@@ -2,7 +2,7 @@
 export const Footer = () => {
     return (
         <div>
-            sdad
+            footer
         </div>
     );
 };
