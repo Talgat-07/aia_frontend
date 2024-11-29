@@ -5,6 +5,7 @@ import HomePage from "pages/HomePage.jsx";
 import AboutUs from "pages/AboutUs.jsx";
 
 export const Router = createBrowserRouter([
+
     {
         element:<Layout />,
         children:[
@@ -19,4 +20,13 @@ export const Router = createBrowserRouter([
         ]
 
     }
-])
+], {
+    future: {
+        v7_relativeSplatPath: true,
+        v7_fetcherPersist: true,
+        v7_normalizeFormMethod: true,
+        v7_partialHydration: true,
+        v7_skipActionErrorRevalidation: true,
+    },
+}
+)
