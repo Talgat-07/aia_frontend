@@ -1,0 +1,177 @@
+.text {
+  margin: 0;
+  line-height: normal;
+}
+
+@font-face {
+  font-family: "Noto Sans Regular";
+  src: local("Noto Sans Regular"),
+  url("../../app/styles/fonts/NotoSans-Regular.ttf") ;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Noto Sans Bold";
+  src: local("Noto Sans Bold"),
+  url("../../app/styles/fonts/NotoSans-Bold.ttf") ;
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Noto Sans Medium";
+  src: local("Noto Sans Medium"),
+  url("../../app/styles/fonts/NotoSans-Medium.ttf") ;
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Noto Sans Light";
+  src: local("Noto Sans Light"),
+  url("../../app/styles/fonts/NotoSans-Light.ttf") ;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Noto Sans SemiBold";
+  src: local("Noto Sans Light"),
+  url("../../app/styles/fonts/NotoSans-SemiBold.ttf") ;
+  font-weight: normal;
+}
+
+
+.h1 {
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.h2 {
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.h3 {
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.h4 {
+  font-size: 24px;
+}
+
+.h5 {
+  font-size: 20px;
+}
+
+.h6 {
+  font-size: 18px;
+}
+
+
+//Weight
+.regular {
+  font-weight: 400;
+}
+.light{
+  font-weight: 300;
+}
+.medium {
+  font-weight: 500;
+}
+
+.semibold {
+  font-weight: 600;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+//color
+.white {
+  color: #FFFFFF;
+}
+.primary{
+  color: #B3895E;
+}
+
+.black {
+  color: #262626;
+}
+
+.gray1 {
+  color: #828282;
+}
+.gray2{
+  color: #D9D9D9;
+}
+.gray3{
+  color: #B5B4B4;
+}
+.gray4{
+  color: #626262;
+}
+
+
+@media(max-width: 1100px) {
+  .h1 {
+    font-size: 26px;
+  }
+
+  .h2 {
+    font-size: 24px;
+  }
+
+  .h3 {
+    font-size: 22px;
+  }
+
+  .bodyXL {
+    font-size: 20px;
+  }
+
+  .bodyL {
+    font-size: 18px;
+  }
+
+  .bodyM {
+    font-size: 16px;
+  }
+
+  .bodyS {
+    font-size: 13px;
+  }
+
+  .bodyXS {
+    font-size: 12px;
+  }
+}
+
+@media(max-width: 480px) {
+  .h1 {
+    font-size: 24px;
+  }
+
+  .h2 {
+    font-size: 22px;
+  }
+
+  .h3 {
+    font-size: 20px;
+  }
+
+  .bodyXL {
+    font-size: 18px;
+  }
+
+  .bodyL {
+    font-size: 16px;
+  }
+
+  .bodyM {
+    font-size: 14px;
+  }
+
+  .bodyS {
+    font-size: 12px;
+  }
+
+  .bodyXS {
+    font-size: 10px;
+  }
+}
