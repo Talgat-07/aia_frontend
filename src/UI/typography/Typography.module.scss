@@ -6,52 +6,26 @@
 @font-face {
   font-family: "Noto Sans Regular";
   src: local("Noto Sans Regular"),
-  url("../../app/styles/fonts/NotoSans-Regular.ttf") ;
-  font-weight: 400;
-}
-@font-face {
-  font-family: "Noto Sans Bold";
-  src: local("Noto Sans Bold"),
-  url("../../app/styles/fonts/NotoSans-Bold.ttf") ;
-  font-weight: 700;
-}
-@font-face {
-  font-family: "Noto Sans Medium";
-  src: local("Noto Sans Medium"),
-  url("../../app/styles/fonts/NotoSans-Medium.ttf") ;
-  font-weight: 500;
-}
-@font-face {
-  font-family: "Noto Sans Light";
-  src: local("Noto Sans Light"),
-  url("../../app/styles/fonts/NotoSans-Light.ttf") ;
-  font-weight: normal;
-}
-@font-face {
-  font-family: "Noto Sans SemiBold";
-  src: local("Noto Sans Light"),
-  url("../../app/styles/fonts/NotoSans-SemiBold.ttf") ;
+  url("../../app/styles/fonts/NotoSans-VariableFont_wdth,wght.ttf") ;
   font-weight: normal;
 }
 
 
 .h1 {
   font-size: 48px;
-  font-weight: 700;
 }
 
 .h2 {
   font-size: 40px;
-  font-weight: 600;
 }
 
 .h3 {
   font-size: 32px;
-  font-weight: 500;
 }
 
 .h4 {
   font-size: 24px;
+
 }
 
 .h5 {
@@ -65,21 +39,21 @@
 
 //Weight
 .regular {
-  font-weight: 400;
+  font-weight: 400 !important;
 }
 .light{
-  font-weight: 300;
+  font-weight: 300 !important;
 }
 .medium {
-  font-weight: 500;
+  font-weight: 500 !important;
 }
 
 .semibold {
-  font-weight: 600;
+  font-weight: 600 !important;
 }
 
 .bold {
-  font-weight: 700;
+  font-weight: 700 !important;
 }
 
 //color
@@ -87,24 +61,24 @@
   color: #FFFFFF;
 }
 .primary{
-  color: #B3895E;
+  color: var(--main-color);
 }
 
 .black {
-  color: #262626;
+  color: var(--black-main-color);
 }
 
 .gray1 {
-  color: #828282;
+  color: var(--gray-first);
 }
 .gray2{
-  color: #D9D9D9;
+  color: var(--gray-second);
 }
 .gray3{
-  color: #B5B4B4;
+  color: var(--gray-third);
 }
 .gray4{
-  color: #626262;
+  color: var(--gray-fourth);
 }
 
 
