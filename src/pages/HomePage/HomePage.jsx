@@ -1,9 +1,10 @@
+import Heading from "UI/heading/heading";
 
 const HomePage = () => {
 
     return (
         <div>
-            HomePage
+            <Heading text={("HomePage")}/>
         </div>
     );
 };
