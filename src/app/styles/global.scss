@@ -1,16 +1,9 @@
 @import "normalize.scss";
 @import "variables.scss";
 
-@font-face {
-  font-family: "Noto Sans Regular";
-  src: local("Noto Sans Regular"),
-  url("../../app/styles/fonts/NotoSans-Regular.ttf") ;
-  font-weight: normal;
-}
-
 body{
   padding: 0 100px 0 100px;
-  font-family: "Noto Sans Regular", serif;
+  font-family: "Noto Sans", serif;
 }
 
 
