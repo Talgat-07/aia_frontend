@@ -1,13 +1,14 @@
-import {Typography} from "UI/typography/Typography.jsx";
 import 'UI/typography/Typography.module.scss'
+import {TopBar} from 'modules/header/Components/TopBar/TopBar.jsx'
+import styles from './Header.module.scss'
+import {BottomBar} from './components/BottomBar/BottomBar.jsx'
 
 export const Header =  () => {
 
     return (
-        <header>
-           <Typography variant="h1" weight="semibold" color="black">
-               The quick brown fox jumps over the lazy dog.
-           </Typography>
+        <header className={styles.header}>
+            <TopBar/>
+            <BottomBar/>
         </header>
     );
 };

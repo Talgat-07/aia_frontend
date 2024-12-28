@@ -7,7 +7,7 @@
   font-family: "Noto Sans";
   src: local("Noto Sans"),
   url("../../app/styles/fonts/NotoSans-VariableFont_wdth,wght.ttf") ;
-  font-weight: normal;
+  font-weight: 100 900;
 }
 
 
@@ -32,8 +32,13 @@
   font-size: 20px;
 }
 
-.bodyS {
+
+.bodyXS{
   font-size: 18px;
+
+}
+.bodyS {
+  font-size: 16px;
 }
 
 
@@ -54,6 +59,19 @@
 
 .bold {
   font-weight: 700 !important;
+}
+
+
+
+//LineHeight
+
+.lineL{
+  line-height: 1.4;
+}
+
+
+.lineXl{
+  line-height: 1.6;
 }
 
 //color
@@ -113,6 +131,7 @@
 
 
 }
+
 
 @media(max-width: 480px) {
   .h1 {
