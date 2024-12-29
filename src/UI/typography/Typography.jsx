@@ -9,14 +9,17 @@ export const Typography = props => {
         className,
         color = 'black',
         truncate = false,
+        lineHeight = 'lineXl',
     } = props;
 
     const Tags = {
         h1: 'h1',
         h2: 'h2',
+        span:'span',
         bodyXl: 'p',
         bodyL: 'p',
         bodyM: 'p',
+        bodyXS:'p',
         bodyS:'p'
     };
 
@@ -25,6 +28,7 @@ export const Typography = props => {
         styles[variant],
         styles[weight],
         styles[color],
+        styles[lineHeight],
         className,
     ]
         .join(' ')
