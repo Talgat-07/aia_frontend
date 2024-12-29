@@ -1,5 +1,6 @@
 
-import {ButtonLanguage, ContactInfo} from "UI/index.js";
+import {ButtonLanguage} from "UI/index.js";
+import {ContactInfo} from "modules/header/Components/ContactInfo/ContactInfo.jsx";
 import styles from './TopBar.module.scss'
 
  export const TopBar = () => {

@@ -1,0 +1,18 @@
+.hours {
+  display: flex;
+  flex-direction: column;
+  a {
+    width: 200px;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+
+    &:hover {
+      color: var(--main-color);
+    }
+  }
+
+  p {
+    margin: 5px 0;
+  }
+}

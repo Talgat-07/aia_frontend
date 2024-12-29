@@ -5,7 +5,7 @@ import {GeeksProIcon} from "assets/index.js";
 export const GeeksProCopyright = () => {
     return (
         <div className={styles.copyright}>
-            <a href="https://geeks.kg/geeks-pro" className={styles.copyright_name}>
+            <a href="https://geeks.kg/geeks-pro" target="_blank" className={styles.copyright_name}>
                 Made By GeeksPro
             </a>
             <GeeksProIcon/>
