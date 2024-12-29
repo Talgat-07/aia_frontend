@@ -130,7 +130,10 @@ hr {
   gap: 35px;
   align-items: center;
   svg{
-
+    &:hover{
+      transform: scale(1.1);
+      transition: 0.4s ease-in-out;
+    }
   }
 
 }
@@ -146,7 +149,6 @@ hr {
         color: #fff;
         text-decoration: none;
         &:hover {
-          transition: 0.3s ease;
           color: var(--main-color);
         }
       }
@@ -214,3 +216,4 @@ hr {
     transform: translateY(0);
   }
 }
+
