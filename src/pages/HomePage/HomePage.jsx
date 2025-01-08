@@ -1,4 +1,4 @@
-import Heading from "UI/heading/heading";
+import Heading from "UI/heading/Heading.jsx";
 
 const HomePage = () => {
 

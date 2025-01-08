@@ -1,7 +1,7 @@
 import { Typography } from "UI/typography/Typography";
-import classes from "UI/heading/heading.module.scss";
+import classes from "UI/heading/Heading.module.scss";
 
-const Heading = ({ text, className }) => {
+export const Heading = ({ text, className }) => {
   return (
     <div className={`${classes.Heading} ${className}`}>
       <Typography variant="h2" weight="semibold" className={classes.title}>
@@ -12,4 +12,3 @@ const Heading = ({ text, className }) => {
   );
 };
 
-export default Heading;
