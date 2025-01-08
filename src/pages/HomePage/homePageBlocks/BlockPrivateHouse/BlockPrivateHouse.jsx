@@ -25,7 +25,7 @@ export const BlockIndiProekt = () => {
                   ultricies rutrum blandit et arcu. Feugiat arcu turpis interdum tortor
                   eu ut diam tincidunt.Lorem ipsum dolor sit amet
                </p>
-               <CustomButton buttonStyles='customButton' text={'Заказать индивидуальный проект'} />
+               <CustomButton buttonStyles='customButtonBrown' text={'Заказать индивидуальный проект'} />
             </div>
          </div>
          <div className={styles.wideLine}>
