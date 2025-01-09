@@ -1,22 +1,10 @@
-import { useState, useRef } from 'react';
 import { CustomButton } from 'UI/buttons/CustomButton/CustomButton.jsx';
 import styles from './BlockPrivateHouse.module.scss';
+import { useReadMoreToggle } from 'UI/buttons/ReadMoreButtonHook/ReadMoreButtonHook.jsx';
 
 export const BlockPrivateHouse = () => {
 
-   const [expanded, setExpanded] = useState(false);
-   const textRef = useRef(null);
-
-   const handleToggle = () => {
-      if (textRef.current) {
-         if (expanded) {
-            textRef.current.scrollTo({ top: 0, behavior: 'smooth' });
-         } else {
-            textRef.current.scrollTo({ top: textRef.current.scrollHeight, behavior: 'smooth' });
-         }
-      }
-      setExpanded(!expanded);
-   };
+   const { expanded, textRef, handleToggle } = useReadMoreToggle();
 
    return (
       <div className={styles.blockPrivateHouse}>
@@ -43,7 +31,10 @@ export const BlockPrivateHouse = () => {
                      Feugiat arcu turpis interdum tortor eu ut diam tincidunt.Lorem ipsum dolor sit ametdiam
                      tincidunt.Lorem
                   </p>
-                  <CustomButton buttonStyles={"readMoreButton"} onClick={handleToggle}
+                  <CustomButton
+                     buttonStyles={"readMoreButton"}
+                     onClick={handleToggle}
+                     text={!expanded ? 'Читать далее' : 'Скрыть'}
                   />
                   <div className={styles.blockPrivateHouse__buttonPosition}>
                      <CustomButton buttonStyles="customButtonBrown" text={'Посмотреть проекты'} />
