@@ -43,9 +43,8 @@ export const BlockPrivateHouse = () => {
                      Feugiat arcu turpis interdum tortor eu ut diam tincidunt.Lorem ipsum dolor sit ametdiam
                      tincidunt.Lorem
                   </p>
-                  <button className={styles.readMoreButton} onClick={handleToggle}>
-                     {expanded ? 'Скрыть' : 'Читать дальше'}
-                  </button>
+                  <CustomButton buttonStyles={"readMoreButton"} onClick={handleToggle}
+                  />
                   <div className={styles.blockPrivateHouse__buttonPosition}>
                      <CustomButton buttonStyles="customButtonBrown" text={'Посмотреть проекты'} />
                   </div>

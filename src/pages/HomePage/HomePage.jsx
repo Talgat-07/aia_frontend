@@ -1,4 +1,4 @@
-import { BlockIndiProekt } from 'pages/HomePage/homePageBlocks/BlockIndiProekt/BlockIndiProekt.jsx';
+import { BlockPrivateHouse } from 'pages/HomePage/homePageBlocks/BlockPrivateHouse/BlockPrivateHouse.jsx';
 
 
 const HomePage = () => {
@@ -6,7 +6,7 @@ const HomePage = () => {
     return (
         <div>
             HELLO
-           <BlockIndiProekt />
+           <BlockPrivateHouse />
         </div>
     );
 };
