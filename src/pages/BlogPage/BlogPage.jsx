@@ -1,10 +1,8 @@
 
-
-export const HomePage = () => {
-
+export const BlogPage = () => {
     return (
         <div>
-            HELLO
+
         </div>
     );
 };

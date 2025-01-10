@@ -1,10 +1,8 @@
 
-
-export const HomePage = () => {
-
+export const InteriorDesignPage = () => {
     return (
         <div>
-            HELLO
+
         </div>
     );
 };

@@ -1,18 +1,31 @@
 import { useState, useRef } from "react";
 import styles from "./BurgerMenu.module.scss";
-import { ButtonLanguage } from "UI/index.js";
-import { SearchBar } from "../SearchBar/SearchBar.jsx";
+import { CustomButton, Typography} from "UI/index.js";
 import Logo from 'assets/img/logo.svg';
-import { InstagramIconMain, TelegramIconMain, YoutubeIconMain, WhatsappIconMain } from "assets/index.js";
+import {InstagramIconMain, TelegramIconMain, YoutubeIconMain, WhatsappIconMain, LoopInput} from "assets/index.js";
 import { useOutsideClick } from "utils/hooks/useClickOutside.js";
 
 export const BurgerMenu = () => {
+    const [hasContent, setHasContent] = useState(false);
+
+    const handleInputChange = (e) => {
+        setHasContent(e.target.value.trim().length > 0);
+    };
+
     const [isOpen, setIsOpen] = useState(false);
     const modalRef = useRef(null);
+    const [activeLanguage, setActiveLanguage] = useState('Русский');
 
+    const languages = ['Русский', 'English', 'Кыргыз'];
     const toggleMenu = () => {
         setIsOpen((prev) => !prev);
     };
+    const socialLinks = [
+        { href: "https://instagram.com", label: "Instagram", Icon: InstagramIconMain },
+        { href: "https://whatsapp.com", label: "WhatsApp", Icon: WhatsappIconMain },
+        { href: "https://telegram.org", label: "Telegram", Icon: TelegramIconMain },
+        { href: "https://youtube.com", label: "YouTube", Icon: YoutubeIconMain },
+    ];
 
     useOutsideClick(modalRef, () => setIsOpen(false), isOpen);
 
@@ -35,8 +48,30 @@ export const BurgerMenu = () => {
                             <a href="/">
                                 <img src={Logo} alt="mainlogo"/>
                             </a>
-                            <ButtonLanguage/>
-                            <button
+
+                            <div className={styles.languageSwitcher}>
+                                {languages.map((language) => (
+
+                                    <CustomButton
+                                        key={language}
+                                        buttonStyles={language === activeLanguage ? 'languageButtonActive' : 'languageButton'}
+                                        onClick={() => setActiveLanguage(language)}
+                                        text={
+
+                                            <Typography
+                                                variant="bodyS"
+                                                color="white"
+                                                weight="regular"
+                                                lineHeight="linel"
+                                            >
+                                                {language}
+                                            </Typography>
+                                        }
+                                    />
+                                ))}
+
+
+                            </div>                            <button
                                 onClick={toggleMenu}
                                 className={styles.closeIcon}
                                 aria-label="Close menu"
@@ -45,24 +80,29 @@ export const BurgerMenu = () => {
                                 <div></div>
                             </button>
                         </div>
-                        <hr />
+                        <hr/>
                         <div className={styles.searchBox}>
-                            <SearchBar/>
+                            <form action="" className={styles.search}>
+                                <input
+                                    type="text"
+                                    placeholder="Поиск"
+                                    className={`${styles.search_input} ${hasContent ? styles.filled : ""}`}
+                                    onChange={handleInputChange}
+                                />
+                                <span
+                                    className={`${styles.search_icon} ${hasContent ? styles.icon_fixed : ""}`}
+                                >
+                    <LoopInput/>
+                </span>
+                            </form>
                         </div>
 
                         <div className={styles.socialIcons}>
-                            <a target="_blank" href="#" aria-label="Instagram">
-                                <InstagramIconMain />
-                            </a>
-                            <a target="_blank" href="#" aria-label="WhatsApp">
-                                <WhatsappIconMain />
-                            </a>
-                            <a target="_blank" href="#" aria-label="Telegram">
-                                <TelegramIconMain />
-                            </a>
-                            <a target="_blank" href="#" aria-label="YouTube">
-                                <YoutubeIconMain />
-                            </a>
+                            {socialLinks.map(({href, label, Icon}) => (
+                                <a key={label} target="_blank" href={href} aria-label={label} rel="noopener noreferrer">
+                                    <Icon/>
+                                </a>
+                            ))}
                         </div>
                         <nav className={styles.menu}>
                             <ul>

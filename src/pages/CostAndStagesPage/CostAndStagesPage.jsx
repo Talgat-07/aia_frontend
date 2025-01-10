@@ -1,10 +1,8 @@
 
-
-export const HomePage = () => {
-
+export const CostAndStagesPage = () => {
     return (
         <div>
-            HELLO
+
         </div>
     );
 };
