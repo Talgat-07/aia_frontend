@@ -14,13 +14,13 @@ export const ButtonLanguage = () => {
                     key={language}
                     className={
                         language === activeLanguage
-                            ? `${styles.languageSwitcher__buttons} ${styles.languageSwitcher__buttonsActive}`
+                            ? `${styles.languageButton} ${styles.languageButtonActive}`
                             : styles.languageSwitcher__buttons
                     }
                     onClick={() => setActiveLanguage(language)}
                 >
                     <Typography variant="bodyS" color="white" weight="regular" lineHeight="linel">
-                        {language}
+                        {languages}
                     </Typography>
                 </button>
             ))}

@@ -1,8 +1,7 @@
 import { createBrowserRouter} from 'react-router-dom'
 import {Layout} from '../layout/Layout.jsx'
 import {path} from "utils/constants/constants.js";
-import HomePage from "pages/HomePage/HomePage.jsx";
-import AboutUs from "pages/AboutUs/AboutUs.jsx";
+import {HomePage,AboutUsPage,CostAndStagesPage,RealizeProjectsPage, InteriorDesignPage,BlogPage,ContactUsPage} from 'pages/index.js'
 
 export const Router = createBrowserRouter([
 
@@ -15,8 +14,31 @@ export const Router = createBrowserRouter([
             },
             {
                 path:path.aboutUs,
-                element:<AboutUs/>
+                element:<AboutUsPage/>
+            },
+            {
+                path:path.realizeProjects,
+                element:<RealizeProjectsPage/>
+            },
+            {
+                path:path.interiorDesign,
+                element:<InteriorDesignPage/>
+            },
+            {
+                path:path.costAndStages,
+                element:<CostAndStagesPage/>
+            },
+            {
+                path:path.blog,
+                element:<BlogPage/>
+            },
+            {
+                path:path.contacts,
+                element:<ContactUsPage/>
             }
+
+
+
         ]
 
     }

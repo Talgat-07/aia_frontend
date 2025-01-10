@@ -2,3 +2,27 @@
   position: relative;
   background-color:var(--black-main-color); ;
 }
+.BottomBar{
+  padding:10px 10px 15px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+.TopBar_Container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  position: relative;
+
+
+}
+.ContactInfo{
+  padding-top:10px;
+}
+.languageSwitcher {
+  display: flex;
+}
+
+
