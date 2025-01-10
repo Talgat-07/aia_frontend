@@ -3,7 +3,6 @@ import {InstagramIconMain,WhatsappIconMain,TelegramIconMain,YoutubeIconMain,Geek
 import { path } from "utils/constants/constants.js";
 import {Link} from "react-router-dom";
 import {Typography} from "UI/typography/Typography.jsx";
-import React from "react";
 import Logo from "assets/img/logo.svg";
 
 

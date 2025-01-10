@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import styles from "./BurgerMenu.module.scss";
-import {ButtonLanguage, CustomButton, Typography} from "UI/index.js";
+import { CustomButton, Typography} from "UI/index.js";
 import Logo from 'assets/img/logo.svg';
 import {InstagramIconMain, TelegramIconMain, YoutubeIconMain, WhatsappIconMain, LoopInput} from "assets/index.js";
 import { useOutsideClick } from "utils/hooks/useClickOutside.js";
