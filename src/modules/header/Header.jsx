@@ -44,7 +44,18 @@ export const Header =  () => {
             </div>
             <div className={styles.BottomBar}>
                 <img src={Logo} alt="logo"/>
-                <BurgerMenu/>
+                <div className={styles.right_bottom_bar}>
+                    <CustomButton
+                    buttonStyles={"customButtonBrown"}
+                    text={
+                        <Typography variant="bodyS" color="white">
+                            Оставить Заявку
+                        </Typography>
+                    }
+                    />
+                    <BurgerMenu/>
+                </div>
+
 
             </div>
         </header>

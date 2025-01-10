@@ -24,5 +24,14 @@
 .languageSwitcher {
   display: flex;
 }
+.right_bottom_bar{
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  .customBrownButton{
+    width:200px;
+    height:40px;
+  }
+}
 
 

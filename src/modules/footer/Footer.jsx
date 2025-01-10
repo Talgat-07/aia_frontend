@@ -1,10 +1,10 @@
 import styles from "./Footer.module.scss";
-import { FooterContacts } from "./Components/FooterContacts/FooterContacts.jsx";
 import {InstagramIconMain,WhatsappIconMain,TelegramIconMain,YoutubeIconMain,GeeksProIcon} from "assets/index.js"
 import { path } from "utils/constants/constants.js";
 import {Link} from "react-router-dom";
 import {Typography} from "UI/typography/Typography.jsx";
 import React from "react";
+import Logo from "assets/img/logo.svg";
 
 
 export const Footer = () => {
@@ -18,7 +18,26 @@ export const Footer = () => {
     return (
         <footer className={styles.footer}>
             <div className={styles.container}>
-                <FooterContacts/>
+                <div className={styles.container_contacts}>
+                    <div className={styles.logo}>
+                        <img src={Logo} alt="Логотип"/>
+                    </div>
+                    <div className={styles.contacts}>
+
+                        <Typography variant="bodyL" weight="medium" color="white">
+                            Телефон:
+                        </Typography>
+                        <div className={styles.contacts_phone}>
+                            <Typography variant="bodyS" weight="light" color="white" className={styles.phoneNumber}>
+                                +996700700700
+                            </Typography>
+                            <Typography variant="bodyS" weight="light" color="white" className={styles.phoneNumber}>
+                                +996700700700
+                            </Typography>
+                        </div>
+
+                    </div>
+                </div>
                 <nav className={styles.links}>
                     <ul>
                         <li>
