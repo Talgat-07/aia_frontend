@@ -2,10 +2,9 @@
 
 export const HomePage = () => {
 
-    return (
-        <div>
-            HELLO
-        </div>
-    );
+  return (
+    <div>
+    </div>
+  );
 };
 

@@ -2,13 +2,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 40px;
     margin-bottom: 32px;
 
     .title {
         margin: 0;
-        font-family: Arial, Helvetica, sans-serif;
-        font-weight: 600;
     }
 
     .headingLink {
@@ -17,5 +14,13 @@
         border-radius: 8px;
         background: #B3895E;
         margin-top: 16px;
+    }
+
+    .whiteText {
+        color: white;
+    }
+
+    .blackText {
+        color: black;
     }
 }
