@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./ContactModal.module.scss";
 
 //TODO FIX ME Использовать это модальное окно начиная с таблет версии до мобильного
