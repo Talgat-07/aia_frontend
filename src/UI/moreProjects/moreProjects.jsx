@@ -1,40 +1,61 @@
 import { useState } from 'react';
-import PropTypes from 'prop-types'; 
+import PropTypes from 'prop-types';
 import classes from 'UI/moreProjects/moreProjects.module.scss';
 import { Typography } from '..';
 
-const MoreProjects = ({ initialConfig, children }) => {
+export const MoreProjects = ({ initialConfig, children }) => {
   const [config] = useState(initialConfig);
 
+  const contentClass = config.image ? classes.content : `${classes.content} ${classes.noImage}`;
+  const textClass = config.image ? classes.textContainer : `${classes.textContainer} ${classes.noImageText}`;
+  const textHead = config.image ? classes.text : `${classes.text} ${classes.noImageTextHead}`;
+
   return (
-    <div className={classes.custom_block}>
-      {children}
-      <div className={classes.content}>
-        <div className={classes.imageContainer}>
-          <img src={config.image} alt="Project" className={classes.custom_image} />
-        </div>
-        <div className={classes.textContainer}>
-          <Typography variant="bodyXl" color="white">{config.subtitle}</Typography>
-          <Typography variant="bodyM" color="white" weight="light" className={classes.textt}>{config.text}</Typography>
-          <div className={classes.buttons}>
-            {config.buttons.map((buttonText, index) => (
-              <button key={index}>{buttonText}</button>
-            ))}
-          </div>
+      <div className={classes.custom_block}>
+        {children}
+        <div className={contentClass}>
+          {config.image && (
+              <div className={`${classes.imageContainer}`}>
+                <img src={config.image} alt="Project" className={classes.custom_image} />
+              </div>
+          )}
+          {(config.subtitle || config.text) && (
+              <div className={textClass}>
+                {config.subtitle && (
+                    <Typography variant="bodyXl" color="white">
+                      {config.subtitle}
+                    </Typography>
+                )}
+                {config.text && (
+                    <Typography
+                        variant="bodyM"
+                        color="white"
+                        weight="light"
+                        className={textHead}
+                    >
+                      {config.text}
+                    </Typography>
+                )}
+                {config.buttons && config.buttons.length > 0 && (
+                    <div className={classes.buttons}>
+                      {config.buttons.map((buttonText, index) => (
+                          <button key={index}>{buttonText}</button>
+                      ))}
+                    </div>
+                )}
+              </div>
+          )}
         </div>
       </div>
-    </div>
   );
 };
 
 MoreProjects.propTypes = {
   initialConfig: PropTypes.shape({
-    image: PropTypes.string.isRequired,
-    subtitle: PropTypes.string.isRequired,
+    image: PropTypes.string,
+    subtitle: PropTypes.string,
     text: PropTypes.string.isRequired,
     buttons: PropTypes.arrayOf(PropTypes.string).isRequired,
   }).isRequired,
   children: PropTypes.node,
 };
-
-export default MoreProjects;

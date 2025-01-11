@@ -1,6 +1,5 @@
 .custom_block {
   background-color: #262626;
-  margin-bottom: 20px;
   padding: 30px 90px 70px;
 
   .title {
@@ -13,7 +12,10 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-
+    &.noImage {
+      flex-direction: column;
+      text-align: center;
+    }
     .imageContainer {
       flex: 1;
       margin-right: 20px;
@@ -29,9 +31,17 @@
       flex: 1;
       display: flex;
       flex-direction: column;
+      &.noImageText {
+        margin: 0 auto;
+        flex-direction: row;
+      }
 
-      .textt {
+      .text {
         margin: 25px 0;
+        &.noImageTextHead{
+          width: 700px;
+          text-align: start;
+        }
       }
 
       .buttons {
