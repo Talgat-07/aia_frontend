@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-import classes from 'UI/moreProjects/moreProjects.module.scss';
+import classes from 'UI/MoreProjects/MoreProjects.module.scss';
 import { Typography } from '..';
 
 export const MoreProjects = ({ initialConfig, children }) => {
