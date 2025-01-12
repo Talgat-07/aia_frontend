@@ -20,11 +20,11 @@ export const NumberAnimation = ({ endValue, duration = 2000 }) => {
         step();
     }, [endValue, duration]);
 
-    // Форматирование числа
-    const formattedValue = value.toLocaleString();
 
-    return <Typography variant="h1" weight="bold" color="primary" >
-        {formattedValue}
+    return(
 
-           </Typography>;
+        <Typography variant="h1" weight="bold" color="primary" >
+            {value}
+        </Typography>
+        )
 };

@@ -1,22 +1,22 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-import classes from 'UI/MoreProjects/MoreProjects.module.scss';
-import { Typography } from '..';
+import styles from 'UI/MoreProjects/MoreProjects.module.scss';
+import { Typography } from 'UI/index.js';
 
 export const MoreProjects = ({ initialConfig, children }) => {
   const [config] = useState(initialConfig);
 
-  const contentClass = config.image ? classes.content : `${classes.content} ${classes.noImage}`;
-  const textClass = config.image ? classes.textContainer : `${classes.textContainer} ${classes.noImageText}`;
-  const textHead = config.image ? classes.text : `${classes.text} ${classes.noImageTextHead}`;
+  const contentClass = config.image ? styles.content : `${styles.content} ${styles.noImage}`;
+  const textClass = config.image ? styles.textContainer : `${styles.textContainer} ${styles.noImageText}`;
+  const textHead = config.image ? styles.text : `${styles.text} ${styles.noImageTextHead}`;
 
   return (
-      <div className={classes.custom_block}>
+      <div className={styles.custom_block}>
         {children}
         <div className={contentClass}>
           {config.image && (
-              <div className={`${classes.imageContainer}`}>
-                <img src={config.image} alt="Project" className={classes.custom_image} />
+              <div className={`${styles.imageContainer}`}>
+                <img src={config.image} alt="Project" className={styles.custom_image} />
               </div>
           )}
           {(config.subtitle || config.text) && (
@@ -37,7 +37,7 @@ export const MoreProjects = ({ initialConfig, children }) => {
                     </Typography>
                 )}
                 {config.buttons && config.buttons.length > 0 && (
-                    <div className={classes.buttons}>
+                    <div className={styles.buttons}>
                       {config.buttons.map((buttonText, index) => (
                           <button key={index}>{buttonText}</button>
                       ))}
