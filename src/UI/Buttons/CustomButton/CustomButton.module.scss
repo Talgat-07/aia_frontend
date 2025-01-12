@@ -11,11 +11,39 @@
 .customButtonAdaptive {
   height: 50px;
   display: block;
+  position: relative;
   padding: 12px 32px;
   border: 2px solid var(--main-color);
   text-align: center;
   background-color: transparent;
+  overflow: hidden;
+  color: black;
+  transition: color 0.3s ease;
+
 }
+.customButtonAdaptive::before {
+   content: "";
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   width: 0;
+   height: 300%;
+   background-color: var(--black-main-color);
+   transform: translate(-50%, -50%);
+   transition: 0.7s ease;
+ }
+
+.customButtonAdaptive:hover::before{
+  width: 100%;
+  z-index: -1;
+
+}
+.customButtonAdaptive:hover{
+  transition: 0.3s ease;
+  color: white;
+  z-index: 1;
+}
+
 
 .languageButton {
   background-color: var(--black-main-color);
