@@ -1,5 +1,5 @@
-import {Typography}  from "UI/typography/Typography.jsx"
-import { Heading} from "UI/heading/Heading.jsx";
+import {Typography}  from "UI/Typography/Typography.jsx"
+import { Heading} from "UI/Heading/Heading.jsx";
 import { NumberAnimation} from "./Components/NumberAnimation/NumberAnimation.jsx";
 // fix need modal import { useModal } from "utils/hooks/useModal.js"
 import classes from "./WeInNumber.module.scss"
