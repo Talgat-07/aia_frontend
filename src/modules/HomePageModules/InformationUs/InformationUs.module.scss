@@ -1,5 +1,5 @@
 .Information {
-  padding: 140px 100px 0 100px;
+  padding: 140px 100px;
 
   &_Content {
     display: flex;
@@ -46,11 +46,11 @@
     }
 
     h1, h2, h3 {
-      font-size: 1.5em; // Увеличьте шрифты
+      font-size: 1.5em;
     }
 
     p {
-      font-size: 1.2em; // Увеличьте размер текста для удобства чтения
+      font-size: 1.2em;
     }
 
     hr {
