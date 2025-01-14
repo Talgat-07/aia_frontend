@@ -4,7 +4,6 @@ import { YoutubeBlock} from "UI/YoutubeBlock/YoutubeBlock.jsx";
 export const HomePage = () => {
 
   return (
-      <div>
       <WeInNumber/>
       <YoutubeBlock videoId="eA0lHNZ1KCA" backgroundColor="black" />
       </div>
