@@ -2,7 +2,7 @@ import styles from "./Footer.module.scss";
 import {InstagramIconMain,WhatsappIconMain,TelegramIconMain,YoutubeIconMain,GeeksProIcon} from "assets/index.js"
 import { path } from "utils/constants/constants.js";
 import {Link} from "react-router-dom";
-import {Typography} from "UI/typography/Typography.jsx";
+import {Typography} from "UI/Typography/Typography.jsx";
 import Logo from "assets/img/logo.svg";
 
 

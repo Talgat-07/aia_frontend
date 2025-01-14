@@ -1,4 +1,4 @@
-import 'UI/typography/Typography.module.scss'
+import 'UI/Typography/Typography.module.scss'
 import styles from './Header.module.scss'
 import Logo from "assets/img/logo.svg";
 import {BurgerMenu} from "modules/header/Components/BurgerMenu/BurgerMenu.jsx";

@@ -1,5 +1,5 @@
-import { Typography } from "UI/typography/Typography";
-import classes from "UI/heading/Heading.module.scss";
+import { Typography } from "UI/Typography/Typography";
+import classes from "UI/Heading/Heading.module.scss";
 
 export const Heading = ({ text, className, color = "white" }) => {
   const textColorClass = color === "black" ? classes.blackText : classes.whiteText;
