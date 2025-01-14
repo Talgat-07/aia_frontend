@@ -1,12 +1,12 @@
 import {WeInNumber} from "UI/WeInNumber/WeInNumber.jsx";
-import { VideoBlock } from "UI/Youtube/Youtube";
+import { YoutubeBlock} from "UI/YoutubeBlock/YoutubeBlock.jsx";
 
 export const HomePage = () => {
 
   return (
       <div>
       <WeInNumber/>
-      <VideoBlock videoId="eA0lHNZ1KCA" backgroundColor="black" />
+      <YoutubeBlock videoId="eA0lHNZ1KCA" backgroundColor="black" />
       </div>
   );
 };

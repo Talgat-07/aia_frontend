@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import { useModal } from "utils/hooks/useModal";
 import PropTypes from "prop-types";
-import styles from "UI/Youtube/Youtube.module.scss";
+import styles from "UI/YoutubeBlock/YoutubeBlock.module.scss";
 import { Heading } from "..";
 
-export const VideoBlock = ({ videoId, backgroundColor }) => {
+export const YoutubeBlock = ({ videoId, backgroundColor }) => {
   const { isOpen, openModal, closeModal } = useModal();
 
   useEffect(() => {
@@ -65,7 +65,7 @@ export const VideoBlock = ({ videoId, backgroundColor }) => {
   );
 };
 
-VideoBlock.propTypes = {
+YoutubeBlock.propTypes = {
   videoId: PropTypes.string.isRequired,
   backgroundColor: PropTypes.oneOf(["white", "black"]),
 };
