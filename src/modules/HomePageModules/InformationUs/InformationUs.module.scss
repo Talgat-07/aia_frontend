@@ -1,5 +1,5 @@
 .Information {
-  padding: 140px 100px 0 100px;
+  padding: 140px 100px;
 
   &_Content {
     display: flex;
@@ -29,32 +29,5 @@
   hr {
     border: 2px var(--gray-third) solid;
     margin-top: 70px;
-  }
-
-  @media (min-width: 2560px) {
-    padding: 200px 150px 0 150px;
-
-    &_Content {
-      gap: 40px;
-    }
-
-    &_Left {
-      &Information {
-        gap: 40px;
-        margin-bottom: 40px;
-      }
-    }
-
-    h1, h2, h3 {
-      font-size: 1.5em; // Увеличьте шрифты
-    }
-
-    p {
-      font-size: 1.2em; // Увеличьте размер текста для удобства чтения
-    }
-
-    hr {
-      margin-top: 100px;
-    }
   }
 }

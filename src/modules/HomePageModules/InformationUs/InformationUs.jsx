@@ -2,12 +2,12 @@ import styles from './InformationUs.module.scss';
 import { Heading, Typography, CustomButton } from "UI/index.js";
 import AboutUs from 'assets/img/AboutUs.png';
 import { useNavigate } from 'react-router-dom';
-
+import PropTypes from 'prop-types';
 export const InformationUs = ({ subtitle, description }) => {
     const navigate = useNavigate();
 
     const handleButtonClick = () => {
-        navigate('/about-us'); // Убедитесь, что путь соответствует вашему роуту
+        navigate('/about-us');
     };
 
     return (
@@ -38,3 +38,9 @@ export const InformationUs = ({ subtitle, description }) => {
         </div>
     );
 };
+
+InformationUs.propTypes = {
+    subtitle: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+};
+
