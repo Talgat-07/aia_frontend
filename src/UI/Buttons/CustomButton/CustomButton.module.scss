@@ -1,16 +1,21 @@
+
+.centerDisplay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .customButtonBrown {
-  display: block;
+  @extend .centerDisplay;
   padding: 12px 32px;
   border: 2px solid var(--main-color);
   height: 50px;
-  text-align: center;
   background-color: var(--main-color);
   color: #FFFFFF;
 }
 
 .customButtonAdaptive {
+  @extend .centerDisplay;
   height: 50px;
-  display: block;
   padding: 12px 32px;
   border: 2px solid var(--main-color);
   text-align: center;
@@ -18,6 +23,7 @@
 }
 
 .languageButton {
+  @extend .centerDisplay;
   width: 98px;
   border: 1px solid var(--gray-fourth);
   padding: 8px;
@@ -25,15 +31,16 @@
   transition: all 0.3s ease;
   background-color: transparent;
   color: var(--gray-fourth);
-}
-.languageButtonActive {
-  @extend .languageButton;
-  transition: 0.5s ease;
-  color: #FFFFFF;
-  border: 1px solid var(--main-color);
+  &:active {
+    @extend .languageButton;
+    transition: 0.5s ease;
+    color: #FFFFFF;
+    border: 1px solid var(--main-color);
+  }
 }
 
 .wideButton {
+  @extend .centerDisplay;
   width: 100%;
   height: 50px;
   padding: 12px 0;
@@ -43,46 +50,51 @@
 }
 
 .activeButton {
+  @extend .centerDisplay;
   width: 270px;
   height: 60px;
   border: 1px solid var(--main-color);
   background-color: transparent;
   text-align: center;
   &:active {
+  @extend .activeButton;
   background-color: var(--main-color);
   color: #FFFFFF;
   }
 }
 
 .blogButtons {
+  @extend .centerDisplay;
   width: 203px;
   padding: 6px 24px;
   border: 1px solid var(--main-color);
   text-align: center;
   background-color: transparent;
   &:active {
+    @extend .blogButtons;
     background-color: var(--main-color);
     color: #FFFFFF;
   }
 }
 
 .twoButtons {
+  @extend .centerDisplay;
   width: 620px;
   padding: 36px 0;
   background-color: var(--gray-second);
   border: none;
-}
-.twoButtonsActive {
-  @extend .twoButtons;
-  background-color: var(--main-color);
+  &:active {
+    @extend .twoButtons;
+    background-color: var(--main-color);
+  }
 }
 
 .readMoreButton {
-  position: absolute;
-  bottom: 80px;
+  @extend .centerDisplay;
   height: 50px;
-  padding: 12px;
+  padding: 12px 0;
   border: none;
   background-color: transparent;
   color: #FFFFFF;
+  margin-bottom: 16px;
 }

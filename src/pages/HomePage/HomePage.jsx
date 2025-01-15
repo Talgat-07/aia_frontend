@@ -1,14 +1,18 @@
-import { BlockPrivateHouse } from 'pages/HomePage/homePageBlocks/BlockPrivateHouse/BlockPrivateHouse.jsx';
+import { PrivateHouses } from 'modules/customBlocksHP/privateHouses/PrivateHouses.jsx';
+import { InteriorDesign } from 'modules/customBlocksHP/interiorDesign/InteriorDesign.jsx';
+import { VillagesNeighborhoods } from 'modules/customBlocksHP/villagesNeighborhoods/VillagesNeighborhoods.jsx';
 
 
-const HomePage = () => {
+export const HomePage = () => {
+
+
 
     return (
         <div>
-            HELLO
-           <BlockPrivateHouse />
+          <PrivateHouses />
+           <InteriorDesign />
+           <VillagesNeighborhoods/>
         </div>
     );
 };
 
-export default HomePage;
