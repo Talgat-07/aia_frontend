@@ -1,5 +1,5 @@
-import {Typography}  from "UI/typography/Typography.jsx"
-import { Heading} from "UI/heading/Heading.jsx";
+import {Typography}  from "UI/Typography/Typography.jsx"
+import { Heading} from "UI/Heading/Heading.jsx";
 import { NumberAnimation} from "./Components/NumberAnimation/NumberAnimation.jsx";
 // fix need modal import { useModal } from "utils/hooks/useModal.js"
 import classes from "./WeInNumber.module.scss"
@@ -24,18 +24,18 @@ export const WeInNumber = () => {
             <Heading text="Мы в цифрах" color="black" />
 
             <div className={classes.content}>
-                <div className={classes.numbers}>
+                <div className={classes.content_numbers}>
                     <Typography variant="bodyXl" weight="medium" color="black">
                         {data.slogan}
                     </Typography>
                     <Typography variant="bodyM" weight="light" color="black">
                         {data.description}
                     </Typography>
-                    <div className={classes.stats}>
+                    <div className={classes.content_stats}>
                         {data.stats.map((stat, index) => (
-                            <div key={index} className={classes.stat}>
+                            <div key={index} className={classes.content_stat}>
                                 <NumberAnimation endValue={stat.value} duration={1500} />
-                                <Typography className={classes.label} variant="bodyM"  color="black">
+                                <Typography className={classes.content_label} variant="bodyM"  color="black">
                                     {stat.label}
                                 </Typography>
                             </div>
@@ -44,7 +44,7 @@ export const WeInNumber = () => {
                 </div>
 
                 <div className={classes.textBlock}>
-                    <div className={classes.textAbout}>
+                    <div className={classes.textBlock_about}>
                         <Typography variant="bodyL" weight="medium" color="black">
                             {data.subtitle}
                         </Typography>

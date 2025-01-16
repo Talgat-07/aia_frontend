@@ -1,1 +1,33 @@
-//fix me
+.Information {
+  padding: 140px 100px;
+
+  &_Content {
+    display: flex;
+    gap: 20px;
+  }
+
+  &_Left {
+    height: 100%;
+    width: 50%;
+
+    &Information {
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      margin-bottom: 25px;
+    }
+  }
+
+  &_Right {
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  hr {
+    border: 2px var(--gray-third) solid;
+    margin-top: 70px;
+  }
+}
