@@ -1,7 +1,7 @@
-import styles from "modules/MainBanner/MainBanner.module.scss";
-import { WhatsappIconMain } from "assets/index";
+import styles from "modules/HomePageModules/MainBanner/MainBanner.module.scss";
+import { WhatsappIconMain } from "assets/index.js";
 import myImage from "assets/img/mainBanner.png";
-import { Typography, CustomButton } from "UI/index";  
+import { Typography, CustomButton } from "UI/index.js";
 
 const MainBanner = () => {
   return (
