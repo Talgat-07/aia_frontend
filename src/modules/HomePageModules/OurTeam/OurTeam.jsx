@@ -6,10 +6,9 @@ import 'swiper/css/effect-coverflow';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import {CustomButton} from "UI/index";
-
-
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Card, Heading } from 'UI/index';
+
 
 const cardsData = [
     {
