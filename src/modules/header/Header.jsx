@@ -24,7 +24,7 @@ export const Header =  () => {
                                 key={language}
                                 buttonStyles={language === activeLanguage ? 'languageButtonActive' : 'languageButton'}
                                 onClick={() => setActiveLanguage(language)}
-                                text={
+                                text={  
 
                             <Typography
                                     variant="bodyS"
