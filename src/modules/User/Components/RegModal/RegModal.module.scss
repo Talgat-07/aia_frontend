@@ -145,17 +145,6 @@
     z-index: 1;
     position: relative;
     transition: border-color 0.3s ease;
-    &::placeholder{
-      position: absolute;
-      left: 45px;
-      top: 10px;
-      color: red;
-
-    }
-    input:nth-child(2)::placeholder{
-      position: absolute;
-      left: 150px !important;
-    }
 
 
     &:focus {
@@ -196,6 +185,6 @@
   }
 
   .error {
-    border-color: var(--error);
+    border-color: var(--error) !important;
   }
 }
