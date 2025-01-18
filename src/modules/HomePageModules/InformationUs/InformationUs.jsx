@@ -14,6 +14,7 @@ export const InformationUs = ({ subtitle, description }) => {
         <div className={styles.Information}>
             <Heading text="Информация о нас" color="black" />
             <div className={styles.Information_Content}>
+
                 <div className={styles.Information_Left}>
                     <div className={styles.Information_LeftInformation}>
                         <Typography variant="bodyL" weight="medium" color="black">
@@ -30,9 +31,11 @@ export const InformationUs = ({ subtitle, description }) => {
                         onClick={handleButtonClick}
                     />
                 </div>
+
                 <div className={styles.Information_Right}>
                     <img src={AboutUs} alt="About Us" />
                 </div>
+
             </div>
             <hr />
         </div>
