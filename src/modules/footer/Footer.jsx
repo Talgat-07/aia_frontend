@@ -6,6 +6,7 @@ import {Typography} from "UI/Typography/Typography.jsx";
 import Logo from "assets/img/logo.svg";
 
 
+
 export const Footer = () => {
     const socialLinks = [
         { href: "https://instagram.com", label: "Instagram", Icon: InstagramIconMain },
@@ -19,7 +20,10 @@ export const Footer = () => {
             <div className={styles.container}>
                 <div className={styles.container_contacts}>
                     <div className={styles.logo}>
-                        <img src={Logo} alt="Логотип"/>
+                        <Link to="/">
+                            <img src={Logo} alt="Логотип"/>
+
+                        </Link>
                     </div>
                     <div className={styles.contacts}>
 

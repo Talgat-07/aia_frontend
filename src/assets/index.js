@@ -1,4 +1,5 @@
 export {BurgerIcon} from './icons/BurgerIcon.jsx';
+export {SubmitApprovedIcon} from './icons/SubmitApprovedIcon.jsx';
 export {CloseIcon} from './icons/CloseIcon.jsx';
 export {TelegramIconMain} from './icons/TelegramIconMain.jsx';
 export {WhatsappIconMain} from './icons/WhatsappIconMain.jsx';

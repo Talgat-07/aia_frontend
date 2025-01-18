@@ -4,9 +4,13 @@ import Logo from "assets/img/logo.svg";
 import {BurgerMenu} from "modules/header/Components/BurgerMenu/BurgerMenu.jsx";
 import {Typography, CustomButton} from "UI/index.js";
 import {useState} from "react";
-
+import {useModal} from "utils/hooks/useModal.js";
+import {RegModal} from "modules/User/Components/RegModal/RegModal.jsx";
+import {Link} from "react-router-dom";
 export const Header =  () => {
+    const {isOpen, openModal, closeModal} = useModal();
     const [activeLanguage, setActiveLanguage] = useState('Русский');
+
 
     const languages = ['Русский', 'English', 'Кыргыз'];
 
@@ -43,10 +47,14 @@ export const Header =  () => {
                 </div>
             </div>
             <div className={styles.BottomBar}>
-                <img src={Logo} alt="logo"/>
+                <Link to="/">
+                    <img src={Logo} alt="logo"/>
+
+                </Link>
                 <div className={styles.right_bottom_bar}>
                     <CustomButton
                     buttonStyles={"customButtonBrown"}
+                    onClick={openModal}
                     text={
                         <Typography variant="bodyS" color="white">
                             Оставить Заявку
@@ -58,7 +66,9 @@ export const Header =  () => {
 
 
             </div>
+            {isOpen? (<RegModal closeModal={closeModal} isOpen={isOpen}/>) : null}
         </header>
+
     );
 };
 
