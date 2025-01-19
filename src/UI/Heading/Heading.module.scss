@@ -4,6 +4,11 @@
     align-items: center;
     padding-bottom: 32px;
 
+    &.alignLeft {
+        align-items: flex-start;
+        text-align: left;
+    }
+
     .title {
         margin: 0;
     }
