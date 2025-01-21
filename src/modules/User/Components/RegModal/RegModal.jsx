@@ -1,17 +1,38 @@
 import {CustomButton, Typography} from 'UI/index.js';
 import styles from './RegModal.module.scss';
 import { useForm } from 'react-hook-form';
-import { schema } from 'utils/hooks/schemaYup.js';
+import { schema } from 'utils/helpers/schemaYup.js';
 import { yupResolver } from '@hookform/resolvers/yup';
-import {useOutsideClick} from "utils/hooks/useClickOutside.js";
-import {useRef, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import {SubmitApprovedIcon} from "assets/index.js";
+import {useOutsideClick} from "utils/hooks/useClickOutside.js";
+import PhoneInput from "react-phone-input-2";
 
-export const RegModal = ({closeModal}) => {
+export const RegModal = ({closeModal, isOpen}) => {
     const modalRef = useRef(null);
     const [isSubmitted, setIsSubmitted] = useState(false);
+    const [phone, setPhone] = useState('');
+    const [isFocused, setIsFocused] = useState(false);
+    const [isFilled, setIsFilled] = useState(false);
 
+    const handleFocus = () => setIsFocused(true);
+    const handleBlur = (e) => {
+        setIsFocused(false);
+        setIsFilled(!!e.target.value); // Проверяем, есть ли значение в поле
+    };
 
+    const handlePhoneChange = (value) => {
+        setPhone(value);
+    };
+    useEffect(() => {
+        if (isOpen) {
+            document.body.classList.add(styles.no_scroll);
+        } else {
+            document.body.classList.remove(styles.no_scroll);
+        }
+
+        return () => document.body.classList.remove(styles.no_scroll);
+    }, [isOpen]);
     const {
         register,
         handleSubmit,
@@ -20,21 +41,22 @@ export const RegModal = ({closeModal}) => {
     } = useForm({
         resolver: yupResolver(schema),
     });
-    useOutsideClick(modalRef, () => closeModal(false));
 
 
+    useOutsideClick(modalRef, closeModal, isOpen);
 
     const onSubmit = (data) => {
         console.log(data);
         reset();
-        setIsSubmitted(true)
+        setIsSubmitted(true);
     };
 
     return (
-        <div className={styles.modal} aria-modal="true" role="dialog">
-            <div className={styles.modalOverlay}>
-                <div className={styles.modalBox} ref={modalRef} onClick={(e) => e.stopPropagation()}>
+        <div className={styles.modal} aria-modal="true" role="dialog" >
+            <div className={styles.modalOverlay}  >
+                <div className={styles.modalBox} ref={modalRef} >
                     <div className={styles.closeModal} onClick={() => closeModal(false)}>
+
                         <div></div>
                         <div></div>
                     </div>
@@ -48,19 +70,17 @@ export const RegModal = ({closeModal}) => {
                                     <br/>
                                     Ваша заявка отправлена
                                 </Typography>
-                                <Typography variant="bodyXS" weight="regular" >
+                                <Typography variant="bodyXS" weight="regular">
                                     Ожидайте, скоро с Вами свяжутся
                                 </Typography>
 
                                 <CustomButton
-                                    onClick={() => closeModal()}
+                                    onClick={() => closeModal(false)}
                                     buttonStyles="customButtonBrown"
                                     text="Закрыть"
                                 />
                             </div>
-                            </div>
-
-
+                        </div>
                     ) : (
                         <>
                             <div className={styles.modalHeader}>
@@ -85,9 +105,6 @@ export const RegModal = ({closeModal}) => {
                                             <div className={styles.labelline}>
                                                 ФИО <span>*</span>
                                             </div>
-                                            {errors.name && (
-                                                <p className={styles.errorMessage}>{errors.name.message}</p>
-                                            )}
                                         </div>
 
                                         <div className={styles.FormArea}>
@@ -103,20 +120,28 @@ export const RegModal = ({closeModal}) => {
                                                 <option value="Казахстан">Казахстан</option>
                                                 <option value="Киргизия">Киргизия</option>
                                             </select>
-                                            {errors.country && (
-                                                <p className={styles.errorMessage}>{errors.country.message}</p>
-                                            )}
+
                                         </div>
 
                                         <div className={styles.FormArea}>
-                                            <input
+                                            <PhoneInput
+                                                value={phone || ''}
+                                                onChange={handlePhoneChange}
+                                                country={null}
                                                 id="phone"
                                                 {...register('phone', {required: 'Введите телефон'})}
                                                 type="tel"
-                                                className={`${styles.input} ${errors.phone && styles.error}`}
+                                                className={`${styles.input} ${errors.phone && styles.error} ${styles.inputphone}`}
                                                 placeholder=" "
+                                                onFocus={handleFocus}
+                                                onBlur={handleBlur}
                                             />
-                                            <label htmlFor="phone" className={styles.labelline}>
+                                            <label
+                                                htmlFor="phone"
+                                                className={`${styles.labelline} ${styles.labelphone} ${
+                                                    (isFocused || isFilled) ? styles.active : ''
+                                                }`}
+                                            >
                                                 (996) 556 - 123 - 456 <span>*</span>
                                             </label>
                                         </div>
@@ -151,5 +176,5 @@ export const RegModal = ({closeModal}) => {
                 </div>
             </div>
         </div>
-    )
+    );
 };

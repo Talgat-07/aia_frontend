@@ -5,6 +5,8 @@ export {TelegramIconMain} from './icons/TelegramIconMain.jsx';
 export {WhatsappIconMain} from './icons/WhatsappIconMain.jsx';
 export {YoutubeIconMain} from './icons/YoutubeIconMain.jsx';
 export {InstagramIconMain} from './icons/InstagramIconMain.jsx';
+export {ArrowLeft} from './icons/ArrowLeft.jsx';
+export {ArrowRight} from './icons/ArrowRight.jsx';
 export {LoopInput} from './icons/LoopInput.jsx';
 export {TwitterIconMain} from './icons/TwitterIconMain.jsx';
 export {GeeksProIcon} from './icons/GeeksProIcon.jsx';

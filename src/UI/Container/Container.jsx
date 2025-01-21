@@ -1,9 +1,9 @@
 import styles from  './Container.module.scss'
 export const Container = ({children, className}) => {
     return (
-        <div className={`${styles.Container} ${className || ''}`}>
+        <main className={`${styles.Container} ${className || ''}`}>
             {children}
-        </div>
+        </main>
     );
 };
 

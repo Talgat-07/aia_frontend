@@ -1,199 +1,170 @@
 import { useState } from "react";
-import { useModal } from "utils/hooks/useModal";
 import styles from "./ContactForm.module.scss";
 import { CustomButton, Typography } from "..";
+import {SubmitApprovedIcon} from "assets/icons/SubmitApprovedIcon.jsx";
+import {useForm} from "react-hook-form";
+import {yupResolver} from "@hookform/resolvers/yup";
+import {schema} from "utils/helpers/schemaYup.js";
+import PhoneInput from "react-phone-input-2";
 
 export const ContactForm = () => {
-  const [formData, setFormData] = useState({
-    fullName: "",
-    country: "",
-    phone: "",
-    email: "",
-    question: "",
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [phone, setPhone] = useState('');
+  const [isFocused, setIsFocused] = useState(false);
+  const [isFilled, setIsFilled] = useState(false);
+
+  const handleFocus = () => setIsFocused(true);
+  const handleBlur = (e) => {
+    setIsFocused(false);
+    setIsFilled(!!e.target.value); // Проверяем, есть ли значение в поле
+  };
+
+  const handlePhoneChange = (value) => {
+    setPhone(value);
+  };
+
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors }
+  } = useForm({
+    resolver: yupResolver(schema),
   });
 
-  const [errors, setErrors] = useState({});
-  const { isVisible, openModal, closeModal } = useModal();
-
-  const [isFormVisible, setIsFormVisible] = useState(false);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+  const onSubmit = (data) => {
+    console.log(data);
+    reset();
+    setIsSubmitted(true);
   };
 
-  const validate = () => {
-    const newErrors = {};
-    if (!formData.fullName.trim()) newErrors.fullName = "ФИО обязательно";
-    if (!formData.country.trim()) newErrors.country = "Страна обязательна";
-    if (!formData.phone.trim()) newErrors.phone = "Телефон обязателен";
-    if (!/^\+996\d{9}$/.test(formData.phone))
-      newErrors.phone = "Введите телефон в формате +996556123456";
-    if (!formData.email.trim()) newErrors.email = "Email обязателен";
-    if (!/\S+@\S+\.\S+/.test(formData.email))
-      newErrors.email = "Введите корректный email";
-    return newErrors;
-  };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const validationErrors = validate();
-    if (Object.keys(validationErrors).length > 0) {
-      setErrors(validationErrors);
-    } else {
-      openModal();
-      setFormData({
-        fullName: "",
-        country: "",
-        phone: "",
-        email: "",
-        question: "",
-      });
-      setErrors({});
-    }
-  };
-
-  const toggleFormVisibility = () => {
-    setIsFormVisible(true);
-  };
-
-  const closeForm = () => {
-    setIsFormVisible(false);
-    setFormData({
-      fullName: "",
-      country: "",
-      phone: "",
-      email: "",
-      question: "",
-    });
-    setErrors({});
+  const handleSubmitForm = () => {
+    setIsSubmitted(false)
   };
 
   return (
-    <div className={styles.expandable_container}>
-      <Typography variant="h2" weight="semibold">
-        Напишите нам
-      </Typography>
-      <Typography className={styles.text} variant="bodyM">
-        И мы ответим на любые интересующие вас вопросы
-      </Typography>
+      <div className={`${styles.wrapper}`}>
+        <div className={styles.modalBox}>
+          {isSubmitted ? (
+              <div className={styles.successMessage}>
+                <SubmitApprovedIcon/>
+                <div className={styles.successContent}>
+                  <Typography variant="h2" weight="semibold">
+                    Спасибо за доверие!
+                    <br/>
+                    Ваша заявка отправлена
+                  </Typography>
+                  <Typography variant="bodyXS" weight="regular">
+                    Ожидайте, скоро с Вами свяжутся
+                  </Typography>
 
-      {!isFormVisible && (
-        <div className={styles.description_block}>
-          <div className={styles.left_column}></div>
-          <div className={styles.right_column}>
-            <label>
-              <textarea
-                name="question"
-                value={formData.question}
-                onChange={handleChange}
-                placeholder="Введите ваш вопрос"
-                onFocus={toggleFormVisibility}
-              />
-            </label>
-          </div>
+                  <CustomButton
+                      onClick={handleSubmitForm}
+                      buttonStyles="customButtonBrown"
+                      text="Закрыть"
+                  />
+                </div>
+              </div>
+          ) : (
+              <>
+                <div className={styles.modalHeader}>
+                  <Typography variant="h2" weight="semibold">
+                    Напишите нам
+                  </Typography>
+                  <Typography weight="medium" variant="bodyXS">
+                    И мы ответим на любые интересующие вас вопросы
+                  </Typography>
+                </div>
+                <div className={styles.modalContent}>
+                  <form className={styles.modalForm} onSubmit={handleSubmit(onSubmit)}>
+                    <div className={styles.modalFormInputs}>
+                      <div className={styles.FormArea}>
+                        <input
+                            id="name"
+                            {...register('username', {required: 'Введите ФИО'})}
+                            type="text"
+                            className={`${styles.input} ${errors.name && styles.error}`}
+                            placeholder=" "
+                        />
+                        <div className={styles.labelline}>
+                          ФИО <span>*</span>
+                        </div>
+                      </div>
+
+                      <div className={styles.FormArea}>
+                        <select
+                            id="country"
+                            {...register('country', {required: 'Выберите страну'})}
+                            className={`${styles.select} ${errors.country && styles.error}`}
+                        >
+                          <option value="" disabled>
+                            Выберите страну
+                          </option>
+                          <option value="Россия">Россия</option>
+                          <option value="Казахстан">Казахстан</option>
+                          <option value="Киргизия">Киргизия</option>
+                        </select>
+                        {errors.country && (
+                            <p className={styles.errorMessage}>{errors.country.message}</p>
+                        )}
+                      </div>
+
+                      <div className={styles.FormArea}>
+                        <PhoneInput
+                            value={phone || ''}
+                            onChange={handlePhoneChange}
+                            country={null}
+                            id="phone"
+                            {...register('phone', {required: 'Введите телефон'})}
+                            type="tel"
+                            className={`${styles.input} ${errors.phone && styles.error} ${styles.inputphone}`}
+                            placeholder=" "
+                            onFocus={handleFocus}
+                            onBlur={handleBlur}
+                        />
+                        <label
+                            htmlFor="phone"
+                            className={`${styles.labelline} ${styles.labelphone} ${
+                                (isFocused || isFilled) ? styles.active : ''
+                            }`}
+                        >
+                          (996) 556 - 123 - 456 <span>*</span>
+                        </label>
+                      </div>
+
+
+                      <div className={styles.FormArea}>
+                        <input
+                            id="email"
+                            {...register('email', {required: 'Введите email'})}
+                            type="email"
+                            className={`${styles.input} ${errors.email && styles.error}`}
+                            placeholder=" "
+                        />
+                        <div className={styles.labelline}>
+                          email <span>*</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className={styles.modalFormArea}>
+                                        <textarea
+                                            id="question"
+                                            {...register('question')}
+                                            className={styles.textarea}
+                                            placeholder="Ваш запрос"
+                                        />
+                      <CustomButton type="submit" buttonStyles="wideButton" text="Отправить"/>
+                    </div>
+                  </form>
+                </div>
+              </>
+          )}
         </div>
-      )}
+      </div>
 
-      {isFormVisible && (
-        <div
-          className={`${styles.form} ${isFormVisible ? styles.form_visible : ""}`}
-        >
-          <button className={styles.closeButton} onClick={closeForm}>
-            ×
-          </button>
 
-          <div className={styles.left_column}>
-            <form onSubmit={handleSubmit}>
-              <label>
-                <input
-                  type="text"
-                  name="fullName"
-                  value={formData.fullName}
-                  onChange={handleChange}
-                  placeholder="Ваше полное имя"
-                />
-                {errors.fullName && (
-                  <span className={styles.error}>{errors.fullName}</span>
-                )}
-              </label>
-
-              <label>
-                <input
-                  type="text"
-                  name="country"
-                  value={formData.country}
-                  onChange={handleChange}
-                  placeholder="Введите страну, город"
-                />
-                {errors.country && (
-                  <span className={styles.error}>{errors.country}</span>
-                )}
-              </label>
-
-              <label>
-                <input
-                  type="tel"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  placeholder="+996556123456"
-                />
-                {errors.phone && (
-                  <span className={styles.error}>{errors.phone}</span>
-                )}
-              </label>
-
-              <label>
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="example@domain.com"
-                />
-                {errors.email && (
-                  <span className={styles.error}>{errors.email}</span>
-                )}
-              </label>
-            </form>
-          </div>
-
-          <div className={styles.right_column}>
-            <label>
-              <textarea
-                name="question"
-                value={formData.question}
-                onChange={handleChange}
-                placeholder="Введите ваш вопрос"
-              />
-              <CustomButton
-                onClick={handleSubmit}
-                text="Отправить..."
-                buttonStyles="customButtonBrown"
-              />
-            </label>
-          </div>
-        </div>
-      )}
-
-      {isVisible && (
-        <div className={styles.modal}>
-          <div className={styles.modalContent}>
-            <button className={styles.closeButton} onClick={closeModal}>
-              ×
-            </button>
-            <Typography variant="h2" weight="semibold">Спасибо за доверие!Ваша заявка отправлена.</Typography>
-            <Typography variant="bodyM">Ожидайте, скоро с Вами свяжутся.</Typography>
-            <CustomButton
-              buttonStyles="customButtonBrown"
-              onClick={closeModal}
-            >
-              Закрыть
-            </CustomButton>
-          </div>
-        </div>
-      )}
-    </div>
   );
 };
