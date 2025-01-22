@@ -28,7 +28,7 @@ export const Router = createBrowserRouter(
                 {
                     path: path.home,
                     element: <HomePage />,
-                    handle: { breadcrumb: "Главная страница" }
+                    handle: { breadcrumb: "Главная" }
                 },
                 {
                     path: path.aboutUs,
@@ -46,17 +46,17 @@ export const Router = createBrowserRouter(
                     handle: { breadcrumb: "Архитектурное проектирование" },
                     children: [
                         {
-                            path: "private",
+                            path: path.privateArchitecture,
                             element: <PrivateArchitecturePage />,
                             handle: { breadcrumb: "Частные дома" }
                         },
                         {
-                            path: "public",
+                            path: path.publicArchitecture,
                             element: <PublicArchitecturePage />,
                             handle: { breadcrumb: "Общественные здания" }
                         },
                         {
-                            path: "blocks",
+                            path: path.blocksArchitecture,
                             element: <BlocksArchitecturePage />,
                             handle: { breadcrumb: "Поселки и кварталы" }
                         }
@@ -68,17 +68,17 @@ export const Router = createBrowserRouter(
                     handle: { breadcrumb: "Дизайн интерьера" },
                     children: [
                         {
-                            path: "houses",
+                            path: path.housesInterior,
                             element: <HousesInteriorPage />,
                             handle: { breadcrumb: "Дизайн домов" }
                         },
                         {
-                            path: "apartments",
+                            path: path.apartmentsInterior,
                             element: <ApartmentsInteriorPage />,
                             handle: { breadcrumb: "Дизайн квартир" }
                         },
                         {
-                            path: "public-spaces",
+                            path: path.publicSpacesInterior,
                             element: <PublicSpacesInteriorPage />,
                             handle: { breadcrumb: "Дизайн общественных пространств" }
                         }

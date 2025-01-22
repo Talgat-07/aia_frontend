@@ -1,4 +1,4 @@
-import {BreadCrumbs} from "UI/index.jsx";
+import {BreadCrumbs} from "UI/index.js";
 
 
 export const BlockTitle = () => {
