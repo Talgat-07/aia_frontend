@@ -6,8 +6,8 @@ export const path = {
     interiorDesign: '/interior-design',
     costAndStages: '/cost-and-stages',
     blog:'/blog',
-    contacts: '/contact-us'
-
+    contacts: '/contact-us',
+    projectCard: '/project-card'
 
 
 }

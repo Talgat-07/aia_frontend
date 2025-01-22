@@ -1,7 +1,7 @@
 import { createBrowserRouter} from 'react-router-dom'
 import {Layout} from '../layout/Layout.jsx'
 import {path} from "utils/constants/constants.js";
-import {HomePage,AboutUsPage,CostAndStagesPage,RealizeProjectsPage, InteriorDesignPage,BlogPage,ContactUsPage} from 'pages/index.js'
+import {HomePage,AboutUsPage,CostAndStagesPage,RealizeProjectsPage, InteriorDesignPage,BlogPage,ContactUsPage, ProjectCardPage} from 'pages/index.js'
 
 export const Router = createBrowserRouter([
 
@@ -35,6 +35,10 @@ export const Router = createBrowserRouter([
             {
                 path:path.contacts,
                 element:<ContactUsPage/>
+            },
+            {
+                path:path.projectCard,
+                element:<ProjectCardPage/>
             }
 
 
