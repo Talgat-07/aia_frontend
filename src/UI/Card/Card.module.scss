@@ -10,8 +10,11 @@
     flex-direction: column;
     align-items: center;
     border:1px solid var(--gray-fourth);
+    background: white;
   }
-}
-.image{
-
+  &.active{
+    width: 380px;
+    height: 480px;
+    transition: all 0.3s ease;
+  }
 }

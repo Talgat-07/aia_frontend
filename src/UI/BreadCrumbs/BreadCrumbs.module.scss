@@ -1,0 +1,33 @@
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
+  color: #666;
+}
+
+.crumb {
+  display: flex;
+  align-items: center;
+}
+
+.link {
+  text-decoration: none;
+  color: var(--black-main-color);
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.active {
+  font-weight: bold;
+  color: #000;
+}
+
+.separator {
+  margin: 0 0.5rem;
+  color: black;
+}
