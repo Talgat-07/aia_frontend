@@ -1,6 +1,5 @@
 import {Container, WeInNumber,YoutubeBlock} from "UI/index.js";
 import {Helmet} from "react-helmet-async";
-import {BlockTitle} from "UI/index.js";
 
 export const AboutUsPage = () => {
     return (
