@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import {Typography} from "UI/typography/Typography.jsx";
+import {Typography} from "UI/Typography/Typography.jsx";
 
 export const NumberAnimation = ({ endValue, duration = 2000 }) => {
     const [value, setValue] = useState(0);

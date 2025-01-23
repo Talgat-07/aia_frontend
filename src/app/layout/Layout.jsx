@@ -1,20 +1,22 @@
-import { Footer } from 'modules/footer/Footer';
-import {Header} from 'modules/header/Header';
+import { Footer } from 'modules/Footer/Footer';
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
-import {Loader} from "UI/loader/Loader.jsx";
-import {ScrollToTop} from "utils/helpers/ScrollToTop.js";
+import { Loader } from 'UI/index.js';
+import { ContactForm } from 'UI/ContactForm/ContactForm';
+import { ScrollToTop } from 'UI/ScrollToTop/ScrollToTop';
+import { Header } from 'modules/headerModule/Components';
 
 export const Layout = () => {
-    return (
-        <>
-            <ScrollToTop/>
-            <Header />
+   return (
+      <>
+         <ScrollToTop />
+         <Header />
 
-            <Suspense fallback={<Loader />}>
-                <Outlet />
-            </Suspense>
-            <Footer />
-        </>
-    );
+         <Suspense fallback={<Loader />}>
+            <Outlet />
+         </Suspense>
+         <ContactForm />
+         <Footer />
+      </>
+   );
 };

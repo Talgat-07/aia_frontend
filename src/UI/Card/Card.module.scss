@@ -1,0 +1,20 @@
+.card{
+  width: 295px;
+  height: 402px;
+  display: flex;
+  flex-direction: column;
+  &_information{
+    gap: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border:1px solid var(--gray-fourth);
+    background: white;
+  }
+  &.active{
+    width: 380px;
+    height: 480px;
+    transition: all 0.3s ease;
+  }
+}
