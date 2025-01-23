@@ -13,8 +13,8 @@ export const path = {
     publicSpacesInterior: '/interior/public-spaces',
     costAndStages: '/cost-and-stages',
     blog: '/blog',
-    contacts: '/contact-us'
-};
+    contacts: '/contact-us',
+    projectCard: '/project-card'};
 
 
 
@@ -70,6 +70,11 @@ export const NavLinks = [
                 path: path.publicSpacesInterior,
             },
         ],
+    },
+    {
+        title: 'Карточка проекта',
+        path: path.projectCard,
+        children: null,
     },
     {
         title: 'Стоимость и этапы строительства',
