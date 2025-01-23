@@ -1,9 +1,9 @@
 import styles from "./MainBanner.module.scss";
-import { WhatsappIconMain } from "assets/index.js";
 import myImage from "assets/img/mainBanner.png";
 import { Typography, CustomButton } from "UI/index.js";
 import {useModal} from "utils/hooks/useModal.js";
 import {RegModal} from "modules/User/Components/RegModal/RegModal.jsx";
+import { WhatsAppIconGreen } from "assets/icons/WhatsAppIconGreen";
 
 const MainBanner = () => {
     const {isOpen, openModal, closeModal} = useModal();
@@ -31,9 +31,9 @@ const MainBanner = () => {
       <div className={styles.whatsapp_icon}>
         <a
             target={"_blank"}
-          href="https://wa.me/+996706882170"
+          href="https://wa.me/+996777123456"
         >
-          <WhatsappIconMain />
+          <WhatsAppIconGreen />
         </a>
       </div>
         {isOpen? (<RegModal closeModal={closeModal} isOpen={isOpen}/>) : null}
