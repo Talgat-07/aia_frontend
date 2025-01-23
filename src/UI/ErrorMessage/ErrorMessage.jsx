@@ -1,3 +1,4 @@
+import {Typography} from 'UI/index.js'
 export const ErrorMessage = () => {
   return (
     <>

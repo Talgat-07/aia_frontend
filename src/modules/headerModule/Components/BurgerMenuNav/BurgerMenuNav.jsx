@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom';
-import { navLinks } from 'utils/constants/navLinks';
 import styles from '../BurgerMenu/BurgerMenu.module.scss';
+import {NavLinks} from "utils/constants/constants.js";
 
 export const BurgerMenuNav = () => {
    return (
       <>
          <nav className={styles.menu}>
             <ul>
-               {navLinks.map((link) => (
+               {NavLinks.map((link) => (
                   <li key={link.path}>
                      <Link to={link.path}>{link.title}</Link>
                      {link.children && (

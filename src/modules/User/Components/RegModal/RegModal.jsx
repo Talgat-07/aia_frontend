@@ -11,7 +11,6 @@ import PhoneInput from "react-phone-input-2";
 export const RegModal = ({closeModal, isOpen}) => {
     const modalRef = useRef(null);
     const [isSubmitted, setIsSubmitted] = useState(false);
-    const [phone, setPhone] = useState('');
     const [isFocused, setIsFocused] = useState(false);
     const [isFilled, setIsFilled] = useState(false);
 
@@ -21,9 +20,7 @@ export const RegModal = ({closeModal, isOpen}) => {
         setIsFilled(!!e.target.value); // Проверяем, есть ли значение в поле
     };
 
-    const handlePhoneChange = (value) => {
-        setPhone(value);
-    };
+
     useEffect(() => {
         if (isOpen) {
             document.body.classList.add(styles.no_scroll);
@@ -37,6 +34,8 @@ export const RegModal = ({closeModal, isOpen}) => {
         register,
         handleSubmit,
         reset,
+        setValue,
+        trigger,
         formState: { errors }
     } = useForm({
         resolver: yupResolver(schema),
@@ -50,7 +49,10 @@ export const RegModal = ({closeModal, isOpen}) => {
         reset();
         setIsSubmitted(true);
     };
-
+    const handlePhoneChange = (value) => {
+        setValue("phone", value);
+        trigger("phone");
+    };
     return (
         <div className={styles.modal} aria-modal="true" role="dialog" >
             <div className={styles.modalOverlay}  >
@@ -125,11 +127,10 @@ export const RegModal = ({closeModal, isOpen}) => {
 
                                         <div className={styles.FormArea}>
                                             <PhoneInput
-                                                value={phone || ''}
+                                                value=""
                                                 onChange={handlePhoneChange}
                                                 country={null}
                                                 id="phone"
-                                                {...register('phone', {required: 'Введите телефон'})}
                                                 type="tel"
                                                 className={`${styles.input} ${errors.phone && styles.error} ${styles.inputphone}`}
                                                 placeholder=" "

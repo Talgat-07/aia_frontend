@@ -11,7 +11,6 @@ export const Layout = () => {
       <>
          <ScrollToTop />
          <Header />
-
          <Suspense fallback={<Loader />}>
             <Outlet />
          </Suspense>
