@@ -17,7 +17,9 @@ import {
     BlocksArchitecturePage,
     HousesInteriorPage,
     ApartmentsInteriorPage,
-    PublicSpacesInteriorPage
+    PublicSpacesInteriorPage,
+    ProjectCardPage
+
 } from 'pages/index.js';
 
 export const Router = createBrowserRouter(
@@ -83,6 +85,11 @@ export const Router = createBrowserRouter(
                             handle: { breadcrumb: "Дизайн общественных пространств" }
                         }
                     ]
+                },
+                {
+                    path: path.projectCard,
+                    element: <ProjectCardPage />,
+                    handle: { breadcrumb: "Карточка проекта" }
                 },
                 {
                     path: path.costAndStages,

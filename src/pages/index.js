@@ -12,6 +12,7 @@ export {BlocksArchitecturePage} from './ArchitectureProjectsPage/BlocksArchitect
 export {HousesInteriorPage} from './InteriorDesignPage/HousesInteriorPage/HousesInteriorPage.jsx'
 export {ApartmentsInteriorPage} from './InteriorDesignPage/ApartmentsInteriorPage/ApartmentsInteriorPage.jsx'
 export {PublicSpacesInteriorPage} from './InteriorDesignPage/PublicSpacesInteriorPage/PublicSpacesInteriorPage.jsx'
+export {ProjectCardPage} from './ProjectCardPage/ProjectCardPage.jsx'
 
 
 
