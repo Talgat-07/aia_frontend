@@ -1,0 +1,120 @@
+.filterContainer {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding: 20px 100px;
+  background-color: black;
+  color: white;
+  justify-content: space-between;
+  .dropdownLine {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.customDropdown {
+  margin: 12px auto;
+  padding: 6px 8px;
+  width: 175px;
+  height: 46px;
+  background-color: #FFFFFF;
+  border: 2px solid black;
+  cursor: pointer;
+  color: #262626;
+}
+
+.dropdownHeader {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dropdownList {
+  position: absolute;
+  width: 100%;
+  background-color: #FFFFFF;
+  color: #262626;
+  border: 2px solid black;
+}
+
+.dropdownItem {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.dropdownItem:hover {
+  background-color: #555;
+}
+
+.arrow {
+  margin-left: 10px;
+}
+
+.sliderContainer {
+  display: flex;
+  align-items: center;
+  color: #FFFFFF;
+  background-color: transparent;
+
+  input {
+    padding: 0;
+    height: 4px;
+  }
+
+  .label {
+    margin-right: 10px;
+  }
+
+  .slider {
+    -webkit-appearance: none;
+    width: 510px;
+    height: 4px;
+    background: #D9D9D9;
+    outline: none;
+
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 14px;
+      height: 27px;
+      background: #B3895E;
+      cursor: pointer;
+    }
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 14px;
+      height: 27px;
+      background: #B3895E;
+    }
+  }
+
+  .scale {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    .scaleValue {
+      font-size: 12px;
+    }
+  }
+}
+
+.sliderContainer {
+  .label {
+    content: "Площадь:";
+  }
+
+  .scale {
+    .scale-value:nth-child(1)::before { content: "0"; }
+    .scale-value:nth-child(2)::before { content: "100"; }
+    .scale-value:nth-child(3)::before { content: "200"; }
+    .scale-value:nth-child(4)::before { content: "300"; }
+    .scale-value:nth-child(5)::before { content: "400"; }
+    .scale-value:nth-child(6)::before { content: "500"; }
+    .scale-value:nth-child(7)::before { content: "600"; }
+    .scale-value:nth-child(8)::before { content: "700"; }
+    .scale-value:nth-child(9)::before { content: "800"; }
+    .scale-value:nth-child(10)::before { content: "900"; }
+    .scale-value:last-child::after { content: "м²"; }
+  }
+}

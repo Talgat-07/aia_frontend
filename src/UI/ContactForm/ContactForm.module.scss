@@ -1,0 +1,202 @@
+.wrapper{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.modalBox {
+
+  background: #fff;
+  position: relative;
+  .successMessage{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 40px 270px 140px;
+  }
+  .successContent{
+    gap: 23px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.modalHeader {
+  padding: 40px 0px 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+
+.modalContent {
+  padding: 0 0px 140px;
+
+  display: flex;
+  margin-top: 16px;
+}
+
+.modalForm {
+  display: flex;
+  gap: 20px;
+
+  &Inputs{
+    width: 500px;
+
+    display: flex;
+    flex-direction: column;
+
+  }
+  &Area{
+    margin: 10px 0 0  0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    textarea{
+      padding: 5px 12px;
+      resize: none;
+      width: 440px;
+      height: 162px;
+    }
+  }
+}
+
+
+.FormArea {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  margin: 10px 0;
+  select{
+    width:440px ;
+    box-sizing: border-box;
+    height: 43px;
+    border: 2px solid var(--black-main-color);
+    outline: none;
+
+
+
+  }
+  :global(.react-tel-input) {
+    position: relative;
+
+
+    :global(form-control) {
+      box-sizing: border-box;
+      width: 440px;
+      padding: 12px 8px;
+      height: 44px;
+      border: 2px solid var(--black-main-color);
+      background: transparent;
+      outline: none;
+      z-index: 1;
+      position: relative;
+      transition: border-color 0.3s ease;
+
+      .labelline {
+        position: absolute;
+        left: 8px;
+        top: 10px;
+        font-size: 16px;
+        color: var(--black-main-color);
+        background: white;
+        padding: 0 5px;
+        transition: 0.2s ease-in-out;
+        pointer-events: none;
+
+        span {
+          color: var(--error);
+          position: relative;
+          right: 5px;
+
+        }
+      }
+
+
+      &:focus {
+        border-color: var(--main-color);
+      }
+
+      &:focus + .labelline,
+      &:not(:placeholder-shown) + .labelline {
+        transform: translate(-5px, -20px) scale(0.85);
+        color: var(--black-main-color);
+        background: white;
+        z-index: 10;
+      }
+    }
+  }
+  }
+
+
+
+  input{
+    box-sizing: border-box;
+    width: 440px;
+    padding: 12px 8px;
+    height: 44px;
+    border: 2px solid var(--black-main-color);
+    background: transparent;
+    outline: none;
+    z-index: 1;
+    position: relative;
+    transition: border-color 0.3s ease;
+
+
+    &:focus {
+      border-color: var(--main-color);
+    }
+
+    &:focus + .labelline,
+    &:not(:placeholder-shown) + .labelline  {
+      transform: translate(-5px, -20px) scale(0.85);
+      color: var(--black-main-color);
+      background: white;
+      z-index: 10;
+    }
+  }
+
+  .labelline {
+    position: absolute;
+    left: 8px;
+    top: 10px;
+    font-size: 16px;
+    color: #828282;
+    background: white;
+    padding: 0 5px;
+    transition: 0.2s ease-in-out;
+    pointer-events: none;
+    span{
+      color: var(--error);
+      position: relative;
+      right:5px;
+
+    }
+  }
+
+  .errorMessage {
+    color: var(--error);
+    font-size: 14px;
+    margin-top: 5px;
+  }
+
+  .error {
+    border-color: var(--error) !important;
+  }
+
+
+:global(.special-label ) {
+  display: none;
+}
+:global(.flag-dropdown ) {
+  display: none !important;
+}
+
+.labelline.active {
+  transform: translate(-5px, -20px) scale(0.85);
+  color: var(--black-main-color);
+  background: white;
+  z-index: 10;
+}

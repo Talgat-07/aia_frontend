@@ -14,6 +14,7 @@
   color: #FFFFFF;
 }
 
+
 .customButtonAdaptive {
   @extend .centerDisplay;
   height: 50px;
@@ -82,9 +83,9 @@
   background-color: transparent;
   text-align: center;
   &:active {
-  @extend .activeButton;
-  background-color: var(--main-color);
-  color: #FFFFFF;
+    @extend .activeButton;
+    background-color: var(--main-color);
+    color: #FFFFFF;
   }
 }
 

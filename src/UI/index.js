@@ -5,3 +5,8 @@ export {FollowUs} from './FollowUs/FollowUs.jsx'
 export {WeInNumber} from './WeInNumber/WeInNumber.jsx'
 export {YoutubeBlock} from './YoutubeBlock/YoutubeBlock.jsx'
 export {Container} from './Container/Container.jsx'
+export {Card} from './Card/Card.jsx'
+export {BreadCrumbs} from './BreadCrumbs/BreadCrumbs.jsx'
+export {Loader} from './Loader/Loader.jsx'
+export {ContactForm} from './ContactForm/ContactForm.jsx'
+

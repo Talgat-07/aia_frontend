@@ -1,9 +1,9 @@
 
 export const RealizeProjectsPage = () => {
-    return (
-        <div>
+   return (
+      <div>
 
-        </div>
-    );
+      </div>
+   );
 };
 
