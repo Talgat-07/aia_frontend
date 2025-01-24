@@ -6,7 +6,7 @@ import { ContactForm } from 'UI/ContactForm/ContactForm';
 import { ScrollToTop } from 'UI/ScrollToTop/ScrollToTop';
 import { Header } from 'modules/HeaderModule/Components';
 
-export const Layout = () => {
+export const Layout = ({ showFooter = true, showContactForm = true }) => {
    return (
       <>
          <ScrollToTop />
@@ -14,8 +14,8 @@ export const Layout = () => {
          <Suspense fallback={<Loader />}>
             <Outlet />
          </Suspense>
-         <ContactForm />
-         <Footer />
+         {showContactForm && <ContactForm />}
+         {showFooter && <Footer />}
       </>
    );
 };

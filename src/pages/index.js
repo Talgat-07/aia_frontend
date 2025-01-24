@@ -13,3 +13,4 @@ export { HouseDesignPage } from './InteriorDesignPage/HouseDesignPage/HouseDesig
 export { ApartmentDesignPage } from './InteriorDesignPage/ApartmentDesignPage/ApartmentDesignPage.jsx';
 export { PublicSpacesInteriorPage } from './InteriorDesignPage/PublicSpacesInteriorPage/PublicSpacesInteriorPage.jsx';
 export { ProjectCardPage } from './ProjectCardPage/ProjectCardPage.jsx';
+export {NotFoundPage} from './NotFoundPage/NotFoundPage.jsx'

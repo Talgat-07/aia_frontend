@@ -1,113 +1,129 @@
-import { createBrowserRouter } from 'react-router-dom';
-import { Layout } from '../layout/Layout.jsx';
-import { path } from 'utils/constants/constants.js';
+   import { createBrowserRouter } from 'react-router-dom';
+   import { Layout } from '../layout/Layout.jsx';
+   import { path} from 'utils/constants/constants.js'
 
-import {
-   HomePage,
-   AboutUsPage,
-   CostAndStagesPage,
-   RealizeProjectsPage,
-   InteriorDesignPage,
-   BlogPage,
-   ContactUsPage,
-   ArchitectureProjectsPage,
-   PrivateArchitecturePage,
-   PublicArchitecturePage,
-   BlocksArchitecturePage,
-   PublicSpacesInteriorPage,
-   HouseDesignPage,
-   ApartmentDesignPage,
-} from 'pages/index.js';
 
-export const Router = createBrowserRouter(
-   [
+   import {
+      NotFoundPage,
+      HomePage,
+      AboutUsPage,
+      CostAndStagesPage,
+      RealizeProjectsPage,
+      InteriorDesignPage,
+      BlogPage,
+      ContactUsPage,
+      ArchitectureProjectsPage,
+      PrivateArchitecturePage,
+      PublicArchitecturePage,
+      BlocksArchitecturePage,
+      PublicSpacesInteriorPage,
+      HouseDesignPage,
+      ApartmentDesignPage,
+   } from 'pages/index.js';
+
+   export const Router = createBrowserRouter(
+      [
+         {
+            element: <Layout showContactForm={true} showFooter={true}  />,
+            children: [
+               {
+                  path: path.home,
+                  index:true,
+                  element: <HomePage />,
+                  handle: { breadcrumb: 'Главная' },
+               },
+               {
+                  path: path.aboutUs,
+                  element: <AboutUsPage />,
+                  handle: { breadcrumb: 'О нас' },
+               },
+               {
+                  path: path.realizeProjects,
+                  element: <RealizeProjectsPage />,
+                  handle: { breadcrumb: 'Реализованные проекты' },
+               },
+               {
+                  path: path.architectureProjects,
+                  element: <ArchitectureProjectsPage />,
+                  handle: { breadcrumb: 'Архитектурное проектирование' },
+                  children: [
+                     {
+                        path: path.privateArchitecture,
+                        element: <PrivateArchitecturePage />,
+                        handle: { breadcrumb: 'Частные дома' },
+                     },
+                     {
+                        path: path.publicArchitecture,
+                        element: <PublicArchitecturePage />,
+                        handle: { breadcrumb: 'Общественные здания' },
+                     },
+                     {
+                        path:  path.blocksArchitecture,
+                        element: <BlocksArchitecturePage />,
+                        handle: { breadcrumb: 'Поселки и кварталы' },
+                     },
+                  ],
+               },
+               {
+                  path: path.interiorDesign,
+                  element: <InteriorDesignPage />,
+                  handle: { breadcrumb: 'Дизайн интерьера' },
+                  children: [
+
+                     {
+                        path: path.apartmentDesignPage,
+                        element: <ApartmentDesignPage />,
+                        handle: { breadcrumb: 'Дизайн квартир' },
+                     },
+                     {
+                        path: path.houseDesignPage,
+                        element: <HouseDesignPage />,
+                        handle: { breadcrumb: 'Дизайн домов' },
+                     },
+                     {
+                        path: path.publicSpacesInterior,
+                        element: <PublicSpacesInteriorPage />,
+                        handle: { breadcrumb: 'Дизайн общественных пространств' },
+                     },
+                  ],
+               },
+               {
+                  path: path.costAndStages,
+                  element: <CostAndStagesPage />,
+                  handle: { breadcrumb: 'Стоимость и этапы строительства' },
+               },
+               {
+                  path: path.blog,
+                  element: <BlogPage />,
+                  handle: { breadcrumb: 'Блог' },
+               },
+               {
+                  path: path.contacts,
+                  element: <ContactUsPage />,
+                  handle: { breadcrumb: 'Контакты' },
+               },
+            ],
+         },
+         {
+            element: <Layout showFooter={false} showContactForm={false} />,
+            children: [
+               {
+                  path: '*',
+                  element: <NotFoundPage />,
+               },
+            ],
+         },
+
+
+
+      ],
       {
-         element: <Layout />,
-         children: [
-            {
-               path: path.home,
-               element: <HomePage />,
-               handle: { breadcrumb: 'Главная' },
-            },
-            {
-               path: path.aboutUs,
-               element: <AboutUsPage />,
-               handle: { breadcrumb: 'О нас' },
-            },
-            {
-               path: path.realizeProjects,
-               element: <RealizeProjectsPage />,
-               handle: { breadcrumb: 'Реализованные проекты' },
-            },
-            {
-               path: path.architectureProjects,
-               element: <ArchitectureProjectsPage />,
-               handle: { breadcrumb: 'Архитектурное проектирование' },
-               children: [
-                  {
-                     path: path.architectureProjects.privateArchitecture,
-                     element: <PrivateArchitecturePage />,
-                     handle: { breadcrumb: 'Частные дома' },
-                  },
-                  {
-                     path: path.architectureProjects.publicArchitecture,
-                     element: <PublicArchitecturePage />,
-                     handle: { breadcrumb: 'Общественные здания' },
-                  },
-                  {
-                     path: path.architectureProjects.blocksArchitecture,
-                     element: <BlocksArchitecturePage />,
-                     handle: { breadcrumb: 'Поселки и кварталы' },
-                  },
-               ],
-            },
-            {
-               path: path.interiorDesign,
-               element: <InteriorDesignPage />,
-               handle: { breadcrumb: 'Дизайн интерьера' },
-               children: [
-                  {
-                     path: path.interiorDesign.houseDesignPage,
-                     element: <HouseDesignPage />,
-                     handle: { breadcrumb: 'Дизайн домов' },
-                  },
-                  {
-                     path: path.interiorDesign.apartmentDesignPage,
-                     element: <ApartmentDesignPage />,
-                     handle: { breadcrumb: 'Дизайн квартир' },
-                  },
-                  {
-                     path: path.interiorDesign.publicSpacesInterior,
-                     element: <PublicSpacesInteriorPage />,
-                     handle: { breadcrumb: 'Дизайн общественных пространств' },
-                  },
-               ],
-            },
-            {
-               path: path.costAndStages,
-               element: <CostAndStagesPage />,
-               handle: { breadcrumb: 'Стоимость и этапы строительства' },
-            },
-            {
-               path: path.blog,
-               element: <BlogPage />,
-               handle: { breadcrumb: 'Блог' },
-            },
-            {
-               path: path.contacts,
-               element: <ContactUsPage />,
-               handle: { breadcrumb: 'Контакты' },
-            },
-         ],
-      },
-   ],
-   {
-      future: {
-         v7_relativeSplatPath: true,
-         v7_fetcherPersist: true,
-         v7_normalizeFormMethod: true,
-         v7_partialHydration: true,
-         v7_skipActionErrorRevalidation: true,
-      },
-   }
-);
+         future: {
+            v7_relativeSplatPath: true,
+            v7_fetcherPersist: true,
+            v7_normalizeFormMethod: true,
+            v7_partialHydration: true,
+            v7_skipActionErrorRevalidation: true,
+         },
+      }
+   );

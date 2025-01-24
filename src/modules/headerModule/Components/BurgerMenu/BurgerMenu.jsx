@@ -17,7 +17,11 @@ export const BurgerMenu = () => {
       setIsOpen((prev) => !prev);
    };
 
-   useOutsideClick(modalRef, () => setIsOpen(false), isOpen);
+   const closeMenu = () => {
+      setIsOpen(false);
+   };
+
+   useOutsideClick(modalRef, () => closeMenu(), isOpen);
 
    useEffect(() => {
       if (isOpen) {
@@ -34,61 +38,57 @@ export const BurgerMenu = () => {
    };
 
    return (
-      <>
-         <div className={styles.burgerContainer}>
-            <button
-               onClick={toggleMenu}
-               className={`${styles.burgerIcon} ${isOpen ? styles.open : ''}`}
-               aria-label="Toggle menu"
-            >
-               <div />
-               <div />
-               <div />
-            </button>
-            {isOpen && (
+      <div className={styles.burgerContainer}>
+         <button
+            onClick={toggleMenu}
+            className={`${styles.burgerIcon} ${isOpen ? styles.open : ''}`}
+            aria-label="Toggle menu"
+         >
+            <div />
+            <div />
+            <div />
+         </button>
+         {isOpen && (
+            <div className={`${styles.modalOverlay} ${isOpen ? styles.open : ''}`}>
                <div
-                  className={`${styles.modalOverlay} ${isOpen ? styles.open : ''}`}
+                  ref={modalRef}
+                  className={`${styles.modalContent} ${isOpen ? styles.open : ''}`}
                >
-                  <div
-                     ref={modalRef}
-                     className={`${styles.modalContent} ${isOpen ? styles.open : ''}`}
-                  >
-                     <div className={styles.topModal}>
-                        <Link to={path.home}>
-                           <img src={Logo} alt="mainlogo" />
-                        </Link>
-                        <LanguageSwitcher />
-                        <button
-                           onClick={toggleMenu}
-                           className={styles.closeIcon}
-                           aria-label="Close menu"
-                        >
-                           <div />
-                           <div />
-                        </button>
-                     </div>
-                     <hr />
-                     <div className={styles.searchBox}>
-                        <form action="" className={styles.search}>
-                           <input
-                              type="text"
-                              placeholder="Поиск"
-                              className={`${styles.search_input} ${hasContent ? styles.filled : ''}`}
-                              onChange={handleInputChange}
-                           />
-                           <span
-                              className={`${styles.search_icon} ${hasContent ? styles.icon_fixed : ''}`}
-                           >
-                              <LoopInput />
-                           </span>
-                        </form>
-                     </div>
-                     <SocialLinks />
-                     <BurgerMenuNav />
+                  <div className={styles.topModal}>
+                     <Link to={path.home} onClick={closeMenu}>
+                        <img src={Logo} alt="mainlogo" />
+                     </Link>
+                     <LanguageSwitcher />
+                     <button
+                        onClick={toggleMenu}
+                        className={styles.closeIcon}
+                        aria-label="Close menu"
+                     >
+                        <div />
+                        <div />
+                     </button>
                   </div>
+                  <hr />
+                  <div className={styles.searchBox}>
+                     <form action="" className={styles.search}>
+                        <input
+                           type="text"
+                           placeholder="Поиск"
+                           className={`${styles.search_input} ${hasContent ? styles.filled : ''}`}
+                           onChange={handleInputChange}
+                        />
+                        <span
+                           className={`${styles.search_icon} ${hasContent ? styles.icon_fixed : ''}`}
+                        >
+                           <LoopInput />
+                        </span>
+                     </form>
+                  </div>
+                  <SocialLinks />
+                  <BurgerMenuNav closeMenu={closeMenu} />
                </div>
-            )}
-         </div>
-      </>
+            </div>
+         )}
+      </div>
    );
 };

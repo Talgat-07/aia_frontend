@@ -1,4 +1,3 @@
-import { Container } from 'UI/index';
 import styles from '../../ApartmentDesignModule/components/ApartmentDesign.module.scss';
 import { MainCards } from 'UI/MainCards/MainCards';
 
