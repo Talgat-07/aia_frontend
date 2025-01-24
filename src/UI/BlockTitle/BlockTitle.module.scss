@@ -1,0 +1,27 @@
+.container{
+  padding: 0 100px 100px;
+  margin-top: 8px;
+  display: flex;
+  column-gap: 20px;
+}
+.left__heading{
+  h2{
+    font-weight: 700 !important;
+    font-size: 48px;
+    color: #262626 !important;
+
+  }
+}
+.container__left{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 610px;
+}
+.container__right{
+  display: flex;
+  gap: 18px;
+  flex-direction: column;
+  width: 610px;
+}
+

@@ -12,14 +12,12 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    width: 93%;
     &.noImage {
       flex-direction: column;
       text-align: center;
     }
     .imageContainer {
-      flex: 1;
-      margin-right: 20px;
-
       .custom_image {
         width: 100%;
         max-width: 610px;
@@ -31,13 +29,18 @@
       flex: 1;
       display: flex;
       flex-direction: column;
+      width: 80% !important;
+      height: 100%;
+      margin-left: 20px;
       &.noImageText {
         margin: 0 auto;
         flex-direction: row;
       }
 
       .text {
+        width: 98%;
         margin: 25px 0;
+
         &.noImageTextHead{
           width: 700px;
           text-align: start;
@@ -48,11 +51,11 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
-  width: 510px;
-  margin-left: 40px;
-  height: auto; 
+  width: 100%;
+  height: auto;
 
   button {
+    width: 100%;
     padding: 10px;
     background-color: #B3895E;
     color: white;
