@@ -1,6 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
 import styles from './BurgerMenu.module.scss';
-// import { CustomButton, Typography } from 'UI/index.js';
 import Logo from 'assets/img/logo.svg';
 import { LoopInput } from 'assets/index.js';
 import { useOutsideClick } from 'utils/hooks/useClickOutside.js';
@@ -13,9 +12,6 @@ export const BurgerMenu = () => {
    const [hasContent, setHasContent] = useState(false);
    const [isOpen, setIsOpen] = useState(false);
    const modalRef = useRef(null);
-   // const [activeLanguage, setActiveLanguage] = useState('Русский');
-
-   // const languages = ['Русский', 'English', 'Кыргыз'];
 
    const toggleMenu = () => {
       setIsOpen((prev) => !prev);
@@ -61,31 +57,7 @@ export const BurgerMenu = () => {
                         <Link to={path.home}>
                            <img src={Logo} alt="mainlogo" />
                         </Link>
-
                         <LanguageSwitcher />
-                        {/* <div className={styles.languageSwitcher}>
-                           {languages.map((language) => (
-                              <CustomButton
-                                 key={language}
-                                 buttonStyles={
-                                    language === activeLanguage
-                                       ? 'languageButtonActive'
-                                       : 'languageButton'
-                                 }
-                                 onClick={() => setActiveLanguage(language)}
-                                 text={
-                                    <Typography
-                                       variant="bodyS"
-                                       color="white"
-                                       weight="regular"
-                                       lineHeight="linel"
-                                    >
-                                       {language}
-                                    </Typography>
-                                 }
-                              />
-                           ))}
-                        </div> */}
                         <button
                            onClick={toggleMenu}
                            className={styles.closeIcon}
