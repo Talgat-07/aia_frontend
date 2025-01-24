@@ -14,9 +14,9 @@ import {
    PrivateArchitecturePage,
    PublicArchitecturePage,
    BlocksArchitecturePage,
-   HousesInteriorPage,
-   ApartmentsInteriorPage,
    PublicSpacesInteriorPage,
+   HouseDesignPage,
+   ApartmentDesignPage,
 } from 'pages/index.js';
 
 export const Router = createBrowserRouter(
@@ -67,13 +67,13 @@ export const Router = createBrowserRouter(
                handle: { breadcrumb: 'Дизайн интерьера' },
                children: [
                   {
-                     path: path.interiorDesign.housesInterior,
-                     element: <HousesInteriorPage />,
+                     path: path.interiorDesign.houseDesignPage,
+                     element: <HouseDesignPage />,
                      handle: { breadcrumb: 'Дизайн домов' },
                   },
                   {
-                     path: path.interiorDesign.apartmentsInterior,
-                     element: <ApartmentsInteriorPage />,
+                     path: path.interiorDesign.apartmentDesignPage,
+                     element: <ApartmentDesignPage />,
                      handle: { breadcrumb: 'Дизайн квартир' },
                   },
                   {
