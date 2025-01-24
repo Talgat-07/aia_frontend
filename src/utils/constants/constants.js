@@ -88,3 +88,61 @@ export const NavLinks = [
         children: null,
     },
 ]
+export const BreadCrumbData = [
+    {
+        link: path.home,
+        label: "Главная "
+    },
+    {
+        link: path.aboutUs,
+        label: "О студии"
+    },
+    {
+        link: path.realizeProjects,
+        label: "Реализованные проекты"
+    },
+    {
+        link: path.architectureProjects,
+        label: "Архитектурные проекты"
+    },
+    {
+        link: path.privateArchitecture,
+        label: "Частная архитектура"
+    },
+    {
+        link: path.publicArchitecture,
+        label: "Общественная архитектура"
+    },
+    {
+        link: path.blocksArchitecture,
+        label: "Многоквартирные дома"
+    },
+    {
+        link: path.interiorDesign,
+        label: "Дизайн интерьера"
+    },
+    {
+        link: path.housesInterior,
+        label: "Дома"
+    },
+    {
+        link: path.apartmentsInterior,
+        label: "Квартиры"
+    },
+    {
+        link: path.publicSpacesInterior,
+        label: "Общественные пространства"
+    },
+    {
+        link: path.costAndStages,
+        label: "Стоимость и этапы"
+    },
+    {
+        link: path.blog,
+        label: "Блог"
+    },
+    {
+        link: path.contacts,
+        label: "Контакты"
+    }
+];

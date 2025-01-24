@@ -1,7 +1,7 @@
 import {Container, WeInNumber, YoutubeBlock} from "UI/index.js";
 import {InformationUs, PrivateHouses, InteriorDesign, VillagesNeighborhoods} from "modules/HomeModules/index.js";
 import MainBanner from 'modules/HomeModules/MainBanner/MainBanner.jsx';
-import {OurTeam} from "modules/HomeModules/OurTeam/OurTeam.jsx";
+import {WeTeam} from "modules/HomeModules/WeTeam/WeTeam.jsx";
 import {Helmet} from "react-helmet-async";
 
 export const HomePage = () => {
@@ -19,7 +19,7 @@ export const HomePage = () => {
           />
 
           <WeInNumber/>
-          <OurTeam/>
+          <WeTeam/>
          <PrivateHouses />
          <InteriorDesign />
          <VillagesNeighborhoods/>

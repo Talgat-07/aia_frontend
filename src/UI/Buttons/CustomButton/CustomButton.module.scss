@@ -121,7 +121,7 @@
   padding: 36px 0;
   background-color: var(--gray-second);
   border: none;
-  &:active {
+  &Active {
     @extend .twoButtons;
     background-color: var(--main-color);
   }

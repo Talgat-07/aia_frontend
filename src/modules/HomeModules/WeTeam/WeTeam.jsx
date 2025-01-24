@@ -1,6 +1,6 @@
 import {  Navigation, EffectCoverflow } from 'swiper';
 import CardImage from 'assets/img/CardImage.png'
-import styles from "./OurTeam.module.scss"
+import styles from "./WeTeam.module.scss"
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/navigation';
@@ -28,7 +28,7 @@ const employees = [
     }
 ];
 
-export const OurTeam = () => {
+export const WeTeam = () => {
 
     const prevRef = useRef(null);
     const nextRef = useRef(null);
