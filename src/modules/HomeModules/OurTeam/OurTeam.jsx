@@ -1,6 +1,6 @@
 import {  Navigation, EffectCoverflow } from 'swiper';
-import CardImage from 'assets/img/CardImage.png'
-import styles from "./OurTeam.module.scss"
+import CardImage from 'assets/img/CardImage.png';
+import styles from "./OurTeam.module.scss";
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/navigation';
