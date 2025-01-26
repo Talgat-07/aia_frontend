@@ -6,19 +6,19 @@ import {GeneralArchitects, OurTeam, HowWeWorks, TabNavigation} from "modules/Our
 
 export const AboutUsPage = () => {
     return (
-        <Container>
-            <Helmet>
-                <title>О нас | АЙА</title>
-                <meta name="description" content="Архитектурно-дизайнерская студия АЙА." />
-            </Helmet>
-            <BlockTitle/>
-            <WeInNumber/>
-            <GeneralArchitects/>
-            <OurTeam/>
-            <TabNavigation/>
-            <YoutubeBlock videoId="eA0lHNZ1KCA" backgroundColor="black" />
-            <HowWeWorks/>
-        </Container>
-    );
+       <Container>
+          <Helmet>
+             <title>О нас | АЙА</title>
+             <meta name="description" content="Архитектурно-дизайнерская студия АЙА." />
+          </Helmet>
+          <BlockTitle />
+          <WeInNumber />
+          <GeneralArchitects />
+          <OurTeam />
+          <TabNavigation />
+          <YoutubeBlock videoId="eA0lHNZ1KCA" backgroundColor="black" />
+          <HowWeWorks />
+       </Container>
+);
 };
 

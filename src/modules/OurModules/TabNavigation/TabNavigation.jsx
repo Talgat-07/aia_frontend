@@ -43,20 +43,26 @@ export const TabNavigation = () => {
 
     return (
         <div className={styles.container}>
-            <div>
+            <div className={styles.content}>
                 <div className={styles.content_buttons}>
                     {tabLabels.map((tab) => (
-                        <CustomButton
-                            key={tab.id}
-                            text={tab.label}
-                            buttonStyles={activeTab === tab.id ? 'twoButtonsActive' : 'twoButtons'}
-                            onClick={() => handleTabClick(tab.id)}
-                            aria-pressed={activeTab === tab.id}
-                        />
+                       <CustomButton
+                          key={tab.id}
+                          text={tab.label}
+                          buttonStyles={activeTab === tab.id ? 'twoButtonsActive' : 'twoButtons'}
+                          onClick={() => handleTabClick(tab.id)}
+                          aria-pressed={activeTab === tab.id}
+                       />
                     ))}
                 </div>
+                <div className={styles.content_information}>
+                    <MoreProjects config={currentTab} />
+                </div>
+                <div className={styles.content_hr}>
+                    <hr />
 
-                <MoreProjects config={currentTab} />
+                </div>
+
             </div>
         </div>
     );

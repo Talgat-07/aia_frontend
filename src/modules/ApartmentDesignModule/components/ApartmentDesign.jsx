@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { Container, CustomButton, Heading, MoreProjects } from 'UI/index';
+import { Container, CustomButton, Heading } from 'UI/index';
 import styles from '../../ApartmentDesignModule/components/ApartmentDesign.module.scss';
 import { MainCards } from 'UI/MainCards/MainCards';
-import { StartBlock } from '.';
 
 export const ApartmentDesign = () => {
+   const [showAllByYear, setShowAllByYear] = useState({});
+
    const years = [
       {
          year: '2023',
@@ -173,58 +174,54 @@ export const ApartmentDesign = () => {
          ],
       },
    ];
-
+   const toggleShowAll = (year) => {
+      setShowAllByYear((prevState) => ({
+         ...prevState,
+         [year]: !prevState[year],
+      }));
+   };
    return (
       <Container>
          <div className={styles.apartmentDesignContainer}>
-            <StartBlock />
-            {years.map((yearData, index) => {
-               const [showAll, setShowAll] = useState(false);
+            {years.map((yearData) => {
+               const showAll = showAllByYear[yearData.year];
 
-               const toggleShow = () => {
-                  setShowAll(!showAll);
-               };
                const displayedCards = showAll
                   ? yearData.cards
                   : yearData.cards.slice(0, 6);
+
                return (
-                  <>
-                     <React.Fragment key={index}>
-                        <Heading
-                           text={yearData.year}
-                           align="left"
-                           color="black"
-                        />
-                        <div key={index} className={styles.yearBlock}>
-                           <div className={styles.cardContainer}>
-                              {displayedCards.map((card, cardIndex) => (
-                                 <MainCards
-                                    key={cardIndex}
-                                    image={card.image}
-                                    title={card.title}
-                                    text={card.text}
-                                 />
-                              ))}
-                           </div>
-                           {yearData.cards.length > 6 && (
-                              <CustomButton
-                                 onClick={toggleShow}
-                                 text={showAll ? 'Скрыть' : 'Показать еще'}
-                                 buttonStyles="customButtonAdaptive"
+                  <React.Fragment key={yearData.year}>
+                     <Heading
+                        text={yearData.year}
+                        align="left"
+                        color="black"
+                     />
+                     <div className={styles.yearBlock}>
+                        <div className={styles.cardContainer}>
+                           {displayedCards.map((card, cardIndex) => (
+                              <MainCards
+                                 key={`${yearData.year}-${cardIndex}`} // Комбинируем year и индекс для уникальности
+                                 image={card.image}
+                                 title={card.title}
+                                 text={card.text}
                               />
-                           )}
+                           ))}
                         </div>
-                        {index < years.length - 1 && (
-                           <div className={styles.divider} />
+                        {yearData.cards.length > 6 && (
+                           <CustomButton
+                              onClick={() => toggleShowAll(yearData.year)}
+                              text={showAll ? 'Скрыть' : 'Показать еще'}
+                              buttonStyles="customButtonAdaptive"
+                           />
                         )}
-                     </React.Fragment>
-                  </>
+                     </div>
+                     {years.indexOf(yearData) < years.length - 1 && (
+                        <hr className={styles.divider} />
+                     )}
+                  </React.Fragment>
                );
             })}
-            {/* FIX__ME
-            <MoreProjects initialConfig={config}>
-               <Heading text={'Больше проектов'} />
-            </MoreProjects> */}
          </div>
       </Container>
    );

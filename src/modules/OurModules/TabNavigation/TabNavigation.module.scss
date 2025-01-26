@@ -1,8 +1,29 @@
 .container{
+  padding: 20px 0 0 0 ;
   background: var(--black-main-color);
 }
-.content_buttons{
-  margin: 0 95px;
+.content{
+  padding: 0 50px;
+  &_buttons{
+    margin: 0 95px;
+    width: 100%;
+    display: flex;
+    button{
+      width: 620px;
+    }
+  }
+  &_information{
+    padding: 0 10px;
+  }
+  &_hr{
+    padding: 0 90px;
 
-  display: flex;
+    hr{
+      margin: 0;
+      padding: 0;
+      border: 2px var(--gray-third) solid;
+      width: 100%;
+    }
+  }
+
 }
