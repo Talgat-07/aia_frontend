@@ -6,7 +6,6 @@ export const ApartmentDesignPage = () => {
    return (
       <>
          <Container>
-            ApartmentDesignPage
             <ApartmentDesign />
             <Outlet />
          </Container>
