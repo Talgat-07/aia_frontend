@@ -9,4 +9,5 @@ export {Card} from './Card/Card.jsx'
 export {BreadCrumbs} from './BreadCrumbs/BreadCrumbs.jsx'
 export {Loader} from './Loader/Loader.jsx'
 export {ContactForm} from './ContactForm/ContactForm.jsx'
+export {BlockTitle} from './BlockTitle/BlockTitle.jsx'
 

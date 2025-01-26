@@ -1,0 +1,37 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  &__arrow,
+  &__number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    border: 1px solid #B3895E;
+    background-color: white;
+    color: #828282;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  &__number.active {
+    background-color: #B3895E;
+    color: white;
+    font-weight: bold;
+    border-color: #B3895E;
+  }
+
+  &__dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    color: var(--gray-first);
+    font-size: 16px;
+  }
+}

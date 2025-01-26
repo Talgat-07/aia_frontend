@@ -8,16 +8,18 @@ import {
     AboutUsPage,
     CostAndStagesPage,
     RealizeProjectsPage,
-    InteriorDesignPage,
+    // InteriorDesignPage,
     BlogPage,
     ContactUsPage,
-    ArchitectureProjectsPage,
+    // ArchitectureProjectsPage,
     PrivateArchitecturePage,
     PublicArchitecturePage,
     BlocksArchitecturePage,
     HousesInteriorPage,
     ApartmentsInteriorPage,
-    PublicSpacesInteriorPage
+    PublicSpacesInteriorPage,
+    ProjectCardPage
+
 } from 'pages/index.js';
 
 export const Router = createBrowserRouter(
@@ -28,7 +30,7 @@ export const Router = createBrowserRouter(
                 {
                     path: path.home,
                     element: <HomePage />,
-                    handle: { breadcrumb: "Главная страница" }
+                    handle: { breadcrumb: "Главная" }
                 },
                 {
                     path: path.aboutUs,
@@ -40,49 +42,54 @@ export const Router = createBrowserRouter(
                     element: <RealizeProjectsPage />,
                     handle: { breadcrumb: "Реализованные проекты" }
                 },
-                {
-                    path: path.architectureProjects,
-                    element: <ArchitectureProjectsPage />,
-                    handle: { breadcrumb: "Архитектурное проектирование" },
-                    children: [
+                // {
+                //     path: path.architectureProjects,
+                //     element: <ArchitectureProjectsPage />,
+                //     handle: { breadcrumb: "Архитектурное проектирование" },
+                //     children: [
                         {
-                            path: "private",
+                            path: path.privateArchitecture,
                             element: <PrivateArchitecturePage />,
                             handle: { breadcrumb: "Частные дома" }
                         },
                         {
-                            path: "public",
+                            path: path.publicArchitecture,
                             element: <PublicArchitecturePage />,
                             handle: { breadcrumb: "Общественные здания" }
                         },
                         {
-                            path: "blocks",
+                            path: path.blocksArchitecture,
                             element: <BlocksArchitecturePage />,
                             handle: { breadcrumb: "Поселки и кварталы" }
-                        }
-                    ]
-                },
-                {
-                    path: path.interiorDesign,
-                    element: <InteriorDesignPage />,
-                    handle: { breadcrumb: "Дизайн интерьера" },
-                    children: [
+                        },
+                //     ]
+                // },
+                // {
+                //     path: path.interiorDesign,
+                //     element: <InteriorDesignPage />,
+                //     handle: { breadcrumb: "Дизайн интерьера" },
+                //     children: [
                         {
-                            path: "houses",
+                            path: path.housesInterior,
                             element: <HousesInteriorPage />,
                             handle: { breadcrumb: "Дизайн домов" }
                         },
                         {
-                            path: "apartments",
+                            path: path.apartmentsInterior,
                             element: <ApartmentsInteriorPage />,
                             handle: { breadcrumb: "Дизайн квартир" }
                         },
                         {
-                            path: "public-spaces",
+                            path: path.publicSpacesInterior,
                             element: <PublicSpacesInteriorPage />,
                             handle: { breadcrumb: "Дизайн общественных пространств" }
-                        }
-                    ]
+                        },
+                //     ]
+                // },
+                {
+                    path: path.projectCard,
+                    element: <ProjectCardPage />,
+                    handle: { breadcrumb: "Карточка проекта" }
                 },
                 {
                     path: path.costAndStages,

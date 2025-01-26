@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import style from './CustomFilters.module.scss'
+import { ArrowClose } from 'assets/icons/ArrowClose.jsx';
+import { ArrowOpen } from 'assets/icons/ArrowOpen.jsx';
 
 
 export const CustomFilters = ({item, onFilterChange}) => {
@@ -34,7 +36,7 @@ export const CustomFilters = ({item, onFilterChange}) => {
             <div className={style.customDropdown}>
                <div className={style.dropdownHeader} onClick={() => setIsYearOpen(!isYearOpen)}>
                   {year || 'Год'}
-                  <span className={style.arrow}>{isYearOpen ? '▲' : '▼'}</span>
+                  <span className={style.arrow}>{isYearOpen ? <ArrowClose/> : <ArrowOpen/>}</span>
                </div>
                {isYearOpen && (
                   <div className={style.dropdownList}>
@@ -51,7 +53,7 @@ export const CustomFilters = ({item, onFilterChange}) => {
             <div className={style.customDropdown}>
                <div className={style.dropdownHeader} onClick={() => setIsFloorOpen(!isFloorOpen)}>
                   {floor || 'Этаж'}
-                  <span className={style.arrow}>{isFloorOpen ? '▲' : '▼'}</span>
+                  <span className={style.arrow}>{isFloorOpen ? <ArrowClose/> : <ArrowOpen/>}</span>
                </div>
                {isFloorOpen && (
                   <div className={style.dropdownList}>
