@@ -1,32 +1,29 @@
-@use "normalize.scss";
-@use "variables.scss";
+@use 'normalize.scss';
+@use 'variables.scss';
+@use 'mixins.scss';
 
-
-
-
-body{
-  padding: 0;
-  margin: 0;
-  font-family: "Noto Sans", serif;
-  overflow-x: hidden;
-
+body {
+   padding: 0;
+   margin: 0;
+   font-family: 'Noto Sans', serif;
+   overflow-x: hidden;
 }
 
 body {
-  font-family: "Noto Sans", sans-serif;
-
+   font-family: 'Noto Sans', sans-serif;
 }
 
 header {
-  margin: 0 ;
-  position: relative;
-  left: 0;
-  box-sizing: border-box;
-  background-color: var(--black-main-color);
-  padding: 0 100px ;
-
+   margin: 0;
+   position: relative;
+   left: 0;
+   box-sizing: border-box;
+   background-color: var(--black-main-color);
+   padding: 0 100px;
 }
 
-select,input,textarea{
-  box-sizing: border-box;
+select,
+input,
+textarea {
+   box-sizing: border-box;
 }

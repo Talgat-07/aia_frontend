@@ -1,53 +1,231 @@
+import React, { useState } from 'react';
+import { Container, CustomButton, Heading, MoreProjects } from 'UI/index';
 import styles from '../../ApartmentDesignModule/components/ApartmentDesign.module.scss';
 import { MainCards } from 'UI/MainCards/MainCards';
+import { StartBlock } from '.';
 
 export const ApartmentDesign = () => {
-   const cardsData = [
+   const years = [
       {
-         image: 'https://m-strana.ru/upload/resize_cache/medialibrary/148/830_830_1/krasivye-doma-foto-kottedzhey-i-primery-planirovok-2.jpg',
-         title: 'Заголовок',
-         text: 'Коттеджные поселки',
+         year: '2023',
+         cards: [
+            {
+               image: 'https://m-strana.ru/upload/resize_cache/medialibrary/148/830_830_1/krasivye-doma-foto-kottedzhey-i-primery-planirovok-2.jpg',
+               title: 'Заголовок 2023',
+               text: 'Коттеджные поселки 2023',
+            },
+            {
+               image: 'https://m-strana.ru/upload/resize_cache/medialibrary/148/830_830_1/krasivye-doma-foto-kottedzhey-i-primery-planirovok-2.jpg',
+               title: 'Заголовок 2023',
+               text: 'Коттеджные поселки 2023',
+            },
+            {
+               image: 'https://m-strana.ru/upload/resize_cache/medialibrary/148/830_830_1/krasivye-doma-foto-kottedzhey-i-primery-planirovok-2.jpg',
+               title: 'Заголовок 2023',
+               text: 'Коттеджные поселки 2023',
+            },
+
+            {
+               image: 'https://m-strana.ru/upload/resize_cache/medialibrary/148/830_830_1/krasivye-doma-foto-kottedzhey-i-primery-planirovok-2.jpg',
+               title: 'Заголовок 2023',
+               text: 'Коттеджные поселки 2023',
+            },
+            {
+               image: 'https://m-strana.ru/upload/resize_cache/medialibrary/148/830_830_1/krasivye-doma-foto-kottedzhey-i-primery-planirovok-2.jpg',
+               title: 'Заголовок 2023',
+               text: 'Коттеджные поселки 2023',
+            },
+            {
+               image: 'https://m-strana.ru/upload/resize_cache/medialibrary/148/830_830_1/krasivye-doma-foto-kottedzhey-i-primery-planirovok-2.jpg',
+               title: 'Заголовок 2023',
+               text: 'Коттеджные поселки 2023',
+            },
+         ],
       },
       {
-         image: 'https://m-strana.ru/upload/resize_cache/medialibrary/148/830_830_1/krasivye-doma-foto-kottedzhey-i-primery-planirovok-2.jpg',
-         title: 'Заголовок',
-         text: 'Коттеджные поселки',
+         year: '2022',
+         cards: [
+            {
+               image: 'https://m-strana.ru/upload/resize_cache/medialibrary/148/830_830_1/krasivye-doma-foto-kottedzhey-i-primery-planirovok-2.jpg',
+               title: 'Заголовок 2022',
+               text: 'Коттеджные поселки 2022',
+            },
+            {
+               image: 'https://m-strana.ru/upload/resize_cache/medialibrary/148/830_830_1/krasivye-doma-foto-kottedzhey-i-primery-planirovok-2.jpg',
+               title: 'Заголовок 2022',
+               text: 'Коттеджные поселки 2022',
+            },
+            {
+               image: 'https://m-strana.ru/upload/resize_cache/medialibrary/148/830_830_1/krasivye-doma-foto-kottedzhey-i-primery-planirovok-2.jpg',
+               title: 'Заголовок 2022',
+               text: 'Коттеджные поселки 2022',
+            },
+            {
+               image: 'https://m-strana.ru/upload/resize_cache/medialibrary/148/830_830_1/krasivye-doma-foto-kottedzhey-i-primery-planirovok-2.jpg',
+               title: 'Заголовок 2022',
+               text: 'Коттеджные поселки 2022',
+            },
+            {
+               image: 'https://m-strana.ru/upload/resize_cache/medialibrary/148/830_830_1/krasivye-doma-foto-kottedzhey-i-primery-planirovok-2.jpg',
+               title: 'Заголовок 2022',
+               text: 'Коттеджные поселки 2022',
+            },
+            {
+               image: 'https://m-strana.ru/upload/resize_cache/medialibrary/148/830_830_1/krasivye-doma-foto-kottedzhey-i-primery-planirovok-2.jpg',
+               title: 'Заголовок 2022',
+               text: 'Коттеджные поселки 2022',
+            },
+            {
+               image: 'https://m-strana.ru/upload/resize_cache/medialibrary/148/830_830_1/krasivye-doma-foto-kottedzhey-i-primery-planirovok-2.jpg',
+               title: 'Заголовок 2022',
+               text: 'Коттеджные поселки 2022',
+            },
+            {
+               image: 'https://m-strana.ru/upload/resize_cache/medialibrary/148/830_830_1/krasivye-doma-foto-kottedzhey-i-primery-planirovok-2.jpg',
+               title: 'Заголовок 2022',
+               text: 'Коттеджные поселки 2022',
+            },
+         ],
       },
       {
-         image: 'https://m-strana.ru/upload/resize_cache/medialibrary/148/830_830_1/krasivye-doma-foto-kottedzhey-i-primery-planirovok-2.jpg',
-         title: 'Заголовок',
-         text: 'Коттеджные поселки',
+         year: '2021',
+         cards: [
+            {
+               image: 'https://m-strana.ru/upload/resize_cache/medialibrary/148/830_830_1/krasivye-doma-foto-kottedzhey-i-primery-planirovok-2.jpg',
+               title: 'Заголовок 2021',
+               text: 'Коттеджные поселки 2021',
+            },
+            {
+               image: 'https://m-strana.ru/upload/resize_cache/medialibrary/148/830_830_1/krasivye-doma-foto-kottedzhey-i-primery-planirovok-2.jpg',
+               title: 'Заголовок 2021',
+               text: 'Коттеджные поселки 2021',
+            },
+            {
+               image: 'https://m-strana.ru/upload/resize_cache/medialibrary/148/830_830_1/krasivye-doma-foto-kottedzhey-i-primery-planirovok-2.jpg',
+               title: 'Заголовок 2021',
+               text: 'Коттеджные поселки 2021',
+            },
+            {
+               image: 'https://m-strana.ru/upload/resize_cache/medialibrary/148/830_830_1/krasivye-doma-foto-kottedzhey-i-primery-planirovok-2.jpg',
+               title: 'Заголовок 2021',
+               text: 'Коттеджные поселки 2021',
+            },
+            {
+               image: 'https://m-strana.ru/upload/resize_cache/medialibrary/148/830_830_1/krasivye-doma-foto-kottedzhey-i-primery-planirovok-2.jpg',
+               title: 'Заголовок 2021',
+               text: 'Коттеджные поселки 2021',
+            },
+            {
+               image: 'https://m-strana.ru/upload/resize_cache/medialibrary/148/830_830_1/krasivye-doma-foto-kottedzhey-i-primery-planirovok-2.jpg',
+               title: 'Заголовок 2021',
+               text: 'Коттеджные поселки 2021',
+            },
+            {
+               image: 'https://m-strana.ru/upload/resize_cache/medialibrary/148/830_830_1/krasivye-doma-foto-kottedzhey-i-primery-planirovok-2.jpg',
+               title: 'Заголовок 2021',
+               text: 'Коттеджные поселки 2021',
+            },
+            {
+               image: 'https://m-strana.ru/upload/resize_cache/medialibrary/148/830_830_1/krasivye-doma-foto-kottedzhey-i-primery-planirovok-2.jpg',
+               title: 'Заголовок 2021',
+               text: 'Коттеджные поселки 2021',
+            },
+         ],
       },
       {
-         image: 'https://m-strana.ru/upload/resize_cache/medialibrary/148/830_830_1/krasivye-doma-foto-kottedzhey-i-primery-planirovok-2.jpg',
-         title: 'Заголовок',
-         text: 'Коттеджные поселки',
-      },
-      {
-         image: 'https://m-strana.ru/upload/resize_cache/medialibrary/148/830_830_1/krasivye-doma-foto-kottedzhey-i-primery-planirovok-2.jpg',
-         title: 'Заголовок',
-         text: 'Коттеджные поселки',
-      },
-      {
-         image: 'https://m-strana.ru/upload/resize_cache/medialibrary/148/830_830_1/krasivye-doma-foto-kottedzhey-i-primery-planirovok-2.jpg',
-         title: 'Заголовок',
-         text: 'Коттеджные поселки',
+         year: '2020',
+         cards: [
+            {
+               image: 'https://m-strana.ru/upload/resize_cache/medialibrary/148/830_830_1/krasivye-doma-foto-kottedzhey-i-primery-planirovok-2.jpg',
+               title: 'Заголовок 2020',
+               text: 'Коттеджные поселки 2020',
+            },
+            {
+               image: 'https://m-strana.ru/upload/resize_cache/medialibrary/148/830_830_1/krasivye-doma-foto-kottedzhey-i-primery-planirovok-2.jpg',
+               title: 'Заголовок 2020',
+               text: 'Коттеджные поселки 2020',
+            },
+            {
+               image: 'https://m-strana.ru/upload/resize_cache/medialibrary/148/830_830_1/krasivye-doma-foto-kottedzhey-i-primery-planirovok-2.jpg',
+               title: 'Заголовок 2020',
+               text: 'Коттеджные поселки 2020',
+            },
+            {
+               image: 'https://m-strana.ru/upload/resize_cache/medialibrary/148/830_830_1/krasivye-doma-foto-kottedzhey-i-primery-planirovok-2.jpg',
+               title: 'Заголовок 2020',
+               text: 'Коттеджные поселки 2020',
+            },
+            {
+               image: 'https://m-strana.ru/upload/resize_cache/medialibrary/148/830_830_1/krasivye-doma-foto-kottedzhey-i-primery-planirovok-2.jpg',
+               title: 'Заголовок 2020',
+               text: 'Коттеджные поселки 2020',
+            },
+            {
+               image: 'https://m-strana.ru/upload/resize_cache/medialibrary/148/830_830_1/krasivye-doma-foto-kottedzhey-i-primery-planirovok-2.jpg',
+               title: 'Заголовок 2020',
+               text: 'Коттеджные поселки 2020',
+            },
+            {
+               image: 'https://m-strana.ru/upload/resize_cache/medialibrary/148/830_830_1/krasivye-doma-foto-kottedzhey-i-primery-planirovok-2.jpg',
+               title: 'Заголовок 2020',
+               text: 'Коттеджные поселки 2020',
+            },
+         ],
       },
    ];
+
    return (
-      <>
-            <div className={styles.apartmentDesignContainer}>
-               <div className={styles.cardContainer}>
-                  {cardsData.map((card, index) => (
-                     <MainCards
-                        key={index}
-                        image={card.image}
-                        title={card.title}
-                        text={card.text}
-                     />
-                  ))}
-               </div>
-            </div>
-      </>
+      <Container>
+         <div className={styles.apartmentDesignContainer}>
+            <StartBlock />
+            {years.map((yearData, index) => {
+               const [showAll, setShowAll] = useState(false);
+
+               const toggleShow = () => {
+                  setShowAll(!showAll);
+               };
+               const displayedCards = showAll
+                  ? yearData.cards
+                  : yearData.cards.slice(0, 6);
+               return (
+                  <>
+                     <React.Fragment key={index}>
+                        <Heading
+                           text={yearData.year}
+                           align="left"
+                           color="black"
+                        />
+                        <div key={index} className={styles.yearBlock}>
+                           <div className={styles.cardContainer}>
+                              {displayedCards.map((card, cardIndex) => (
+                                 <MainCards
+                                    key={cardIndex}
+                                    image={card.image}
+                                    title={card.title}
+                                    text={card.text}
+                                 />
+                              ))}
+                           </div>
+                           {yearData.cards.length > 6 && (
+                              <CustomButton
+                                 onClick={toggleShow}
+                                 text={showAll ? 'Скрыть' : 'Показать еще'}
+                                 buttonStyles="customButtonAdaptive"
+                              />
+                           )}
+                        </div>
+                        {index < years.length - 1 && (
+                           <div className={styles.divider} />
+                        )}
+                     </React.Fragment>
+                  </>
+               );
+            })}
+            {/* FIX__ME
+            <MoreProjects initialConfig={config}>
+               <Heading text={'Больше проектов'} />
+            </MoreProjects> */}
+         </div>
+      </Container>
    );
 };
