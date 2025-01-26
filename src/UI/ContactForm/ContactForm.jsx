@@ -22,8 +22,8 @@ export const ContactForm = () => {
     register,
     handleSubmit,
     reset,
-    setValue, // Для ручного управления значениями
-    trigger,  // Для проверки валидации
+    setValue,
+    trigger,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
