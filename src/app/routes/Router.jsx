@@ -19,6 +19,7 @@
       PublicSpacesInteriorPage,
       HouseDesignPage,
       ApartmentDesignPage,
+      CottageVillageCardPage,
    } from 'pages/index.js';
 
    export const Router = createBrowserRouter(
@@ -91,6 +92,11 @@
                   path: path.costAndStages,
                   element: <CostAndStagesPage />,
                   handle: { breadcrumb: 'Стоимость и этапы строительства' },
+               },
+               {
+                  path: path.cottageVillageCard,
+                  element: <CottageVillageCardPage/>,
+                  handle: { breadcrumb: 'Карточка коттеджного поселка' },
                },
                {
                   path: path.blog,

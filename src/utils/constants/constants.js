@@ -14,6 +14,7 @@ export const path = {
     blog: '/blog',
     contacts: '/contact-us',
     projectCard: '/project-card',
+    cottageVillageCard: '/cottage-village-card',
 };
 
 export const NavLinks = [
@@ -71,6 +72,11 @@ export const NavLinks = [
     {
         title: 'Стоимость и этапы строительства',
         path: path.costAndStages,
+        children: null,
+    },
+    {
+        title: 'Карточка коттеджного поселка',
+        path: path.cottageVillageCard,
         children: null,
     },
     {
