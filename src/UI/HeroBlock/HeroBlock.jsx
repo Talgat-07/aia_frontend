@@ -22,7 +22,7 @@ export const HeroBlock = ({ config = {} }) => {
    } = config;
 
    const filteredBreadCrumbData = [
-      BreadCrumbData.find(item => item.link === "/"), // Главная
+      BreadCrumbData.find(item => item.link === "/"),
       BreadCrumbData.find(item => item.link === currentPath),
    ].filter(Boolean);
 
@@ -41,7 +41,7 @@ export const HeroBlock = ({ config = {} }) => {
          {image && (
             <img
                className={styles.image_frame}
-               src={image}
+               src={myImage}
                alt="Main banner background"
             />
          )}
