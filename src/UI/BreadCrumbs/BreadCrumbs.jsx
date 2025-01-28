@@ -3,7 +3,7 @@ import styles from './BreadCrumbs.module.scss';
 import { ArrowRightIcon } from 'assets/icons/ArrowRightIcon';
 import React from 'react';
 
-export const BreadCrumbs = ({ items }) => {
+export const BreadCrumbs = ({ items, linkColor = "white", activeColor = "#828282" }) => {
    const navigate = useNavigate();
 
    return (
@@ -15,13 +15,14 @@ export const BreadCrumbs = ({ items }) => {
                      <li
                         className={styles.navigation__item}
                         onClick={() => navigate(item.link)}
+                        style={{ color: linkColor }}
                      >
                         {item.label}
                      </li>
                      <ArrowRightIcon />
                   </>
                ) : (
-                  <div>{item.label}</div>
+                  <div style={{ color: activeColor }}>{item.label}</div>
                )}
             </React.Fragment>
          ))}

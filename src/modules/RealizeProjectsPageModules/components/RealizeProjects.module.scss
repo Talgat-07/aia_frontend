@@ -10,6 +10,8 @@
   }
 
   .cardContainer {
+
+    cursor: pointer;
     display: flex;
     flex-wrap: wrap;
     width: 100%;
@@ -69,4 +71,50 @@
   opacity: 0;
   animation: fadeIn 0.4s ease forwards;
   animation-delay: var(--delay);
+}
+
+
+
+
+@media screen and (max-width: 770px) {
+  .content {
+    padding: 20px 30px;
+  }
+
+  .blockButton {
+    padding: 0 30px;
+  }
+
+  .cardContainer {
+    gap: 10px;
+  }
+
+  .cardContainer .card {
+    flex-basis: 48%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .content {
+    padding: 15px 20px;
+  }
+
+  .blockButton {
+    padding: 0 20px;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .cardContainer {
+    gap: 8px;
+  }
+
+  .cardContainer .card {
+    flex-basis: 100%;
+  }
+
+  .blockButton button {
+    font-size: 16px;
+    height: auto;
+  }
 }

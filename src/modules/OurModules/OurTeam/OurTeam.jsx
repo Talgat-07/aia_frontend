@@ -18,7 +18,7 @@ export const OurTeam = () => {
     ];
 
     return (
-        <div className={styles.container}>
+        <div className={styles.container} id="ourteam">
             <Heading text="Команда" color="black" />
             <div className={styles.OurTeam}>
                 {teamConfig.map(({ name, position, image }, index) => (

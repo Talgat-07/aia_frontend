@@ -8,30 +8,27 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import {useRef, useEffect, useState} from "react";
 import {Card, CustomButton, Heading} from 'UI/index';
 import {ArrowLeft, ArrowRight} from "assets/index.js";
-import { useModal } from 'utils/hooks/useModal.js';
-import { RegModal } from 'modules/User/Components/RegModal/RegModal.jsx';
 
 
 const employees = [
     {
-        title: 'Имя Фамилия',
+        title: 'Имя Фамилия1',
         description: 'должность',
         image: CardImage,
     },
     {
-        title: 'Имя Фамилия',
+        title: 'Имя Фамилия2',
         description: 'должность',
         image: CardImage,
     },
     {
-        title: 'Имя Фамилия',
+        title: 'Имя Фамилия3',
         description: 'должность',
         image: CardImage,
     }
 ];
 
 export const WeTeam = () => {
-    const {openModal,isOpen,closeModal} = useModal();
 
     const prevRef = useRef(null);
     const nextRef = useRef(null);
@@ -111,7 +108,7 @@ export const WeTeam = () => {
 
                 </div>
                 <div className={styles.buttongo}>
-                    <CustomButton text={"Вся команда"} buttonStyles={"customButtonAdaptive"} onClick={openModal}/>
+                    <CustomButton text={"Вся команда"} buttonStyles={"customButtonAdaptive"}  to="/about-us#ourteam"/>
 
                 </div>
 
@@ -125,7 +122,6 @@ export const WeTeam = () => {
 
             </div>
 
-            {isOpen? (<RegModal closeModal={closeModal} isOpen={isOpen}/>) : null}
 
         </div>
     );

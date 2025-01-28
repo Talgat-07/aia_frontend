@@ -26,8 +26,9 @@ export const BlockTitle = ({ config = {} }) => {
 
    return (
       <div className={styles.container}>
+
          <div className={styles.container__left}>
-            <BreadCrumbs items={filteredBreadCrumbData} />
+            <BreadCrumbs items={filteredBreadCrumbData} linkColor={"#828282"} activeColor={'#262626'} />
             <Heading className={styles.left__heading} text={heading} color={"black"} align={"left"} />
          </div>
          <div className={styles.container__right}>

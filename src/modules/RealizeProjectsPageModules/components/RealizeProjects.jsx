@@ -144,7 +144,7 @@ export const RealizeProjects = () => {
                               <div className={styles.cardContainer} >
                                  {displayedCards.map((card, cardIndex) => (
                                     <div
-                                       key={`${yearData.year}-${cardIndex}`}  // Ensure the key is unique
+                                       key={`${yearData.year}-${cardIndex}`}
                                        className={styles.card}
                                        style={{ '--delay': `${cardIndex * 0.1}s` }}
                                     >
