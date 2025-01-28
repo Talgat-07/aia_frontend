@@ -10,3 +10,6 @@ export {ArrowRight} from './icons/ArrowRight.jsx';
 export {LoopInput} from './icons/LoopInput.jsx';
 export {TwitterIconMain} from './icons/TwitterIconMain.jsx';
 export {GeeksProIcon} from './icons/GeeksProIcon.jsx';
+export {TelegramBlackIconMain} from './icons/TelegramBlackIconMain.jsx';
+export {WhatsappBlackIconMain} from './icons/WhatsappBlackIconMain.jsx';
+export {InstagramBlackIconMain} from './icons/InstagramBlackIconMain.jsx';

@@ -89,6 +89,16 @@
   }
 }
 
+.activeButtonBrown {
+  @extend .centerDisplay;
+  width: 270px;
+  height: 60px;
+  padding: 12px 30px;
+  border: 2px solid var(--main-color);
+  background-color: var(--main-color);
+  color: #FFFFFF;
+}
+
 .blogButtons {
   @extend .centerDisplay;
   width: 203px;
@@ -109,7 +119,7 @@
   padding: 36px 0;
   background-color: var(--gray-second);
   border: none;
-  &:active {
+  &Active {
     @extend .twoButtons;
     background-color: var(--main-color);
   }

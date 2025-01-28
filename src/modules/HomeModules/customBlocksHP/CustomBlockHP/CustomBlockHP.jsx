@@ -36,6 +36,7 @@ export const CustomBlockHP = ({ items }) => {
                         <CustomButton
                             buttonStyles="customButtonBrown"
                             text="Посмотреть проекты"
+                            onClick={items.click}
                         />
                     </div>
                 </div>

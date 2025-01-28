@@ -1,0 +1,24 @@
+.container{
+  background: var(--black-main-color);
+  padding: 70px 100px 100px;
+    hr{
+      margin: 0;
+      padding: 0;
+      border: 2px var(--gray-third) solid;
+      width: 100%;
+
+  }
+}
+.HowWork{
+    padding: 70px 0 0 0;
+  &__content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    width: 100%;
+    &_des{
+      width: 78%;
+    }
+  }
+}
