@@ -6,13 +6,11 @@ import { ProgectCardMoreProjects } from "modules/ProjectCardModules/ProgectCardM
 
 export const ProjectCardPage = () => {
     return (
-        <div>
             <Container>
                 <ProjectCard/>
                 <ProjectCardVideo videoId="eA0lHNZ1KCA"/>
                 <ProgectCardMoreProjects/>
             </Container>
-        </div>
     );
 };
 

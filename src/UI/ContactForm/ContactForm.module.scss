@@ -200,3 +200,44 @@
   background: white;
   z-index: 10;
 }
+
+
+
+@media screen and (max-width: 770px) {
+  .modalBox {
+    width: 90%;
+    padding: 30px;
+  }
+  .modalHeader{
+    padding: 20px 0px 0;
+  }
+
+  .modalFormArea {
+    textarea{
+      width: 346px;
+    }
+
+  }
+  .modalFormInputs{
+    width: 350px;
+  }
+  .modalForm{
+    gap: 10px;
+  }
+  .FormArea {
+
+    max-width: 100%;
+    input, , select {
+      width: 346px  !important;
+    }
+  }
+
+  .successMessage {
+    gap: 30px;
+  }
+
+  .modalBox .closeModal {
+    top: 15px;
+    right: 15px;
+  }
+}

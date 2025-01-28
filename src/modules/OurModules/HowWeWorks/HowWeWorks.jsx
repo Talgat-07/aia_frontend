@@ -1,6 +1,7 @@
 import {Container, Heading} from "UI/index.js";
 import styles from './HowWeWorks.module.scss'
 import {Typography,CustomButton} from "UI/index.js";
+import { path } from 'utils/constants/constants.js';
 
 export const HowWeWorks = () => {
     const config = {
@@ -17,7 +18,7 @@ export const HowWeWorks = () => {
                     <div className={styles.HowWork__content_des}>
                         <Typography variant="bodyM" weight="light" color="white">{config.subtitle}</Typography>
                     </div>
-                    <CustomButton buttonStyles="customButtonBrown" text="Посмотреть все этапы"/>
+                    <CustomButton buttonStyles="customButtonBrown" text="Посмотреть все этапы" to={path.costAndStages}/>
                 </div>
             </div>
 
