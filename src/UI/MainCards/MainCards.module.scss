@@ -19,3 +19,13 @@
     margin: 12px 0 24px;
   }
 }
+@media screen and (max-width: 770px){
+  .card{
+    width: 346px;
+    height: 350px;
+  }
+  .card_image{
+    height: 250px;
+  }
+
+}

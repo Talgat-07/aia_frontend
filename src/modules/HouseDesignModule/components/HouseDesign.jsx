@@ -1,10 +1,11 @@
 import styles from '../../HouseDesignModule/components/HouseDesign.module.scss';
 import React, { useState } from 'react';
-import { Container, CustomButton, Heading, MoreProjects } from 'UI/index';
+import { Container, CustomButton, Heading } from 'UI/index';
 import { MainCards } from 'UI/MainCards/MainCards';
-import { StartBlock } from '.';
 
 export const HouseDesign = () => {
+
+   const [showAllByYear, setShowAllByYear] = useState({});
    const years = [
       {
          year: '2023',
@@ -173,34 +174,18 @@ export const HouseDesign = () => {
       },
    ];
 
-   const config = [
-      {
-         image: 'https://m-strana.ru/upload/resize_cache/medialibrary/148/830_830_1/krasivye-doma-foto-kottedzhey-i-primery-planirovok-2.jpg',
-      },
-      { subtitle: 'Наши проекты' },
-      {
-         text: 'Lorem ipsum dolor sit amet consectetur. Mi tristique risus accumsan morbi. Sed adipiscing libero vel enim justo phasellus a et. Placerat ultricies ultricies rutrum blandit et arcu. Feugiat arcu turpis interdum tortom dolor sit amet   consectetur. Mi tristique risus.',
-      },
-      {
-         buttons: [
-            'Реализованные проекты',
-            'Архитектурное проектирование',
-            'Дизайн общественных пространств',
-            'Дизайн домов',
-         ],
-      },
-   ];
 
+   const toggleShow = (year) => {
+      setShowAllByYear((prev) => ({
+         ...prev,
+         [year]: !prev[year],
+      }));
+   };
    return (
       <Container>
          <div className={styles.apartmentDesignContainer}>
-            <StartBlock />
             {years.map((yearData, index) => {
-               const [showAll, setShowAll] = useState(false);
-
-               const toggleShow = () => {
-                  setShowAll(!showAll);
-               };
+               const showAll = showAllByYear[yearData.year];
 
                const displayedCards = showAll
                   ? yearData.cards
@@ -222,7 +207,7 @@ export const HouseDesign = () => {
                         </div>
                         {yearData.cards.length > 6 && (
                            <CustomButton
-                              onClick={toggleShow}
+                              onClick={() => toggleShow(yearData.year)}
                               text={showAll ? 'Скрыть' : 'Показать еще'}
                               buttonStyles="customButtonAdaptive"
                            />
@@ -234,10 +219,6 @@ export const HouseDesign = () => {
                   </React.Fragment>
                );
             })}
-            {/* FIX__ME
-            <MoreProjects initialConfig={config}>
-               <Heading text={'Больше проектов'} />
-            </MoreProjects> */}
          </div>
       </Container>
    );

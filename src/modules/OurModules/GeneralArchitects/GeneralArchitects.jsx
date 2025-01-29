@@ -1,7 +1,7 @@
 import { Heading, Typography } from "UI/index.js";
 import styles from './GeneralArchitects.module.scss';
 import { WhatsappBlackIconMain, TelegramBlackIconMain, InstagramBlackIconMain } from 'assets/index.js';
-import GeneralArchitect from 'assets/img/generalArchitects.png';
+import GeneralArchitectImage from 'assets/img/generalArchitects.png';
 
 export const GeneralArchitects = () => {
     const socialLinks = [
@@ -9,8 +9,11 @@ export const GeneralArchitects = () => {
         { id: 2, href: "https://instagram.com", label: "Instagram", Icon: InstagramBlackIconMain },
         { id: 3, href: "https://whatsapp.com", label: "WhatsApp", Icon: WhatsappBlackIconMain },
     ];
-    const Config = {
+    const config = {
         title: "Имя фамилия",
+        subtitle: 'Llandit et arcu. Feugiat arcu turpis inmet consectetur. Mi tristique risus accumsan morbi.Lorem ipsum dolor sit amet comet consectetur. Mi tristique risus accumsan morbi.',
+        image: GeneralArchitectImage,
+
     };
 
     return (
@@ -18,15 +21,15 @@ export const GeneralArchitects = () => {
             <Heading text={"Главные архитекторы"} color="black" />
             <div className={styles.BlockGeneral}>
                 <div className={styles.BlockGeneral__Left}>
-                    <img src={GeneralArchitect} alt="" />
+                    <img src={config.image} alt="" />
                 </div>
                 <div className={styles.BlockGeneral__Right}>
                     <div className={styles.BlockGeneral__Typography}>
-                        <Typography variant="bodyXl" weight="medium">{Config.title}</Typography>
+                        <Typography variant="bodyXl" weight="medium">{config.title}</Typography>
                         <div className={styles.BlockGeneral__Typography_Icons}>
                             {socialLinks.map(({ id, href, label, Icon }) => (
                                 <a
-                                    key={id} // Добавлен ключ для уникальности
+                                    key={id}
                                     href={href}
                                     aria-label={label}
                                     target="_blank"
@@ -42,7 +45,7 @@ export const GeneralArchitects = () => {
                         <div className={styles.BlockGeneral__Typography_Icons}>
                             {socialLinks.map(({ id, href, label, Icon }) => (
                                 <a
-                                    key={id} // Добавлен ключ для уникальности
+                                    key={id}
                                     href={href}
                                     aria-label={label}
                                     target="_blank"
@@ -55,8 +58,7 @@ export const GeneralArchitects = () => {
                     </div>
                     <div className={styles.BlockGeneral__description}>
                         <Typography variant="bodyM" weight="light">
-                            Llandit et arcu. Feugiat arcu turpis inmet consectetur. Mi tristique risus accumsan morbi.
-                            Lorem ipsum dolor sit amet comet consectetur. Mi tristique risus accumsan morbi.
+                            {config.subtitle}
                         </Typography>
                     </div>
                 </div>

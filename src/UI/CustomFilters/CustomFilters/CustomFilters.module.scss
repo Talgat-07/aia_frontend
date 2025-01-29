@@ -57,14 +57,9 @@
   display: flex;
   color: #FFFFFF;
   background-color: transparent;
-  //position: relative;
+  position: relative;
   margin-top: -12px;
-
-  input {
-    border: none;
-    padding: 0;
-    height: 4px;
-  }
+  overflow: visible;
 
   .label {
     margin-right: 10px;
@@ -76,28 +71,33 @@
     align-items: flex-start;
     position: relative;
 
+    input {
+      border: none;
+      padding: 0;
+      height: 4px;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
     .staticHandle {
       position: absolute;
       top: -10px;
-      right: 2px;
-      width: 14px;
+      right: -14px;
+      width: 15px;
       height: 27px;
       border: 1px solid var(--gray-fourth);
       background: var(--gray-fourth);
-      z-index: 2;
+      pointer-events: none;
+      filter: none;
     }
 
     .slider {
       -webkit-appearance: none;
+      appearance: none;
       height: 4px;
       background: var(--gray-second);
-      outline: none;
       position: relative;
-
-      &::-webkit-slider-runnable-track {
-        height: 4px;
-        background: var(--gray-second);
-      }
+      z-index: 5;
 
       &::-webkit-slider-thumb {
         -webkit-appearance: none;
@@ -107,7 +107,15 @@
         border: 1px solid var(--main-color);
         background: var(--main-color);
         cursor: pointer;
-        z-index: 10;
+        position: absolute;
+        z-index: 6;
+        //transition: left 0.1s ease-in-out;
+        left: calc(var(--progress) + var(--thumb-offset));
+      }
+
+      &::-webkit-slider-runnable-track {
+        height: 4px;
+        background: var(--gray-second);
       }
 
       &::-webkit-slider-runnable-track {
@@ -140,13 +148,6 @@
         width: 2px;
         height: 5px;
         background: #FFFFFF;
-      }
-    }
-
-    .scaleValue:last-child {
-      &:after {
-        content: 'м²';
-        margin-left: 4px;
       }
     }
   }

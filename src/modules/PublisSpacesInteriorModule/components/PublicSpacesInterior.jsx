@@ -6,6 +6,7 @@ import { Heading } from 'UI/heading/Heading.jsx';
 import { CustomButton } from 'UI/buttons/CustomButton/CustomButton.jsx';
 import style from './PublicSpacesInterior.module.scss'
 import { MoreProjects } from 'UI/MoreProjects/MoreProjects.jsx';
+import { path } from 'utils/constants/constants.js';
 
 
 export const PublicSpacesInterior = () => {
@@ -25,10 +26,10 @@ export const PublicSpacesInterior = () => {
       subtitle: 'subtitle',
       text: 'text',
       buttons: [
-         { text: 'Реализованные проекты'},
-         { text: 'Архитектурное проектирование'},
-         { text: 'Дизайн общественных пространств'},
-         { text: 'Дизайн квартир'},
+         { text: 'Реализованные проекты', link: path.realizeProjects},
+         { text: 'Архитектурное проектирование', link: path.architectureProjects},
+         { text: 'Дизайн общественных пространств', link: path.publicSpacesInterior},
+         { text: 'Дизайн квартир', link: path.apartmentDesignPage},
       ],
    }
 

@@ -12,17 +12,17 @@ import {ArrowLeft, ArrowRight} from "assets/index.js";
 
 const employees = [
     {
-        title: 'Имя Фамилия',
+        title: 'Имя Фамилия1',
         description: 'должность',
         image: CardImage,
     },
     {
-        title: 'Имя Фамилия',
+        title: 'Имя Фамилия2',
         description: 'должность',
         image: CardImage,
     },
     {
-        title: 'Имя Фамилия',
+        title: 'Имя Фамилия3',
         description: 'должность',
         image: CardImage,
     }
@@ -108,7 +108,7 @@ export const WeTeam = () => {
 
                 </div>
                 <div className={styles.buttongo}>
-                    <CustomButton text={"Вся команда"} buttonStyles={"customButtonAdaptive"}/>
+                    <CustomButton text={"Вся команда"} buttonStyles={"customButtonAdaptive"}  to="/about-us#ourteam"/>
 
                 </div>
 

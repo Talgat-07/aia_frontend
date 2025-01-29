@@ -11,7 +11,6 @@ export const CustomPagination = () => {
 
    const handlePageChange = (pageNumber) => {
       setActivePage(pageNumber);
-      console.log(`Active page is ${pageNumber}`);
    };
 
    return (
@@ -32,6 +31,7 @@ export const CustomPagination = () => {
             activeLinkClass={style.activeLink}
             hideDisabled={false}
             hideNavigation={false}
+            hideFirstLastPages={true}
          />
       </div>
    )

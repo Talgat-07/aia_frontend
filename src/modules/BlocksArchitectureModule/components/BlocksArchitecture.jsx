@@ -4,6 +4,7 @@ import { MoreProjects } from 'UI/MoreProjects/MoreProjects.jsx';
 import { CustomFilters } from 'UI/CustomFilters/CustomFilters/CustomFilters.jsx';
 import { Container } from 'UI/Container/Container.jsx';
 import { CustomPagination } from 'UI/CustomPagination/CustomPagination.jsx';
+import { path } from 'utils/constants/constants.js';
 
 export const BlocksArchitecture = () => {
 
@@ -14,10 +15,10 @@ export const BlocksArchitecture = () => {
       subtitle: 'subtitle',
       text: 'text',
       buttons: [
-         { text: 'Реализованные проекты'},
-         { text: 'Архитектурное проектирование'},
-         { text: 'Дизайн общественных пространств'},
-         { text: 'Дизайн квартир'},
+         { text: 'Реализованные проекты', link: path.realizeProjects},
+         { text: 'Архитектурное проектирование', link: path.architectureProjects},
+         { text: 'Дизайн общественных пространств', link: path.publicSpacesInterior},
+         { text: 'Дизайн квартир', link: path.apartmentDesignPage},
       ],
    }
 

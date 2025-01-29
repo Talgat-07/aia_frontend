@@ -44,6 +44,9 @@ export const CustomFilters = ({item, onFilterChange, visibleFilters}) => {
                   </div>
                   {isYearOpen && (
                      <div className={style.dropdownList}>
+                        <div className={style.dropdownItem} onClick={() => yearSelect('')}>
+                           Все
+                        </div>
                         {item.years.map((y) => (
                            <div className={style.dropdownItem} key={y}
                                 onClick={() => yearSelect(y)}>
@@ -63,6 +66,9 @@ export const CustomFilters = ({item, onFilterChange, visibleFilters}) => {
                   </div>
                   {isFloorOpen && (
                      <div className={style.dropdownList}>
+                        <div className={style.dropdownItem} onClick={() => floorSelect('')}>
+                           Все
+                        </div>
                         {item.floors.map((f) => (
                            <div className={style.dropdownItem} key={f}
                                 onClick={() => floorSelect(f)}>
@@ -79,24 +85,30 @@ export const CustomFilters = ({item, onFilterChange, visibleFilters}) => {
             <div className={style.sliderContainer}>
                <div className={style.label}>Площадь:</div>
                <div className={style.inline}>
-                  <div className={style.staticHandle}></div> {/* Статичный прямоугольник */}
-                  <input
-                  type="range"
-                  className={style.slider}
-                  min="0"
-                  max="900"
-                  value={area}
-                  onChange={areaChange}
-                  style={{ '--progress': `${progress}%` }}
-                  />
+                  <div className={style.staticHandle}></div>
+                     <input
+                     type="range"
+                     className={style.slider}
+                     min="0"
+                     max="900"
+                     value={area}
+                     onChange={areaChange}
+                     style={{
+                        '--progress': `${progress}%`,
+                        '--thumb-offset': `0px`
+                     }}
+
+                     />
                   <div className={style.scale}>
                      {[...Array(10)].map((_, i) => (
                         <div key={i} className={style.scaleValue}>{i * 100}</div>
                      ))}
+                     <div className={style.scaleValue}>м²</div>
                   </div>
                </div>
             </div>
          )}
+
       </div>
    )
 }
