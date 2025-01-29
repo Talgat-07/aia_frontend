@@ -36,3 +36,4 @@ export const CustomButton = ({ text, onClick, buttonStyles, to }) => {
       </button>
    );
 };
+

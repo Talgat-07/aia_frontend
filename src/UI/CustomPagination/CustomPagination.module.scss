@@ -1,0 +1,65 @@
+.paginationContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin-bottom: 100px;
+
+  ul {
+    display: flex;
+    gap: 12px;
+  }
+
+  .pageItem {
+    border: 1px solid var(--main-color);
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    .pageItem:hover {
+      background-color: var(--hover-effect);
+    }
+
+    .pageItem:first-of-type, .page-item:last-of-type {
+      width: 48px; /* Для стрелок */
+    }
+
+    .pageItem.disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+  }
+
+  .pageLink {
+    text-decoration: none;
+    color: var(--gray-first);
+  }
+
+  .active {
+    background-color: var(--main-color);
+    color: white;
+    font-weight: bold;
+    border: 1px solid var(--main-color);
+  }
+
+  .activeLink {
+    color: white;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+

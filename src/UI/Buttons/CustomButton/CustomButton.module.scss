@@ -4,6 +4,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .customButtonBrown {
   @extend .centerDisplay;
   padding: 12px 32px;
@@ -15,18 +16,14 @@
 
 
 .customButtonAdaptive {
+  @extend .centerDisplay;
   height: 50px;
-  display: block;
-  position: relative;
   padding: 12px 32px;
   border: 2px solid var(--main-color);
   text-align: center;
   background-color: transparent;
-  overflow: hidden;
-  color: black;
-  transition: color 0.3s ease;
-
 }
+
 .customButtonAdaptive::before {
    content: "";
    position: absolute;
@@ -37,43 +34,34 @@
    background-color: var(--black-main-color);
    transform: translate(-50%, -50%);
    transition: 0.7s ease;
- }
+}
 
 .customButtonAdaptive:hover::before{
   width: 100%;
   z-index: -1;
-
 }
+
 .customButtonAdaptive:hover{
   transition: 0.3s ease;
   color: white;
   z-index: 1;
 }
 
-
 .languageButton {
-  background-color: var(--black-main-color);
-  display: flex;
-  width: 100px;
-  justify-content: center;
-  align-items: center;
+  @extend .centerDisplay;
+  width: 98px;
   border: 1px solid var(--gray-fourth);
   padding: 8px;
-  cursor: pointer;
+  text-align: center;
   transition: all 0.3s ease;
-  p{
-    color: var(--gray-fourth);
+  background-color: transparent;
+  color: var(--gray-fourth);
 
-  }
-}
-.languageButtonActive {
-  @extend .languageButton;
-  transition: 0.5s ease;
-  color: #FFFFFF;
-  border: 1px solid var(--main-color);
-  p{
-    color: white;
+  &:active {
+    @extend .languageButton;
     transition: 0.5s ease;
+    color: #FFFFFF;
+    border: 1px solid var(--main-color);
   }
 }
 

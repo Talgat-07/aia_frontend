@@ -9,6 +9,7 @@ import { useModal } from 'utils/hooks/useModal.js';
 export const BlockTitle = ({ config = {} }) => {
    const {isOpen, openModal, closeModal} = useModal();
 
+
    const {
       heading = "Архитектурная студия АЙА",
       subheading = "Подзаголовок",

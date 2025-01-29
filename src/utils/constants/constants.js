@@ -70,6 +70,11 @@ export const NavLinks = [
         ],
     },
     {
+        title: 'Карточка проекта',
+        path: path.projectCard,
+        children: null,
+    },
+    {
         title: 'Стоимость и этапы строительства',
         path: path.costAndStages,
         children: null,
