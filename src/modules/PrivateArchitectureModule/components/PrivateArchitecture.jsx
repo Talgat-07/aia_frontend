@@ -87,7 +87,7 @@ export const PrivateArchitecture = () => {
       {
          img: img,
          title: '2021 - 2 этаж',
-         text: 'Площадь: 200 м²',
+         text: 'проверка',
          year: 2021,
          floor: 2,
          area: 200,
@@ -103,7 +103,7 @@ export const PrivateArchitecture = () => {
       {
          img: img,
          title: '2020 - 1 этаж',
-         text: 'Площадь: 100 м²',
+         text: 'проверка',
          year: 2020,
          floor: 1,
          area: 100,
@@ -119,7 +119,7 @@ export const PrivateArchitecture = () => {
       {
          img: img,
          title: '2022 - 3 этаж',
-         text: 'Площадь: 300 м²',
+         text: 'проверка',
          year: 2022,
          floor: 3,
          area: 300,

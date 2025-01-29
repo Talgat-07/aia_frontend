@@ -1,31 +1,29 @@
 import Pagination from 'react-js-pagination';
-import {useState} from 'react';
 import style from './CustomPagination.module.scss'
 import {ArrowPrev} from 'assets/icons/ArrowPrev.jsx';
 import {ArrowNext} from 'assets/icons/ArrowNext.jsx';
 
 
-export const CustomPagination = () => {
-
-   const [activePage, setActivePage] = useState(1);
-
-   const handlePageChange = (pageNumber) => {
-      setActivePage(pageNumber);
-   };
+export const CustomPagination = ({ activePage,
+                                    // itemsPerPage, totalItems,
+                                    onChange }) => {
 
    return (
       <div className={style.paginationContainer}>
+
          <Pagination
             activePage={activePage}
-            itemsCountPerPage={10}
+            // itemsCountPerPage={itemsPerPage}
+            // totalItemsCount={totalItems}
+            itemsCountPerPage={9}
             totalItemsCount={90}
             pageRangeDisplayed={3}
-            onChange={handlePageChange}
+            onChange={onChange}
             itemClass={style.pageItem}
             linkClass={style.pageLink}
 
-            prevPageText={<ArrowPrev/>}
-            nextPageText={<ArrowNext/>}
+            prevPageText={<ArrowPrev />}
+            nextPageText={<ArrowNext />}
 
             activeClass={style.active}
             activeLinkClass={style.activeLink}
