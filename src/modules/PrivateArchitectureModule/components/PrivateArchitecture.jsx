@@ -1,26 +1,14 @@
-import {useState} from 'react';
+import {useState, useMemo} from 'react';
 import { CustomGalleryBlock } from 'UI/CustomGalleryBlock/CustomGalleryBlock.jsx';
-import { MoreProjects } from 'UI/MoreProjects/MoreProjects.jsx';
 import { CustomFilters } from 'UI/CustomFilters/CustomFilters/CustomFilters.jsx';
 import { Container } from 'UI/Container/Container.jsx';
 import { CustomPagination } from 'UI/CustomPagination/CustomPagination.jsx';
-import { path } from 'utils/constants/constants.js';
 
 export const PrivateArchitecture = () => {
 
    const img = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmCy16nhIbV3pI1qLYHMJKwbH2458oiC9EmA&s'
 
-   const moreProjectsData = {
-      image: img,
-      subtitle: 'subtitle',
-      text: 'text',
-      buttons: [
-         { text: 'Реализованные проекты', link: path.realizeProjects},
-         { text: 'Архитектурное проектирование', link: path.architectureProjects},
-         { text: 'Дизайн общественных пространств', link: path.publicSpacesInterior},
-         { text: 'Дизайн квартир', link: path.apartmentDesignPage},
-      ],
-   }
+
 
    const customFiltersItem = {
       years: [2020, 2021, 2022],
@@ -87,7 +75,126 @@ export const PrivateArchitecture = () => {
       {
          img: img,
          title: '2021 - 2 этаж',
-         text: 'Площадь: 200 м²',
+         text: 'Площадььь: 200 м²',
+         year: 2021,
+         floor: 2,
+         area: 200,
+      },{
+         img: img,
+         title: '2021 - 2 этаж',
+         text: 'Площадььь: 200 м²',
+         year: 2021,
+         floor: 2,
+         area: 200,
+      },{
+         img: img,
+         title: '2021 - 2 этаж',
+         text: 'Площадььь: 200 м²',
+         year: 2021,
+         floor: 2,
+         area: 200,
+      },{
+         img: img,
+         title: '2021 - 2 этаж',
+         text: 'Площадььь: 200 м²',
+         year: 2021,
+         floor: 2,
+         area: 200,
+      },{
+         img: img,
+         title: '2021 - 2 этаж',
+         text: 'Площадььь: 200 м²',
+         year: 2021,
+         floor: 2,
+         area: 200,
+      },{
+         img: img,
+         title: '2021 - 2 этаж',
+         text: 'Площадььь: 200 м²',
+         year: 2021,
+         floor: 2,
+         area: 200,
+      },{
+         img: img,
+         title: '2021 - 2 этаж',
+         text: 'Площадььь: 200 м²',
+         year: 2021,
+         floor: 2,
+         area: 200,
+      },{
+         img: img,
+         title: '2021 - 2 этаж',
+         text: 'Площадььь: 200 м²',
+         year: 2021,
+         floor: 2,
+         area: 200,
+      },{
+         img: img,
+         title: '2021 - 2 этаж',
+         text: 'Площадььь: 200 м²',
+         year: 2021,
+         floor: 2,
+         area: 200,
+      },{
+         img: img,
+         title: '2021 - 2 этаж',
+         text: 'Площадььь: 200 м²',
+         year: 2021,
+         floor: 2,
+         area: 200,
+      },{
+         img: img,
+         title: '2021 - 2 этаж',
+         text: 'Площадььь: 200 м²',
+         year: 2021,
+         floor: 2,
+         area: 200,
+      },{
+         img: img,
+         title: '2021 - 2 этаж',
+         text: 'Площадььь: 200 м²',
+         year: 2021,
+         floor: 2,
+         area: 200,
+      },{
+         img: img,
+         title: '2021 - 2 этаж',
+         text: 'Площадььь: 200 м²',
+         year: 2021,
+         floor: 2,
+         area: 200,
+      },{
+         img: img,
+         title: '2021 - 2 этаж',
+         text: 'Площадььь: 200 м²',
+         year: 2021,
+         floor: 2,
+         area: 200,
+      },{
+         img: img,
+         title: '2021 - 2 этаж',
+         text: 'Площадььь: 200 м²',
+         year: 2021,
+         floor: 2,
+         area: 200,
+      },{
+         img: img,
+         title: '2021 - 2 этаж',
+         text: 'Площадььь: 200 м²',
+         year: 2021,
+         floor: 2,
+         area: 200,
+      },{
+         img: img,
+         title: '2021 - 2 этаж',
+         text: 'Площадььь: 200 м²',
+         year: 2021,
+         floor: 2,
+         area: 200,
+      },{
+         img: img,
+         title: '2021 - 2 этаж',
+         text: 'Площадььь: 200 м²',
          year: 2021,
          floor: 2,
          area: 200,
@@ -119,49 +226,55 @@ export const PrivateArchitecture = () => {
       {
          img: img,
          title: '2022 - 3 этаж',
-         text: 'Площадь: 300 м²',
+         text: 'Площадь: 30000 м²',
          year: 2022,
          floor: 3,
          area: 300,
       },
    ];
 
-   const [filteredCards, setFilteredCards] = useState(cardsData);
+
+   const [filters, setFilters] = useState({ year: "", floor: "", area: 50 });
    const [activePage, setActivePage] = useState(1);
    const itemsPerPage = 9;
 
-   const handleFilterChange = (filters) => {
-      const { year, floor, area } = filters;
-      const filtered = cardsData.filter(
-         (card) =>
-            (year === '' || card.year === year) &&
-            (floor === '' || card.floor === floor) &&
-            card.area <= area
-      );
-      setFilteredCards(filtered);
+   const handleFilterChange = (newFilters) => {
+      setFilters((prevFilters) => ({ ...prevFilters, ...newFilters }));
       setActivePage(1);
    };
 
-   const indexOfLastItem = activePage * itemsPerPage;
-   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-   const currentCards = filteredCards.slice(indexOfFirstItem, indexOfLastItem);
+   const filteredCards = useMemo(() => {
+      return cardsData.filter(
+         (card) =>
+            (filters.year === '' || card.year === filters.year) &&
+            (filters.floor === '' || card.floor === filters.floor) &&
+            card.area >= filters.area
+      );
+   }, [filters, cardsData]);
 
-   const handlePageChange = (pageNumber) => {
-      setActivePage(pageNumber);
-   };
+
+
+   const currentCards = useMemo(() => {
+      const indexOfLastItem = activePage * itemsPerPage;
+      const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+      return filteredCards.slice(indexOfFirstItem, indexOfLastItem);
+   }, [filteredCards, activePage]);
 
    return (
       <Container>
-         <CustomFilters visibleFilters={['year', 'floor', 'area']} item={customFiltersItem} onFilterChange={handleFilterChange}/>
+         <CustomFilters
+            visibleFilters={['year', 'floor', 'area']}
+            item={customFiltersItem}
+            onFilterChange={handleFilterChange}
+         />
+
          <CustomGalleryBlock cardsData={currentCards} />
          <CustomPagination
             activePage={activePage}
             itemsCountPerPage={itemsPerPage}
             totalItemsCount={filteredCards.length}
-            onChange={handlePageChange}
+            onChange={setActivePage}
          />
-         <MoreProjects config={moreProjectsData}/>
       </Container>
    );
 };
-

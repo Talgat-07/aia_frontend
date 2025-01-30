@@ -2,8 +2,8 @@ import { BreadCrumbs, Typography, CustomButton } from 'UI/index.js';
 import { useLocation } from 'react-router-dom';
 import { BreadCrumbData } from 'utils/constants/constants.js';
 import myImage from 'assets/img/mainBanner.png';
-import { WhatsAppIconGreen } from 'assets/icons/WhatsAppIconGreen.jsx';
 import styles from './HeroBlock.module.scss';
+import {BackToTop} from "modules/HomeModules/index.js";
 import { useModal } from 'utils/hooks/useModal.js';
 import { RegModal } from 'modules/User/Components/RegModal/RegModal.jsx';
 
@@ -87,15 +87,8 @@ export const HeroBlock = ({ config = {} }) => {
          </div>
 
          {showWhatsAppIcon && (
-            <div className={styles.whatsapp_icon}>
-               <a
-                  target={"_blank"}
-                  href="https://wa.me/+996777123456"
-                  rel="noopener noreferrer"
-               >
-                  <WhatsAppIconGreen />
-               </a>
-            </div>
+             <BackToTop/>
+
          )}
          {isOpen? (<RegModal closeModal={closeModal} isOpen={isOpen}/>) : null}
 

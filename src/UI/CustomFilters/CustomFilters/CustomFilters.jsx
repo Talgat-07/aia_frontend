@@ -1,82 +1,43 @@
 import { useState } from 'react';
-import style from './CustomFilters.module.scss'
-import { ArrowClose } from 'assets/icons/ArrowClose.jsx';
-import { ArrowOpen } from 'assets/icons/ArrowOpen.jsx';
+import style from './CustomFilters.module.scss';
+import Select from 'react-select';
 
+export const CustomFilters = ({ item, onFilterChange, visibleFilters }) => {
+   const [filters, setFilters] = useState({ year: '', floor: '', area: 900 });
 
-export const CustomFilters = ({item, onFilterChange, visibleFilters}) => {
+   const handleChange = (name, value) => {
+      const newFilters = { ...filters, [name]: value };
+      setFilters(newFilters);
+      onFilterChange(newFilters);
+   };
 
-   const [year, setYear] = useState('')
-   const [floor, setFloor] = useState('')
-   const [area, setArea] = useState(50)
-   const [isYearOpen, setIsYearOpen] = useState(false)
-   const [isFloorOpen, setIsFloorOpen] = useState(false)
-
-   const yearSelect = (value) => {
-      setYear(value)
-      setIsYearOpen(false)
-      onFilterChange({year: value, floor, area})
-   }
-
-   const floorSelect = (value) => {
-      setFloor(value)
-      setIsFloorOpen(false)
-      onFilterChange({ year, floor: value, area });
-   }
-
-   const areaChange = (event) => {
-      const value = Number(event.target.value);
-      setArea(value)
-      onFilterChange({ year, floor, area: value});
-   }
-
-   const progress = ((area - 0) / (900 - 0)) * 100;
-
+   const yearOptions = [{ value: '', label: 'Все' }, ...item.years.map((y) => ({ value: y, label: y }))];
+   const floorOptions = [{ value: '', label: 'Все' }, ...item.floors.map((f) => ({ value: f, label: f }))];
 
    return (
       <div className={style.filterContainer}>
          <div className={style.dropdownLine}>
             {visibleFilters.includes('year') && (
                <div className={style.customDropdown}>
-                  <div className={style.dropdownHeader} onClick={() => setIsYearOpen(!isYearOpen)}>
-                     {year || 'Год'}
-                     <span className={style.arrow}>{isYearOpen ? <ArrowClose/> : <ArrowOpen/>}</span>
-                  </div>
-                  {isYearOpen && (
-                     <div className={style.dropdownList}>
-                        <div className={style.dropdownItem} onClick={() => yearSelect('')}>
-                           Все
-                        </div>
-                        {item.years.map((y) => (
-                           <div className={style.dropdownItem} key={y}
-                                onClick={() => yearSelect(y)}>
-                              {y}
-                           </div>
-                        ))}
-                     </div>
-                  )}
+                  <Select
+                     value={yearOptions.find((opt) => opt.value === filters.year)}
+                     onChange={(option) => handleChange('year', option.value)}
+                     options={yearOptions}
+                     placeholder="Год"
+                     classNamePrefix="react-select"
+                  />
                </div>
             )}
 
             {visibleFilters.includes('floor') && (
                <div className={style.customDropdown}>
-                  <div className={style.dropdownHeader} onClick={() => setIsFloorOpen(!isFloorOpen)}>
-                     {floor || 'Этаж'}
-                     <span className={style.arrow}>{isFloorOpen ? <ArrowClose/> : <ArrowOpen/>}</span>
-                  </div>
-                  {isFloorOpen && (
-                     <div className={style.dropdownList}>
-                        <div className={style.dropdownItem} onClick={() => floorSelect('')}>
-                           Все
-                        </div>
-                        {item.floors.map((f) => (
-                           <div className={style.dropdownItem} key={f}
-                                onClick={() => floorSelect(f)}>
-                              {f}
-                           </div>
-                        ))}
-                     </div>
-                  )}
+                  <Select
+                     value={floorOptions.find((opt) => opt.value === filters.floor)}
+                     onChange={(option) => handleChange('floor', option.value)}
+                     options={floorOptions}
+                     placeholder="Этаж"
+                     classNamePrefix="react-select"
+                  />
                </div>
             )}
          </div>
@@ -85,30 +46,29 @@ export const CustomFilters = ({item, onFilterChange, visibleFilters}) => {
             <div className={style.sliderContainer}>
                <div className={style.label}>Площадь:</div>
                <div className={style.inline}>
-                  <div className={style.staticHandle}></div>
-                     <input
+                  <input
                      type="range"
                      className={style.slider}
                      min="0"
                      max="900"
-                     value={area}
-                     onChange={areaChange}
+                     value={filters.area}
+                     onChange={(e) => handleChange('area', Number(e.target.value))}
                      style={{
-                        '--progress': `${progress}%`,
-                        '--thumb-offset': `0px`
+                        '--progress': `${((filters.area - 0) / 900) * 100}%`,
+                        '--thumb-offset': `0px`,
                      }}
-
-                     />
+                  />
                   <div className={style.scale}>
                      {[...Array(10)].map((_, i) => (
-                        <div key={i} className={style.scaleValue}>{i * 100}</div>
+                        <div key={i} className={style.scaleValue}>
+                           <div>{i * 100}</div>
+                        </div>
                      ))}
                      <div className={style.scaleValue}>м²</div>
                   </div>
                </div>
             </div>
          )}
-
       </div>
-   )
-}
+   );
+};

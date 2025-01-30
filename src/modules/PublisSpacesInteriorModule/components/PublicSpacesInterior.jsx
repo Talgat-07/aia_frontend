@@ -1,7 +1,7 @@
 import { SimpleFilter } from 'UI/CustomFilters/SimpleFilter/SimpleFilter.jsx';
 import { Container } from 'UI/Container/Container.jsx';
 import { CustomGalleryBlock } from 'UI/CustomGalleryBlock/CustomGalleryBlock.jsx';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Heading } from 'UI/heading/Heading.jsx';
 import { CustomButton } from 'UI/buttons/CustomButton/CustomButton.jsx';
 import style from './PublicSpacesInterior.module.scss'
@@ -11,7 +11,12 @@ import { path } from 'utils/constants/constants.js';
 
 export const PublicSpacesInterior = () => {
 
-   const [filteredCards, setFilteredCards] = useState([])
+   const [filteredCards, setFilteredCards] = useState(() =>
+      groupedData.map((group) => ({
+         year: group.year,
+         cards: group.cards,
+      }))
+   );
    const [selectedFilters, setSelectedFilters] = useState('Все')
    const [visibleCards, setVisibleCards] = useState(6)
    const [isAllVisible, setIsAllVisible] = useState(false);
@@ -101,13 +106,7 @@ export const PublicSpacesInterior = () => {
       }
    };
 
-   useEffect(() => {
-      const allCards = groupedData.map((group) => ({
-         year: group.year,
-         cards: group.cards,
-      }));
-      setFilteredCards(allCards);
-   }, []);
+
 
    return (
       <Container>
