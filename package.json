@@ -20,7 +20,9 @@
     "react-js-pagination": "^3.0.3",
     "react-phone-input-2": "^2.15.1",
     "react-router-dom": "^6.28.0",
+    "react-select": "^5.10.0",
     "swiper": "^8.4.5",
+    "world-countries": "^5.0.0",
     "yup": "^1.6.1"
   },
   "devDependencies": {
