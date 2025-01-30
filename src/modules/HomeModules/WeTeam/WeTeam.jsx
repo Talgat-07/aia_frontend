@@ -1,6 +1,6 @@
 import {  Navigation, EffectCoverflow } from 'swiper';
 import CardImage from 'assets/img/CardImage.png'
-import styles from "./OurTeam.module.scss"
+import styles from "./WeTeam.module.scss"
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/navigation';
@@ -12,23 +12,23 @@ import {ArrowLeft, ArrowRight} from "assets/index.js";
 
 const employees = [
     {
-        title: 'Имя Фамилия',
+        title: 'Имя Фамилия1',
         description: 'должность',
         image: CardImage,
     },
     {
-        title: 'Имя Фамилия',
+        title: 'Имя Фамилия2',
         description: 'должность',
         image: CardImage,
     },
     {
-        title: 'Имя Фамилия',
+        title: 'Имя Фамилия3',
         description: 'должность',
         image: CardImage,
     }
 ];
 
-export const OurTeam = () => {
+export const WeTeam = () => {
 
     const prevRef = useRef(null);
     const nextRef = useRef(null);
@@ -49,7 +49,7 @@ export const OurTeam = () => {
             swiperRef.current.navigation.init();
             swiperRef.current.navigation.update();
         }
-    }, [employees]);
+    }, []);
 
     const handleCardClick = (index) => {
         if (!swiperRef.current) return;
@@ -108,7 +108,7 @@ export const OurTeam = () => {
 
                 </div>
                 <div className={styles.buttongo}>
-                    <CustomButton text={"Вся команда"} buttonStyles={"customButtonAdaptive"}/>
+                    <CustomButton text={"Вся команда"} buttonStyles={"customButtonAdaptive"}  to="/about-us#ourteam"/>
 
                 </div>
 

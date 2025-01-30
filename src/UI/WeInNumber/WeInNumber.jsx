@@ -1,12 +1,13 @@
 import {Typography}  from "UI/Typography/Typography.jsx"
 import { Heading} from "UI/Heading/Heading.jsx";
 import { NumberAnimation} from "./Components/NumberAnimation/NumberAnimation.jsx";
-// fix need modal import { useModal } from "utils/hooks/useModal.js"
+import { useModal } from "utils/hooks/useModal.js"
 import classes from "./WeInNumber.module.scss"
 import {CustomButton} from "UI/Buttons/CustomButton/CustomButton.jsx";
+import { RegModal } from 'modules/User/Components/RegModal/RegModal.jsx';
 
 export const WeInNumber = () => {
-    // fix need modal   const { isOpen, openModal, closeModal } = useModal();
+     const { isOpen, openModal, closeModal } = useModal();
     const data = {
         slogan: "Наш слоган",
         description: "Lorem ipsum dolor sit amet consectetur. Mi tristique risus. Sed adipiscing libero enim justo.",
@@ -53,13 +54,13 @@ export const WeInNumber = () => {
                         </Typography>
                     </div>
 
-                    <CustomButton text="Оставить заявку" buttonStyles="customButtonAdaptive" />
+                    <CustomButton text="Оставить заявку" buttonStyles="customButtonAdaptive" onClick={openModal} />
 
                 </div>
 
             </div>
+            {isOpen? (<RegModal closeModal={closeModal} isOpen={isOpen}/>) : null}
 
-            { /* fix need modal {isOpen &&()}*/}
             <hr/>
         </div>
 

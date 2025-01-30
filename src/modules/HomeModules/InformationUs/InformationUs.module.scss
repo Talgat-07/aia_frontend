@@ -31,3 +31,21 @@
     margin-top: 70px;
   }
 }
+
+@media screen and (max-width: 768px){
+  .Information{
+    &_Left {
+      height: 30%;
+      width: 80%;
+
+      &Information {
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        margin-bottom: 25px;
+      }
+    }
+  }
+
+}

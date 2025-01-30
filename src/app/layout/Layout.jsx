@@ -5,18 +5,20 @@ import { Loader } from 'UI/index.js';
 import { ContactForm } from 'UI/ContactForm/ContactForm';
 import { ScrollToTop } from 'UI/ScrollToTop/ScrollToTop';
 import { Header } from 'modules/headerModule/Components';
+import {BackToTop} from "modules/HomeModules/index.js";
 
-export const Layout = () => {
+export const Layout = ({ showFooter = true, showContactForm = true }) => {
    return (
       <>
          <ScrollToTop />
          <Header />
-
          <Suspense fallback={<Loader />}>
             <Outlet />
          </Suspense>
-         <ContactForm />
-         <Footer />
+          {/*<BackToTop />*/}
+
+          {showContactForm && <ContactForm />}
+         {showFooter && <Footer />}
       </>
    );
 };

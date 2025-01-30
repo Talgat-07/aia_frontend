@@ -1,0 +1,32 @@
+.container{
+  padding: 30px 100px;
+}
+.content{
+  display: flex;
+  gap: 30px;
+  padding: 0 0 40px 0;
+  &_nav{
+    width: 380px;
+  }
+  &_info{
+    width: 307px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+  }
+
+
+}
+.mapContainer {
+  width: 100%;
+  max-width: 300px;
+  height: 400px;
+  margin-top: 20px;
+  border: 1px solid #a3a3a3;
+  map{
+    width: 1240px;
+    height: 600px;
+
+  }
+}

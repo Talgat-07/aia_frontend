@@ -12,14 +12,12 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    width: 100%;
     &.noImage {
       flex-direction: column;
       text-align: center;
     }
     .imageContainer {
-      flex: 1;
-      margin-right: 20px;
-
       .custom_image {
         width: 100%;
         max-width: 610px;
@@ -31,15 +29,28 @@
       flex: 1;
       display: flex;
       flex-direction: column;
+      width: 80% !important;
+      height: 100%;
+      margin-left: 20px;
       &.noImageText {
+        gap: 20px;
+
+        width: 100% !important;
+        height: 200px;
         margin: 0 auto;
         flex-direction: row;
       }
 
       .text {
-        margin: 25px 0;
+        width: 100%;
+        margin: 20px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
         &.noImageTextHead{
-          width: 700px;
+          width: 1200px;
+          margin: 0;
           text-align: start;
         }
       }
@@ -48,17 +59,24 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
-  width: 510px;
-  margin-left: 40px;
-  height: auto; 
+  width: 100%;
+  height: auto;
+        &_noImage{
+          width: 75%;
+
+        }
+
+
 
   button {
+    width: 100%;
     padding: 10px;
     background-color: #B3895E;
     color: white;
     border: none;
     cursor: pointer;
     transition: color 0.3s ease;
+
 
     &:hover {
       color: #262626;

@@ -4,7 +4,6 @@ import {
    TelegramIconMain,
    YoutubeIconMain,
    WhatsappIconMain,
-   LoopInput,
 } from 'assets/index.js';
 
 export const SocialLinks = () => {

@@ -1,167 +1,219 @@
+@use '/src/app/styles/mixins.scss' as mixins;
+
 .text {
-  margin: 0;
-  line-height: normal;
+   margin: 0;
+   line-height: normal;
 }
 
 @font-face {
-  font-family: "Noto Sans";
-  src: local("Noto Sans"),
-  url("../../app/styles/fonts/NotoSans-VariableFont_wdth,wght.ttf") ;
-  font-weight: 100 900;
+   font-family: 'Noto Sans';
+   src: local('Noto Sans'),
+      url('../../app/styles/fonts/NotoSans-VariableFont_wdth,wght.ttf');
+   font-weight: 100 900;
 }
 
+// Desktop
 
 .h1 {
-  font-size: 48px;
+   font-size: 48px;
 }
 
 .h2 {
-  font-size: 40px;
+   font-size: 40px;
 }
 
 .bodyXl {
-  font-size: 32px;
+   font-size: 32px;
 }
 
 .bodyL {
-  font-size: 24px;
-
+   font-size: 24px;
 }
 
 .bodyM {
-  font-size: 20px;
+   font-size: 20px;
 }
 
-
-.bodyXS{
-  font-size: 18px;
-
+.bodyXS {
+   font-size: 18px;
 }
 .bodyS {
-  font-size: 16px;
+   font-size: 16px;
 }
 
+// Tablet
+
+@include mixins.Tablet {
+   .h1 {
+      font-size: 32px !important;
+   }
+
+   .h2 {
+      font-size: 28px !important;
+   }
+
+   .bodyXl {
+      font-size: 22px !important;
+   }
+
+   .bodyL {
+      font-size: 20px !important;
+   }
+
+   .bodyM {
+      font-size: 18px !important;
+   }
+
+   .bodyXS {
+      font-size: 16px !important;
+   }
+   .bodyS {
+      font-size: 16px !important;
+   }
+}
+
+// Mobile
+@include mixins.Mobile {
+   .h1 {
+      font-size: 24px !important;
+   }
+
+   .h2 {
+      font-size: 22px !important;
+   }
+
+   .bodyXl {
+      font-size: 20px !important;
+   }
+
+   .bodyL {
+      font-size: 18px !important;
+   }
+
+   .bodyM {
+      font-size: 16px !important;
+   }
+
+   .bodyXS {
+      font-size: 14px !important;
+   }
+   .bodyS {
+      font-size: 14px !important;
+   }
+}
 
 //Weight
 .regular {
-  font-weight: 400 !important;
+   font-weight: 400 !important;
 }
-.light{
-  font-weight: 300 !important;
+.light {
+   font-weight: 300 !important;
 }
 .medium {
-  font-weight: 500 !important;
+   font-weight: 500 !important;
 }
 
 .semibold {
-  font-weight: 600 !important;
+   font-weight: 600 !important;
 }
 
 .bold {
-  font-weight: 700 !important;
+   font-weight: 700 !important;
 }
-
-
 
 //LineHeight
 
-.lineL{
-  line-height: 1.4;
+.lineL {
+   line-height: 1.4;
 }
 
-
-.lineXl{
-  line-height: 1.6;
+.lineXl {
+   line-height: 1.6;
 }
-.lineM{
-  line-height: 32px;
+.lineM {
+   line-height: 32px;
 }
 //color
 .white {
-  color: #FFFFFF;
+   color: #ffffff;
 }
-.primary{
-  color: var(--main-color);
+.primary {
+   color: var(--main-color);
 }
 
 .black {
-  color: var(--black-main-color);
+   color: var(--black-main-color);
 }
 
 .gray1 {
-  color: var(--gray-first);
+   color: var(--gray-first);
 }
-.gray2{
-  color: var(--gray-second);
+.gray2 {
+   color: var(--gray-second);
 }
-.gray3{
-  color: var(--gray-third);
+.gray3 {
+   color: var(--gray-third);
 }
-.gray4{
-  color: var(--gray-fourth);
-}
-
-
-@media(max-width: 1100px) {
-  .h1 {
-    font-size: 26px;
-  }
-
-  .h2 {
-    font-size: 24px;
-  }
-
-  .h3 {
-    font-size: 22px;
-  }
-
-  .bodyXL {
-    font-size: 20px;
-  }
-
-  .bodyL {
-    font-size: 18px;
-  }
-
-  .bodyM {
-    font-size: 16px;
-  }
-
-  .bodyS {
-    font-size: 13px;
-  }
-
-
+.gray4 {
+   color: var(--gray-fourth);
 }
 
+@media (max-width: 1100px) {
+   .h1 {
+      font-size: 26px;
+   }
 
-@media(max-width: 480px) {
-  .h1 {
-    font-size: 24px;
-  }
+   .h2 {
+      font-size: 24px;
+   }
 
-  .h2 {
-    font-size: 22px;
-  }
+   .h3 {
+      font-size: 22px;
+   }
 
-  .h3 {
-    font-size: 20px;
-  }
+   .bodyXL {
+      font-size: 20px;
+   }
 
-  .bodyXL {
-    font-size: 18px;
-  }
+   .bodyL {
+      font-size: 18px;
+   }
 
-  .bodyL {
-    font-size: 16px;
-  }
+   .bodyM {
+      font-size: 16px;
+   }
 
-  .bodyM {
-    font-size: 14px;
-  }
+   .bodyS {
+      font-size: 13px;
+   }
+}
 
-  .bodyS {
-    font-size: 12px;
-  }
+@media (max-width: 480px) {
+   .h1 {
+      font-size: 24px;
+   }
 
+   .h2 {
+      font-size: 22px;
+   }
+
+   .h3 {
+      font-size: 20px;
+   }
+
+   .bodyXL {
+      font-size: 18px;
+   }
+
+   .bodyL {
+      font-size: 16px;
+   }
+
+   .bodyM {
+      font-size: 14px;
+   }
+
+   .bodyS {
+      font-size: 12px;
+   }
 }

@@ -1,34 +1,30 @@
 import { useState } from "react";
 import styles from "./ContactForm.module.scss";
 import { CustomButton, Typography } from "..";
-import {SubmitApprovedIcon} from "assets/icons/SubmitApprovedIcon.jsx";
-import {useForm} from "react-hook-form";
-import {yupResolver} from "@hookform/resolvers/yup";
-import {schema} from "utils/helpers/schemaYup.js";
+import { SubmitApprovedIcon } from "assets/icons/SubmitApprovedIcon.jsx";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { schema } from "utils/helpers/schemaYup.js";
 import PhoneInput from "react-phone-input-2";
 
 export const ContactForm = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [phone, setPhone] = useState('');
   const [isFocused, setIsFocused] = useState(false);
   const [isFilled, setIsFilled] = useState(false);
 
   const handleFocus = () => setIsFocused(true);
   const handleBlur = (e) => {
     setIsFocused(false);
-    setIsFilled(!!e.target.value); // Проверяем, есть ли значение в поле
+    setIsFilled(!!e.target.value);
   };
-
-  const handlePhoneChange = (value) => {
-    setPhone(value);
-  };
-
 
   const {
     register,
     handleSubmit,
     reset,
-    formState: { errors }
+    setValue,
+    trigger,
+    formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
   });
@@ -39,9 +35,13 @@ export const ContactForm = () => {
     setIsSubmitted(true);
   };
 
-
   const handleSubmitForm = () => {
-    setIsSubmitted(false)
+    setIsSubmitted(false);
+  };
+
+  const handlePhoneChange = (value) => {
+    setValue("phone", value);
+    trigger("phone");
   };
 
   return (
@@ -49,11 +49,11 @@ export const ContactForm = () => {
         <div className={styles.modalBox}>
           {isSubmitted ? (
               <div className={styles.successMessage}>
-                <SubmitApprovedIcon/>
+                <SubmitApprovedIcon />
                 <div className={styles.successContent}>
                   <Typography variant="h2" weight="semibold">
                     Спасибо за доверие!
-                    <br/>
+                    <br />
                     Ваша заявка отправлена
                   </Typography>
                   <Typography variant="bodyXS" weight="regular">
@@ -83,7 +83,7 @@ export const ContactForm = () => {
                       <div className={styles.FormArea}>
                         <input
                             id="name"
-                            {...register('username', {required: 'Введите ФИО'})}
+                            {...register("username", { required: "Введите ФИО" })}
                             type="text"
                             className={`${styles.input} ${errors.name && styles.error}`}
                             placeholder=" "
@@ -96,7 +96,7 @@ export const ContactForm = () => {
                       <div className={styles.FormArea}>
                         <select
                             id="country"
-                            {...register('country', {required: 'Выберите страну'})}
+                            {...register("country", { required: "Выберите страну" })}
                             className={`${styles.select} ${errors.country && styles.error}`}
                         >
                           <option value="" disabled>
@@ -106,18 +106,14 @@ export const ContactForm = () => {
                           <option value="Казахстан">Казахстан</option>
                           <option value="Киргизия">Киргизия</option>
                         </select>
-                        {errors.country && (
-                            <p className={styles.errorMessage}>{errors.country.message}</p>
-                        )}
                       </div>
 
                       <div className={styles.FormArea}>
                         <PhoneInput
-                            value={phone || ''}
+                            value=""
                             onChange={handlePhoneChange}
                             country={null}
                             id="phone"
-                            {...register('phone', {required: 'Введите телефон'})}
                             type="tel"
                             className={`${styles.input} ${errors.phone && styles.error} ${styles.inputphone}`}
                             placeholder=" "
@@ -127,18 +123,17 @@ export const ContactForm = () => {
                         <label
                             htmlFor="phone"
                             className={`${styles.labelline} ${styles.labelphone} ${
-                                (isFocused || isFilled) ? styles.active : ''
+                                isFocused || isFilled ? styles.active : ""
                             }`}
                         >
                           (996) 556 - 123 - 456 <span>*</span>
                         </label>
                       </div>
 
-
                       <div className={styles.FormArea}>
                         <input
                             id="email"
-                            {...register('email', {required: 'Введите email'})}
+                            {...register("email", { required: "Введите email" })}
                             type="email"
                             className={`${styles.input} ${errors.email && styles.error}`}
                             placeholder=" "
@@ -150,13 +145,13 @@ export const ContactForm = () => {
                     </div>
 
                     <div className={styles.modalFormArea}>
-                                        <textarea
-                                            id="question"
-                                            {...register('question')}
-                                            className={styles.textarea}
-                                            placeholder="Ваш запрос"
-                                        />
-                      <CustomButton type="submit" buttonStyles="wideButton" text="Отправить"/>
+                  <textarea
+                      id="question"
+                      {...register("question")}
+                      className={styles.textarea}
+                      placeholder="Ваш вопрос"
+                  />
+                      <CustomButton type="submit" buttonStyles="wideButton" text="Отправить" />
                     </div>
                   </form>
                 </div>
@@ -164,7 +159,5 @@ export const ContactForm = () => {
           )}
         </div>
       </div>
-
-
   );
 };
