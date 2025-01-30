@@ -11,6 +11,16 @@ import countries from "world-countries";
 export const ContactForm = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [countryList, setCountryList] = useState([]);
+  const [isFocused, setIsFocused] = useState(false);
+  const [isFilled, setIsFilled] = useState(false);
+
+  const handleFocus = () => setIsFocused(true);
+  const handleBlur = (e) => {
+    setIsFocused(false);
+    setIsFilled(!!e.target.value);
+  };
+
+
 
   const {
     register,
@@ -68,6 +78,7 @@ export const ContactForm = () => {
               </div>
             </div>
          ) : (
+
             <>
               <div className={styles.modalHeader}>
                 <Typography variant="h2" weight="semibold">
@@ -121,11 +132,19 @@ export const ContactForm = () => {
                          type="tel"
                          className={`${styles.input} ${errors.phone && styles.error} ${styles.inputphone}`}
                          placeholder=" "
+                         onFocus={handleFocus}
+                         onBlur={handleBlur}
                       />
-                      <label htmlFor="phone" className={styles.labelline}>
+                      <label
+                         htmlFor="phone"
+                         className={`${styles.labelline} ${styles.labelphone} ${
+                            isFocused || isFilled ? styles.active : ""
+                         }`}
+                      >
                         (996) 556 - 123 - 456 <span>*</span>
                       </label>
                     </div>
+
 
                     <div className={styles.FormArea}>
                       <input
@@ -142,7 +161,8 @@ export const ContactForm = () => {
                   </div>
 
                   <div className={styles.modalFormArea}>
-                    <textarea id="question" {...register("question")} className={styles.textarea} placeholder="Ваш вопрос" />
+                    <textarea id="question" {...register("question")} className={`${styles.textarea} ${styles.error}`}
+                              placeholder="Ваш вопрос" />
                     <CustomButton type="submit" buttonStyles="wideButton" text="Отправить" />
                   </div>
                 </form>
