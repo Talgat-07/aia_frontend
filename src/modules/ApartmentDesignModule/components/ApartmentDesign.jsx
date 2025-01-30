@@ -7,7 +7,7 @@ export const ApartmentDesign = () => {
    const [showAllByYear, setShowAllByYear] = useState({});
 
    const years = [
-      {
+      { 
          year: '2023',
          cards: [
             {
