@@ -1,9 +1,12 @@
+import { Container } from 'UI/Container/Container.jsx';
+import { PublicSpacesInterior } from 'modules/PublisSpacesInteriorModule/components/PublicSpacesInterior.jsx';
+
 
 export const PublicSpacesInteriorPage = () => {
-    return (
-        <div>
 
-        </div>
-    );
-};
-
+   return (
+      <Container>
+         <PublicSpacesInterior />
+      </Container>
+   )
+}

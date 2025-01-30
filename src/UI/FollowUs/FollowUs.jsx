@@ -1,4 +1,4 @@
-import { Typography } from "UI/Typography/Typography.jsx";
+import { Typography } from "UI/typography/Typography.jsx";
 import classes from "./FollowUs.module.scss";
 import { TelegramIconMain, YoutubeIconMain, InstagramIconMain } from "assets/index.js";
 

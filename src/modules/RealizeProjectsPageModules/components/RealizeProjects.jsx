@@ -160,11 +160,14 @@ export const RealizeProjects = () => {
 
                               </div>
                               {filteredCards.length > 6 && (
-                                 <CustomButton
-                                    onClick={() => toggleShowAll(yearData.year)}
-                                    text={showAll ? 'Скрыть' : 'Показать еще'}
-                                    buttonStyles="customButtonAdaptive"
-                                 />
+                                 <div className={styles.button_content}>
+                                    <CustomButton
+                                       onClick={() => toggleShowAll(yearData.year)}
+                                       text={showAll ? 'Скрыть' : 'Показать еще'}
+                                       buttonStyles="customButtonAdaptive"
+                                    />
+                                 </div>
+
                               )}
                            </div>
                            <hr className={styles.divider} />
