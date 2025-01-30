@@ -5,18 +5,19 @@ import styles from "./WeInNumber.module.scss"
 import { RegModal } from 'modules/User/Components/RegModal/RegModal.jsx';
 
 export const WeInNumber = () => {
-     const { isOpen, openModal, closeModal } = useModal();
-    const data = {
-        slogan: "Наш слоган",
-        description: "Lorem ipsum dolor sit amet consectetur. Mi tristique risus. Sed adipiscing libero enim justo.",
-        stats: [
-            { value: 500000, label: "Реализовано объектов" },
-            { value: 1200, label: "Количество проектов" },
-            { value: 100000, label: "Спроектировано площадей" },
-        ],
-        subtitle: "Подзаголовок",
-        text:"Lorem ipsum dolor sit amet consectetur. Mi tristique risus accumsan morbi. Sed adipiscing libero vel enim justo phasellus a et. Placerat ultricies ultricies rutrum blandit et arcu. Feugiat arcu turpis inmet consectetur. Mi tristique risus accumsan morbi.Lorem ipsum dolor sit amet consectetur. Mi tristique risus accumsan morbi. Sed adipiscing libero vel enim justo phasellus a et. Placerat ultricies ultricies rutrum blandit et arcu. Feugiat arcu turpis inmet consectetur. Mi tristique risus accumsan morbi."
-    };
+   const { isOpen, openModal, closeModal } = useModal();
+   const data = {
+      slogan: 'Наш слоган',
+      description:
+         'Lorem ipsum dolor sit amet consectetur. Mi tristique risus. Sed adipiscing libero enim justo.',
+      stats: [
+         { value: 500000, label: 'Реализовано объектов' },
+         { value: 1200, label: 'Количество проектов' },
+         { value: 100000, label: 'Спроектировано площадей' },
+      ],
+      subtitle: 'Подзаголовок',
+      text: 'Lorem ipsum dolor sit amet consectetur. Mi tristique risus accumsan morbi. Sed adipiscing libero vel enim justo phasellus a et. Placerat ultricies ultricies rutrum blandit et arcu. Feugiat arcu turpis inmet consectetur. Mi tristique risus accumsan morbi.Lorem ipsum dolor sit amet consectetur. Mi tristique risus accumsan morbi. Sed adipiscing libero vel enim justo phasellus a et. Placerat ultricies ultricies rutrum blandit et arcu. Feugiat arcu turpis inmet consectetur. Mi tristique risus accumsan morbi.',
+   };
 
     return (
         <div className={styles.container}>
@@ -52,15 +53,16 @@ export const WeInNumber = () => {
                         </Typography>
                     </div>
 
-                    <CustomButton text="Оставить заявку" buttonStyles="customButtonAdaptive" onClick={openModal} />
-
-                </div>
-
+               <CustomButton
+                  text="Оставить заявку"
+                  buttonStyles="customButtonAdaptive"
+                  onClick={openModal}
+               />
             </div>
-            {isOpen? (<RegModal closeModal={closeModal} isOpen={isOpen}/>) : null}
+         </div>
+         {isOpen ? <RegModal closeModal={closeModal} isOpen={isOpen} /> : null}
 
-            <hr/>
-        </div>
-
-    );
+         <hr />
+      </div>
+   );
 };

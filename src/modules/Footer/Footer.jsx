@@ -9,7 +9,7 @@ import {
 } from 'assets/index.js';
 import { NavLinks,path } from 'utils/constants/constants.js';
 import { Link } from 'react-router-dom';
-import { Typography } from 'UI/typography/Typography.jsx';
+import { Typography } from 'UI/index';
 import Logo from 'assets/img/logo.svg';
 import {useMediaQuery} from "utils/hooks/useMediaQuery.js";
 
