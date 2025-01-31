@@ -17,7 +17,7 @@ export const RegModal = ({ closeModal, isOpen }) => {
    const handleFocus = () => setIsFocused(true);
    const handleBlur = (e) => {
       setIsFocused(false);
-      setIsFilled(!!e.target.value); // Проверяем, есть ли значение в поле
+      setIsFilled(!!e.target.value);
    };
 
    useEffect(() => {

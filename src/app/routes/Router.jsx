@@ -2,7 +2,6 @@
    import { Layout } from '../layout/Layout.jsx';
    import { path} from 'utils/constants/constants.js'
 
-
    import {
       NotFoundPage,
       HomePage,
@@ -125,8 +124,6 @@
                },
             ],
          },
-
-
 
       ],
       {

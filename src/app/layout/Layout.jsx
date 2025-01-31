@@ -14,7 +14,9 @@ export const Layout = ({ showFooter = true, showContactForm = true }) => {
          <Suspense fallback={<Loader />}>
             <Outlet />
          </Suspense>
-         {showContactForm && <ContactForm />}
+          {/*<BackToTop />*/}
+
+          {showContactForm && <ContactForm />}
          {showFooter && <Footer />}
       </>
    );

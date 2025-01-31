@@ -6,7 +6,20 @@ export const CustomButton = ({ text, onClick, buttonStyles, to }) => {
 
    const handleClick = () => {
       if (to) {
-         navigate(to);
+         if (to.startsWith('http')) {
+            window.open(to, '_blank');
+         } else if (to.includes('#')) {
+            const [path, anchor] = to.split('#');
+            navigate(path);
+            setTimeout(() => {
+               const element = document.getElementById(anchor);
+               if (element) {
+                  element.scrollIntoView({ behavior: 'smooth' });
+               }
+            }, 0);
+         } else {
+            navigate(to);
+         }
       }
 
       if (onClick) {
@@ -23,3 +36,4 @@ export const CustomButton = ({ text, onClick, buttonStyles, to }) => {
       </button>
    );
 };
+

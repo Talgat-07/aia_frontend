@@ -144,7 +144,7 @@ export const RealizeProjects = () => {
                               <div className={styles.cardContainer} >
                                  {displayedCards.map((card, cardIndex) => (
                                     <div
-                                       key={`${yearData.year}-${cardIndex}`}  // Ensure the key is unique
+                                       key={`${yearData.year}-${cardIndex}`}
                                        className={styles.card}
                                        style={{ '--delay': `${cardIndex * 0.1}s` }}
                                     >
@@ -160,11 +160,14 @@ export const RealizeProjects = () => {
 
                               </div>
                               {filteredCards.length > 6 && (
-                                 <CustomButton
-                                    onClick={() => toggleShowAll(yearData.year)}
-                                    text={showAll ? 'Скрыть' : 'Показать еще'}
-                                    buttonStyles="customButtonAdaptive"
-                                 />
+                                 <div className={styles.button_content}>
+                                    <CustomButton
+                                       onClick={() => toggleShowAll(yearData.year)}
+                                       text={showAll ? 'Скрыть' : 'Показать еще'}
+                                       buttonStyles="customButtonAdaptive"
+                                    />
+                                 </div>
+
                               )}
                            </div>
                            <hr className={styles.divider} />

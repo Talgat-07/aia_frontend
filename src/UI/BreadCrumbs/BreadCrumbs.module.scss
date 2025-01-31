@@ -1,25 +1,27 @@
-.breadcrumb{
+
+.breadcrumb {
   font-size: 18px;
   font-weight: 400;
 }
-li{
+
+li {
   list-style-type: none;
 }
 
-.navigation__item{
+.navigation__item {
   cursor: pointer;
+  transition: color 0.3s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
-.navigation li:first-child{
-  color: #828282;
-}
-
-.navigation{
+.navigation {
+  position: relative;
+  z-index: 1;
   display: flex;
   gap: 4px;
   align-items: center;
 }
 
-.path{
-  color: #262626;
-}

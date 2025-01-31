@@ -14,7 +14,7 @@ export const AboutUsPage = () => {
           <BlockTitle />
           <WeInNumber />
           <GeneralArchitects />
-          <OurTeam />
+          <OurTeam  />
           <TabNavigation />
           <YoutubeBlock videoId="eA0lHNZ1KCA" backgroundColor="black" />
           <HowWeWorks />

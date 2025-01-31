@@ -200,3 +200,115 @@
   background: white;
   z-index: 10;
 }
+
+
+
+@media screen and (max-width: 770px) {
+  .modalBox {
+    width: 90%;
+    padding: 30px;
+  }
+  .modalHeader{
+    padding: 20px 0px 0;
+  }
+
+  .modalFormArea {
+    textarea{
+      width: 346px;
+    }
+
+  }
+  .modalFormInputs{
+    width: 350px;
+  }
+  .modalForm{
+    gap: 10px;
+  }
+  .FormArea {
+
+    max-width: 100%;
+    input, , select {
+      width: 346px  !important;
+    }
+  }
+
+  .successMessage {
+    gap: 30px;
+  }
+
+  .modalBox .closeModal {
+    top: 15px;
+    right: 15px;
+  }
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal {
+  background: #fff;
+  padding: 24px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+  transform: translateY(-20px);
+  transition: transform 0.3s ease;
+}
+
+.modal.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.closeModal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.closeModal div {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #333;
+  transform: rotate(45deg);
+}
+
+.closeModal div:last-child {
+  transform: rotate(-45deg);
+}
+
+.successMessage {
+  text-align: center;
+}
+
+.successContent {
+  margin-top: 16px;
+}
+
+@media (max-width: 480px) {
+  .modal {
+    width: 95%;
+    padding: 16px;
+  }
+}

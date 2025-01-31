@@ -1,14 +1,9 @@
 import styles from './InformationUs.module.scss';
 import { Heading, Typography, CustomButton } from "UI/index.js";
 import AboutUs from 'assets/img/AboutUs.png';
-import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { path } from 'utils/constants/constants.js';
 export const InformationUs = ({ subtitle, description }) => {
-    const navigate = useNavigate();
-
-    const handleButtonClick = () => {
-        navigate('/about-us');
-    };
 
     return (
         <div className={styles.Information}>
@@ -28,7 +23,7 @@ export const InformationUs = ({ subtitle, description }) => {
                     <CustomButton
                         buttonStyles="customButtonAdaptive"
                         text="Как мы работаем"
-                        onClick={handleButtonClick}
+                        to={path.aboutUs}
                     />
                 </div>
 

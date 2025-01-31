@@ -32,7 +32,7 @@ const MainBanner = () => {
             </Typography>
 
             <CustomButton
-               buttonStyles={['customButtonBrown']}
+               buttonStyles={'customButtonBrown'}
                text={'Оставить заявку'}
                onClick={openModal}
             />

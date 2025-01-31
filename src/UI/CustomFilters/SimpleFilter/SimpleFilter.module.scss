@@ -1,0 +1,22 @@
+.filterContainer {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 40px;
+  background-color: var(--black-main-color);
+  padding: 20px 90px;
+  margin-bottom: 40px;
+  
+  .filterItem {
+    cursor: pointer;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: var(--main-color);
+    }
+  }
+
+  .active {
+    color: var(--main-color);
+  }
+}
