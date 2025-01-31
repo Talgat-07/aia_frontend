@@ -12,6 +12,7 @@ export const path = {
     publicSpacesInterior: '/interior-design/public-spaces',
     costAndStages: '/cost-and-stages',
     blog: '/blog',
+    blogOpen: 'blog-open',
     contacts: '/contact-us',
     projectCard: '/project-card',
     cottageVillageCard: '/cottage-village-card',
