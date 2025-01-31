@@ -19,6 +19,8 @@
       PublicSpacesInteriorPage,
       HouseDesignPage,
       ApartmentDesignPage,
+      BlogOpenPage,
+      ProjectCardPage,
    } from 'pages/index.js';
 
    export const Router = createBrowserRouter(
@@ -93,9 +95,19 @@
                   handle: { breadcrumb: 'Стоимость и этапы строительства' },
                },
                {
+                  path: path.projectCard,
+                  element: <ProjectCardPage/>,
+                  handle: { breadcrumb: 'Карточка проекта' },
+               },
+               {
                   path: path.blog,
                   element: <BlogPage />,
                   handle: { breadcrumb: 'Блог' },
+               },
+               {
+                  path: path.blogOpen,
+                  element: <BlogOpenPage />,
+                  handle: { breadcrumb: 'Блог(Открытая)' },
                },
                {
                   path: path.contacts,

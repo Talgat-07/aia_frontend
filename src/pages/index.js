@@ -14,3 +14,4 @@ export { ApartmentDesignPage } from './InteriorDesignPage/ApartmentDesignPage/Ap
 export { PublicSpacesInteriorPage } from './InteriorDesignPage/PublicSpacesInteriorPage/PublicSpacesInteriorPage.jsx';
 export { ProjectCardPage } from './ProjectCardPage/ProjectCardPage.jsx';
 export {NotFoundPage} from './NotFoundPage/NotFoundPage.jsx'
+export {BlogOpenPage} from './BlogOpenPage/BlogOpenPage.jsx';
