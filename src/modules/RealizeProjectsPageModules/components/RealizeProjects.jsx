@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Container, CustomButton, Heading } from 'UI/index';
 import styles from './RealizeProjects.module.scss';
-import { MainCards } from 'UI/MainCards/MainCards';
+import { MainCards } from 'UI/Cards/MainCards/MainCards';
 import image from 'assets/img/RealProjects.png'
 
 export const RealizeProjects = () => {

@@ -1,8 +1,7 @@
 import styles from "modules/ProjectCardModules/ProjectCard/ProjectCard.module.scss";
 import img from "assets/img/CardProject.png";
 import floor from "assets/img/CardProgects.png";
-import { Heading } from "UI/index";
-import { Typography } from "UI/index";
+import { Heading,Typography, BreadCrumbs } from "UI/index";
 
 const FloorDetails = ({ floorNumber, rooms }) => (
   <div>
@@ -76,11 +75,12 @@ export const ProjectCard = () => {
 
   const images = [img, img, img, img,img];
 
+
   return (
       <div className={styles.project_card}>
         <div className={styles.left}>
           <div className={styles.left_top}>
-            <Heading align="left" color="black" text={"Заголовок"} />
+            <Heading align="left" color="black" text={"INSIDE RESIDENCE"} />
             <Typography className={styles.subtitle} variant="h2">Подзаголовок</Typography>
             <div>
               {[

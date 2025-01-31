@@ -1,4 +1,4 @@
-import { MainCards } from 'UI/MainCards/MainCards.jsx';
+import { MainCards } from 'UI/Cards/MainCards/MainCards.jsx';
 import style from './CustomGalleryBlock.module.scss';
 
 export const CustomGalleryBlock = ({cardsData}) => {

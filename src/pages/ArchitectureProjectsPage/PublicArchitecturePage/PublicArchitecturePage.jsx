@@ -4,6 +4,7 @@ import {BlockTitle} from 'UI/BlockTitle/BlockTitle.jsx';
 
 export const PublicArchitecturePage = () => {
 
+
    const  realizeConfig = {
       heading: 'Общественные здания',
       button:null

@@ -1,7 +1,16 @@
 import { Typography } from "UI/Typography/Typography";
 import classes from "UI/Heading/Heading.module.scss";
 
-export const Heading = ({ text, className, color = "white", align = "center", fontWeight = "semibold", fontSize = "h2" }) => {
+export const Heading = ({
+                           text,
+                           className,
+                           color = "white",
+                           align = "center",
+                           fontWeight = "semibold",
+                           fontSize = "h2",
+                           linkWidth = "210px",
+                        }) => {
+
    const textColorClass = color === "black" ? classes.blackText : classes.whiteText;
 
    const alignmentClass =
@@ -17,7 +26,7 @@ export const Heading = ({ text, className, color = "white", align = "center", fo
          >
             {text}
          </Typography>
-         <div className={classes.headingLink}></div>
+         <div className={classes.headingLink} style={{ width: linkWidth }}></div>
       </div>
    );
 };

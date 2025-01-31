@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Container, CustomButton, Heading } from 'UI/index';
-import styles from '../../ApartmentDesignModule/components/ApartmentDesign.module.scss';
-import { MainCards } from 'UI/MainCards/MainCards';
+import styles from './ApartmentDesign.module.scss';
+import { MainCards } from 'UI/Cards/MainCards/MainCards';
 
 export const ApartmentDesign = () => {
    const [showAllByYear, setShowAllByYear] = useState({});
@@ -193,6 +193,7 @@ export const ApartmentDesign = () => {
                return (
                   <React.Fragment key={yearData.year}>
                      <Heading
+                        linkWidth={'105px'}
                         text={yearData.year}
                         align="left"
                         color="black"
@@ -201,7 +202,7 @@ export const ApartmentDesign = () => {
                         <div className={styles.cardContainer}>
                            {displayedCards.map((card, cardIndex) => (
                               <MainCards
-                                 key={`${yearData.year}-${cardIndex}`} // Комбинируем year и индекс для уникальности
+                                 key={`${yearData.year}-${cardIndex}`}
                                  image={card.image}
                                  title={card.title}
                                  text={card.text}

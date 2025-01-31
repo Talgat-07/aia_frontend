@@ -116,15 +116,15 @@ export const BreadCrumbData = [
     },
     {
         link: path.privateArchitecture,
-        label: "Частная архитектура"
+        label: "Частные дома"
     },
     {
         link: path.publicArchitecture,
-        label: "Общественная архитектура"
+        label: "Общественные здания"
     },
     {
         link: path.blocksArchitecture,
-        label: "Многоквартирные дома"
+        label: "Посёлки и кварталы"
     },
     {
         link: path.interiorDesign,
@@ -132,19 +132,19 @@ export const BreadCrumbData = [
     },
     {
         link: path.houseDesignPage,
-        label: "Дома"
+        label: "Дизайн домов и котеджей"
     },
     {
         link: path.apartmentDesignPage,
-        label: "Квартиры"
+        label: "Дизайн квартир"
     },
     {
         link: path.publicSpacesInterior,
-        label: "Общественные пространства"
+        label: "Дизайн общественных пространств"
     },
     {
         link: path.costAndStages,
-        label: "Стоимость и этапы"
+        label: "Стоимость и этапы строительства"
     },
     {
         link: path.blog,
@@ -153,5 +153,9 @@ export const BreadCrumbData = [
     {
         link: path.contacts,
         label: "Контакты"
+    },
+    {
+        link: path.projectCard,
+        label: "Проект"
     }
 ];

@@ -113,6 +113,12 @@
                   element: <ContactUsPage />,
                   handle: { breadcrumb: 'Контакты' },
                },
+               {
+                  path: `${path.projectCard}/:projectId`,
+                  element: <ProjectCardPage />,
+                  handle: { breadcrumb: "Карточка проекта" },
+               }
+
             ],
          },
          {

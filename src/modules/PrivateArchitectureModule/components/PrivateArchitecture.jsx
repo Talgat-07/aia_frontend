@@ -3,10 +3,10 @@ import { CustomGalleryBlock } from 'UI/CustomGalleryBlock/CustomGalleryBlock.jsx
 import { CustomFilters } from 'UI/CustomFilters/CustomFilters/CustomFilters.jsx';
 import { Container } from 'UI/Container/Container.jsx';
 import { CustomPagination } from 'UI/CustomPagination/CustomPagination.jsx';
+import img from 'assets/img/CardProject.png'
 
 export const PrivateArchitecture = () => {
 
-   const img = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmCy16nhIbV3pI1qLYHMJKwbH2458oiC9EmA&s'
 
 
 
@@ -226,10 +226,10 @@ export const PrivateArchitecture = () => {
       {
          img: img,
          title: '2022 - 3 этаж',
-         text: 'Площадь: 30000 м²',
+         text: 'Площадь: 600 м²',
          year: 2022,
          floor: 3,
-         area: 300,
+         area: 600,
       },
    ];
 

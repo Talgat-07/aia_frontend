@@ -1,7 +1,7 @@
-import styles from '../../HouseDesignModule/components/HouseDesign.module.scss';
+import styles from './HouseDesign.module.scss';
 import React, { useState } from 'react';
 import { Container, CustomButton, Heading } from 'UI/index';
-import { MainCards } from 'UI/MainCards/MainCards';
+import { MainCards } from 'UI/Cards/MainCards/MainCards';
 
 export const HouseDesign = () => {
 
@@ -193,7 +193,7 @@ export const HouseDesign = () => {
 
                return (
                   <React.Fragment key={index}>
-                     <Heading text={yearData.year} align="left" color="black" />
+                     <Heading linkWidth={'105px'} text={yearData.year} align="left" color="black" />
                      <div className={styles.yearBlock}>
                         <div className={styles.cardContainer}>
                            {displayedCards.map((card, cardIndex) => (
