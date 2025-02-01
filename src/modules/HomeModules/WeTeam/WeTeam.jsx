@@ -49,7 +49,7 @@ export const WeTeam = () => {
             swiperRef.current.navigation.init();
             swiperRef.current.navigation.update();
         }
-    }, [employees]);
+    }, []);
 
     const handleCardClick = (index) => {
         if (!swiperRef.current) return;

@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 
 export const NewProjects = ({config = {}}) => {
 
-   const { cards = [] } = config;
 
    return (
       <div className={styles.container}>
