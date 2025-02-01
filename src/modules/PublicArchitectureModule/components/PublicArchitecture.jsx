@@ -156,7 +156,7 @@ export const PublicArchitecture = () => {
          <CustomGalleryBlock cardsData={currentCards} />
          <CustomPagination
             activePage={activePage}
-            itemsCountPerPage={itemsPerPage}
+            itemsPerPage={itemsPerPage}
             totalItemsCount={filteredCards.length}
             onChange={handlePageChange}
          />
