@@ -5,7 +5,7 @@ import { CustomButton } from "UI/index";
 import { VectorIcon } from "assets/icons/VectorIcon";
 import { useModal } from "utils/hooks/useModal.js";
 import { RegModal } from "modules/User/Components/RegModal/RegModal.jsx";
-import { MainCards } from "UI/MainCards/MainCards";
+import { MainCards } from "UI/Cards/MainCards/MainCards";
 
 export const CottageVillageCard = () => {
   const projectData = {

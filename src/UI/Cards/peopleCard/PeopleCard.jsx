@@ -1,8 +1,8 @@
-import styles from './Card.module.scss';
+import styles from './PeopleCard.module.scss';
 import {Typography} from "UI/index.js";
 
 
-export const Card = ({ title, description, image, isActive}) => {
+export const PeopleCard = ({ title, description, image, isActive}) => {
 
     return (
         <div className={`${styles.card} ${isActive ? styles.active : ''}`}>

@@ -3,7 +3,6 @@
    justify-content: center;
    align-items: center;
 }
-
 .customButtonBrown {
    @extend .centerDisplay;
    padding: 12px 32px;
@@ -21,6 +20,7 @@
 }
 
 .customButtonAdaptive {
+<<<<<<< HEAD
 //<<<<<<< HEAD
 //  @extend .centerDisplay;
 //  height: 50px;
@@ -29,6 +29,8 @@
 //  text-align: center;
 //  background-color: transparent;
 //=======
+=======
+>>>>>>> 72ccd1525863f1f1129882a501f2bba745fcca25
    height: 50px;
    display: block;
    position: relative;
@@ -39,7 +41,10 @@
    overflow: hidden;
    color: black;
    transition: color 0.3s ease;
+<<<<<<< HEAD
 //>>>>>>> 2d72782238fb115073e88a4fc2a31b912339f989
+=======
+>>>>>>> 72ccd1525863f1f1129882a501f2bba745fcca25
 }
 
 .customButtonAdaptive::before {
@@ -52,6 +57,7 @@
    background-color: var(--black-main-color);
    transform: translate(-50%, -50%);
    transition: 0.7s ease;
+<<<<<<< HEAD
 //<<<<<<< HEAD
 //}
 //
@@ -83,6 +89,8 @@
 //    border: 1px solid var(--main-color);
 //  }
 //=======
+=======
+>>>>>>> 72ccd1525863f1f1129882a501f2bba745fcca25
 }
 
 .customButtonAdaptive:hover::before {
@@ -118,7 +126,10 @@
       color: white;
       transition: 0.5s ease;
    }
+<<<<<<< HEAD
 //>>>>>>> 2d72782238fb115073e88a4fc2a31b912339f989
+=======
+>>>>>>> 72ccd1525863f1f1129882a501f2bba745fcca25
 }
 
 .wideButton {

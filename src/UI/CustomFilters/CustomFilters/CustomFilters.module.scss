@@ -137,7 +137,9 @@
     color: #FFFFFF;
 
     .scaleValue {
+      font-style: normal;
       position: relative;
+
 
       &:before {
         margin-top: 2px;
@@ -145,7 +147,7 @@
         position: absolute;
         top: -6px;
         left: 50%;
-        width: 2px;
+        width: 2px !important;
         height: 5px;
         background: #FFFFFF;
       }
@@ -153,4 +155,9 @@
   }
 
 }
+
+.react_select{
+  display: none;
+}
+
 

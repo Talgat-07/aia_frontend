@@ -1,5 +1,5 @@
-import { Typography } from "..";
-import styles from "UI/MainCards/MainCards.module.scss";
+import { Typography } from "UI";
+import styles from "UI/Cards/MainCards/MainCards.module.scss";
 
 export const MainCards = ({ image, title, text }) => {
   return (

@@ -6,7 +6,7 @@ import 'swiper/css/effect-coverflow';
 import 'swiper/css/navigation';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import {useRef, useEffect, useState} from "react";
-import {Card, CustomButton, Heading} from 'UI/index';
+import {PeopleCard, CustomButton, Heading} from 'UI/index';
 import {ArrowLeft, ArrowRight} from "assets/index.js";
 
 
@@ -90,7 +90,7 @@ export const WeTeam = () => {
                     >
                         {employees.map((item, index) => (
                             <SwiperSlide key={index} className={styles.swiperSlide}>
-                                <Card
+                                <PeopleCard
                                     title={item.title}
                                     description={item.description}
                                     image={item.image}
