@@ -49,7 +49,7 @@ export const ContactForm = () => {
     reset();
     setIsSubmitted(true);
   };
-
+ 
   const handleSubmitForm = () => {
     setIsSubmitted(false);
   };

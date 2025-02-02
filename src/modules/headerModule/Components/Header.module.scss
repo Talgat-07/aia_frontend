@@ -1,43 +1,4 @@
-// .header {
-//    position: relative;
-//    background-color: var(--black-main-color);
-//    position: sticky;
-//    top: 0;
-//    z-index: 10;
-//    transition: all 0.3s ease;
-// }
-// .BottomBar {
-//    padding: 10px 10px 15px 10px;
-//    display: flex;
-//    justify-content: space-between;
-//    align-items: center;
-// }
-// .TopBar_Container {
-//    display: flex;
-//    justify-content: space-between;
-//    margin-right: 125px;
-//    align-items: center;
-//    text-align: center;
-//    position: relative;
-// }
-// .ContactInfo {
-//    padding-top: 10px;
-// }
-// .languageSwitcher {
-//    display: flex;
-// }
-// .right_bottom_bar {
-//    display: flex;
-//    align-items: center;
-//    gap: 50px;
-//    .customBrownButton {
-//       width: 200px;
-//       height: 40px;
-//    }
-// }
-
 .header {
-  //  position: relative;
    background-color: var(--black-main-color);
    position: sticky;
    top: 0;
@@ -45,15 +6,15 @@
    transition: all 0.3s ease;
 }
 .BottomBar {
-  padding: 30px 0;
+   padding: 30px 0;
    display: flex;
    justify-content: space-between;
    align-items: center;
 
-   .logoAndContact{
-    display: flex;
-    align-items: center;
-    gap: 30px;
+   .logoAndContact {
+      display: flex;
+      align-items: center;
+      gap: 30px;
    }
 }
 .TopBar_Container {
@@ -65,6 +26,16 @@
 }
 .ContactInfo {
    padding-top: 10px;
+
+   .phone {
+      transition:
+         color 0,
+         3s ease;
+
+      &:hover {
+         color: rgba(179, 137, 94, 1);
+      }
+   }
 }
 .languageSwitcher {
    display: flex;
