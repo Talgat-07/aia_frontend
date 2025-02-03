@@ -3,6 +3,7 @@ import { Container, CustomButton, MainCards, Heading } from 'UI/index.js';
 import React, { useState, useEffect } from 'react';
 import styles from './PublicSpacesInterior.module.scss';
 import img from 'assets/img/RealProjects.png'
+import { CustomButton } from "UI/index";
 
 export const PublicSpacesInterior = () => {
 
