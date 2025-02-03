@@ -161,8 +161,13 @@ export const ContactForm = () => {
                   </div>
 
                   <div className={styles.modalFormArea}>
-                    <textarea id="question" {...register("question")} className={`${styles.textarea} ${styles.error}`}
-                              placeholder="Ваш вопрос" />
+                    <textarea
+                       id="question"
+                       {...register('question', { required: 'Введите вопрос' })}
+                       className={`${styles.textarea} ${errors.question && styles.error}`}
+                       placeholder="Ваш вопрос"
+                    />
+
                     <CustomButton type="submit" buttonStyles="wideButton" text="Отправить" />
                   </div>
                 </form>

@@ -193,7 +193,8 @@ export const HouseDesign = () => {
 
                return (
                   <React.Fragment key={index}>
-                     <Heading linkWidth={'105px'} text={yearData.year} align="left" color="black" />
+                     <hr/>
+                     <Heading className={styles.heading} linkWidth={'105px'} text={yearData.year} align="left" color="black" />
                      <div className={styles.yearBlock}>
                         <div className={styles.cardContainer}>
                            {displayedCards.map((card, cardIndex) => (
@@ -214,7 +215,10 @@ export const HouseDesign = () => {
                         )}
                      </div>
                      {index < years.length - 1 && (
-                        <div className={styles.divider} />
+                        <div className={styles.containerdivider}>
+                           <hr className={styles.divider} />
+
+                        </div>
                      )}
                   </React.Fragment>
                );

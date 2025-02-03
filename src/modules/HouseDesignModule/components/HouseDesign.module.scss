@@ -26,10 +26,18 @@
 
    }
 
+   .heading{
+      padding: 0 50px;
+   }
+   .containerdivider{
+      padding: 0 50px;
+   }
    .divider {
+      border:none;
       height: 2px;
       background-color: rgba(181, 180, 180, 1);
-      margin: 70px 0;
+      margin: 50px 0;
+
       width: 100%;
       max-width: 100%;
    }

@@ -1,11 +1,13 @@
 import styles from "modules/CottageVillageCardModule/CottageVillageCard.module.scss";
 import img from "assets/img/vilageCard.png";
-import { Heading, Typography } from "UI/index";
+import { HeroBlock, Typography } from 'UI/index';
 import { CustomButton } from "UI/index";
 import { VectorIcon } from "assets/icons/VectorIcon";
 import { useModal } from "utils/hooks/useModal.js";
 import { RegModal } from "modules/User/Components/RegModal/RegModal.jsx";
 import { MainCards } from "UI/Cards/MainCards/MainCards";
+import {  path } from 'utils/constants/constants.js';
+import {  useParams } from 'react-router-dom';
 
 export const CottageVillageCard = () => {
   const projectData = {
@@ -61,6 +63,33 @@ export const CottageVillageCard = () => {
   };
 
   const { isOpen, openModal, closeModal } = useModal();
+  const { cottageProjectID } = useParams();
+  const projects = [
+    { id: "1", title: "INSIDE RESIDENCE" },
+    { id: "2", title: "Проект 2" },
+    { id: "3", title: "Проект 3" },
+  ]
+  const project = projects.find((p) => p.id === cottageProjectID) || {
+    title: "INSIDE RESIDENCE",
+    location: "-",
+    area: "-",
+    scale: "-",
+    year: "-",
+    descriptions: [],
+    cards: [],
+  };
+
+  const config = {
+    showCustomButton: false,
+    showWhatsAppIcon: false,
+    titleHero: project.title,
+  };
+  const filteredBreadCrumbData = [
+    { link: path.home, label: "Главная" },
+    { link: path.architectureProjects, label: "Архитектурное проектирование" },
+    { label: project.title },
+  ];
+
 
   const copyPageUrl = () => {
     const url = window.location.href;
@@ -73,16 +102,7 @@ export const CottageVillageCard = () => {
 
   return (
     <div>
-      <div
-        className={styles.hero_block}
-        style={{ backgroundImage: `url(${img})` }}
-      >
-        <div className={styles.hero_text}>
-          <Heading text={"INSIDE RESIDENCE"} align="left" />
-          <Typography variant="bodyXl" weight="medium" color="white">Подзаголовок</Typography>
-        </div>
-      </div>
-
+      <HeroBlock breadcrumbs={filteredBreadCrumbData} config={config}/>
       <div className={styles.container}>
         <div className={styles.project_info}>
           <div className={styles.info_row}>
@@ -109,7 +129,7 @@ export const CottageVillageCard = () => {
           <iframe
             width="560"
             height="315"
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -156,10 +176,10 @@ export const CottageVillageCard = () => {
           <Typography variant="h1" weight="semibold">Проекты в этом поселке</Typography>
           <div className={styles.cards_container}>
             {projectData.cards.map((card, index) => (
-              <MainCards 
-                key={index} 
-                image={card.image} 
-                title={card.title} 
+              <MainCards
+                key={index}
+                image={card.image}
+                title={card.title}
                 text={card.text}
               />
             ))}

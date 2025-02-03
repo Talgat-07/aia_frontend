@@ -1,9 +1,12 @@
-import styles from "modules/ProjectCardModules/ProjectCard/ProjectCard.module.scss";
+import styles from "./ProjectCard.module.scss";
 import img from "assets/img/CardProject.png";
 import floor from "assets/img/CardProgects.png";
 import { Heading,Typography, BreadCrumbs } from "UI/index";
+import { BreadCrumbData, path } from 'utils/constants/constants.js';
+import { useParams } from 'react-router-dom';
 
 const FloorDetails = ({ floorNumber, rooms }) => (
+
   <div>
     <Typography variant="bodyL">{floorNumber} Этаж</Typography>
     <img src={floor} alt={`Floor plan for ${floorNumber}`} />
@@ -25,6 +28,26 @@ const ImageGallery = ({ images }) => (
 );
 
 export const ProjectCard = () => {
+  const { projectId } = useParams();
+  const projects = [
+    { id: "1", title: "INSIDE RESIDENCE" },
+    { id: "2", title: "Проект 2" },
+    { id: "3", title: "Проект 3" },
+  ]
+  const project = projects.find(p => p.id === projectId);
+
+  const projectTitle = project ? project.title : "Неизвестный проект";
+
+
+
+
+  const filteredBreadCrumbData = [
+    BreadCrumbData.find(item => item.link === path.home),
+    BreadCrumbData.find(item => item.link === path.architectureProjects),
+    { label: projectTitle },
+  ].filter(Boolean);
+
+
   const floorData = [
     {
       floorNumber: 1,
@@ -80,8 +103,12 @@ export const ProjectCard = () => {
       <div className={styles.project_card}>
         <div className={styles.left}>
           <div className={styles.left_top}>
-            <Heading align="left" color="black" text={"INSIDE RESIDENCE"} />
-            <Typography className={styles.subtitle} variant="h2">Подзаголовок</Typography>
+            <div className={styles.breadcrumb}>
+              <BreadCrumbs items={filteredBreadCrumbData} linkColor={'#828282'} activeColor={'#262626'} />
+
+            </div>
+            <Heading align="left" color="black" text={projectTitle} />
+            <Typography className={styles.subtitle} weight={"medium"} variant="bodyL">Подзаголовок</Typography>
             <div>
               {[
                 { label: "Студия", value: "Студия" },

@@ -6,6 +6,7 @@ import React from 'react';
 export const BreadCrumbs = ({ items, linkColor = "white", activeColor = "#828282" }) => {
    const navigate = useNavigate();
 
+
    return (
       <ul className={styles.navigation}>
          {items.map((item, index) => (
