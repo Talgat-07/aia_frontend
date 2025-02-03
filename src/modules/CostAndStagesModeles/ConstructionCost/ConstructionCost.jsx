@@ -1,5 +1,7 @@
-import { Heading, Typography } from "UI/index";
+import { BreadCrumbs, Heading, Typography } from 'UI/index';
 import styles from "modules/CostAndStagesModeles/ConstructionCost/ConstructionCost.module.scss";
+import { useLocation } from 'react-router-dom';
+import { BreadCrumbData, path } from 'utils/constants/constants.js';
 
 export const ConstructionCost = () => {
   const mockData = {
@@ -12,11 +14,19 @@ export const ConstructionCost = () => {
       diam tincidunt. Lorem ipsum dolor sit amet ut diam tincidunt. Lorem ipsum dolor sit amet 
       consectetur. Mi tristique risus accumsan morbi.`,
   };
+  const location = useLocation();
+  const currentPath = location.pathname;
+
+  const filteredBreadCrumbData = [
+    BreadCrumbData.find(item => item.link === path.home),
+    BreadCrumbData.find(item => item.link === currentPath),
+  ].filter(Boolean);
 
   return (
     <div>
       <div className={styles.title_block}>
         <div className={styles.title}>
+          <BreadCrumbs items={filteredBreadCrumbData} linkColor={"#828282"} activeColor={'#262626'} />
           <Heading text={mockData.title} align="left" color="black" />
         </div>
         <div className={styles.description}>

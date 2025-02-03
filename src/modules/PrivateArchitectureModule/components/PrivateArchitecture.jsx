@@ -1,27 +1,13 @@
 import {useState} from 'react';
 import { CustomGalleryBlock } from 'UI/CustomGalleryBlock/CustomGalleryBlock.jsx';
-import { MoreProjects } from 'UI/MoreProjects/MoreProjects.jsx';
 import { CustomFilters } from 'UI/CustomFilters/CustomFilters/CustomFilters.jsx';
 import { Container } from 'UI/Container/Container.jsx';
 import { CustomPagination } from 'UI/CustomPagination/CustomPagination.jsx';
-import { path } from 'utils/constants/constants.js';
-import { MainCards } from 'UI/MainCards/MainCards.jsx';
 
 export const PrivateArchitecture = () => {
 
    const img = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmCy16nhIbV3pI1qLYHMJKwbH2458oiC9EmA&s'
 
-   const moreProjectsData = {
-      image: img,
-      subtitle: 'subtitle',
-      text: 'text',
-      buttons: [
-         { text: 'Реализованные проекты', link: path.realizeProjects},
-         { text: 'Архитектурное проектирование', link: path.architectureProjects},
-         { text: 'Дизайн общественных пространств', link: path.publicSpacesInterior},
-         { text: 'Дизайн квартир', link: path.apartmentDesignPage},
-      ],
-   }
 
    const customFiltersItem = {
       years: [2020, 2021, 2022],
@@ -583,11 +569,12 @@ export const PrivateArchitecture = () => {
       const { year, floor, area } = filters;
       const filtered = cardsData.filter(
          (card) =>
-            (year === '' || card.year === year) &&
+           (year === '' || card.year === year) &&
             (floor === '' || card.floor === floor) &&
             card.area <= area
       );
-      setFilteredCards(filtered);
+      console.log('filtered', filtered)
+     setFilteredCards(filtered);
       setActivePage(1);
    };
 
@@ -609,7 +596,6 @@ export const PrivateArchitecture = () => {
             totalItemsCount={filteredCards.length}
             onChange={handlePageChange}
          />
-         <MoreProjects config={moreProjectsData}/>
       </Container>
    );
 };

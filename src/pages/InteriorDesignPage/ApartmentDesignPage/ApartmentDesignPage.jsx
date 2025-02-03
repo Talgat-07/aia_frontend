@@ -20,7 +20,8 @@ export const ApartmentDesignPage = () => {
       }
    const startBlockConfig = {
       heading: 'Дизайн квартир',
-      button: true
+      button: true,
+      linkWidth: '467px',
    }
    return (
       <>

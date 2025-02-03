@@ -182,7 +182,9 @@ export const ApartmentDesign = () => {
    };
    return (
       <Container>
+
          <div className={styles.apartmentDesignContainer}>
+            <hr/>
             {years.map((yearData) => {
                const showAll = showAllByYear[yearData.year];
 
@@ -191,6 +193,7 @@ export const ApartmentDesign = () => {
                   : yearData.cards.slice(0, 6);
 
                return (
+
                   <React.Fragment key={yearData.year}>
                      <Heading
                         linkWidth={'105px'}

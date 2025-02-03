@@ -20,8 +20,8 @@ export const PublicSpacesInteriorPage = () => {
    }
    const blockConfig = {
       heading: 'Дизайн общественных пространств',
-      button: true
-
+      button: true,
+      linkWidth: '467px',
    }
    return (
       <Container>
