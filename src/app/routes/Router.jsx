@@ -1,6 +1,6 @@
-   import { createBrowserRouter } from 'react-router-dom';
-   import { Layout } from '../layout/Layout.jsx';
-   import { path} from 'utils/constants/constants.js'
+import { createBrowserRouter } from 'react-router-dom';
+import { Layout } from '../layout/Layout.jsx';
+import { path } from 'utils/constants/constants.js';
 
    import {
       NotFoundPage,
