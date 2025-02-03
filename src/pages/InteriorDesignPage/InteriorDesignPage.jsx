@@ -1,6 +1,7 @@
 import { Outlet, useLocation } from 'react-router-dom';
 import { path } from 'utils/constants/constants.js';
 import { YoutubeBlock, Container,HeroBlock,EngineeringBlock,NewProjects,MoreProjects,IndividualBlock } from 'UI/index.js';
+import image from "assets/img/vilageCard.png";
 
 export const InteriorDesignPage = () => {
     const location = useLocation();
@@ -26,22 +27,25 @@ export const InteriorDesignPage = () => {
         projects: {
             cards: [
                 {
-                    link: path.privateArchitecture,
+                    id: 1,
+                    link: `${path.projectCard}/1`,
                     image: 'https://m-strana.ru/upload/resize_cache/medialibrary/148/830_830_1/krasivye-doma-foto-kottedzhey-i-primery-planirovok-2.jpg',
-                    title: 'Заголовок',
-                    text: 'Дизайн домов',
+                    title: 'Частные дома',
+                    text: 'Описание частных домов',
                 },
                 {
-                    link: path.publicArchitecture,
+                    id: 2,
+                    link: `${path.projectCard}/2`,
                     image: 'https://m-strana.ru/upload/resize_cache/medialibrary/148/830_830_1/krasivye-doma-foto-kottedzhey-i-primery-planirovok-2.jpg',
-                    title: 'Заголовок',
-                    text: 'Дизайн квартир',
+                    title: 'Общественные здания',
+                    text: 'Описание общественных зданий',
                 },
                 {
-                    link: path.blocksArchitecture,
-                    image: 'https://m-strana.ru/upload/resize_cache/medialibrary/148/830_830_1/krasivye-doma-foto-kottedzhey-i-primery-planirovok-2.jpg',
-                    title: 'Заголовок',
-                    text: 'Дизайн общественных пространств',
+                    id: 3,
+                    link: `${path.cottageVillageCard}/1`,
+                    image: image,
+                    title: 'Коттеджные поселки',
+                    text: 'Описание коттеджных поселков',
                 }
             ]
         },

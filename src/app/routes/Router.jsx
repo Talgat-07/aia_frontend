@@ -109,7 +109,7 @@ import { path } from 'utils/constants/constants.js';
                   handle: { breadcrumb: 'Карточка проекта' },
                },
                {
-                  path: `${path.cottageVillageCard}/:CottageprojectId`,
+                  path: `${path.cottageVillageCard}/:CottageProjectId`,
                   element: <CottageVillageCardPage/>
                },
                {

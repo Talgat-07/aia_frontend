@@ -216,8 +216,6 @@ export const HouseDesign = () => {
                      </div>
                      {index < years.length - 1 && (
                         <div className={styles.containerdivider}>
-                           <hr className={styles.divider} />
-
                         </div>
                      )}
                   </React.Fragment>

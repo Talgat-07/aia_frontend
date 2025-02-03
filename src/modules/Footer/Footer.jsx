@@ -7,7 +7,7 @@ import {
    GeeksProIcon,
    TwitterIconMain,
 } from 'assets/index.js';
-import { NavLinks } from 'utils/constants/constants.js';
+import { NavLinks,path } from 'utils/constants/constants.js';
 import { Link } from 'react-router-dom';
 import { Typography } from 'UI/typography/Typography.jsx';
 import Logo from 'assets/img/logo.svg';
@@ -36,6 +36,7 @@ export const Footer = () => {
       },
       { href: 'https://youtube.com', label: 'YouTube', Icon: YoutubeIconMain },
    ];
+
 
    return (
       <footer className={styles.footer}>
@@ -76,7 +77,9 @@ export const Footer = () => {
             </div>
             <nav className={styles.links}>
                <ul>
-                  {NavLinks.map((link) => (
+                  {NavLinks
+                      .filter(link => link.path !== path.home)
+                      .map((link) => (
                      <li key={link.path}>
                         <Link to={link.path}>{link.title}</Link>
                      </li>
