@@ -1,5 +1,12 @@
 import styles from "./Footer.module.scss";
-import {InstagramIconMain,WhatsappIconMain,TelegramIconMain,YoutubeIconMain,GeeksProIcon} from "assets/index.js"
+import {
+    InstagramIconMain,
+    WhatsappIconMain,
+    TelegramIconMain,
+    YoutubeIconMain,
+    GeeksProIcon,
+    TwitterIconMain
+} from "assets/index.js"
 import {NavLinks, path} from "utils/constants/constants.js";
 import {Link} from "react-router-dom";
 import {Typography} from "UI/typography/Typography.jsx";
@@ -9,11 +16,12 @@ import Logo from "assets/img/logo.svg";
 
 export const Footer = () => {
     const socialLinks = [
-        { href: "https://instagram.com", label: "Instagram", Icon: InstagramIconMain },
         { href: "https://whatsapp.com", label: "WhatsApp", Icon: WhatsappIconMain },
         { href: "https://telegram.org", label: "Telegram", Icon: TelegramIconMain },
-        { href: "https://youtube.com", label: "YouTube", Icon: YoutubeIconMain },
+        { href: "https://instagram.com", label: "Instagram", Icon: InstagramIconMain },
 
+        { href: 'https://x.com', label: 'Twitter', Icon: TwitterIconMain },
+        { href: "https://youtube.com", label: "YouTube", Icon: YoutubeIconMain },
     ];
 
     return (
