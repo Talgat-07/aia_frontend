@@ -19,8 +19,9 @@ export const HouseDesignPage = () => {
          ],
       }
    const startBlockConfig = {
-      heading: 'Дизайн домов',
-      button: true
+      heading: 'Дизайн домов и коттеджей',
+      button: true,
+      linkWidth: '467px',
    }
    return (
       <>

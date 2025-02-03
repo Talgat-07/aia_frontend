@@ -9,11 +9,13 @@ import { useModal } from 'utils/hooks/useModal.js';
 export const BlockTitle = ({ config = {} }) => {
    const {isOpen, openModal, closeModal} = useModal();
 
+
    const {
       heading = "Архитектурная студия АЙА",
       subheading = "Подзаголовок",
       description = "",
       button = null,
+      linkWidth = '210px'
    } = config;
 
    const location = useLocation();
@@ -29,7 +31,7 @@ export const BlockTitle = ({ config = {} }) => {
 
          <div className={styles.container__left}>
             <BreadCrumbs items={filteredBreadCrumbData} linkColor={"#828282"} activeColor={'#262626'} />
-            <Heading className={styles.left__heading} text={heading} color={"black"} align={"left"} />
+            <Heading className={styles.left__heading} text={heading} linkWidth={linkWidth} color={"black"} align={"left"} />
          </div>
          <div className={styles.container__right}>
             <Typography variant={"bodyL"} weight={"semibold"}>

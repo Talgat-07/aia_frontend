@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Container, CustomButton, Heading } from 'UI/index';
-import styles from '../../ApartmentDesignModule/components/ApartmentDesign.module.scss';
-import { MainCards } from 'UI/MainCards/MainCards';
+import styles from './ApartmentDesign.module.scss';
+import { MainCards } from 'UI/Cards/MainCards/MainCards';
 
 export const ApartmentDesign = () => {
    const [showAllByYear, setShowAllByYear] = useState({});
@@ -182,7 +182,9 @@ export const ApartmentDesign = () => {
    };
    return (
       <Container>
+
          <div className={styles.apartmentDesignContainer}>
+            <hr/>
             {years.map((yearData) => {
                const showAll = showAllByYear[yearData.year];
 
@@ -191,8 +193,10 @@ export const ApartmentDesign = () => {
                   : yearData.cards.slice(0, 6);
 
                return (
+
                   <React.Fragment key={yearData.year}>
                      <Heading
+                        linkWidth={'105px'}
                         text={yearData.year}
                         align="left"
                         color="black"
@@ -201,7 +205,7 @@ export const ApartmentDesign = () => {
                         <div className={styles.cardContainer}>
                            {displayedCards.map((card, cardIndex) => (
                               <MainCards
-                                 key={`${yearData.year}-${cardIndex}`} // Комбинируем year и индекс для уникальности
+                                 key={`${yearData.year}-${cardIndex}`}
                                  image={card.image}
                                  title={card.title}
                                  text={card.text}

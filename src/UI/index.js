@@ -1,18 +1,20 @@
-export {Typography} from 'UI/Typography/Typography.jsx'
-export {CustomButton} from './Buttons/CustomButton/CustomButton.jsx'
-export {Heading} from 'UI/Heading/Heading.jsx'
-export {FollowUs} from './FollowUs/FollowUs.jsx'
-export {WeInNumber} from './WeInNumber/WeInNumber.jsx'
-export {YoutubeBlock} from './YoutubeBlock/YoutubeBlock.jsx'
-export {Container} from './Container/Container.jsx'
-export {Card} from './Card/Card.jsx'
-export {BreadCrumbs} from './BreadCrumbs/BreadCrumbs.jsx'
-export {Loader} from './Loader/Loader.jsx'
-export {ContactForm} from './ContactForm/ContactForm.jsx'
-export {HeroBlock} from './HeroBlock/HeroBlock.jsx'
-export {EngineeringBlock} from './EngineeringBlock/EngineeringBlock.jsx'
-export {MainCards} from './MainCards/MainCards.jsx'
-export {NewProjects} from './NewProjects/NewProjects.jsx'
-export {IndividualBlock} from './IndividualBlock/IndividualBlock.jsx'
-export {BlockTitle} from './BlockTitle/BlockTitle.jsx'
-export {MoreProjects} from './MoreProjects/MoreProjects.jsx'
+export { Typography } from 'UI/Typography/Typography.jsx';
+export { CustomButton } from './Buttons/CustomButton/CustomButton.jsx';
+export { Heading } from 'UI/Heading/Heading.jsx';
+export { FollowUs } from './FollowUs/FollowUs.jsx';
+export { WeInNumber } from './WeInNumber/WeInNumber.jsx';
+export { YoutubeBlock } from './YoutubeBlock/YoutubeBlock.jsx';
+export { Container } from './Container/Container.jsx';
+export { PeopleCard } from 'UI/Cards/peopleCard/PeopleCard.jsx';
+export { BreadCrumbs } from './BreadCrumbs/BreadCrumbs.jsx';
+export { Loader } from './Loader/Loader.jsx';
+export { ContactForm } from './ContactForm/ContactForm.jsx';
+export { HeroBlock } from './HeroBlock/HeroBlock.jsx';
+export { EngineeringBlock } from './EngineeringBlock/EngineeringBlock.jsx';
+export { MainCards } from 'UI/Cards/MainCards/MainCards.jsx';
+export { NewProjects } from './NewProjects/NewProjects.jsx';
+export { IndividualBlock } from './IndividualBlock/IndividualBlock.jsx';
+export { BlockTitle } from './BlockTitle/BlockTitle.jsx';
+export { MoreProjects } from './MoreProjects/MoreProjects.jsx';
+export { BlogCards } from './Cards/BlogCards/BlogCards.jsx';
+export { CustomBlogGallery } from './CustomBlogGallery/CustomBlogGallery.jsx';

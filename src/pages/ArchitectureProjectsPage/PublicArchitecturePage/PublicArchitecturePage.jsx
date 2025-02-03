@@ -1,10 +1,20 @@
+import { Container } from 'UI/Container/Container.jsx';
+import { PublicArchitecture } from 'modules/PublicArchitectureModule/components/PublicArchitecture.jsx';
+import {BlockTitle} from 'UI/BlockTitle/BlockTitle.jsx';
 
 export const PublicArchitecturePage = () => {
-    return (
-       <div>
-           <h1>HEELOOO</h1>
 
-       </div>
+
+   const  realizeConfig = {
+      heading: 'Общественные здания',
+      button:null
+   }
+
+    return (
+       <Container>
+          <BlockTitle config={realizeConfig} />
+          <PublicArchitecture />
+       </Container>
     );
 };
 

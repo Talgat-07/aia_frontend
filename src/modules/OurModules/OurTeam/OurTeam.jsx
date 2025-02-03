@@ -1,6 +1,6 @@
 import { Heading } from "UI/index.js";
 import styles from './OurTeam.module.scss';
-import { Card } from "UI/index.js";
+import { PeopleCard } from "UI/index.js";
 import imageCard from 'assets/img/CardImage.png';
 
 export const OurTeam = () => {
@@ -22,7 +22,7 @@ export const OurTeam = () => {
             <Heading text="Команда" color="black" />
             <div className={styles.OurTeam}>
                 {teamConfig.map(({ name, position, image }, index) => (
-                    <Card
+                    <PeopleCard
                         key={index}
                         image={image}
                         description={position}

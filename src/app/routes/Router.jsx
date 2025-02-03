@@ -1,7 +1,6 @@
-   import { createBrowserRouter } from 'react-router-dom';
-   import { Layout } from '../layout/Layout.jsx';
-   import { path} from 'utils/constants/constants.js'
-
+import { createBrowserRouter } from 'react-router-dom';
+import { Layout } from '../layout/Layout.jsx';
+import { path } from 'utils/constants/constants.js';
 
    import {
       NotFoundPage,
@@ -19,17 +18,19 @@
       PublicSpacesInteriorPage,
       HouseDesignPage,
       ApartmentDesignPage,
-      CottageVillageCardPage,
+      BlogOpenPage,
+      ProjectCardPage,
    } from 'pages/index.js';
+   import { CottageVillageCardPage } from 'pages/CottageVillageCardPage/CottageVillageCardPage.jsx';
 
    export const Router = createBrowserRouter(
       [
          {
-            element: <Layout showContactForm={true} showFooter={true}  />,
+            element: <Layout showContactForm={true} showFooter={true} />,
             children: [
                {
                   path: path.home,
-                  index:true,
+                  index: true,
                   element: <HomePage />,
                   handle: { breadcrumb: 'Главная' },
                },
@@ -59,7 +60,7 @@
                         handle: { breadcrumb: 'Общественные здания' },
                      },
                      {
-                        path:  path.blocksArchitecture,
+                        path: path.blocksArchitecture,
                         element: <BlocksArchitecturePage />,
                         handle: { breadcrumb: 'Поселки и кварталы' },
                      },
@@ -70,7 +71,6 @@
                   element: <InteriorDesignPage />,
                   handle: { breadcrumb: 'Дизайн интерьера' },
                   children: [
-
                      {
                         path: path.apartmentDesignPage,
                         element: <ApartmentDesignPage />,
@@ -94,14 +94,23 @@
                   handle: { breadcrumb: 'Стоимость и этапы строительства' },
                },
                {
-                  path: path.cottageVillageCard,
-                  element: <CottageVillageCardPage/>,
-                  handle: { breadcrumb: 'Карточка коттеджного поселка' },
-               },
-               {
                   path: path.blog,
                   element: <BlogPage />,
                   handle: { breadcrumb: 'Блог' },
+               },
+               {
+                  path: `${path.blog}/:blogId`,
+                  element: <BlogOpenPage />,
+                  handle: { breadcrumb: 'Блог (Открытая статья)' },
+               },
+               {
+                  path: `${path.projectCard}/:projectId`,
+                  element: <ProjectCardPage />,
+                  handle: { breadcrumb: 'Карточка проекта' },
+               },
+               {
+                  path: `${path.cottageVillageCard}/:CottageProjectId`,
+                  element: <CottageVillageCardPage/>
                },
                {
                   path: path.contacts,
@@ -119,9 +128,6 @@
                },
             ],
          },
-
-
-
       ],
       {
          future: {
@@ -133,3 +139,5 @@
          },
       }
    );
+
+

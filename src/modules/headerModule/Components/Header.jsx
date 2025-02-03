@@ -23,7 +23,7 @@ export const Header = () => {
                </Link>
                <div className={styles.ContactInfo}>
                   <Typography variant="bodyS" color="white" lineHeight="lineXl">
-                     <a href="tel:+996020373712">+996020373712</a>
+                     <a className={styles.phone} href="tel:+996020373712">+996020373712</a>
                   </Typography>
                </div>
             </div>

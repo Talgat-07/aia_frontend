@@ -1,4 +1,4 @@
-import {MainCards} from "UI/MainCards/MainCards"
+import {MainCards} from "UI/Cards/MainCards/MainCards"
 import styles from "modules/RealizeProjectsPageModules/CardsContainer/CardsContainer.module.scss";
 import img from "assets/img/RealProjects.png"
 

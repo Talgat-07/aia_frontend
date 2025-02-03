@@ -5,7 +5,6 @@ import { Loader } from 'UI/index.js';
 import { ContactForm } from 'UI/ContactForm/ContactForm';
 import { ScrollToTop } from 'UI/ScrollToTop/ScrollToTop';
 import { Header } from 'modules/headerModule/Components';
-import {BackToTop} from "modules/HomeModules/index.js";
 
 export const Layout = ({ showFooter = true, showContactForm = true }) => {
    return (
@@ -15,8 +14,6 @@ export const Layout = ({ showFooter = true, showContactForm = true }) => {
          <Suspense fallback={<Loader />}>
             <Outlet />
          </Suspense>
-          {/*<BackToTop />*/}
-
           {showContactForm && <ContactForm />}
          {showFooter && <Footer />}
       </>
