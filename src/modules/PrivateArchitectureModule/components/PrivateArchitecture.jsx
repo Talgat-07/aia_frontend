@@ -3,10 +3,10 @@ import { CustomGalleryBlock } from 'UI/CustomGalleryBlock/CustomGalleryBlock.jsx
 import { CustomFilters } from 'UI/CustomFilters/CustomFilters/CustomFilters.jsx';
 import { Container } from 'UI/Container/Container.jsx';
 import { CustomPagination } from 'UI/CustomPagination/CustomPagination.jsx';
+import img from 'assets/img/moreProjects.png'
 
 export const PrivateArchitecture = () => {
 
-   const img = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmCy16nhIbV3pI1qLYHMJKwbH2458oiC9EmA&s'
 
 
    const customFiltersItem = {
@@ -74,7 +74,7 @@ export const PrivateArchitecture = () => {
       {
          img: img,
          title: '2021 - 2 этаж',
-         text: 'проверка',
+         text: 'Площадь: 200 м²',
          year: 2021,
          floor: 2,
          area: 200,
@@ -82,10 +82,10 @@ export const PrivateArchitecture = () => {
       {
          img: img,
          title: '2022 - 3 этаж',
-         text: 'Площадь: 300 м²',
+         text: 'Площадь: 500 м²',
          year: 2022,
          floor: 3,
-         area: 300,
+         area: 500,
       },
       {
          img: img,

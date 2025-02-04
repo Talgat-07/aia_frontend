@@ -15,24 +15,30 @@
   overflow-y: hidden;
 }
 
+.select{
+  color: #262626;
+  font-weight: 300;
+  option{
+    font-weight: 400;
+  }
+}
 
 .modalBox {
   z-index: 100;
   background: #fff;
   width: 980px;
-  height: 460px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 70px 40px 40px 40px;
+  padding:  57px 40px 40px 40px;
   .closeModal{
 
-    width: 19px;
-    height: 19px;
+    width: 25px;
+    height: 25px;
     display: flex;
     position: absolute;
-    top: 25px;
+    top: 40px;
     right: 25px;
     cursor: pointer;
 
@@ -88,7 +94,7 @@
   gap: 20px;
 
   &Inputs{
-    width: 500px;
+    width: 440px;
 
     display: flex;
     flex-direction: column;

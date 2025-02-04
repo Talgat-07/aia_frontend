@@ -1,4 +1,4 @@
-import styles from "modules/ProjectCardModules/ProjectCardVideo/ProgectCardVideo.module.scss";
+import styles from "./ProjectCardVideo.module.scss";
 import { CustomButton } from "UI/index";
 import { VectorIcon } from "assets/icons/VectorIcon";
 

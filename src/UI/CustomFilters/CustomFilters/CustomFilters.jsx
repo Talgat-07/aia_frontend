@@ -57,8 +57,8 @@ export const CustomFilters = ({ item, onFilterChange, visibleFilters }) => {
 
 
 
-   const yearOptions = [{ value: '', label: 'Все' }, ...(item?.years?.map(y => ({ value: y, label: y })) || [])];
-   const floorOptions = item?.floors ? [{ value: '', label: 'Все' }, ...item.floors.map(f => ({ value: f, label: f }))] : [];
+   const yearOptions = [{ value: '', label: 'Год' }, ...(item?.years?.map(y => ({ value: y, label: y })) || [])];
+   const floorOptions = item?.floors ? [{ value: '', label: 'Этаж' }, ...item.floors.map(f => ({ value: f, label: f }))] : [];
 
 
    return (

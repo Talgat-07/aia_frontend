@@ -151,7 +151,7 @@ export const ConstAndStages = () => {
         </div>
         <Typography variant="bodyM" weight="light">{currentContent.description}</Typography>
         {activeTab === "introduction" && (
-          <CustomButton buttonStyles="activeButton" text="Бриф" />
+          <CustomButton buttonStyles="customButtonAdaptive" text="Бриф" />
         )}
         <div className={styles.stages}>
           {currentContent.stages.map((stage, index) => (

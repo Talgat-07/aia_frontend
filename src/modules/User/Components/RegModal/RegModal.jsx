@@ -7,9 +7,13 @@ import { useEffect, useRef, useState } from 'react';
 import { SubmitApprovedIcon } from 'assets/index.js';
 import { useOutsideClick } from 'utils/hooks/useClickOutside.js';
 import PhoneInput from 'react-phone-input-2';
+import countries from "world-countries";
+
 
 export const RegModal = ({ closeModal, isOpen }) => {
    const modalRef = useRef(null);
+   const [countryList, setCountryList] = useState([]);
+
    const [isSubmitted, setIsSubmitted] = useState(false);
    const [isFocused, setIsFocused] = useState(false);
    const [isFilled, setIsFilled] = useState(false);
@@ -19,6 +23,16 @@ export const RegModal = ({ closeModal, isOpen }) => {
       setIsFocused(false);
       setIsFilled(!!e.target.value);
    };
+   useEffect(() => {
+      const countryOptions = countries.map((country) => ({
+         code: country.cca2,
+         name: country.translations.rus?.common || country.name.common,
+      }));
+
+      countryOptions.sort((a, b) => a.name.localeCompare(b.name));
+
+      setCountryList(countryOptions);
+   }, []);
 
    useEffect(() => {
       if (isOpen) {
@@ -128,9 +142,11 @@ export const RegModal = ({ closeModal, isOpen }) => {
                                     <option value="" disabled>
                                        Выберите страну
                                     </option>
-                                    <option value="Россия">Россия</option>
-                                    <option value="Казахстан">Казахстан</option>
-                                    <option value="Киргизия">Киргизия</option>
+                                    {countryList.map((country) => (
+                                        <option key={country.code} value={country.name}>
+                                           {country.name}
+                                        </option>
+                                    ))}
                                  </select>
                               </div>
 

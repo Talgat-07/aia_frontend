@@ -37,7 +37,7 @@ export const Header = () => {
                      </Typography>
                   }
                />
-               <BurgerMenu />
+               <BurgerMenu/>
             </div>
          </div>
          {isOpen ? (

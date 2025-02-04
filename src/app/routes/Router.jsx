@@ -120,7 +120,7 @@ import { path } from 'utils/constants/constants.js';
             ],
          },
          {
-            element: <Layout showFooter={false} showContactForm={false} />,
+            element: <Layout showFooter={true} showContactForm={false} />,
             children: [
                {
                   path: '*',

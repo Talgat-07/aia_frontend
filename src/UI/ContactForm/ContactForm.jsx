@@ -106,12 +106,13 @@ export const ContactForm = () => {
 
                     <div className={styles.FormArea}>
                       <select
-                         id="country"
+                          size='0'
+                          id="country"
                          {...register("country", { required: "Выберите страну" })}
                          className={`${styles.select} ${errors.country && styles.error}`}
                          defaultValue=""
                       >
-                        <option value="" disabled>
+                        <option value="" disabled className={styles.disabled}>
                           Выберите страну
                         </option>
                         {countryList.map((country) => (

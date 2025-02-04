@@ -1,5 +1,5 @@
 import { ProjectCard } from "modules/ProjectCardModules/ProjectCard/ProjectCard";
-import { ProjectCardVideo } from "modules/ProjectCardModules/ProjectCardVideo/ProgectCardVideo";
+import { ProjectCardVideo } from "modules/ProjectCardModules/ProjectCardVideo/ProjectCardVideo.jsx";
 import { Container, MoreProjects } from 'UI/index';
 import Image from 'assets/img/moreProjects.png';
 import { path } from 'utils/constants/constants.js';
