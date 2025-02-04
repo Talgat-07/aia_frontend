@@ -10,9 +10,6 @@
    height: 50px;
    background-color: var(--main-color);
    color: #ffffff;
-   //transition:
-   //   background-color 0,
-   //   3 ease;
 
    &:hover {
       background-color: rgba(217, 179, 140, 1);
@@ -20,17 +17,6 @@
 }
 
 .customButtonAdaptive {
-<<<<<<< HEAD
-//<<<<<<< HEAD
-//  @extend .centerDisplay;
-//  height: 50px;
-//  padding: 12px 32px;
-//  border: 2px solid var(--main-color);
-//  text-align: center;
-//  background-color: transparent;
-//=======
-=======
->>>>>>> 72ccd1525863f1f1129882a501f2bba745fcca25
    height: 50px;
    display: block;
    position: relative;
@@ -41,10 +27,6 @@
    overflow: hidden;
    color: black;
    transition: color 0.3s ease;
-<<<<<<< HEAD
-//>>>>>>> 2d72782238fb115073e88a4fc2a31b912339f989
-=======
->>>>>>> 72ccd1525863f1f1129882a501f2bba745fcca25
 }
 
 .customButtonAdaptive::before {
@@ -57,40 +39,6 @@
    background-color: var(--black-main-color);
    transform: translate(-50%, -50%);
    transition: 0.7s ease;
-<<<<<<< HEAD
-//<<<<<<< HEAD
-//}
-//
-//.customButtonAdaptive:hover::before{
-//  width: 100%;
-//  z-index: -1;
-//}
-//
-//.customButtonAdaptive:hover{
-//  transition: 0.3s ease;
-//  color: white;
-//  z-index: 1;
-//}
-//
-//.languageButton {
-//  @extend .centerDisplay;
-//  width: 98px;
-//  border: 1px solid var(--gray-fourth);
-//  padding: 8px;
-//  text-align: center;
-//  transition: all 0.3s ease;
-//  background-color: transparent;
-//  color: var(--gray-fourth);
-//
-//  &:active {
-//    @extend .languageButton;
-//    transition: 0.5s ease;
-//    color: #FFFFFF;
-//    border: 1px solid var(--main-color);
-//  }
-//=======
-=======
->>>>>>> 72ccd1525863f1f1129882a501f2bba745fcca25
 }
 
 .customButtonAdaptive:hover::before {
@@ -126,10 +74,6 @@
       color: white;
       transition: 0.5s ease;
    }
-<<<<<<< HEAD
-//>>>>>>> 2d72782238fb115073e88a4fc2a31b912339f989
-=======
->>>>>>> 72ccd1525863f1f1129882a501f2bba745fcca25
 }
 
 .wideButton {
@@ -140,10 +84,6 @@
    background-color: var(--main-color);
    border: 2px solid var(--main-color);
    color: #ffffff;
-
-   //transition:
-      //background-color 0,
-      //3 ease;
 
    &:hover {
       background-color: rgba(217, 179, 140, 1);

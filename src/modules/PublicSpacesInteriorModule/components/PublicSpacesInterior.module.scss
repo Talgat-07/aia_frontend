@@ -1,5 +1,4 @@
 
-
 .publicContainer {
   max-width: calc(100% - 180px);
   margin: 0 auto;
@@ -9,12 +8,9 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-
     justify-content: center;
     row-gap: 20px;
   }
-
-
 
   .cardContainer {
     display: flex;
@@ -22,8 +18,6 @@
     gap: 20px;
     justify-content: center;
     width: 100%;
-
-
   }
 
   .divider {

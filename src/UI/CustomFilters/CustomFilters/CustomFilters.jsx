@@ -11,8 +11,8 @@ export const CustomFilters = ({ item, onFilterChange, visibleFilters }) => {
       onFilterChange(newFilters);
    };
 
-   const yearOptions = [{ value: '', label: 'Все' }, ...item.years.map((y) => ({ value: y, label: y }))];
-   const floorOptions = [{ value: '', label: 'Все' }, ...item.floors.map((f) => ({ value: f, label: f }))];
+   const yearOptions = [{ value: '', label: 'Все' }, ...(item?.years?.map(y => ({ value: y, label: y })) || [])];
+   const floorOptions = item?.floors ? [{ value: '', label: 'Все' }, ...item.floors.map(f => ({ value: f, label: f }))] : [];
 
    return (
       <div className={style.filterContainer}>
@@ -58,6 +58,7 @@ export const CustomFilters = ({ item, onFilterChange, visibleFilters }) => {
                         '--thumb-offset': `0px`,
                      }}
                   />
+                  <div className={style.staticHandle}></div>
                   <div className={style.scale}>
                      {[...Array(10)].map((_, i) => (
                         <div key={i} className={style.scaleValue}>

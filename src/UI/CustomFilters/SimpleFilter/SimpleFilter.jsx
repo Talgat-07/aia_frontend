@@ -5,9 +5,9 @@ export const SimpleFilter = ({items, onFilterChange, selectedFilter}) => {
 
    return (
       <div className={style.filterContainer}>
-         {items.map((item, index) => (
+         {items.map((item) => (
             <span
-               key={index}
+               key={item}
                className={`${style.filterItem} ${selectedFilter === item ? style.active : ''}`}
                onClick={() => onFilterChange(item)}
             >
