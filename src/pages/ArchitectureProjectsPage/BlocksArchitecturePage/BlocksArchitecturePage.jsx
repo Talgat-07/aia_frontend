@@ -1,5 +1,5 @@
 import { Container } from 'UI/Container/Container.jsx';
-import {BlocksArchitecture} from 'modules/BlocksArchitectureModule/components/BlocksArchitecture.jsx';
+import {BlocksArchitecture} from 'modules/BlocksArchitectureModule/BlocksArchitecture.jsx';
 import {BlockTitle} from 'UI/BlockTitle/BlockTitle.jsx';
 
 

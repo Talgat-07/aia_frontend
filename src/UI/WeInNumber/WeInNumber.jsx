@@ -2,8 +2,8 @@ import {Typography}  from "UI/Typography/Typography.jsx"
 import { Heading} from "UI/Heading/Heading.jsx";
 import { NumberAnimation} from "./Components/NumberAnimation/NumberAnimation.jsx";
 import { useModal } from "utils/hooks/useModal.js"
-import classes from "./WeInNumber.module.scss"
-import {CustomButton} from "UI/Buttons/CustomButton/CustomButton.jsx";
+import styles from "./WeInNumber.module.scss"
+import {CustomButton} from "UI/Button/CustomButton/CustomButton.jsx";
 import { RegModal } from 'modules/User/Components/RegModal/RegModal.jsx';
 
 export const WeInNumber = () => {
@@ -21,22 +21,22 @@ export const WeInNumber = () => {
     };
 
     return (
-        <div className={classes.container}>
-            <Heading text="Мы в цифрах" color="black" />
+        <div className={styles.container}>
+            <Heading text="Мы в цифрах" color="black" className={styles.heading} />
 
-            <div className={classes.content}>
-                <div className={classes.content_numbers}>
+            <div className={styles.content}>
+                <div className={styles.content_numbers}>
                     <Typography variant="bodyXl" weight="medium" color="black">
                         {data.slogan}
                     </Typography>
                     <Typography variant="bodyM" weight="light" color="black">
                         {data.description}
                     </Typography>
-                    <div className={classes.content_stats}>
+                    <div className={styles.content_stats}>
                         {data.stats.map((stat, index) => (
-                            <div key={index} className={classes.content_stat}>
+                            <div key={index} className={styles.content_stat}>
                                 <NumberAnimation endValue={stat.value} duration={1500} />
-                                <Typography className={classes.content_label} variant="bodyM"  color="black">
+                                <Typography className={styles.content_label} variant="bodyM"  color="black">
                                     {stat.label}
                                 </Typography>
                             </div>
@@ -44,8 +44,8 @@ export const WeInNumber = () => {
                     </div>
                 </div>
 
-                <div className={classes.textBlock}>
-                    <div className={classes.textBlock_about}>
+                <div className={styles.textBlock}>
+                    <div className={styles.textBlock_about}>
                         <Typography variant="bodyL" weight="medium" color="black">
                             {data.subtitle}
                         </Typography>

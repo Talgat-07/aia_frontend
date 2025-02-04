@@ -100,6 +100,27 @@ export const Cards = () => {
          title: 'Подзаголовок',
          text: 'Lorem ipsum dolor sit amet consectetur. Mi tristique risus accumsan morbi.Mi tristique risus accumsan morbi.',
          link: path.blogOpen,
+      },{
+         id: 13,
+         img: 'https://24.kg/files/media/265/265730.jpeg',
+         date: '12.12.2024',
+         title: 'Подзаголовок',
+         text: 'Lorem ipsum dolor sit amet consectetur. Mi tristique risus accumsan morbi.Mi tristique risus accumsan morbi.',
+         link: path.blogOpen,
+      },{
+         id: 14,
+         img: 'https://24.kg/files/media/265/265730.jpeg',
+         date: '12.12.2024',
+         title: 'Подзаголовок',
+         text: 'Lorem ipsum dolor sit amet consectetur. Mi tristique risus accumsan morbi.Mi tristique risus accumsan morbi.',
+         link: path.blogOpen,
+      },{
+         id: 15,
+         img: 'https://24.kg/files/media/265/265730.jpeg',
+         date: '12.12.2024',
+         title: 'Подзаголовок',
+         text: 'Lorem ipsum dolor sit amet consectetur. Mi tristique risus accumsan morbi.Mi tristique risus accumsan morbi.',
+         link: path.blogOpen,
       },
    ];
 

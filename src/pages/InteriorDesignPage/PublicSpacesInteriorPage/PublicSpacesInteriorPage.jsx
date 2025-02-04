@@ -1,5 +1,5 @@
 import { Container } from 'UI/Container/Container.jsx';
-import { PublicSpacesInterior } from 'modules/PublicSpacesInteriorModule/components/PublicSpacesInterior.jsx';
+import { PublicSpacesInterior } from 'modules/PublicSpacesInteriorModule/PublicSpacesInterior.jsx';
 import { MoreProjects } from 'UI/MoreProjects/MoreProjects.jsx';
 import { path } from 'utils/constants/constants.js';
 import img from 'assets/img/moreProjects.png'

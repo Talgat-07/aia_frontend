@@ -14,7 +14,6 @@ import { path } from 'utils/constants/constants.js';
 export const ArchitectureProjectsPage = () => {
    const location = useLocation();
    const isRootRoute = location.pathname === path.architectureProjects;
-   const navigate = useNavigate();
 
    const config = {
       heroBlock: {
@@ -69,7 +68,7 @@ export const ArchitectureProjectsPage = () => {
                <EngineeringBlock />
                <NewProjects config={config.projects} />
                <MoreProjects config={config.moreProjects} />
-               <IndividualBlock />
+               <IndividualBlock/>
                <YoutubeBlock backgroundColor={"white"} videoId="eA0lHNZ1KCA"/>
 
             </>
