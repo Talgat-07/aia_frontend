@@ -1,4 +1,4 @@
-import { HouseDesign } from 'modules/HouseDesignModule/components';
+import { HouseDesign } from 'modules/HouseDesignModule/HouseDesign.jsx';
 import { MoreProjects } from 'UI/MoreProjects/MoreProjects.jsx';
 import Image from 'assets/img/moreProjects.png';
 import { path } from 'utils/constants/constants.js';

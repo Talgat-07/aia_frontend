@@ -50,7 +50,7 @@ export const BurgerMenu = () => {
                 <div />
             </button>
 
-            <div ref={modalRef} className={`${styles.modalOverlay} ${isOpen ? styles.open : ''}`}>
+            <div ref={modalRef} className={`${styles.modalOverlay} ${isOpen ? styles.open : ''}`} >
                 <div className={styles.modalContent}>
                     <div className={styles.topModal}>
                         <Link to={path.home} onClick={closeMenu}>

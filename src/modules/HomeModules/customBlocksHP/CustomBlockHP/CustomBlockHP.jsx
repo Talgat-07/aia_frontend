@@ -1,8 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { useReadMoreToggle } from 'utils/hooks/useReadMoreButtonHook.js';
-import { CustomButton } from 'UI/Button/CustomButton/CustomButton.jsx';
-import { Typography } from 'UI/typography/Typography.jsx';
-import { Heading } from 'UI/heading/Heading.jsx';
+import { Typography, CustomButton, Heading } from 'UI/index.js';
 import styles from './CustomBlockHP.module.scss';
 import { useOverflowCheck } from 'utils/hooks/useOverflowCheck.js';
 

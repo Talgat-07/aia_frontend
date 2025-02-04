@@ -1,9 +1,7 @@
-import {Typography}  from "UI/Typography/Typography.jsx"
-import { Heading} from "UI/Heading/Heading.jsx";
+import {Typography, Heading, CustomButton}  from "UI/index.js"
 import { NumberAnimation} from "./Components/NumberAnimation/NumberAnimation.jsx";
 import { useModal } from "utils/hooks/useModal.js"
 import styles from "./WeInNumber.module.scss"
-import {CustomButton} from "UI/Button/CustomButton/CustomButton.jsx";
 import { RegModal } from 'modules/User/Components/RegModal/RegModal.jsx';
 
 export const WeInNumber = () => {
