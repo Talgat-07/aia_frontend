@@ -1,13 +1,13 @@
 import { Container } from "UI/index";
-import { ConstAndStages } from "modules/CostAndStagesModeles/ConstructionStages/CostAndStages";
-import { ConstructionCost } from "modules/CostAndStagesModeles/ConstructionCost/ConstructionCost";
+import { CostAndStages } from "modules/CostAndStagesModule/ConstructionStages/CostAndStages.jsx";
+import { ConstructionCost } from "modules/CostAndStagesModule/ConstructionCost/ConstructionCost";
 
 export const CostAndStagesPage = () => {
     return (
         <div>
             <Container>
                 <ConstructionCost/>
-                <ConstAndStages/>
+                <CostAndStages/>
             </Container>
         </div>
     );

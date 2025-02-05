@@ -1,9 +1,9 @@
 import { useState } from "react";
-import styles from "modules/CostAndStagesModeles/ConstructionStages/CostAndStages.module.scss";
+import styles from "modules/CostAndStagesModule/ConstructionStages/CostAndStages.module.scss";
 import { CustomButton, Typography } from "UI/index";
 import img from "assets/img/moreProjects.png";
 
-export const ConstAndStages = () => {
+export const CostAndStages = () => {
   const [activeTab, setActiveTab] = useState("introduction");
 
   const tabs = [
