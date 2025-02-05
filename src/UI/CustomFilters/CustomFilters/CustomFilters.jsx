@@ -60,12 +60,6 @@ export const CustomFilters = ({ item, onFilterChange, visibleFilters }) => {
    const yearOptions = [{ value: '', label: 'Год' }, ...(item?.years?.map(y => ({ value: y, label: y })) || [])];
    const floorOptions = item?.floors ? [{ value: '', label: 'Этаж' }, ...item.floors.map(f => ({ value: f, label: f }))] : [];
 
-<<<<<<< HEAD
-   const yearOptions = [{ value: '', label: 'Все' }, ...(item?.years?.map(y => ({ value: y, label: y })) || [])];
-   const floorOptions = item?.floors ? [{ value: '', label: 'Все' }, ...item.floors.map(f => ({ value: f, label: f }))] : [];
-=======
->>>>>>> 9b83c7c757a2ae73fff31d776009dd137c2cbcfd
-
    return (
       <div className={style.filterContainer}>
          <div className={style.dropdownLine}>
@@ -111,11 +105,7 @@ export const CustomFilters = ({ item, onFilterChange, visibleFilters }) => {
                         '--thumb-offset': `0px`,
                      }}
                   />
-<<<<<<< HEAD
-                  <div className={style.staticHandle}></div>
-=======
                   <div className={style.staticHandle} />
->>>>>>> 9b83c7c757a2ae73fff31d776009dd137c2cbcfd
                   <div className={style.scale}>
                      {[...Array(10)].map((_, i) => (
                         <div key={i} className={style.scaleValue}>

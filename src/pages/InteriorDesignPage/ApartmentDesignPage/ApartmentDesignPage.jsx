@@ -1,5 +1,5 @@
 import { BlockTitle, Container, MoreProjects } from 'UI/index';
-import { ApartmentDesign } from 'modules/ApartmentDesignModule/components';
+import { ApartmentDesign } from 'modules/ApartmentDesignModule/ApartmentDesign.jsx';
 import { Outlet } from 'react-router-dom';
 import Image from 'assets/img/moreProjects.png';
 import { path } from 'utils/constants/constants.js';

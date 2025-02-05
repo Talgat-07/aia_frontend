@@ -1,9 +1,6 @@
 import { SimpleFilter } from 'UI/CustomFilters/SimpleFilter/SimpleFilter.jsx';
-import { Container } from 'UI/Container/Container.jsx';
+import { Container, CustomButton, MainCards, Heading } from 'UI/index.js';
 import React, { useState } from 'react';
-import {MainCards} from 'UI/Cards/MainCards/MainCards.jsx';
-import { Heading } from 'UI/Heading/Heading.jsx';
-import { CustomButton } from 'UI/Button/CustomButton/CustomButton.jsx';
 import styles from './PublicSpacesInterior.module.scss';
 import img from 'assets/img/RealProjects.png'
 

@@ -3,19 +3,11 @@ import { CustomGalleryBlock } from 'UI/CustomGalleryBlock/CustomGalleryBlock.jsx
 import { CustomFilters } from 'UI/CustomFilters/CustomFilters/CustomFilters.jsx';
 import { Container } from 'UI/Container/Container.jsx';
 import { CustomPagination } from 'UI/CustomPagination/CustomPagination.jsx';
-<<<<<<< HEAD
 import style from './PrivateArchitecture.module.scss'
-=======
 import img from 'assets/img/moreProjects.png'
->>>>>>> 9b83c7c757a2ae73fff31d776009dd137c2cbcfd
 
 export const PrivateArchitecture = () => {
 
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 9b83c7c757a2ae73fff31d776009dd137c2cbcfd
    const customFiltersItem = {
       years: [2020, 2021, 2022],
       floors: [1, 2, 3]
