@@ -1,15 +1,21 @@
 import { Link } from 'react-router-dom';
 import styles from '../BurgerMenu/BurgerMenu.module.scss';
 import { NavLinks } from 'utils/constants/constants.js';
+import { useRef } from 'react';
+import { useOutsideClick } from 'utils/hooks/useClickOutside';
 
 export const BurgerMenuNav = ({ closeMenu }) => {
+   const burgerMenuRef = useRef(null);
+
    const handleLinkClick = () => {
       closeMenu();
    };
 
+   useOutsideClick(burgerMenuRef, handleLinkClick, closeMenu);
+
    return (
       <nav className={styles.menu}>
-         <ul>
+         <ul ref={burgerMenuRef}>
             {NavLinks.map((link) => (
                <li key={link.path}>
                   <Link to={link.path} onClick={handleLinkClick}>
