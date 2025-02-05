@@ -49,7 +49,7 @@ export const ContactForm = () => {
     reset();
     setIsSubmitted(true);
   };
-
+ 
   const handleSubmitForm = () => {
     setIsSubmitted(false);
   };
@@ -106,12 +106,13 @@ export const ContactForm = () => {
 
                     <div className={styles.FormArea}>
                       <select
-                         id="country"
+                          size='0'
+                          id="country"
                          {...register("country", { required: "Выберите страну" })}
                          className={`${styles.select} ${errors.country && styles.error}`}
                          defaultValue=""
                       >
-                        <option value="" disabled>
+                        <option value="" disabled className={styles.disabled}>
                           Выберите страну
                         </option>
                         {countryList.map((country) => (
@@ -161,8 +162,13 @@ export const ContactForm = () => {
                   </div>
 
                   <div className={styles.modalFormArea}>
-                    <textarea id="question" {...register("question")} className={`${styles.textarea} ${styles.error}`}
-                              placeholder="Ваш вопрос" />
+                    <textarea
+                       id="question"
+                       {...register('question', { required: 'Введите вопрос' })}
+                       className={`${styles.textarea} ${errors.question && styles.error}`}
+                       placeholder="Ваш вопрос"
+                    />
+
                     <CustomButton type="submit" buttonStyles="wideButton" text="Отправить" />
                   </div>
                 </form>

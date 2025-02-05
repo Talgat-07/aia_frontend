@@ -3,11 +3,11 @@ import { useLocation } from 'react-router-dom';
 import { BreadCrumbData } from 'utils/constants/constants.js';
 import myImage from 'assets/img/mainBanner.png';
 import styles from './HeroBlock.module.scss';
-import {BackToTop} from "modules/HomeModules/index.js";
+import { BackToTop } from "modules/HomeModules/index.js";
 import { useModal } from 'utils/hooks/useModal.js';
 import { RegModal } from 'modules/User/Components/RegModal/RegModal.jsx';
 
-export const HeroBlock = ({ config = {} }) => {
+export const HeroBlock = ({ config = {}, breadcrumbs }) => {
    const { isOpen, openModal, closeModal } = useModal();
    const location = useLocation();
    const currentPath = location.pathname;
@@ -18,22 +18,24 @@ export const HeroBlock = ({ config = {} }) => {
       showWhatsAppIcon = true,
       image = myImage,
       video = null,
-      titleHero = ''
+      titleHero = '',
+      linkColor = 'white',
+      activeColor = 'white'
    } = config;
 
-   const filteredBreadCrumbData = [
+   const filteredBreadCrumbData = breadcrumbs || [
       BreadCrumbData.find(item => item.link === "/"),
       BreadCrumbData.find(item => item.link === currentPath),
    ].filter(Boolean);
 
    return (
       <div className={styles.image_banner}>
-         {showBreadCrumbs && (
+         {showBreadCrumbs && filteredBreadCrumbData.length > 0 && (
             <div className={styles.breadcrumb}>
                <BreadCrumbs
                   items={filteredBreadCrumbData}
-                  activeColor={"white"}
-                  linkColor={"white"}
+                  activeColor={activeColor}
+                  linkColor={linkColor}
                />
             </div>
          )}
@@ -64,7 +66,7 @@ export const HeroBlock = ({ config = {} }) => {
                color="white"
                className={styles.title}
             >
-               { titleHero || BreadCrumbData.find(item => item.link === currentPath)?.label || "Не найдено"}
+               {titleHero || BreadCrumbData.find(item => item.link === currentPath)?.label || "Не найдено"}
             </Typography>
 
             <div className={styles.line}></div>
@@ -86,12 +88,9 @@ export const HeroBlock = ({ config = {} }) => {
             )}
          </div>
 
-         {showWhatsAppIcon && (
-             <BackToTop/>
+         {showWhatsAppIcon && <BackToTop />}
 
-         )}
-         {isOpen? (<RegModal closeModal={closeModal} isOpen={isOpen}/>) : null}
-
+         {isOpen && <RegModal closeModal={closeModal} isOpen={isOpen} />}
       </div>
    );
 };

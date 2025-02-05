@@ -1,9 +1,8 @@
 import style from './CustomPagination.module.scss';
 import { ArrowPrev } from 'assets/icons/ArrowPrev';
 import { ArrowNext } from 'assets/icons/ArrowNext';
-import { useMemo, useCallback } from 'react';
-
-export const CustomPagination = ({ activePage, itemsPerPage, totalItemsCount, onChange}) => {
+import { useMemo, useCallback, useEffect } from 'react';
+export const CustomPagination = ({ activePage, itemsPerPage, totalItemsCount, onChange }) => {
    const totalPages = Math.ceil(totalItemsCount / itemsPerPage);
 
    const handlePageChange = useCallback(
@@ -64,15 +63,19 @@ export const CustomPagination = ({ activePage, itemsPerPage, totalItemsCount, on
    const NavigationButton = ({ direction, Icon }) => (
       <button
          onClick={() => handlePageChange(activePage + direction)}
-         disabled={
-            direction === -1 ? activePage === 1 : activePage === totalPages
-         }
+         disabled={direction === -1 ? activePage === 1 : activePage === totalPages}
          className={style.navButton}
          aria-label={direction === -1 ? 'Previous page' : 'Next page'}
       >
          <Icon />
       </button>
    );
+
+   useEffect(() => {
+      window.scrollTo(0, 0);
+   }, [activePage]);
+   if (totalItemsCount === 0) return null;
+   if (totalPages <= 1) return null;
 
    return (
       <div className={style.paginationContainer} role="navigation">
@@ -82,5 +85,3 @@ export const CustomPagination = ({ activePage, itemsPerPage, totalItemsCount, on
       </div>
    );
 };
-
-

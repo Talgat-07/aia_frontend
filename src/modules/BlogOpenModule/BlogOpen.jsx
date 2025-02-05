@@ -1,8 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import styles from "modules/BlogOpenModule/BlogOpen.module.scss";
 import img1 from "assets/img/BlogOpen.png";
-import { Heading } from 'UI/index';
-import { Typography } from 'UI/index';
+import { Heading, Typography, BreadCrumbs } from 'UI/index';
 import { VectorIcon } from "assets/icons/VectorIcon";
 
 export const BlogOpen = () => {
@@ -18,6 +17,12 @@ export const BlogOpen = () => {
     mainTags: ["consectetur", "ultricies", "design", "all"],
     recommendedTags: ["creative", "ideas", "innovation"]
   };
+  const breadCrumbsItems = [
+    { label: "Главная", link: "/" },
+    { label: "Блог", link: "/blog" },
+    { label: staticData.mission, link: window.location.pathname }
+  ];
+
 
   const [imageIndex, setImageIndex] = useState(1);
   const [activeTags, setActiveTags] = useState(staticData.mainTags);
@@ -66,6 +71,10 @@ export const BlogOpen = () => {
 
   return (
     <div className={styles.page}>
+      <div className={styles.breadcrumb}>
+        <BreadCrumbs items={breadCrumbsItems} linkColor={'#828282'} activeColor={'#262626'} />
+
+      </div>
       <Heading text={staticData.mission} align="left" color="black" />
       
       <Typography variant="bodyM" weight="light" className={styles.imageCounter}>

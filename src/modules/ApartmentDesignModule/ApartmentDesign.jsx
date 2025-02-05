@@ -1,13 +1,13 @@
-import styles from './HouseDesign.module.scss';
 import React, { useState } from 'react';
-import { Container, CustomButton, Heading } from 'UI/index';
-import { MainCards } from 'UI/Cards/MainCards/MainCards';
+import { Container, CustomButton, Heading } from 'UI/index.js';
+import styles from './ApartmentDesign.module.scss';
+import { MainCards } from 'UI/Cards/MainCards/MainCards.jsx';
 
-export const HouseDesign = () => {
-
+export const ApartmentDesign = () => {
    const [showAllByYear, setShowAllByYear] = useState({});
+
    const years = [
-      {
+      { 
          year: '2023',
          cards: [
             {
@@ -25,6 +25,7 @@ export const HouseDesign = () => {
                title: 'Заголовок 2023',
                text: 'Коттеджные поселки 2023',
             },
+
             {
                image: 'https://m-strana.ru/upload/resize_cache/medialibrary/148/830_830_1/krasivye-doma-foto-kottedzhey-i-primery-planirovok-2.jpg',
                title: 'Заголовок 2023',
@@ -173,18 +174,18 @@ export const HouseDesign = () => {
          ],
       },
    ];
-
-
-   const toggleShow = (year) => {
-      setShowAllByYear((prev) => ({
-         ...prev,
-         [year]: !prev[year],
+   const toggleShowAll = (year) => {
+      setShowAllByYear((prevState) => ({
+         ...prevState,
+         [year]: !prevState[year],
       }));
    };
    return (
       <Container>
+
          <div className={styles.apartmentDesignContainer}>
-            {years.map((yearData, index) => {
+            <hr/>
+            {years.map((yearData) => {
                const showAll = showAllByYear[yearData.year];
 
                const displayedCards = showAll
@@ -192,13 +193,19 @@ export const HouseDesign = () => {
                   : yearData.cards.slice(0, 6);
 
                return (
-                  <React.Fragment key={index}>
-                     <Heading linkWidth={'105px'} text={yearData.year} align="left" color="black" />
+
+                  <React.Fragment key={yearData.year}>
+                     <Heading
+                        linkWidth={'105px'}
+                        text={yearData.year}
+                        align="left"
+                        color="black"
+                     />
                      <div className={styles.yearBlock}>
                         <div className={styles.cardContainer}>
                            {displayedCards.map((card, cardIndex) => (
                               <MainCards
-                                 key={cardIndex}
+                                 key={`${yearData.year}-${cardIndex}`}
                                  image={card.image}
                                  title={card.title}
                                  text={card.text}
@@ -207,14 +214,14 @@ export const HouseDesign = () => {
                         </div>
                         {yearData.cards.length > 6 && (
                            <CustomButton
-                              onClick={() => toggleShow(yearData.year)}
+                              onClick={() => toggleShowAll(yearData.year)}
                               text={showAll ? 'Скрыть' : 'Показать еще'}
                               buttonStyles="customButtonAdaptive"
                            />
                         )}
                      </div>
-                     {index < years.length - 1 && (
-                        <div className={styles.divider} />
+                     {years.indexOf(yearData) < years.length - 1 && (
+                        <hr className={styles.divider} />
                      )}
                   </React.Fragment>
                );

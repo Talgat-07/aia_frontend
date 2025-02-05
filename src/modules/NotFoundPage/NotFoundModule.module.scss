@@ -8,16 +8,17 @@
   gap: 180px;
 }
 .content__left{
-  width:45%;
+
+  width:60%;
   display: flex;
   gap: 16px;
   flex-direction: column;
   align-items: start;
 
 }
-.no_scroll{
-  overflow-y: hidden;
-}
+//.no_scroll{
+//  overflow-y: hidden;
+//}
 .heading{
   font-weight: 700 !important;
 }

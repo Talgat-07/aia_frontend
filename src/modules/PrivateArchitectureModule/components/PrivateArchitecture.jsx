@@ -3,12 +3,19 @@ import { CustomGalleryBlock } from 'UI/CustomGalleryBlock/CustomGalleryBlock.jsx
 import { CustomFilters } from 'UI/CustomFilters/CustomFilters/CustomFilters.jsx';
 import { Container } from 'UI/Container/Container.jsx';
 import { CustomPagination } from 'UI/CustomPagination/CustomPagination.jsx';
+<<<<<<< HEAD
 import style from './PrivateArchitecture.module.scss'
+=======
+import img from 'assets/img/moreProjects.png'
+>>>>>>> 9b83c7c757a2ae73fff31d776009dd137c2cbcfd
 
 export const PrivateArchitecture = () => {
 
-   const img = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmCy16nhIbV3pI1qLYHMJKwbH2458oiC9EmA&s'
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9b83c7c757a2ae73fff31d776009dd137c2cbcfd
    const customFiltersItem = {
       years: [2020, 2021, 2022],
       floors: [1, 2, 3]
@@ -74,7 +81,7 @@ export const PrivateArchitecture = () => {
       {
          img: img,
          title: '2021 - 2 этаж',
-         text: 'проверка',
+         text: 'Площадь: 200 м²',
          year: 2021,
          floor: 2,
          area: 200,
@@ -82,10 +89,10 @@ export const PrivateArchitecture = () => {
       {
          img: img,
          title: '2022 - 3 этаж',
-         text: 'Площадь: 300 м²',
+         text: 'Площадь: 500 м²',
          year: 2022,
          floor: 3,
-         area: 300,
+         area: 500,
       },
       {
          img: img,
@@ -569,11 +576,12 @@ export const PrivateArchitecture = () => {
       const { year, floor, area } = filters;
       const filtered = cardsData.filter(
          (card) =>
-            (year === '' || card.year === year) &&
+           (year === '' || card.year === year) &&
             (floor === '' || card.floor === floor) &&
             card.area <= area
       );
-      setFilteredCards(filtered);
+      console.log('filtered', filtered)
+     setFilteredCards(filtered);
       setActivePage(1);
    };
 

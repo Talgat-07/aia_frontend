@@ -108,7 +108,7 @@ export const WeTeam = () => {
 
                 </div>
                 <div className={styles.buttongo}>
-                    <CustomButton text={"Вся команда"} buttonStyles={"customButtonAdaptive"}  to="/about-us#ourteam"/>
+                    <CustomButton text={"Вся команда"} buttonStyles={"customButtonAdaptive"}     to='/about-us#ourteam' />
 
                 </div>
 

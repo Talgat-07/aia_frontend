@@ -139,6 +139,8 @@ export const RealizeProjects = () => {
                               text={yearData.year}
                               align="left"
                               color="black"
+                              linkWidth={'110px'}
+                              className={styles.heading}
                            />
                            <div className={styles.content_year}>
                               <div className={styles.cardContainer} >

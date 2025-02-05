@@ -31,10 +31,10 @@ export const PublicArchitecture = () => {
       {
          img: img,
          title: '2020 - 1 этаж',
-         text: 'Площадь: 100 м²',
+         text: '1212: 900 м²',
          year: 2020,
          floor: 1,
-         area: 100,
+         area: 900,
       },
       {
          img: img,

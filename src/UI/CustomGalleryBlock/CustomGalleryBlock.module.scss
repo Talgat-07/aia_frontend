@@ -1,8 +1,15 @@
 .galleryBlock {
   display: flex;
   flex-wrap: wrap;
+<<<<<<< HEAD
   justify-content: center;
   gap: 20px;
+=======
+  gap: 25px;
+  padding: 0 90px;
+
+  justify-content: space-between;
+>>>>>>> 9b83c7c757a2ae73fff31d776009dd137c2cbcfd
   margin-bottom: 32px;
 }
 .paginationCenter {

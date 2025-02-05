@@ -66,6 +66,7 @@
   }
 
   .inline {
+    width: 510px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -87,11 +88,13 @@
       height: 27px;
       border: 1px solid var(--gray-fourth);
       background: var(--gray-fourth);
+      z-index: 100;
       pointer-events: none;
       filter: none;
     }
 
     .slider {
+      width: 510px;
       -webkit-appearance: none;
       appearance: none;
       height: 4px;
@@ -132,13 +135,14 @@
     justify-content: space-between;
     width: 100%;
     position: absolute;
-    margin-top: 30px;
+    margin-top: 35px;
     margin-bottom: 12px;
     color: #FFFFFF;
 
     .scaleValue {
       font-style: normal;
       position: relative;
+
 
 
       &:before {
@@ -159,5 +163,3 @@
 .react_select{
   display: none;
 }
-
-

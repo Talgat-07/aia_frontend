@@ -3,6 +3,7 @@
   display: flex;
   justify-content: center;
 }
+
 .modalBox {
 
   background: #fff;
@@ -43,7 +44,8 @@
   gap: 20px;
 
   &Inputs{
-    width: 500px;
+    width: 440px;
+    box-sizing: border-box;
 
     display: flex;
     flex-direction: column;
@@ -136,7 +138,7 @@
     box-sizing: border-box;
     width: 440px;
     padding: 12px 8px;
-    height: 44px;
+    height: 43px;
     border: 2px solid var(--black-main-color);
     background: transparent;
     outline: none;
@@ -181,6 +183,21 @@
     font-size: 14px;
     margin-top: 5px;
   }
+option {
+  padding: 10px;
+  font-size: 16px;
+  background-color: white;
+  color: black;
+}
+
+select option:hover {
+  background-color: #f0f0f0;
+}
+
+select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 black;
+}
 
   .error {
     border-color: var(--error) !important;
@@ -199,6 +216,13 @@
   color: var(--black-main-color);
   background: white;
   z-index: 10;
+}
+.select{
+  color: #262626;
+  font-weight: 300;
+  option{
+    font-weight: 400;
+  }
 }
 
 
@@ -306,6 +330,10 @@
   margin-top: 16px;
 }
 
+.textarea{
+  height: 162px;
+  box-sizing: border-box;
+}
 @media (max-width: 480px) {
   .modal {
     width: 95%;

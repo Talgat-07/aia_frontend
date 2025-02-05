@@ -29,7 +29,6 @@ export const TabNavigation = () => {
             ],
         },
     };
-    console.log("Image Path:", Image);
 
     const tabLabels = [
         { id: "architecture", label: "Архитектурное проектирование" },

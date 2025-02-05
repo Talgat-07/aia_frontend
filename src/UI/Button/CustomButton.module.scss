@@ -11,6 +11,8 @@
    background-color: var(--main-color);
    color: #ffffff;
 
+   transition: background-color 0.3s ease;
+
    &:hover {
       background-color: rgba(217, 179, 140, 1);
    }
@@ -85,6 +87,8 @@
    border: 2px solid var(--main-color);
    color: #ffffff;
 
+   transition: background-color 0.3s ease;
+
    &:hover {
       background-color: rgba(217, 179, 140, 1);
    }
@@ -149,4 +153,3 @@
    color: #ffffff;
    margin-bottom: 16px;
 }
-

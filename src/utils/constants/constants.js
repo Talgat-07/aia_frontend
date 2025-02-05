@@ -15,6 +15,7 @@ export const path = {
     blogOpen: 'blog-open',
     contacts: '/contact-us',
     projectCard: '/project-card',
+
     cottageVillageCard: '/cottage-village-card',
 };
 
@@ -70,21 +71,21 @@ export const NavLinks = [
             },
         ],
     },
-    {
-        title: 'Карточка проекта',
-        path: path.projectCard,
-        children: null,
-    },
+    // {
+    //     title: 'Карточка проекта',
+    //     path: path.projectCard,
+    //     children: null,
+    // },
     {
         title: 'Стоимость и этапы строительства',
         path: path.costAndStages,
         children: null,
     },
-    {
-        title: 'Карточка коттеджного поселка',
-        path: path.cottageVillageCard,
-        children: null,
-    },
+    // {
+    //     title: 'Карточка коттеджного поселка',
+    //     path: path.cottageVillageCard,
+    //     children: null,
+    // },
     {
         title: 'Блог',
         path: path.blog,

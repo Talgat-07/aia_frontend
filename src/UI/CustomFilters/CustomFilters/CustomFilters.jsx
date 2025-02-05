@@ -7,12 +7,64 @@ export const CustomFilters = ({ item, onFilterChange, visibleFilters }) => {
 
    const handleChange = (name, value) => {
       const newFilters = { ...filters, [name]: value };
+
       setFilters(newFilters);
       onFilterChange(newFilters);
    };
+   const customStyles = {
+      control: (styles) => ({
+         ...styles,
+         display: "flex",
+         alignItems: "center",
+         justifyContent: "space-between",
+         width: "175px",
+         height: "45px",
+         borderRadius: "0",
+         border: "0",
+         boxShadow: "none",
+         padding: "0 10px",
+      }),
 
+      valueContainer: (styles) => ({
+         ...styles,
+         padding: "0",
+      }),
+
+      input: (styles) => ({
+         ...styles,
+         margin: "0",
+         padding: "0",
+      }),
+
+      placeholder: (styles) => ({
+         ...styles,
+         margin: "0",
+         padding: "0",
+      }),
+
+      dropdownIndicator: (styles) => ({
+         ...styles,
+         padding: "0",
+         marginRight: "8px",
+         color: "black",
+      }),
+
+      indicatorSeparator: (styles) => ({
+         ...styles,
+         display: "none",
+      }),
+   };
+
+
+
+   const yearOptions = [{ value: '', label: 'Год' }, ...(item?.years?.map(y => ({ value: y, label: y })) || [])];
+   const floorOptions = item?.floors ? [{ value: '', label: 'Этаж' }, ...item.floors.map(f => ({ value: f, label: f }))] : [];
+
+<<<<<<< HEAD
    const yearOptions = [{ value: '', label: 'Все' }, ...(item?.years?.map(y => ({ value: y, label: y })) || [])];
    const floorOptions = item?.floors ? [{ value: '', label: 'Все' }, ...item.floors.map(f => ({ value: f, label: f }))] : [];
+=======
+>>>>>>> 9b83c7c757a2ae73fff31d776009dd137c2cbcfd
 
    return (
       <div className={style.filterContainer}>
@@ -20,11 +72,11 @@ export const CustomFilters = ({ item, onFilterChange, visibleFilters }) => {
             {visibleFilters.includes('year') && (
                <div className={style.customDropdown}>
                   <Select
+                     styles={customStyles}
                      value={yearOptions.find((opt) => opt.value === filters.year)}
                      onChange={(option) => handleChange('year', option.value)}
                      options={yearOptions}
                      placeholder="Год"
-                     classNamePrefix="react-select"
                   />
                </div>
             )}
@@ -32,11 +84,11 @@ export const CustomFilters = ({ item, onFilterChange, visibleFilters }) => {
             {visibleFilters.includes('floor') && (
                <div className={style.customDropdown}>
                   <Select
+                     styles={customStyles}
                      value={floorOptions.find((opt) => opt.value === filters.floor)}
                      onChange={(option) => handleChange('floor', option.value)}
                      options={floorOptions}
                      placeholder="Этаж"
-                     classNamePrefix="react-select"
                   />
                </div>
             )}
@@ -44,21 +96,26 @@ export const CustomFilters = ({ item, onFilterChange, visibleFilters }) => {
 
          {visibleFilters.includes('area') && (
             <div className={style.sliderContainer}>
-               <div className={style.label}>Площадь:</div>
+               <div className={style.label}>Площадь: </div>
                <div className={style.inline}>
                   <input
                      type="range"
                      className={style.slider}
                      min="0"
                      max="900"
+                     step="10"
                      value={filters.area}
                      onChange={(e) => handleChange('area', Number(e.target.value))}
                      style={{
-                        '--progress': `${((filters.area - 0) / 900) * 100}%`,
+                        '--progress': `${(filters.area / 930) * 100}%`,
                         '--thumb-offset': `0px`,
                      }}
                   />
+<<<<<<< HEAD
                   <div className={style.staticHandle}></div>
+=======
+                  <div className={style.staticHandle} />
+>>>>>>> 9b83c7c757a2ae73fff31d776009dd137c2cbcfd
                   <div className={style.scale}>
                      {[...Array(10)].map((_, i) => (
                         <div key={i} className={style.scaleValue}>
@@ -70,6 +127,7 @@ export const CustomFilters = ({ item, onFilterChange, visibleFilters }) => {
                </div>
             </div>
          )}
+
       </div>
    );
 };
