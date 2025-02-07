@@ -1,11 +1,13 @@
 
+.filterColor {
+  background-color: var(--black-main-color);
+}
 .filterContainer {
   display: flex;
   justify-content: start;
   align-items: center;
   gap: 40px;
-  background-color: var(--black-main-color);
-  padding: 20px 100px;
+  padding: 20px 0 20px;
   margin-bottom: 40px;
 
   .filterItem {

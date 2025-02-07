@@ -1,8 +1,9 @@
 
-
 .apartmentDesignContainer {
-   padding: 0 90px;
-   margin: 0 auto;
+
+   hr {
+      margin: 70px 0 70px;
+   }
    .yearBlock {
       margin-bottom: 40px;
       display: flex;
@@ -10,29 +11,17 @@
       align-items: center;
       width: 100%;
       justify-content: center;
-      row-gap: 20px;
+      gap: 20px;
    }
-
-
 
    .cardContainer {
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
-      padding: 0 90px;
-      justify-content: space-between;
+      justify-content: center;
       width: 100%;
-
-
    }
 
-   .heading{
-
-      padding: 0 5px;
-   }
-   .containerdivider{
-      padding: 0 50px;
-   }
    .divider {
       border:none;
       height: 2px;

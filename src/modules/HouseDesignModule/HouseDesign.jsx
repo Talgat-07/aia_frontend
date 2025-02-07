@@ -1,6 +1,6 @@
 import styles from './HouseDesign.module.scss';
 import React, { useState } from 'react';
-import { Container, CustomButton, Heading } from 'UI/index.js';
+import { ContentContainer, CustomButton, Heading } from 'UI/index.js';
 import { MainCards } from 'UI/Cards/MainCards/MainCards.jsx';
 
 export const HouseDesign = () => {
@@ -182,7 +182,7 @@ export const HouseDesign = () => {
       }));
    };
    return (
-      <Container>
+      <ContentContainer>
          <div className={styles.apartmentDesignContainer}>
             {years.map((yearData, index) => {
                const showAll = showAllByYear[yearData.year];
@@ -222,6 +222,6 @@ export const HouseDesign = () => {
                );
             })}
          </div>
-      </Container>
+      </ContentContainer>
    );
 };

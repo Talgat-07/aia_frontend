@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, CustomButton, Heading } from 'UI/index.js';
+import { ContentContainer, CustomButton, Heading } from 'UI/index.js';
 import styles from './ApartmentDesign.module.scss';
 import { MainCards } from 'UI/Cards/MainCards/MainCards.jsx';
 
@@ -181,7 +181,7 @@ export const ApartmentDesign = () => {
       }));
    };
    return (
-      <Container>
+      <ContentContainer>
 
          <div className={styles.apartmentDesignContainer}>
             <hr/>
@@ -227,6 +227,6 @@ export const ApartmentDesign = () => {
                );
             })}
          </div>
-      </Container>
+      </ContentContainer>
    );
 };
