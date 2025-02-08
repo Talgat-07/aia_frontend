@@ -1,5 +1,5 @@
 import { BreadCrumbs, ContentContainer, Heading, Typography } from 'UI/index';
-import styles from "modules/CostAndStagesModeles/ConstructionCost/ConstructionCost.module.scss";
+import styles from "./ConstructionCost.module.scss";
 import { useLocation } from 'react-router-dom';
 import { BreadCrumbData, path } from 'utils/constants/constants.js';
 

@@ -54,7 +54,7 @@ export const CustomBlockHP = ({ items, link }) => {
 };
 
 
-import { blocksConfig } from './config';
+import { blocksConfig } from './config.js';
 import { path } from 'utils/constants/constants.js';
 export const PrivateHouses = () => (
    <CustomBlockHP items={blocksConfig.privateHouses} link={path.privateArchitecture} />
