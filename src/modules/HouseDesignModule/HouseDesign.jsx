@@ -183,7 +183,7 @@ export const HouseDesign = () => {
    };
    return (
       <Container>
-         <div className={styles.apartmentDesignContainer}>
+         <div className={styles.houseDesignContainer}>
             {years.map((yearData, index) => {
                const showAll = showAllByYear[yearData.year];
 
