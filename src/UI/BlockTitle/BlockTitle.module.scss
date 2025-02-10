@@ -1,5 +1,8 @@
 .container{
-  padding: 0 100px 100px;
+  padding: 0 100px 0;
+
+}
+.container_content{
   margin-top: 30px;
   display: flex;
 }
@@ -15,12 +18,28 @@
   display: flex;
   flex-direction: column;
   gap: 30px;
-  width: 40%;
+  width: 50%;
 }
 .container__right{
   display: flex;
   gap: 18px;
   flex-direction: column;
-  width: 715px;
+  width: 38rem;
 }
 
+
+
+@media screen and (max-width: 1024px){
+  .container{
+    padding: 0 30px 100px;
+
+  }
+  .container_content{
+    display: flex;
+    flex-direction: column;
+  }
+  .container__right{
+    width: 100%;
+    padding: 0 0 50px;
+  }
+}

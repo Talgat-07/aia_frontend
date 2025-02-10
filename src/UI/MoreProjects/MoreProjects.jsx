@@ -1,8 +1,11 @@
 import PropTypes from 'prop-types';
-import styles from 'UI/MoreProjects/MoreProjects.module.scss';
+import styles from './MoreProjects.module.scss';
 import { CustomButton, Heading, Typography } from 'UI/index.js';
+import {useMediaQuery} from "utils/hooks/useMediaQuery.js";
 
 export const MoreProjects = ({ config = {}, children }) => {
+   const Desktop = useMediaQuery('(min-width: 1350px)');
+   const Tablet = useMediaQuery('(max-width: 1024px)');
    const {
       image = null,
       subtitle = '',
@@ -47,7 +50,7 @@ export const MoreProjects = ({ config = {}, children }) => {
                         {text}
                      </Typography>
                   )}
-                  {buttons.length > 0 && (
+                  {Desktop && buttons.length > 0 && (
                      <div className={buttonHead}>
                         {buttons.map((button, index) => (
                            <CustomButton
@@ -61,7 +64,20 @@ export const MoreProjects = ({ config = {}, children }) => {
                   )}
                </div>
             )}
+
          </div>
+         {Tablet && buttons.length > 0 && (
+             <div className={styles.buttonHead}>
+                {buttons.map((button, index) => (
+                    <CustomButton
+                        text={button.text}
+                        key={index}
+                        to={button.link}
+                        buttonStyles="wideButton"
+                    />
+                ))}
+             </div>
+         )}
       </div>
    );
 };
