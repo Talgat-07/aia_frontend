@@ -1,10 +1,11 @@
 import { MainCards } from 'UI/Cards/MainCards/MainCards.jsx';
 import style from './CustomGalleryBlock.module.scss';
+import { ContentContainer } from 'UI/Container/Container.jsx';
 
 export const CustomGalleryBlock = ({cardsData}) => {
 
    return(
-      <div>
+      <ContentContainer>
          <div className={style.galleryBlock}>
             {
                cardsData.map((card, index) => (
@@ -17,6 +18,6 @@ export const CustomGalleryBlock = ({cardsData}) => {
                ))
             }
          </div>
-      </div>
+      </ContentContainer>
    )
 }

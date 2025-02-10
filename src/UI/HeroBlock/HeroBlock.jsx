@@ -1,4 +1,4 @@
-import { BreadCrumbs, Typography, CustomButton } from 'UI/index.js';
+import { BreadCrumbs, Typography, CustomButton, ContentContainer } from 'UI/index.js';
 import { useLocation } from 'react-router-dom';
 import { BreadCrumbData } from 'utils/constants/constants.js';
 import myImage from 'assets/img/mainBanner.png';
@@ -30,6 +30,7 @@ export const HeroBlock = ({ config = {}, breadcrumbs }) => {
 
    return (
       <div className={styles.image_banner}>
+
          {showBreadCrumbs && filteredBreadCrumbData.length > 0 && (
             <div className={styles.breadcrumb}>
                <BreadCrumbs
@@ -58,7 +59,7 @@ export const HeroBlock = ({ config = {}, breadcrumbs }) => {
                playsInline
             />
          )}
-
+         <ContentContainer>
          <div className={styles.textBanner}>
             <Typography
                variant="h1"
@@ -87,7 +88,7 @@ export const HeroBlock = ({ config = {}, breadcrumbs }) => {
                />
             )}
          </div>
-
+         </ContentContainer>
          {showWhatsAppIcon && <BackToTop />}
 
          {isOpen && <RegModal closeModal={closeModal} isOpen={isOpen} />}

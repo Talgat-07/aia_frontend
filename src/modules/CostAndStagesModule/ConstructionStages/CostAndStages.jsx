@@ -1,9 +1,9 @@
 import { useState } from "react";
-import styles from "modules/CostAndStagesModeles/ConstructionStages/CostAndStages.module.scss";
-import { CustomButton, Typography } from "UI/index";
+import styles from "./CostAndStages.module.scss";
+import { ContentContainer, CustomButton, Typography } from 'UI/index';
 import img from "assets/img/moreProjects.png";
 
-export const ConstAndStages = () => {
+export const CostAndStages = () => {
   const [activeTab, setActiveTab] = useState("introduction");
 
   const tabs = [
@@ -116,6 +116,7 @@ export const ConstAndStages = () => {
   const currentContent = tabs.find((tab) => tab.id === activeTab)?.content;
 
   return (
+     <ContentContainer>
     <div className={styles.app}>
       <div className={styles.tabs}>
         <div className={styles.top_tabs}>
@@ -189,5 +190,6 @@ export const ConstAndStages = () => {
         </div>
       </div>
     </div>
+     </ContentContainer>
   );
 };

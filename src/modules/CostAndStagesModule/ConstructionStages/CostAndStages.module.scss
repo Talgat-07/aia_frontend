@@ -1,5 +1,5 @@
 .app {
-  max-width: 1240px;
+  //max-width: 1240px; //
   margin: 70px auto;
   display: flex;
   flex-direction: column;
@@ -26,6 +26,9 @@
     gap: 32px;
     flex-grow: 1;
     justify-content: center;
+    button{
+      width: 190px;
+    }
 
     .title_section {
       display: flex;

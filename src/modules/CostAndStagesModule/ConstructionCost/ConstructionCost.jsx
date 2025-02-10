@@ -1,5 +1,5 @@
-import { BreadCrumbs, Heading, Typography } from 'UI/index';
-import styles from "modules/CostAndStagesModeles/ConstructionCost/ConstructionCost.module.scss";
+import { BreadCrumbs, ContentContainer, Heading, Typography } from 'UI/index';
+import styles from "./ConstructionCost.module.scss";
 import { useLocation } from 'react-router-dom';
 import { BreadCrumbData, path } from 'utils/constants/constants.js';
 
@@ -23,7 +23,7 @@ export const ConstructionCost = () => {
   ].filter(Boolean);
 
   return (
-    <div>
+    <ContentContainer>
       <div className={styles.title_block}>
         <div className={styles.title}>
           <BreadCrumbs items={filteredBreadCrumbData} linkColor={"#828282"} activeColor={'#262626'} />
@@ -39,6 +39,6 @@ export const ConstructionCost = () => {
         </div>
       </div>
       <div className={styles.divider}></div>
-    </div>
+    </ContentContainer>
   );
 };

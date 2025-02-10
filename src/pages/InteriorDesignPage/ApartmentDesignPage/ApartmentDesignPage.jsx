@@ -24,7 +24,6 @@ export const ApartmentDesignPage = () => {
       linkWidth: '467px',
    }
    return (
-      <>
          <Container>
             <BlockTitle config={startBlockConfig}/>
             <ApartmentDesign />
@@ -32,6 +31,5 @@ export const ApartmentDesignPage = () => {
 
             <Outlet />
          </Container>
-      </>
    );
 };

@@ -1,26 +1,13 @@
 import {useState} from 'react';
 import { CustomGalleryBlock } from 'UI/CustomGalleryBlock/CustomGalleryBlock.jsx';
-import { MoreProjects } from 'UI/MoreProjects/MoreProjects.jsx';
 import { CustomFilters } from 'UI/CustomFilters/CustomFilters/CustomFilters.jsx';
 import { Container } from 'UI/Container/Container.jsx';
 import { CustomPagination } from 'UI/CustomPagination/CustomPagination.jsx';
-import { path } from 'utils/constants/constants.js';
+// import style from './BlocksArchitecture.module.scss'
 
 export const BlocksArchitecture = () => {
 
    const img = 'https://s3.ww-realty.ru/upload/216/216902068b2411fc09c8bc6355623cb5.jpg'
-
-   const moreProjectsData = {
-      image: img,
-      subtitle: 'subtitle',
-      text: 'text',
-      buttons: [
-         { text: 'Реализованные проекты', link: path.realizeProjects},
-         { text: 'Архитектурное проектирование', link: path.architectureProjects},
-         { text: 'Дизайн общественных пространств', link: path.publicSpacesInterior},
-         { text: 'Дизайн квартир', link: path.apartmentDesignPage},
-      ],
-   }
 
    const customFiltersItem = {
       years: [2020, 2021, 2022]
@@ -129,14 +116,13 @@ export const BlocksArchitecture = () => {
             visibleFilters={['year']}
             item={customFiltersItem}
             onFilterChange={handleFilterChange}/>
-         <CustomGalleryBlock cardsData={currentCards} />
+            <CustomGalleryBlock cardsData={currentCards} />
          <CustomPagination
             activePage={activePage}
             itemsPerPage={itemsPerPage}
             totalItemsCount={filteredCards.length}
             onChange={handlePageChange}
          />
-         <MoreProjects config={moreProjectsData}/>
       </Container>
    );
 };

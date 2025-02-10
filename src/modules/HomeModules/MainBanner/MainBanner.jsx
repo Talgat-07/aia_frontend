@@ -10,33 +10,36 @@ const MainBanner = () => {
 
    return (
       <div className={styles.image_banner}>
+
          <img className={styles.image_frame} src={myImage} alt="Main banner" />
-         <div className={styles.textBanner}>
-            <Typography
-               variant="h1"
-               weight="bold"
-               color="white"
-               className={styles.title}
-            >
-               Архитектура со смыслом
-            </Typography>
 
-            <div className={styles.line} />
+            <div className={styles.textBanner}>
+               <Typography
+                  variant="h1"
+                  weight="bold"
+                  color="white"
+                  className={styles.title}
+               >
+                  Архитектура со смыслом
+               </Typography>
 
-            <Typography
-               variant="bodyM"
-               color="white"
-               className={styles.subtitle}
-            >
-               Архитектурная студия АЙА
-            </Typography>
+               <div className={styles.line} />
 
-            <CustomButton
-               buttonStyles={'customButtonBrown'}
-               text={'Оставить заявку'}
-               onClick={openModal}
-            />
-         </div>
+               <Typography
+                  variant="bodyM"
+                  color="white"
+                  className={styles.subtitle}
+               >
+                  Архитектурная студия АЙА
+               </Typography>
+
+               <CustomButton
+                  buttonStyles={'customButtonBrown'}
+                  text={'Оставить заявку'}
+                  onClick={openModal}
+               />
+            </div>
+
          <BackToTop />
          {isOpen ? <RegModal closeModal={closeModal} isOpen={isOpen} /> : null}
       </div>
