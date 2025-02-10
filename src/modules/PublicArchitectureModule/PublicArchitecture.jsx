@@ -1,9 +1,9 @@
 import {useState} from 'react';
 import { CustomGalleryBlock } from 'UI/CustomGalleryBlock/CustomGalleryBlock.jsx';
 import { CustomFilters } from 'UI/CustomFilters/CustomFilters/CustomFilters.jsx';
-import { Container } from 'UI/index.js';
+import { Container } from 'UI/Container/Container.jsx';
 import { CustomPagination } from 'UI/CustomPagination/CustomPagination.jsx';
-// import style from './PublicArchitecture.module.scss'
+import style from './PublicArchitecture.module.scss'
 
 export const PublicArchitecture = () => {
 
@@ -140,7 +140,9 @@ export const PublicArchitecture = () => {
    return (
       <Container>
          <CustomFilters visibleFilters={['year', 'floor', 'area']} item={customFiltersItem} onFilterChange={handleFilterChange}/>
-         <CustomGalleryBlock cardsData={currentCards} />
+         <div className={style.publicContainer}>
+            <CustomGalleryBlock cardsData={currentCards} />
+         </div>
          <CustomPagination
             activePage={activePage}
             itemsPerPage={itemsPerPage}

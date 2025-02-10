@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import styles from 'UI/MoreProjects/MoreProjects.module.scss';
-import { Container, ContentContainer, CustomButton, Heading, Typography } from 'UI/index.js';
+import { CustomButton, Heading, Typography } from 'UI/index.js';
 
 export const MoreProjects = ({ config = {}, children }) => {
    const {
@@ -21,9 +21,7 @@ export const MoreProjects = ({ config = {}, children }) => {
    const buttonHead = image ? styles.text : `${styles.buttons} ${styles.buttons_noImage}`;
 
    return (
-      <Container>
       <div className={styles.custom_block}>
-         <ContentContainer>
          {children}
          {title && <Heading text={title} color="white" />}
          <div className={contentClass}>
@@ -64,9 +62,7 @@ export const MoreProjects = ({ config = {}, children }) => {
                </div>
             )}
          </div>
-         </ContentContainer>
       </div>
-      </Container>
    );
 };
 

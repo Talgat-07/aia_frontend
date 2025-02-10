@@ -1,4 +1,4 @@
-import { Heading, Typography, CustomButton, ContentContainer } from 'UI/index.js';
+import {Heading,Typography,CustomButton} from 'UI/index.js';
 import styles from './EngineeringBlock.module.scss'
 
 export const EngineeringBlock = ({config = {}}) => {
@@ -10,7 +10,7 @@ export const EngineeringBlock = ({config = {}}) => {
    } = config;
    return (
       <div className={styles.container}>
-         <ContentContainer>
+
          <Heading text={title} color={"black"}/>
          <div className={styles.content}>
             <Typography variant="bodyL" color="black" weight="medium">{subtitle}</Typography>
@@ -19,7 +19,7 @@ export const EngineeringBlock = ({config = {}}) => {
 
          </div>
          <hr/>
-         </ContentContainer>
+
       </div>
    );
 };

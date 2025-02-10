@@ -1,7 +1,7 @@
 import 'UI/Typography/Typography.module.scss';
 import styles from './Header.module.scss';
 import Logo from 'assets/img/logo.svg';
-import { Typography, CustomButton, ContentContainer } from 'UI/index.js';
+import { Typography, CustomButton } from 'UI/index.js';
 import { useModal } from 'utils/hooks/useModal.js';
 import { RegModal } from 'modules/User/Components/RegModal/RegModal.jsx';
 import { Link } from 'react-router-dom';
@@ -13,7 +13,6 @@ export const Header = () => {
 
    return (
       <header className={styles.header}>
-         <ContentContainer>
          {/* <div className={styles.TopBar_Container}>
             <div className={styles.languageSwitcher} />
          </div> */}
@@ -48,7 +47,6 @@ export const Header = () => {
                setIsOpen={setIsOpen}
             />
          ) : null}
-         </ContentContainer>
       </header>
    );
 };

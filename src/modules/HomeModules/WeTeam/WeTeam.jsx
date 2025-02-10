@@ -6,7 +6,7 @@ import 'swiper/css/effect-coverflow';
 import 'swiper/css/navigation';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import {useRef, useEffect, useState} from "react";
-import { PeopleCard, CustomButton, Heading, ContentContainer } from 'UI/index';
+import {PeopleCard, CustomButton, Heading} from 'UI/index';
 import {ArrowLeft, ArrowRight} from "assets/index.js";
 
 
@@ -63,7 +63,6 @@ export const WeTeam = () => {
         return null;
     }
     return (
-       <ContentContainer>
         <div className={styles.wrapper}>
                 <Heading text={"Наша команда"} color={"black"}/>
             <div className={styles.content}>
@@ -125,7 +124,6 @@ export const WeTeam = () => {
 
 
         </div>
-       </ContentContainer>
     );
 
 

@@ -1,24 +1,18 @@
 .filterContainer {
-  background-color: var(--black-main-color);
-
-  .dropdownLine {
-    display: flex;
-    flex-direction: row;
-    gap: 2px;
-  }
-}
-
-.filter {
   margin-bottom: 40px;
   display: flex;
   gap: 20px;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 0;
+  padding: 12px 100px;
   background-color: var(--black-main-color);
   color: white;
-}
 
+  .dropdownLine {
+    display: flex;
+    flex-direction: row;
+  }
+}
 
 .customDropdown {
   margin: 12px auto;
@@ -28,6 +22,7 @@
   border: 2px solid var(--black-main-color);
   cursor: pointer;
   color: #262626;
+  gap: 2px;
 }
 
 .dropdownHeader {
@@ -87,20 +82,19 @@
 
     .staticHandle {
       position: absolute;
-      top: -12px;
-      right: -15px;
+      top: -10px;
+      right: -14px;
       width: 15px;
-      height: 28px;
+      height: 27px;
       border: 1px solid var(--gray-fourth);
       background: var(--gray-fourth);
-      z-index: 1;
+      z-index: 100;
       pointer-events: none;
       filter: none;
     }
 
     .slider {
-      max-width: 510px;
-      width: 100%;
+      width: 510px;
       -webkit-appearance: none;
       appearance: none;
       height: 4px;
@@ -117,7 +111,8 @@
         background: var(--main-color);
         cursor: pointer;
         position: absolute;
-        z-index: 5;
+        z-index: 6;
+        //transition: left 0.1s ease-in-out;
         left: calc(var(--progress) + var(--thumb-offset));
       }
 
