@@ -18,4 +18,3 @@ export { BlockTitle } from './BlockTitle/BlockTitle.jsx';
 export { MoreProjects } from './MoreProjects/MoreProjects.jsx';
 export { BlogCards } from './Cards/BlogCards/BlogCards.jsx';
 export { CustomBlogGallery } from './CustomBlogGallery/CustomBlogGallery.jsx';
-export { ContentContainer } from './Container/Container.jsx'

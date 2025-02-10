@@ -5,7 +5,6 @@ import { BreadCrumbData } from 'utils/constants/constants.js';
 import { useLocation } from "react-router-dom";
 import { RegModal } from 'modules/User/Components/RegModal/RegModal.jsx';
 import { useModal } from 'utils/hooks/useModal.js';
-import { ContentContainer } from 'UI/Container/Container.jsx';
 
 export const BlockTitle = ({ config = {} }) => {
    const {isOpen, openModal, closeModal} = useModal();
@@ -28,7 +27,6 @@ export const BlockTitle = ({ config = {} }) => {
    ].filter(Boolean);
 
    return (
-      <ContentContainer>
       <div className={styles.container}>
 
          <div className={styles.container__left}>
@@ -56,6 +54,5 @@ export const BlockTitle = ({ config = {} }) => {
          {isOpen? (<RegModal closeModal={closeModal} isOpen={isOpen}/>) : null}
 
       </div>
-      </ContentContainer>
    );
 };

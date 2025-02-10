@@ -1,4 +1,4 @@
-import { Typography, Heading, CustomButton, ContentContainer } from 'UI/index.js';
+import {Typography, Heading, CustomButton}  from "UI/index.js"
 import { NumberAnimation} from "./Components/NumberAnimation/NumberAnimation.jsx";
 import { useModal } from "utils/hooks/useModal.js"
 import styles from "./WeInNumber.module.scss"
@@ -19,7 +19,6 @@ export const WeInNumber = () => {
     };
 
     return (
-       <ContentContainer>
         <div className={styles.container}>
             <Heading text="Мы в цифрах" color="black" className={styles.heading} />
 
@@ -62,6 +61,6 @@ export const WeInNumber = () => {
 
             <hr/>
         </div>
-       </ContentContainer>
+
     );
 };

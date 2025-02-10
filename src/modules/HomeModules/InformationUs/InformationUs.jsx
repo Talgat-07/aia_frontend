@@ -1,12 +1,11 @@
 import styles from './InformationUs.module.scss';
-import { Heading, Typography, CustomButton, ContentContainer } from 'UI/index.js';
+import { Heading, Typography, CustomButton } from "UI/index.js";
 import AboutUs from 'assets/img/AboutUs.png';
 import PropTypes from 'prop-types';
 import { path } from 'utils/constants/constants.js';
 export const InformationUs = ({ subtitle, description }) => {
 
     return (
-       <ContentContainer>
         <div className={styles.Information}>
             <Heading text="Информация о нас" color="black" />
             <div className={styles.Information_Content}>
@@ -35,7 +34,6 @@ export const InformationUs = ({ subtitle, description }) => {
             </div>
             <hr />
         </div>
-       </ContentContainer>
     );
 };
 

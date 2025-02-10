@@ -1,7 +1,8 @@
 
 .publicContainer {
-  margin: 0 auto;
+  padding: 0 90px;
 
+  margin: 0 auto;
   .yearBlock {
     margin-bottom: 40px;
     display: flex;
@@ -20,7 +21,7 @@
     flex-wrap: wrap;
     gap: 20px;
     padding: 0 90px;
-    justify-content: center;
+    justify-content: space-between;
     width: 100%;
   }
 

@@ -1,7 +1,6 @@
 import {MainCards} from "UI/Cards/MainCards/MainCards"
 import styles from "modules/RealizeProjectsModules/CardsContainer/CardsContainer.module.scss";
 import img from "assets/img/RealProjects.png"
-import { ContentContainer } from 'UI/Container/Container.jsx';
 
 export const CardContainer = () => {
   const cardsData = [
@@ -38,7 +37,6 @@ export const CardContainer = () => {
   ];
 
   return (
-     <ContentContainer>
     <div className={styles.card_container}>
       {cardsData.map((card, index) => (
         <MainCards
@@ -49,7 +47,6 @@ export const CardContainer = () => {
         />
       ))}
     </div>
-     </ContentContainer>
   );
 };
 

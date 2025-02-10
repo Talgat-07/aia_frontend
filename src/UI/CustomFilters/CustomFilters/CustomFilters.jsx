@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import style from './CustomFilters.module.scss';
 import Select from 'react-select';
-import { ContentContainer } from 'UI/Container/Container.jsx';
 
 export const CustomFilters = ({ item, onFilterChange, visibleFilters }) => {
    const [filters, setFilters] = useState({ year: '', floor: '', area: 900 });
@@ -63,8 +62,6 @@ export const CustomFilters = ({ item, onFilterChange, visibleFilters }) => {
 
    return (
       <div className={style.filterContainer}>
-         <ContentContainer>
-            <div className={style.filter}>
          <div className={style.dropdownLine}>
             {visibleFilters.includes('year') && (
                <div className={style.customDropdown}>
@@ -95,7 +92,6 @@ export const CustomFilters = ({ item, onFilterChange, visibleFilters }) => {
             <div className={style.sliderContainer}>
                <div className={style.label}>Площадь: </div>
                <div className={style.inline}>
-                  <div className={style.staticHandle} />
                   <input
                      type="range"
                      className={style.slider}
@@ -105,10 +101,11 @@ export const CustomFilters = ({ item, onFilterChange, visibleFilters }) => {
                      value={filters.area}
                      onChange={(e) => handleChange('area', Number(e.target.value))}
                      style={{
-                        '--progress': `${(filters.area / 900) * 100}%`,
+                        '--progress': `${(filters.area / 930) * 100}%`,
                         '--thumb-offset': `0px`,
                      }}
                   />
+                  <div className={style.staticHandle} />
                   <div className={style.scale}>
                      {[...Array(10)].map((_, i) => (
                         <div key={i} className={style.scaleValue}>
@@ -120,8 +117,7 @@ export const CustomFilters = ({ item, onFilterChange, visibleFilters }) => {
                </div>
             </div>
          )}
-            </div>
-         </ContentContainer>
+
       </div>
    );
 };

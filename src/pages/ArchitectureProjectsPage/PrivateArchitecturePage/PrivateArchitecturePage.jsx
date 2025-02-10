@@ -1,4 +1,4 @@
-// import { Container } from 'UI/Container/Container.jsx';
+import { Container } from 'UI/Container/Container.jsx';
 import {PrivateArchitecture} from 'modules/PrivateArchitectureModule/components/PrivateArchitecture.jsx';
 import { BlockTitle } from 'UI/BlockTitle/BlockTitle.jsx';
 import { path } from 'utils/constants/constants.js';
@@ -25,10 +25,11 @@ export const PrivateArchitecturePage = () => {
    }
 
    return (
-      <>
+      <Container>
          <BlockTitle config={realizeConfig} />
          <PrivateArchitecture/>
          <MoreProjects config={moreProjectsData}/>
-      </>
+
+      </Container>
    )
 }

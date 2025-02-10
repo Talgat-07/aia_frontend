@@ -3,7 +3,7 @@ import { CustomGalleryBlock } from 'UI/CustomGalleryBlock/CustomGalleryBlock.jsx
 import { CustomFilters } from 'UI/CustomFilters/CustomFilters/CustomFilters.jsx';
 import { Container } from 'UI/Container/Container.jsx';
 import { CustomPagination } from 'UI/CustomPagination/CustomPagination.jsx';
-// import style from './PrivateArchitecture.module.scss'
+import style from './PrivateArchitecture.module.scss'
 import img from 'assets/img/moreProjects.png'
 
 export const PrivateArchitecture = () => {
@@ -587,17 +587,18 @@ export const PrivateArchitecture = () => {
 
    return (
       <Container>
-         <CustomFilters visibleFilters={['year', 'floor', 'area']} item={customFiltersItem}
-                        onFilterChange={handleFilterChange} />
+         <CustomFilters visibleFilters={['year', 'floor', 'area']} item={customFiltersItem} onFilterChange={handleFilterChange}/>
+         <div className={style.privateContainer}>
             <CustomGalleryBlock cardsData={currentCards} />
-            <CustomPagination
-               activePage={activePage}
-               itemsPerPage={itemsPerPage}
-               totalItemsCount={filteredCards.length}
-               onChange={handlePageChange}
-            />
+         </div>
+         <CustomPagination
+            activePage={activePage}
+            itemsPerPage={itemsPerPage}
+            totalItemsCount={filteredCards.length}
+            onChange={handlePageChange}
+         />
       </Container>
-);
+   );
 };
 
 
