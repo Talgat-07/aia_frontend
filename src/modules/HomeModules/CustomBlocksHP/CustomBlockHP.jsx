@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { useReadMoreToggle } from 'utils/hooks/useReadMoreButtonHook.js';
-import { Typography, CustomButton, Heading } from 'UI/index.js';
+import { Typography, CustomButton, Heading, ContentContainer } from 'UI/index.js';
 import styles from './CustomBlockHP.module.scss';
 import { useOverflowCheck } from 'utils/hooks/useOverflowCheck.js';
 
@@ -15,6 +15,7 @@ export const CustomBlockHP = ({ items, link }) => {
 
     return (
        <div className={styles.customBlock}>
+           <ContentContainer>
            <Heading text={items.heading} />
 
            <div className={items.onLeft ? styles.leftContentClass : styles.rightContentClass}>
@@ -47,6 +48,7 @@ export const CustomBlockHP = ({ items, link }) => {
            </div>
 
            <hr />
+           </ContentContainer>
        </div>
     );
 };

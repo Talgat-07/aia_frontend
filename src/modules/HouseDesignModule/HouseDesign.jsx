@@ -1,6 +1,6 @@
 import styles from './HouseDesign.module.scss';
+import { ContentContainer, CustomButton, Heading } from 'UI/index.js';
 import React, { useState, useEffect } from 'react';
-import { Container, CustomButton, Heading } from 'UI/index.js';
 import { MainCards } from 'UI/Cards/MainCards/MainCards.jsx';
 
 export const HouseDesign = () => {
@@ -194,10 +194,10 @@ export const HouseDesign = () => {
       });
    }, [showAllByYear]);
    return (
-       <Container>
-          <div className={styles.apartmentDesignContainer}>
-             {years.map((yearData, index) => {
-                const showAll = showAllByYear[yearData.year];
+      <ContentContainer>
+         <div className={styles.apartmentDesignContainer}>
+            {years.map((yearData, index) => {
+               const showAll = showAllByYear[yearData.year];
 
                 const displayedCards = showAll
                     ? yearData.cards
@@ -205,6 +205,7 @@ export const HouseDesign = () => {
 
                 return (
                     <React.Fragment key={index}>
+                       {/*<div>*/}
                        <hr />
                        <Heading
                            className={styles.heading}
@@ -235,13 +236,16 @@ export const HouseDesign = () => {
                                   text={showAll ? "Скрыть" : "Показать еще"}
                                   buttonStyles="customButtonAdaptive"
                               />
-                          )}
-                       </div>
-                       {index < years.length - 1 && <div className={styles.containerdivider}></div>}
-                    </React.Fragment>
-                );
-             })}
-          </div>
-       </Container>
+                           )}
+                        </div>
+                     {index < years.length - 1 && (
+                        <div className={styles.containerdivider}>
+                        </div>
+                     )}
+                  </React.Fragment>
+               );
+            })}
+         </div>
+      </ContentContainer>
    );
 };
