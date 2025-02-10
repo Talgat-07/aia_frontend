@@ -4,7 +4,6 @@ import { Container, CustomButton, Heading } from 'UI/index.js';
 import { MainCards } from 'UI/Cards/MainCards/MainCards.jsx';
 
 export const HouseDesign = () => {
-
    const [showAllByYear, setShowAllByYear] = useState({});
    const years = [
       {
@@ -174,7 +173,6 @@ export const HouseDesign = () => {
       },
    ];
 
-
    const toggleShow = (year) => {
       setShowAllByYear((prev) => ({
          ...prev,
@@ -193,8 +191,14 @@ export const HouseDesign = () => {
 
                return (
                   <React.Fragment key={index}>
-                     <hr/>
-                     <Heading className={styles.heading} linkWidth={'105px'} text={yearData.year} align="left" color="black" />
+                     <hr className={styles.dividerTop} />
+                     <Heading
+                        className={styles.heading}
+                        linkWidth={'105px'}
+                        text={yearData.year}
+                        align="left"
+                        color="black"
+                     />
                      <div className={styles.yearBlock}>
                         <div className={styles.cardContainer}>
                            {displayedCards.map((card, cardIndex) => (
@@ -215,8 +219,7 @@ export const HouseDesign = () => {
                         )}
                      </div>
                      {index < years.length - 1 && (
-                        <div className={styles.containerdivider}>
-                        </div>
+                        <div className={styles.containerdivider}></div>
                      )}
                   </React.Fragment>
                );
