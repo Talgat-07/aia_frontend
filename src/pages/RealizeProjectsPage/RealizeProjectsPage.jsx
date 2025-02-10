@@ -13,7 +13,6 @@ export const RealizeProjectsPage = () => {
         <Container >
             <BlockTitle config={realizeConfig} />
             <RealizeProjects/>
-
         </Container>
     );
 };

@@ -4,12 +4,10 @@ import { ConstructionCost } from "modules/CostAndStagesModule/ConstructionCost/C
 
 export const CostAndStagesPage = () => {
     return (
-        <div>
             <Container>
                 <ConstructionCost/>
                 <CostAndStages/>
             </Container>
-        </div>
     );
 };
 
