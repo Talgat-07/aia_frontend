@@ -3,9 +3,11 @@ import Image from 'assets/img/moreProjects.png';
 import { CustomButton, MoreProjects } from "UI/index.js";
 import styles from './TabNavigation.module.scss';
 import { path } from 'utils/constants/constants.js';
+import {useMediaQuery} from "utils/hooks/useMediaQuery.js";
 
 export const TabNavigation = () => {
     const [activeTab, setActiveTab] = useState("architecture");
+    const Desktop = useMediaQuery('(min-width: 1030px)');
 
     const tabsConfig =  {
         architecture: {
@@ -58,10 +60,12 @@ export const TabNavigation = () => {
                 <div className={styles.content_information}>
                     <MoreProjects config={currentTab} />
                 </div>
-                <div className={styles.content_hr}>
-                    <hr />
+                {Desktop && (
+                    <div className={styles.content_hr}>
+                        <hr/>
+                    </div>
+                )}
 
-                </div>
 
             </div>
         </div>

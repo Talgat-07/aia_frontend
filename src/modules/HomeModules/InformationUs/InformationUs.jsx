@@ -15,9 +15,12 @@ export const InformationUs = ({ subtitle, description }) => {
                         <Typography variant="bodyL" weight="medium" color="black">
                             {subtitle}
                         </Typography>
-                        <Typography variant="bodyM" weight="light" color="black" lineHeight="lineXl">
-                            {description}
-                        </Typography>
+                        <div className={styles.Information_LeftDescription}>
+                            <Typography variant="bodyM" weight="light" color="black" lineHeight="lineXl">
+                                {description}
+                            </Typography>
+                        </div>
+
                     </div>
 
                     <CustomButton

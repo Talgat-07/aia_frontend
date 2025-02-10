@@ -2,15 +2,21 @@ import {Container, Heading} from "UI/index.js";
 import styles from './HowWeWorks.module.scss'
 import {Typography,CustomButton} from "UI/index.js";
 import { path } from 'utils/constants/constants.js';
+import {useMediaQuery} from "utils/hooks/useMediaQuery.js";
 
 export const HowWeWorks = () => {
+    const Desktop = useMediaQuery('(min-width: 1080px)');
     const config = {
 
         subtitle:'Lorem ipsum dolor sit amet consectetur. Mi tristique risus accumsan morbi. Sed adipiscing libero vel enim justo phasellus a et. Placerat ultricies ultricies Lorem ipsum dolor sit amet consectetur. Mi tristique risus accumsan morbi. Sed adipiscing libero vel enim justo phasellus a et. Placerat ultricies ultricies Lorem ipsum dolor sit amet consectetur. Mi tristique risus accumsan morbi. Sed adipiscing libero vel enim justo phasellus a et.'
     }
     return (
         <Container className={styles.container}>
-            <hr/>
+            {Desktop &&
+                (
+                    <hr/>
+                )
+            }
             <div className={styles.HowWork}>
                     <Heading text="Как мы работаем"/>
                 <div className={styles.HowWork__content}>

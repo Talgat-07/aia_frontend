@@ -32,3 +32,10 @@
         color: var(--black-main-color);
     }
 }
+
+@media screen and (max-width: 780px){
+    .Heading{
+        margin-bottom: 0px;
+    }
+
+}

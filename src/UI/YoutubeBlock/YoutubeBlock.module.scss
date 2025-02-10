@@ -76,11 +76,14 @@
 
 @media screen and (max-width: 770px) {
   .video_preview {
-    width: 90vw !important;
-    height: auto;
+    width: 526px !important;
+    height: 300px !important;
+    iframe{
+      width: 100%;
+    }
   }
   .clickable_overlay{
-    width: 90vw;
-    height: auto;
+    width: 500px !important;
+    height: 400px !important;
   }
 }

@@ -13,9 +13,6 @@ export const Header = () => {
 
    return (
       <header className={styles.header}>
-         {/* <div className={styles.TopBar_Container}>
-            <div className={styles.languageSwitcher} />
-         </div> */}
          <div className={styles.BottomBar}>
             <div className={styles.logoAndContact}>
                <Link to={path.home}>

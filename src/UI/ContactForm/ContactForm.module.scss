@@ -227,13 +227,13 @@ select:-moz-focusring {
 
 
 
-@media screen and (max-width: 770px) {
+@media screen and (max-width: 1000px) {
   .modalBox {
     width: 90%;
     padding: 30px;
   }
   .modalHeader{
-    padding: 20px 0px 0;
+    padding: 20px 0 0;
   }
 
   .modalFormArea {
