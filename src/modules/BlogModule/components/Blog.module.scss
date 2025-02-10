@@ -5,9 +5,15 @@
       display: flex;
       justify-content: space-between;
       gap: 20px;
+      @media (max-width: 1091px) {
+         flex-direction: column;
+      }
 
       .leftBlock {
          margin-top: 32px;
+         @media (max-width: 1091px) {
+            margin-top: 0px !important;
+         }
 
          .pageTitleAndDescription {
             display: flex;
@@ -22,6 +28,13 @@
       margin: 70px 0;
       width: 100%;
       max-width: 100%;
+      @media (max-width: 1091px) {
+         margin: 50px 0 !important;
+
+         @media (max-width: 650px) {
+            margin: 40px 0 !important;
+         }
+      }
    }
 
    .heading {
