@@ -60,7 +60,6 @@ export const CustomFilters = ({ item, onFilterChange, visibleFilters }) => {
    const yearOptions = [{ value: '', label: 'Год' }, ...(item?.years?.map(y => ({ value: y, label: y })) || [])];
    const floorOptions = item?.floors ? [{ value: '', label: 'Этаж' }, ...item.floors.map(f => ({ value: f, label: f }))] : [];
 
-
    return (
       <div className={style.filterContainer}>
          <div className={style.dropdownLine}>

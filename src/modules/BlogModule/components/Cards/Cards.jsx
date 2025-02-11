@@ -385,7 +385,7 @@ export const Cards = () => {
       },
    ];
 
-   const [filteredCards, setFilteredCards] = useState(cardsData);
+   const [filteredCards] = useState(cardsData);
    const [activePage, setActivePage] = useState(1);
    const itemsPerPage = 6;
 

@@ -10,8 +10,9 @@
   }
 
   .cardContainer {
-    overflow: hidden;
+    padding: 0px;
     justify-content: center;
+    overflow: hidden;
     cursor: pointer;
     display: flex;
     flex-wrap: wrap;
@@ -40,13 +41,13 @@
   margin-right: auto;
 }
 .heading{
-  padding: 0 50px;
+  padding: 0 20px;
 }
 .blockButton{
   display: flex;
   gap: 20px;
   height: 90px;
-  padding: 0 150px ;
+  padding: 0 100px ;
   background: var(--black-main-color);
   button{
     font-weight: 400;
@@ -123,5 +124,12 @@
   .blockButton button {
     font-size: 16px;
     height: auto;
+  }
+}
+
+@media  screen and (max-width: 1550px) {
+  .cardContainer {
+    padding: 0;
+
   }
 }

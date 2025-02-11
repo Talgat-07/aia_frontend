@@ -140,11 +140,11 @@
       color: #ffffff;
    }
 }
-
 .twoButtons {
    @extend .centerDisplay;
-   width: 620px;
-   padding: 36px 0;
+   width: 38.75rem;
+  padding: 36px 0;
+
    background-color: var(--gray-second);
    border: none;
    &Active {
@@ -161,4 +161,19 @@
    background-color: transparent;
    color: #ffffff;
    margin-bottom: 16px;
+}
+
+
+//Adaptive
+@media screen and (max-width: 1370px) {
+   .twoButtons{
+      width: 500px;
+   }
+
+}
+@media screen and (max-width: 1030px) {
+   .twoButtons{
+      width: 354px;
+   }
+
 }

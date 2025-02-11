@@ -6,8 +6,8 @@ import { useOverflowCheck } from 'utils/hooks/useOverflowCheck.js';
 
 export const CustomBlockHP = ({ items, link }) => {
     const navigate = useNavigate();
-    const { expanded, textRef, handleToggle } = useReadMoreToggle();
-    const { ref: textContainerRef, isOverflowing: showReadMore } = useOverflowCheck();
+    const { textRef } = useReadMoreToggle();
+    const { ref: textContainerRef } = useOverflowCheck();
 
     const handleViewProjectsClick = () => {
         navigate(link);
@@ -26,13 +26,6 @@ export const CustomBlockHP = ({ items, link }) => {
                    </div>
 
                    <div className={styles.buttonContainer}>
-                       {showReadMore && (
-                          <CustomButton
-                             buttonStyles="readMoreButton"
-                             onClick={handleToggle}
-                             text={expanded ? 'Скрыть' : 'Читать далее'}
-                          />
-                       )}
                        <CustomButton
                           buttonStyles="customButtonBrown"
                           text="Посмотреть проекты"
@@ -52,7 +45,7 @@ export const CustomBlockHP = ({ items, link }) => {
 };
 
 
-import { blocksConfig } from './config';
+import { blocksConfig } from './config.js';
 import { path } from 'utils/constants/constants.js';
 export const PrivateHouses = () => (
    <CustomBlockHP items={blocksConfig.privateHouses} link={path.privateArchitecture} />

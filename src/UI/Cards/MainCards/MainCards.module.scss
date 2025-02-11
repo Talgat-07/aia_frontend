@@ -48,3 +48,21 @@
       }
    }
 }
+@media screen and (max-width: 770px){
+  .card{
+    width: 346px;
+    height: 350px;
+  }
+  .card_image{
+    height: 250px;
+  }
+
+}
+
+@media screen and (max-width: 1550px) {
+  card{
+    width: 400px;
+    height: 418px;
+  }
+
+}

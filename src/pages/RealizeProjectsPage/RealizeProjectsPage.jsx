@@ -1,5 +1,5 @@
 import { BlockTitle, Container } from 'UI/index.js';
-import {RealizeProjects} from 'modules/RealizeProjectsPageModules/components/RealizeProjects.jsx';
+import {RealizeProjects} from 'modules/RealizeProjectsModules/components/RealizeProjects.jsx';
 
 export const RealizeProjectsPage = () => {
    const  realizeConfig = {
@@ -13,7 +13,6 @@ export const RealizeProjectsPage = () => {
         <Container >
             <BlockTitle config={realizeConfig} />
             <RealizeProjects/>
-
         </Container>
     );
 };
