@@ -9,8 +9,7 @@
    text-align: center;
    margin-bottom: 20px;
 
-   width: calc(33.33% - 20px); // адаптивная ширина
-   max-width: 410px; // но не больше 410px
+   width: 400px;
 
    @media (max-width: 1024px) {
       width: 346px !important;
@@ -38,12 +37,12 @@
    }
 
    .card_title {
-      margin: 12px 0px 24px 0px;
+      margin: 12px 0 24px 0;
       @media (max-width: 1024px) {
-         margin: 12px 0px 16px 0px !important;
+         margin: 12px 0 16px 0 !important;
 
          @media (max-width: 550px) {
-            margin: 17px 0px 8px 0px !important;
+            margin: 17px 0 8px 0 !important;
          }
       }
    }
