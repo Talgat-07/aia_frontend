@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import styles from './ContactForm.module.scss';
-import { Container, CustomButton, Typography } from '..';
+import { CustomButton, Typography } from '..';
 import { SubmitApprovedIcon } from 'assets/icons/SubmitApprovedIcon.jsx';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -58,8 +58,6 @@ export const ContactForm = () => {
    };
 
    return (
-      <>
-         <Container>
             <div className={`${styles.wrapper}`}>
                <div className={styles.modalBox}>
                   {isSubmitted ? (
@@ -207,7 +205,6 @@ export const ContactForm = () => {
                   )}
                </div>
             </div>
-         </Container>
-      </>
+
    );
 };
