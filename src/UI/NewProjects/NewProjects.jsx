@@ -12,8 +12,8 @@ export const NewProjects = ({config = {}}) => {
             {config.cards.map((card, index) => (
                <Link to={card.link} key={index}>
                   <MainCards
-                     image={card.image}
-                     title={card.title}
+                      image={card.image}
+                      title={card.title}
                      text={card.text}
                   />
                </Link>

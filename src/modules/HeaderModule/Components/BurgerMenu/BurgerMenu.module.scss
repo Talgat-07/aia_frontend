@@ -26,7 +26,7 @@
 
 .modalContent {
    overflow-x: hidden;
-   width: 500px;
+   width: 640px;
    height: 100vh;
    background: #1a1a1a;
    color: #fff;
@@ -80,7 +80,7 @@
 }
 .burgerIcon.open div:nth-child(1) {
    width: 32px;
-   transform: translateY(14px) rotate(45deg);
+   transform: translateY(13px) rotate(45deg);
 }
 
 .burgerIcon.open div:nth-child(2) {
@@ -151,6 +151,7 @@ hr {
 }
 
 .searchBox {
+   margin-top: 16px;
    margin-bottom: 20px;
    .searchInput {
       width: 100%;
