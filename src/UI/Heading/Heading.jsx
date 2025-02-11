@@ -1,12 +1,20 @@
-import { Typography } from "UI/Typography/Typography";
-import classes from "UI/Heading/Heading.module.scss";
+import { Typography } from 'UI/Typography/Typography';
+import classes from 'UI/Heading/Heading.module.scss';
 
-export const Heading = ({ text, className, color = "white", align = "center", fontWeight = "semibold", fontSize = "h2" }) => {
-   const textColorClass = color === "black" ? classes.blackText : classes.whiteText;
+export const Heading = ({
+   text,
+   className,
+   color = 'white',
+   align = 'center',
+   fontWeight = 'semibold',
+   fontSize = 'h2',
+   linkWidth = '210px',
+}) => {
+   const textColorClass =
+      color === 'black' ? classes.blackText : classes.whiteText;
 
    const alignmentClass =
-      align === "left" ? classes.alignLeft :
-         classes.alignCenter;
+      align === 'left' ? classes.alignLeft : classes.alignCenter;
 
    return (
       <div className={`${classes.Heading} ${className} ${alignmentClass}`}>
@@ -17,7 +25,10 @@ export const Heading = ({ text, className, color = "white", align = "center", fo
          >
             {text}
          </Typography>
-         <div className={classes.headingLink}></div>
+         <div
+            className={classes.headingLink}
+            style={{ width: linkWidth }}
+         ></div>
       </div>
    );
 };
