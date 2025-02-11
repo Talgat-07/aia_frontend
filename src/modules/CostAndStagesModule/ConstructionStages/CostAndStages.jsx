@@ -1,6 +1,6 @@
 import { useState } from "react";
-import styles from "./CostAndStages.module.scss";
-import { ContentContainer, CustomButton, Typography } from 'UI/index';
+import styles from "modules/CostAndStagesModule/ConstructionStages/CostAndStages.module.scss";
+import { CustomButton, Typography } from "UI/index";
 import img from "assets/img/moreProjects.png";
 
 export const CostAndStages = () => {
@@ -116,7 +116,6 @@ export const CostAndStages = () => {
   const currentContent = tabs.find((tab) => tab.id === activeTab)?.content;
 
   return (
-     <ContentContainer>
     <div className={styles.app}>
       <div className={styles.tabs}>
         <div className={styles.top_tabs}>
@@ -190,6 +189,5 @@ export const CostAndStages = () => {
         </div>
       </div>
     </div>
-     </ContentContainer>
   );
 };

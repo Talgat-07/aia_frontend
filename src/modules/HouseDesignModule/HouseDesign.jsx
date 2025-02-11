@@ -1,10 +1,9 @@
 import styles from './HouseDesign.module.scss';
-import { ContentContainer, CustomButton, Heading } from 'UI/index.js';
 import React, { useState, useEffect } from 'react';
+import { Container, CustomButton, Heading } from 'UI/index.js';
 import { MainCards } from 'UI/Cards/MainCards/MainCards.jsx';
 
 export const HouseDesign = () => {
-   const [animatedYears, setAnimatedYears] = useState({});
    const [showAllByYear, setShowAllByYear] = useState({});
    const years = [
       {
@@ -194,10 +193,10 @@ export const HouseDesign = () => {
       });
    }, [showAllByYear]);
    return (
-      <ContentContainer>
-         <div className={styles.apartmentDesignContainer}>
-            {years.map((yearData, index) => {
-               const showAll = showAllByYear[yearData.year];
+       <Container>
+          <div className={styles.apartmentDesignContainer}>
+             {years.map((yearData, index) => {
+                const showAll = showAllByYear[yearData.year];
 
                 const displayedCards = showAll
                     ? yearData.cards
@@ -205,7 +204,6 @@ export const HouseDesign = () => {
 
                 return (
                     <React.Fragment key={index}>
-                       {/*<div>*/}
                        <hr />
                        <Heading
                            className={styles.heading}
@@ -226,26 +224,42 @@ export const HouseDesign = () => {
                                         text={card.text}
                                         className={showAll && animatedYears[yearData.year] ? styles.fadeIn : ""}
 
-                                    />
-                                 </div>
-                             ))}
-                          </div>
-                          {yearData.cards.length > 6 && (
-                              <CustomButton
-                                  onClick={() => toggleShow(yearData.year)}
-                                  text={showAll ? "Скрыть" : "Показать еще"}
-                                  buttonStyles="customButtonAdaptive"
+               return (
+                  <React.Fragment key={index}>
+                     <hr className={styles.dividerTop} />
+                     <Heading
+                        className={styles.heading}
+                        linkWidth={'105px'}
+                        text={yearData.year}
+                        align="left"
+                        color="black"
+                     />
+                     <div className={styles.yearBlock}>
+                        <div className={styles.cardContainer}>
+                           {displayedCards.map((card, cardIndex) => (
+                              <MainCards
+                                 key={cardIndex}
+                                 image={card.image}
+                                 title={card.title}
+                                 text={card.text}
                               />
-                           )}
+                           ))}
                         </div>
+                        {yearData.cards.length > 6 && (
+                           <CustomButton
+                              onClick={() => toggleShow(yearData.year)}
+                              text={showAll ? 'Скрыть' : 'Показать еще'}
+                              buttonStyles="customButtonAdaptive"
+                           />
+                        )}
+                     </div>
                      {index < years.length - 1 && (
-                        <div className={styles.containerdivider}>
-                        </div>
+                        <div className={styles.containerdivider}></div>
                      )}
                   </React.Fragment>
                );
             })}
          </div>
-      </ContentContainer>
+      </Container>
    );
 };

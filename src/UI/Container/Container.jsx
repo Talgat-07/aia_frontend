@@ -6,11 +6,3 @@ export const Container = ({children, className }) => {
         </main>
     );
 };
-
-export const ContentContainer = ({children}) => {
-    return (
-       <div className={styles.ContentContainer}>
-           {children}
-       </div>
-    )
-}

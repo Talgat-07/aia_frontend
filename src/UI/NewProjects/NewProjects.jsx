@@ -1,4 +1,4 @@
-import { MainCards, Heading, ContentContainer } from 'UI/index.js';
+import { MainCards, Heading } from 'UI/index.js';
 import styles from './NewProjects.module.scss';
 import { Link } from 'react-router-dom';
 
@@ -6,7 +6,6 @@ export const NewProjects = ({config = {}}) => {
 
 
    return (
-      <ContentContainer>
       <div className={styles.container}>
          <Heading text="Новые проекты" color="black" />
          <div className={styles.content}>
@@ -22,6 +21,5 @@ export const NewProjects = ({config = {}}) => {
             ))}
          </div>
       </div>
-      </ContentContainer>
    );
 };

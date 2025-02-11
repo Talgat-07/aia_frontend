@@ -1,13 +1,13 @@
 import { useNavigate } from 'react-router-dom';
 import { useReadMoreToggle } from 'utils/hooks/useReadMoreButtonHook.js';
-import { Typography, CustomButton, Heading, ContentContainer } from 'UI/index.js';
+import { Typography, CustomButton, Heading } from 'UI/index.js';
 import styles from './CustomBlockHP.module.scss';
 import { useOverflowCheck } from 'utils/hooks/useOverflowCheck.js';
 
 export const CustomBlockHP = ({ items, link }) => {
     const navigate = useNavigate();
-    const { expanded, textRef, handleToggle } = useReadMoreToggle();
-    const { ref: textContainerRef, isOverflowing: showReadMore } = useOverflowCheck();
+    const { textRef } = useReadMoreToggle();
+    const { ref: textContainerRef } = useOverflowCheck();
 
     const handleViewProjectsClick = () => {
         navigate(link);
@@ -15,7 +15,6 @@ export const CustomBlockHP = ({ items, link }) => {
 
     return (
        <div className={styles.customBlock}>
-           <ContentContainer>
            <Heading text={items.heading} />
 
            <div className={items.onLeft ? styles.leftContentClass : styles.rightContentClass}>
@@ -27,13 +26,6 @@ export const CustomBlockHP = ({ items, link }) => {
                    </div>
 
                    <div className={styles.buttonContainer}>
-                       {showReadMore && (
-                          <CustomButton
-                             buttonStyles="readMoreButton"
-                             onClick={handleToggle}
-                             text={expanded ? 'Скрыть' : 'Читать далее'}
-                          />
-                       )}
                        <CustomButton
                           buttonStyles="customButtonBrown"
                           text="Посмотреть проекты"
@@ -48,7 +40,6 @@ export const CustomBlockHP = ({ items, link }) => {
            </div>
 
            <hr />
-           </ContentContainer>
        </div>
     );
 };

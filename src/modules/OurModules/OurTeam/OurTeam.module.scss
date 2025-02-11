@@ -7,3 +7,14 @@
 .container{
   padding: 70px 100px 140px;
 }
+
+
+@media screen and (max-width: 1025px){
+  .container{
+    padding: 70px 30px 70px;
+  }
+  .OurTeam{
+    gap: 15px;
+  }
+
+}

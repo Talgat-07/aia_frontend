@@ -1,8 +1,11 @@
 import PropTypes from 'prop-types';
-import styles from 'UI/MoreProjects/MoreProjects.module.scss';
-import { Container, ContentContainer, CustomButton, Heading, Typography } from 'UI/index.js';
+import styles from './MoreProjects.module.scss';
+import { CustomButton, Heading, Typography } from 'UI/index.js';
+import {useMediaQuery} from "utils/hooks/useMediaQuery.js";
 
 export const MoreProjects = ({ config = {}, children }) => {
+   const Desktop = useMediaQuery('(min-width: 1350px)');
+   const Tablet = useMediaQuery('(max-width: 1024px)');
    const {
       image = null,
       subtitle = '',
@@ -21,9 +24,7 @@ export const MoreProjects = ({ config = {}, children }) => {
    const buttonHead = image ? styles.text : `${styles.buttons} ${styles.buttons_noImage}`;
 
    return (
-      <Container>
       <div className={styles.custom_block}>
-         <ContentContainer>
          {children}
          {title && <Heading text={title} color="white" />}
          <div className={contentClass}>
@@ -49,7 +50,7 @@ export const MoreProjects = ({ config = {}, children }) => {
                         {text}
                      </Typography>
                   )}
-                  {buttons.length > 0 && (
+                  {Desktop && buttons.length > 0 && (
                      <div className={buttonHead}>
                         {buttons.map((button, index) => (
                            <CustomButton
@@ -63,10 +64,21 @@ export const MoreProjects = ({ config = {}, children }) => {
                   )}
                </div>
             )}
+
          </div>
-         </ContentContainer>
+         {Tablet && buttons.length > 0 && (
+             <div className={styles.buttonHead}>
+                {buttons.map((button, index) => (
+                    <CustomButton
+                        text={button.text}
+                        key={index}
+                        to={button.link}
+                        buttonStyles="wideButton"
+                    />
+                ))}
+             </div>
+         )}
       </div>
-      </Container>
    );
 };
 

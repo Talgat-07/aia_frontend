@@ -3,7 +3,7 @@ import { CustomGalleryBlock } from 'UI/CustomGalleryBlock/CustomGalleryBlock.jsx
 import { CustomFilters } from 'UI/CustomFilters/CustomFilters/CustomFilters.jsx';
 import { Container } from 'UI/Container/Container.jsx';
 import { CustomPagination } from 'UI/CustomPagination/CustomPagination.jsx';
-// import style from './BlocksArchitecture.module.scss'
+import style from './BlocksArchitecture.module.scss'
 
 export const BlocksArchitecture = () => {
 
@@ -116,7 +116,9 @@ export const BlocksArchitecture = () => {
             visibleFilters={['year']}
             item={customFiltersItem}
             onFilterChange={handleFilterChange}/>
+         <div className={style.villageContainer}>
             <CustomGalleryBlock cardsData={currentCards} />
+         </div>
          <CustomPagination
             activePage={activePage}
             itemsPerPage={itemsPerPage}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, ContentContainer, CustomButton, Heading } from 'UI/index';
+import { Container, CustomButton, Heading } from 'UI/index';
 import styles from './RealizeProjects.module.scss';
 import { MainCards } from 'UI/Cards/MainCards/MainCards';
 import image from 'assets/img/RealProjects.png'
@@ -100,29 +100,25 @@ export const RealizeProjects = () => {
 
    return (
       <Container>
-         <div className={styles.blockButtonColor}>
-            <ContentContainer>
-               <div className={styles.blockButton}>
-                  <button
-                     className={filter === 'Все' ? styles.activeButton : ''}
-                     onClick={() => handleFilterChange('Все')}
-                  >
-                     Все
-                  </button>
-                  <button
-                     className={filter === 'Архитектура' ? styles.activeButton : ''}
-                     onClick={() => handleFilterChange('Архитектура')}
-                  >
-                     Архитектура
-                  </button>
-                  <button
-                     className={filter === 'Интерьер' ? styles.activeButton : ''}
-                     onClick={() => handleFilterChange('Интерьер')}
-                  >
-                     Интерьер
-                  </button>
-               </div>
-            </ContentContainer>
+         <div className={styles.blockButton}>
+            <button
+               className={filter === 'Все' ? styles.activeButton : ''}
+               onClick={() => handleFilterChange('Все')}
+            >
+               Все
+            </button>
+            <button
+               className={filter === 'Архитектура' ? styles.activeButton : ''}
+               onClick={() => handleFilterChange('Архитектура')}
+            >
+               Архитектура
+            </button>
+            <button
+               className={filter === 'Интерьер' ? styles.activeButton : ''}
+               onClick={() => handleFilterChange('Интерьер')}
+            >
+               Интерьер
+            </button>
          </div>
          <div className={styles.content}>
             {years.map((yearData) => {
@@ -176,9 +172,7 @@ export const RealizeProjects = () => {
 
                               )}
                            </div>
-                           <ContentContainer>
-                              <hr className={styles.divider} />
-                           </ContentContainer>
+                           <hr className={styles.divider} />
                         </>
                      )}
                   </React.Fragment>

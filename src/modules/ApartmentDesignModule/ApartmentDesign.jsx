@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentContainer, CustomButton, Heading } from 'UI/index.js';
+import { Container, CustomButton, Heading } from 'UI/index.js';
 import styles from './ApartmentDesign.module.scss';
 import { MainCards } from 'UI/Cards/MainCards/MainCards.jsx';
 
@@ -181,10 +181,9 @@ export const ApartmentDesign = () => {
       }));
    };
    return (
-      <ContentContainer>
-
+      <Container>
          <div className={styles.apartmentDesignContainer}>
-            <hr/>
+            <hr className={styles.dividerTop} />
             {years.map((yearData) => {
                const showAll = showAllByYear[yearData.year];
 
@@ -193,13 +192,13 @@ export const ApartmentDesign = () => {
                   : yearData.cards.slice(0, 6);
 
                return (
-
                   <React.Fragment key={yearData.year}>
                      <Heading
                         linkWidth={'105px'}
                         text={yearData.year}
                         align="left"
                         color="black"
+                        className={styles.heading}
                      />
                      <div className={styles.yearBlock}>
                         <div className={styles.cardContainer}>
@@ -227,6 +226,6 @@ export const ApartmentDesign = () => {
                );
             })}
          </div>
-      </ContentContainer>
+      </Container>
    );
 };

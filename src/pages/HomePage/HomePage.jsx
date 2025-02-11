@@ -1,4 +1,4 @@
-import { Container, HeroBlock, WeInNumber, YoutubeBlock } from 'UI/index.js';
+import {Container, HeroBlock, WeInNumber, YoutubeBlock} from 'UI/index.js';
 import {InformationUs, PrivateHouses, InteriorDesign, VillagesNeighborhoods} from "modules/HomeModules/index.js";
 import {WeTeam} from "modules/HomeModules/WeTeam/WeTeam.jsx";
 import {Helmet} from "react-helmet-async";
