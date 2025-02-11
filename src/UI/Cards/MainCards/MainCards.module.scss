@@ -1,10 +1,12 @@
 .card {
-  width: 400px;
+  width: 400px !important;
+  box-sizing: border-box;
   height: 418px;
   background: #fff;
   border: 1px solid #626262;
   overflow: hidden;
   display: flex;
+  cursor: pointer;
   flex-direction: column;
   align-items: center;
   text-align: center;

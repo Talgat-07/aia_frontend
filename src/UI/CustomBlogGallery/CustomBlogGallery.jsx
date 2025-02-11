@@ -1,9 +1,9 @@
-import { BlogCards } from '..';
+import {BlogCards, Container} from '..';
 import styles from './CustomBlogGallery.module.scss';
 
 export const CustomBlogGallery = ({ cardsData }) => {
    return (
-      <div>
+      <Container>
          <div className={styles.galleryBlock}>
             {cardsData.map((card, index) => (
                <BlogCards
@@ -16,6 +16,6 @@ export const CustomBlogGallery = ({ cardsData }) => {
                />
             ))}
          </div>
-      </div>
+      </Container>
    );
 };

@@ -1,5 +1,5 @@
 .apartmentDesignContainer {
-   padding: 0 90px;
+   padding: 0 100px ;
    margin: 0 auto;
    .yearBlock {
       margin-bottom: 40px;
@@ -15,8 +15,8 @@
    .cardContainer {
       display: flex;
       flex-wrap: wrap;
-      padding: 0 90px;
-      justify-content: space-between;
+      justify-content: center;
+      gap: 20px;
       width: 100%;
       margin-bottom: 20px;
    }
