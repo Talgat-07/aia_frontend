@@ -10,11 +10,15 @@
    height: 50px;
    background-color: var(--main-color);
    color: #ffffff;
-
-   transition: background-color 0.3s ease;
+   transition:
+      background-color 0,
+      3 ease;
 
    &:hover {
       background-color: rgba(217, 179, 140, 1);
+   }
+   @media (max-width: 750px) {
+      width: 100%;
    }
 }
 
@@ -29,6 +33,9 @@
    overflow: hidden;
    color: black;
    transition: color 0.3s ease;
+   @media (max-width: 750px) {
+      width: 100%;
+   }
 }
 
 .customButtonAdaptive::before {
@@ -87,7 +94,9 @@
    border: 2px solid var(--main-color);
    color: #ffffff;
 
-   transition: background-color 0.3s ease;
+   transition:
+      background-color 0,
+      3 ease;
 
    &:hover {
       background-color: rgba(217, 179, 140, 1);
