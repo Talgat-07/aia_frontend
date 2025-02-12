@@ -5,6 +5,7 @@ import { MainCards } from 'UI/Cards/MainCards/MainCards.jsx';
 
 export const HouseDesign = () => {
    const [showAllByYear, setShowAllByYear] = useState({});
+   const [animatedYears, setAnimatedYears] = useState({});
    const years = [
       {
          year: '2023',
@@ -192,37 +193,15 @@ export const HouseDesign = () => {
          }
       });
    }, [showAllByYear]);
+
    return (
-       <Container>
-          <div className={styles.apartmentDesignContainer}>
-             {years.map((yearData, index) => {
-                const showAll = showAllByYear[yearData.year];
-
-                const displayedCards = showAll
-                    ? yearData.cards
-                    : yearData.cards.slice(0, 6);
-
-                return (
-                    <React.Fragment key={index}>
-                       <hr />
-                       <Heading
-                           className={styles.heading}
-                           linkWidth={"105px"}
-                           text={yearData.year}
-                           align="left"
-                           color="black"
-                       />
-                       <div className={styles.yearBlock}>
-                          <div className={styles.cardContainer}>
-                             {displayedCards.map((card, cardIndex) => (
-                                 <div
-                                     key={cardIndex}
-                                 >
-                                    <MainCards
-                                        image={card.image}
-                                        title={card.title}
-                                        text={card.text}
-                                        className={showAll && animatedYears[yearData.year] ? styles.fadeIn : ""}
+      <Container>
+         <div className={styles.apartmentDesignContainer}>
+            {years.map((yearData, index) => {
+               const showAll = showAllByYear[yearData.year];
+               const displayedCards = showAll
+                  ? yearData.cards
+                  : yearData.cards.slice(0, 6);
 
                return (
                   <React.Fragment key={index}>
@@ -242,6 +221,11 @@ export const HouseDesign = () => {
                                  image={card.image}
                                  title={card.title}
                                  text={card.text}
+                                 className={
+                                    showAll && animatedYears[yearData.year]
+                                       ? styles.fadeIn
+                                       : ''
+                                 }
                               />
                            ))}
                         </div>
