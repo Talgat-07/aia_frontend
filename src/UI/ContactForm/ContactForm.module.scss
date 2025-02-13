@@ -270,7 +270,6 @@ select:-moz-focusring {
 
 @media screen and (max-width: 1000px) {
   .modalBox {
-    width: 90%;
     padding: 30px;
   }
   .modalHeader{
@@ -292,7 +291,7 @@ select:-moz-focusring {
   .FormArea {
 
     max-width: 100%;
-    input, , select {
+    input, select {
       width: 346px  !important;
     }
   }

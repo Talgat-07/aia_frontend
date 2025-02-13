@@ -6,7 +6,6 @@ import { MainCards } from 'UI/Cards/MainCards/MainCards.jsx';
 export const HouseDesign = () => {
    const [showAllByYear, setShowAllByYear] = useState({});
    const [animatedYears, setAnimatedYears] = useState({});
-
    const years = [
       {
          year: '2023',
@@ -200,7 +199,9 @@ export const HouseDesign = () => {
          <div className={styles.apartmentDesignContainer}>
             {years.map((yearData, index) => {
                const showAll = showAllByYear[yearData.year];
-               const displayedCards = showAll ? yearData.cards : yearData.cards.slice(0, 6);
+               const displayedCards = showAll
+                  ? yearData.cards
+                  : yearData.cards.slice(0, 6);
 
                return (
                   <React.Fragment key={index}>
@@ -220,7 +221,11 @@ export const HouseDesign = () => {
                                  image={card.image}
                                  title={card.title}
                                  text={card.text}
-                                 className={showAll && animatedYears[yearData.year] ? styles.fadeIn : ""}
+                                 className={
+                                    showAll && animatedYears[yearData.year]
+                                       ? styles.fadeIn
+                                       : ''
+                                 }
                               />
                            ))}
                         </div>
@@ -232,7 +237,9 @@ export const HouseDesign = () => {
                            />
                         )}
                      </div>
-                     {index < years.length - 1 && <div className={styles.containerdivider}></div>}
+                     {index < years.length - 1 && (
+                        <div className={styles.containerdivider}></div>
+                     )}
                   </React.Fragment>
                );
             })}

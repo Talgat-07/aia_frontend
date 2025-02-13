@@ -1,7 +1,7 @@
-import {Heading,Typography,CustomButton} from 'UI/index.js';
-import styles from './NotFoundModule.module.scss'
-import Error from 'assets/img/ErrorPage.png'
-import {useNavigate} from 'react-router-dom'
+import { Heading, Typography, CustomButton } from 'UI/index.js';
+import styles from './NotFoundModule.module.scss';
+import Error from 'assets/img/ErrorPage.png';
+import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 
 export const NotFoundModule = () => {
@@ -12,7 +12,7 @@ export const NotFoundModule = () => {
       return () => {
          document.body.classList.remove(styles.no_scroll);
       };
-      }, []);
+   }, []);
    const handleNavigateHome = () => {
       navigate('/');
    };
@@ -20,19 +20,30 @@ export const NotFoundModule = () => {
       <div className={styles.container}>
          <div className={styles.content}>
             <div className={styles.content__left}>
-               <Heading fontSize={"h1"} fontWeight={"bold"}  text={"Что-то пошло не так"} color={"black"} align={"left"} />
-               <Typography variant="bodyM">Давайте попробуем вместе это исправить! Попробуйте вернуться на главную
-                  страницу и найти необходимую информацию там!</Typography>
-               <CustomButton onClick={handleNavigateHome}  buttonStyles={"customButtonBrown"} text={"На главную"} />
+               <Heading
+                  className={styles.heading}
+                  fontSize={'h1'}
+                  fontWeight={'bold'}
+                  text={'Что-то пошло не так'}
+                  color={'black'}
+                  align={'left'}
+               />
+               <Typography variant="bodyM">
+                  Давайте попробуем вместе это исправить! Попробуйте вернуться
+                  на главную страницу и найти необходимую информацию там!
+               </Typography>
+               <CustomButton
+                  onClick={handleNavigateHome}
+                  buttonStyles={'customButtonBrown'}
+                  text={'На главную'}
+                  className={styles.btn}
+               />
             </div>
 
             <div className={styles.content_right}>
                <img src={Error} alt="error_page" />
             </div>
          </div>
-
-
       </div>
    );
 };
-
