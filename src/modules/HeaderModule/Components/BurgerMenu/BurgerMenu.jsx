@@ -34,6 +34,7 @@ export const BurgerMenu = () => {
         return () => document.body.classList.remove(styles.no_scroll);
     }, [isOpen]);
 
+
     const handleInputChange = (e) => {
         setHasContent(e.target.value.trim().length > 0);
     };
@@ -60,7 +61,7 @@ export const BurgerMenu = () => {
                     </div>
                     <hr />
                     <div className={styles.searchBox}>
-                        <form action="" className={styles.search}>
+                        <form action='' onSubmit={(e) => e.preventDefault()} className={styles.search}>
                             <input
                                 type="text"
                                 placeholder="Поиск"
@@ -70,8 +71,8 @@ export const BurgerMenu = () => {
                             <span
                                 className={`${styles.search_icon} ${hasContent ? styles.icon_fixed : ''}`}
                             >
-                        <LoopInput />
-                     </span>
+                                <LoopInput />
+                            </span>
                         </form>
                     </div>
                     <SocialLinks />
