@@ -4,9 +4,23 @@
   justify-content: start;
   align-items: center;
   gap: 40px;
+  overflow-x: auto;
   background-color: var(--black-main-color);
   padding: 20px 100px;
   margin-bottom: 40px;
+
+  &::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--main-color);
+    border-radius: 2px;
+  }
 
   .filterItem {
     cursor: pointer;
@@ -26,3 +40,30 @@
   }
 }
 
+@media screen and (max-width: 770px) {
+  .filterContainer {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 30px;
+    gap: 46px;
+
+    .filterItem {
+      flex-shrink: 0;
+      font-size: 16px;
+      line-height: 25.6px;
+    }
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .filterContainer {
+    padding: 6px 20px;
+    gap: 30px;
+
+    .filterItem {
+      flex-shrink: 0;
+      font-size: 14px;
+      line-height: 21px;
+    }
+  }
+}

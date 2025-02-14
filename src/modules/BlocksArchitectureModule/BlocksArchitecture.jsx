@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import { useEffect, useState } from 'react';
 import { CustomGalleryBlock } from 'UI/CustomGalleryBlock/CustomGalleryBlock.jsx';
 import { CustomFilters } from 'UI/CustomFilters/CustomFilters/CustomFilters.jsx';
 import { Container } from 'UI/Container/Container.jsx';
@@ -90,7 +90,7 @@ export const BlocksArchitecture = () => {
 
    const [filteredCards, setFilteredCards] = useState(cardsData);
    const [activePage, setActivePage] = useState(1);
-   const itemsPerPage = 9;
+   const [itemsPerPage, setItemsPerPage] = useState(9);
 
    const handleFilterChange = (filters) => {
       const { year } = filters;
@@ -109,6 +109,25 @@ export const BlocksArchitecture = () => {
    const handlePageChange = (pageNumber) => {
       setActivePage(pageNumber);
    };
+
+   useEffect(() => {
+      const updateItemsPerPage = () => {
+         if (window.innerWidth <= 768) {
+            setItemsPerPage(4);
+         } else if (window.innerWidth <= 1024) {
+            setItemsPerPage(6);
+         } else {
+            setItemsPerPage(9);
+         }
+      };
+
+      updateItemsPerPage();
+      window.addEventListener('resize', updateItemsPerPage);
+
+      return () => {
+         window.removeEventListener('resize', updateItemsPerPage);
+      };
+   }, []);
 
    return (
       <Container>
