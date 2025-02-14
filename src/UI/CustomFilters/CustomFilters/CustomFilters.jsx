@@ -17,12 +17,12 @@ export const CustomFilters = ({ item, onFilterChange, visibleFilters }) => {
          display: "flex",
          alignItems: "center",
          justifyContent: "space-between",
-         width: "175px",
-         height: "45px",
+         // width: "175px",
+         // height: "45px",
          borderRadius: "0",
          border: "0",
          boxShadow: "none",
-         padding: "0 10px",
+         // padding: "0 10px",
       }),
 
       valueContainer: (styles) => ({
@@ -103,7 +103,7 @@ export const CustomFilters = ({ item, onFilterChange, visibleFilters }) => {
                      value={filters.area}
                      onChange={(e) => handleChange('area', Number(e.target.value))}
                      style={{
-                        '--progress': `${(filters.area / 930) * 100}%`,
+                        '--progress': `${(filters.area / 900) * 100}%`,
                         '--thumb-offset': `0px`,
                      }}
                   />
