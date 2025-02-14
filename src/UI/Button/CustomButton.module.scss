@@ -70,6 +70,11 @@
    padding: 8px;
    cursor: pointer;
    transition: all 0.3s ease;
+   @media screen and (max-width: 1024px) {
+      width: 78px;
+      height: 28px;
+
+   }
    p {
       color: var(--gray-fourth);
    }
