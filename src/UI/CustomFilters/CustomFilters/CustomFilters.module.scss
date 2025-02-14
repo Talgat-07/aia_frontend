@@ -1,3 +1,4 @@
+
 .filterContainer {
   margin-bottom: 40px;
   display: flex;
@@ -7,22 +8,23 @@
   padding: 12px 100px;
   background-color: var(--black-main-color);
   color: white;
-
-  .dropdownLine {
-    display: flex;
-    flex-direction: row;
-  }
 }
 
-.customDropdown {
-  margin: 12px auto;
-  width: 175px;
-  height: 46px;
-  background-color: #FFFFFF;
-  border: 2px solid var(--black-main-color);
-  cursor: pointer;
-  color: #262626;
-  gap: 2px;
+.dropdownLine {
+  display: flex;
+  flex-direction: row;
+
+  .customDropdown {
+    margin: 12px auto;
+    min-width: 175px;
+    width: 100%;
+    height: 46px;
+    background-color: #FFFFFF;
+    border: 2px solid var(--black-main-color);
+    cursor: pointer;
+    color: #262626;
+    gap: 2px;
+  }
 }
 
 .dropdownHeader {
@@ -66,10 +68,11 @@
   }
 
   .inline {
-    width: 510px;
+    max-width: 510px;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     position: relative;
 
     input {
@@ -88,19 +91,17 @@
       height: 27px;
       border: 1px solid var(--gray-fourth);
       background: var(--gray-fourth);
-      z-index: 100;
       pointer-events: none;
       filter: none;
     }
 
     .slider {
-      width: 510px;
+      //max-width: 510px;
+      //width: 100%;
       -webkit-appearance: none;
       appearance: none;
       height: 4px;
-      background: var(--gray-second);
       position: relative;
-      z-index: 5;
 
       &::-webkit-slider-thumb {
         -webkit-appearance: none;
@@ -143,8 +144,6 @@
       font-style: normal;
       position: relative;
 
-
-
       &:before {
         margin-top: 2px;
         content: '';
@@ -157,9 +156,160 @@
       }
     }
   }
-
 }
 
 .react_select{
   display: none;
 }
+
+@media screen and (max-width: 1100px) {
+  .filterContainer {
+    flex-direction: column;
+    padding: 9px 65px;
+    gap: 18px;
+
+    .dropdownLine {
+      display: flex;
+      max-width: 636px !important;
+      width: 100%;
+      gap: 24px;
+    }
+  }
+
+  .customDropdown {
+    margin: 0;
+    width: 100%;
+    max-width: 310px !important;
+    height: 46px;
+    z-index: 12;
+  }
+
+  .sliderContainer {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 97px;
+    margin-bottom: 18px !important;
+
+    .inline {
+      width: 100%;
+      max-width: 510px !important;
+      input {
+        width: 510px !important;
+      }
+
+      .staticHandle {
+        top: -10px;
+        right: -18px;
+      }
+
+    }
+
+  }
+  .scale {
+    margin-top: 40px !important;
+  }
+
+  .react_select {
+    display: block;
+    width: 310px;
+  }
+}
+
+@media screen and (max-width: 920px) {
+  .sliderContainer {
+    .inline {
+      display: flex;
+      gap: 20px;
+      .staticHandle {
+        top: 13px;
+        right: -18px;
+      }
+    }
+  }
+  .scale {
+    margin-top: 50px !important;
+  }
+}
+
+
+@media screen and (max-width: 650px) {
+  .sliderContainer {
+    max-width: 335px !important;
+    width: 100%;
+    .inline {
+      width: 100%;
+      max-width: 335px;
+      input {
+        max-width: 335px !important;
+        width: 100%;
+      }
+      .staticHandle {
+        top: 13px;
+        right: -18px;
+      }
+    }
+  }
+  .scale {
+    margin-top: 50px !important;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .inline {
+    max-width: 265px !important;
+    width: 100%;
+    input {
+      max-width: 265px !important;
+      width: 100%;
+    }
+    //.staticHandle {
+    //  top: 13px;
+    //  right: -18px;
+    //}
+  }
+  .scale {
+    font-size: 14px;
+    line-height: 21px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .filterContainer {
+    padding: 10px 20px;
+    gap: 16px;
+
+      .dropdownLine {
+        //max-width: 335px !important;
+        width: 100%;
+        gap: 20px;
+        .customDropdown {
+          max-width: 157px !important;
+          width: 100%;
+        }
+      }
+  }
+
+  .sliderContainer {
+    display: flex;
+    flex-direction: column;
+    .inline {
+      //max-width: 280px !important;
+      width: 100%;
+    }
+    .slider {
+      max-width: 280px !important;
+      width: 100%;
+    }
+  }
+
+  .scale {
+    font-size: 12px;
+    margin-top: 25px;
+  }
+
+  //.react_select {
+  //  max-width: 100%;
+  //}
+}
+

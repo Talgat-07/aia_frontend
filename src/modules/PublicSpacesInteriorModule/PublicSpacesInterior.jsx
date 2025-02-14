@@ -1,6 +1,6 @@
 import { SimpleFilter } from 'UI/CustomFilters/SimpleFilter/SimpleFilter.jsx';
 import { Container, CustomButton, MainCards, Heading } from 'UI/index.js';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './PublicSpacesInterior.module.scss';
 import img from 'assets/img/RealProjects.png'
 
@@ -42,9 +42,28 @@ export const PublicSpacesInterior = () => {
 
    const [showAllByYear, setShowAllByYear] = useState({});
    const [selectedFilters, setSelectedFilters] = useState('Все');
+   const [cardsPerRow, setCardsPerRow] = useState(6);
 
    const filterItems = ['Все', 'Офисы', 'Хорека', 'Медцентры', 'Спортклубы', 'Банки', 'Другое'];
 
+   useEffect(() => {
+      const updateCardsPerRow = () => {
+         if (window.innerWidth <= 430) {
+            setCardsPerRow(3);
+         } else if (window.innerWidth <= 1024) {
+            setCardsPerRow(6);
+         } else {
+            setCardsPerRow(6);
+         }
+      };
+
+      updateCardsPerRow();
+      window.addEventListener('resize', updateCardsPerRow);
+
+      return () => {
+         window.removeEventListener('resize', updateCardsPerRow);
+      };
+   }, []);
 
    const handleFilterChange = (filter) => {
       setSelectedFilters(filter);
