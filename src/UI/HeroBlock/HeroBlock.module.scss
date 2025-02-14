@@ -17,7 +17,7 @@
     display: block;
   }
   .video_overlay {
-    filter: brightness(70%);
+    filter: brightness(60%);
 
     position: absolute;
     top: 0;
@@ -97,6 +97,28 @@
   .title{
     margin-bottom: 5px !important;
 
+  }
+
+}
+@media screen and (max-width: 480px){
+
+  .textBanner{
+    width: 100%;
+    left: 20px !important;
+    bottom: 20px !important;
+    padding-right: 20px;
+    .subtitle{
+      margin-bottom: 16px !important;
+    }
+    h1{
+      font-size: 24px !important;
+      font-weight: 700;
+    }
+
+    button{
+      width: 100% !important;
+      max-width: 335px;
+    }
   }
 
 }

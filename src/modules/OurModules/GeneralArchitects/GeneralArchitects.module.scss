@@ -76,3 +76,28 @@
   }
 
 }
+
+@media screen and (max-width: 480px){
+  .container{
+    padding: 40px  20px 0;
+
+  }
+  .BlockGeneral{
+    display: flex;
+    flex-direction: column;
+    &__Left{
+      width: 335px;
+
+    }
+    &__Right{
+      width: 100% !important;
+    }
+    &__Typography{
+
+      &_Icons{
+        gap: 32px !important;
+
+      }
+    }
+  }
+}

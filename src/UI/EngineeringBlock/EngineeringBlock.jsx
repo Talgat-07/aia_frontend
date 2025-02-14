@@ -9,18 +9,21 @@ export const EngineeringBlock = ({config = {}}) => {
       href = 'https://www.youtube.com/@geekskg/videos'
    } = config;
    return (
-      <div className={styles.container}>
+       <div className={styles.container}>
 
-         <Heading text={title} color={"black"}/>
-         <div className={styles.content}>
-            <Typography variant="bodyL" color="black" weight="medium">{subtitle}</Typography>
-            <Typography variant="bodyM" color="black" weight="light">{text}</Typography>
-            <CustomButton buttonStyles="customButtonAdaptive" text={"Видео о нас"} to={href}/>
+           <Heading text={title} color={"black"}/>
+           <div className={styles.content}>
+               <Typography variant="bodyL" color="black" weight="medium">{subtitle}</Typography>
+           <div className={styles.des}>
+               <Typography variant="bodyM" color="black" weight="light">{text}</Typography>
+           </div>
 
-         </div>
-         <hr/>
+               <CustomButton buttonStyles="customButtonAdaptive" text={"Видео о нас"} to={href}/>
 
-      </div>
+           </div>
+           <hr/>
+
+       </div>
    );
 };
 

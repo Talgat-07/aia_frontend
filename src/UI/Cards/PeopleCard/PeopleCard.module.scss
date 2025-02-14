@@ -31,3 +31,13 @@
   }
 
 }
+@media screen and (max-width: 480px){
+  .card {
+    width: 287px;
+    height: 240px;
+    &.active{
+      width: 287px;
+      height: 240px;
+    }
+  }
+}

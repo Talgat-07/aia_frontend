@@ -1,14 +1,25 @@
 .Information {
   padding: 140px 100px 0 ;
+  @media screen and (max-width: 480px){
+    padding: 80px 20px 0 !important ;
+
+  }
 
   &_Content {
     display: flex;
     gap: 20px;
+    @media screen and (max-width: 480px){
+      flex-direction: column;
+    }
   }
 
   &_Left {
     height: 100%;
     width: 50%;
+    @media screen and (max-width: 480px){
+      order: 1;
+      width: 100% !important;
+    }
 
     &Information {
       text-align: left;
@@ -55,6 +66,7 @@
         gap: 25px;
 
         margin-bottom: 25px;
+
       }
       &Description{
         height: 15rem;

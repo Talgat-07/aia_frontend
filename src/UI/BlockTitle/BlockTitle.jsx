@@ -27,7 +27,6 @@ export const BlockTitle = ({ config = {} }) => {
       BreadCrumbData.find(item => item.link === path.home),
       BreadCrumbData.find(item => item.link === currentPath),
    ].filter(Boolean);
-
    return (
        <div className={styles.container}>
           <div className={styles.container_content}>

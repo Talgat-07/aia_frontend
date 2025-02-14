@@ -79,7 +79,7 @@
    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .burgerIcon.open div:nth-child(1) {
-   width: 32px;
+   width: 40px;
    transform: translateY(13px) rotate(45deg);
 }
 
@@ -88,7 +88,7 @@
 }
 
 .burgerIcon.open div:nth-child(3) {
-   width: 32px;
+   width: 40px;
    transform: translateY(-10px) rotate(-45deg);
 }
 
@@ -97,12 +97,11 @@
 }
 
 .modalContent::-webkit-scrollbar-thumb {
-   background: #555;
-   border-radius: 4px;
+   background: #B3895E;
 }
 
 .modalContent::-webkit-scrollbar-thumb:hover {
-   background: #777;
+   background: #626262;
 }
 
 .closeIcon {
@@ -137,7 +136,7 @@
          height: 38px;
       }
    gap: 5px;
-   padding: 0 16px 0 0;
+   padding: 10px 16px 0 0;
    display: flex;
    align-items: center;
    img {
@@ -176,12 +175,27 @@ hr {
 }
 
 .menu {
+   padding-top: 16px  ;
    display: flex;
    ul {
       list-style: none;
       padding: 0;
       li {
          margin-bottom: 10px;
+         .activeChildLink{
+            color: var(--main-color);
+
+         }
+         .Link{
+            font-weight: 500;
+         }
+         .disabledLink {
+            pointer-events: none;
+            opacity: 0.5;
+         }
+         .activeLink{
+            color: var(--main-color);
+         }
          a {
             color: #fff;
             text-decoration: none;

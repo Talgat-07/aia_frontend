@@ -11,6 +11,7 @@
   .dropdownLine {
     display: flex;
     flex-direction: row;
+    gap: 2px;
   }
 }
 
@@ -82,10 +83,10 @@
 
     .staticHandle {
       position: absolute;
-      top: -10px;
+      top: -12px;
       right: -14px;
       width: 15px;
-      height: 27px;
+      height: 28px;
       border: 1px solid var(--gray-fourth);
       background: var(--gray-fourth);
       z-index: 100;
