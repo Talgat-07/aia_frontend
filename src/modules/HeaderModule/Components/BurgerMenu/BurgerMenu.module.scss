@@ -26,7 +26,7 @@
 
 .modalContent {
    overflow-x: hidden;
-   width: 640px;
+   width: 540px;
    height: 100vh;
    background: #1a1a1a;
    color: #fff;
@@ -37,6 +37,13 @@
    transform: translateX(100%);
    transition: transform 0.5s ease;
    pointer-events: none;
+   @media screen and (max-width: 1024px){
+      width: 440px;
+      @media screen and (max-width: 480px){
+         width: 330px;
+
+      }
+   }
 }
 
 .modalContent.open {
@@ -80,7 +87,7 @@
 }
 .burgerIcon.open div:nth-child(1) {
    width: 40px;
-   transform: translateY(13px) rotate(45deg);
+   transform: translateY(11px) rotate(45deg);
 }
 
 .burgerIcon.open div:nth-child(2) {
@@ -89,7 +96,7 @@
 
 .burgerIcon.open div:nth-child(3) {
    width: 40px;
-   transform: translateY(-10px) rotate(-45deg);
+   transform: translateY(-9px) rotate(-45deg);
 }
 
 .modalContent::-webkit-scrollbar {
@@ -153,7 +160,7 @@ hr {
    margin-top: 16px;
    margin-bottom: 20px;
    .searchInput {
-      width: 100%;
+      width: 440px;
       padding: 8px;
       border: 1px solid #555;
       border-radius: 4px;
@@ -175,16 +182,23 @@ hr {
 }
 
 .menu {
-   padding-top: 16px  ;
    display: flex;
    ul {
       list-style: none;
       padding: 0;
       li {
          margin-bottom: 10px;
+         @media  screen and (max-width: 1024px){
+            margin-bottom: 20px;
+         }
          .activeChildLink{
             color: var(--main-color);
 
+         }
+         .childMenu{
+            li{
+               margin-bottom: 10px;
+            }
          }
          .Link{
             font-weight: 500;

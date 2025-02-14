@@ -132,29 +132,23 @@ export const WeTeam = () => {
                     )}
                     {isTablet && (
                         <Swiper
-                            ref={tabletSwiperRef}
-                            modules={[Navigation]}
-                            loop={true}
-                            spaceBetween={4}
-                            slidesOffsetAfter={0}
-                            slidesOffsetBefore={-45}
-                            loopAdditionalSlides={3}
-
-                            centeredSlides={true}
-                            centeredSlidesBounds={true}
                             slidesPerView={3}
-                            onSwiper={(swiper) => { tabletSwiperRef.current = swiper; }}
-                            onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+                            centeredSlides={true}
+
+
+                            loop={true}
+                            spaceBetween={16}
+                            grabCursor={true}
+
                         >
-                            {employees.map((item, index) => (
+                            {
+                                employees.map((item, index) => (
                                 <SwiperSlide key={index} className={styles.swiperSlide}>
                                     <PeopleCard
                                         title={item.title}
                                         description={item.description}
                                         image={item.image}
                                         className={styles.card}
-                                        isActive={index === activeIndex}
-                                        onClick={() => handleCardClick(index)}
                                     />
                                 </SwiperSlide>
                             ))}
