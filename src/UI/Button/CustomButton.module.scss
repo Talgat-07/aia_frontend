@@ -175,5 +175,16 @@
    .twoButtons{
       width: 354px;
    }
+  @media screen and (max-width: 480px){
+     .twoButtons{
+        width: 168px;
+        height: 76px;
 
+        &Active{
+           height: 84px;
+           transition: 0.3s ease;
+        }
+     }
+
+  }
 }

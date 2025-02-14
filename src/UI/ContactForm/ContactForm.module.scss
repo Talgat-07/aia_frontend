@@ -7,10 +7,15 @@
 .modalBox {
    background: #fff;
    position: relative;
-   //  padding: 0 266px;
 
    @media (max-width: 920px) {
       padding: 0 30px !important;
+   }
+   @media (max-width: 480px) {
+      padding: 0 15px !important;
+   }
+   @media (max-width: 320px) {
+      padding: 0 5px !important;
    }
    .successMessage {
       display: flex;
@@ -86,6 +91,7 @@
       @media (max-width: 920px) {
          gap: 24px;
       }
+
       textarea {
          padding: 5px 12px;
          resize: none;
@@ -99,9 +105,34 @@
                margin-top: 214px;
                width: 335px !important;
             }
+            @media (max-width: 480px) {
+               width: 345px !important;
+
+            }
          }
       }
    }
+}
+:global(.flag-dropdown) {
+   display: block !important;
+   z-index: 100;
+}
+.phoneDropdown {
+   background: white;
+   border: 1px solid #ccc;
+   max-height: 200px;
+   overflow-y: auto;
+}
+
+.react-tel-input .flag-dropdown {
+   border: 2px solid var(--black-main-color);
+}
+
+.react-tel-input .country-list {
+   max-height: 200px;
+   overflow-y: auto;
+   background: white;
+   z-index: 1000;
 }
 
 .FormArea {
@@ -261,8 +292,19 @@ select:-moz-focusring {
 .select {
    color: #262626;
    font-weight: 300;
+
    option {
       font-weight: 400;
+
+   }
+   .select option {
+      font-size: 14px;
+      max-height: 100px !important;
+      overflow: auto;
+      padding: 10px;
+      height: 40px;
+      color: #333;
+      background-color: white;
    }
 }
 

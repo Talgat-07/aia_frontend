@@ -67,6 +67,7 @@ export const CustomFilters = ({ item, onFilterChange, visibleFilters }) => {
                <div className={style.customDropdown}>
                   <Select
                      styles={customStyles}
+                     isSearchable={false}
                      value={yearOptions.find((opt) => opt.value === filters.year)}
                      onChange={(option) => handleChange('year', option.value)}
                      options={yearOptions}
@@ -81,6 +82,7 @@ export const CustomFilters = ({ item, onFilterChange, visibleFilters }) => {
                      styles={customStyles}
                      value={floorOptions.find((opt) => opt.value === filters.floor)}
                      onChange={(option) => handleChange('floor', option.value)}
+                     isSearchable={false}
                      options={floorOptions}
                      placeholder="Этаж"
                   />

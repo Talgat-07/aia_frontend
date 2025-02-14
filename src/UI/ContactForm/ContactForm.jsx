@@ -112,13 +112,13 @@ export const ContactForm = () => {
 
                                  <div className={styles.FormArea}>
                                     <select
-                                       size="0"
                                        id="country"
                                        {...register('country', {
                                           required: 'Выберите страну',
                                        })}
                                        className={`${styles.select} ${errors.country && styles.error}`}
                                        defaultValue=""
+
                                     >
                                        <option
                                           value=""
@@ -147,13 +147,13 @@ export const ContactForm = () => {
                                     <PhoneInput
                                        value=""
                                        onChange={handlePhoneChange}
-                                       country={null}
                                        id="phone"
                                        type="tel"
                                        className={`${styles.input} ${errors.phone && styles.error} ${styles.inputphone}`}
                                        placeholder=" "
                                        onFocus={handleFocus}
                                        onBlur={handleBlur}
+                                        dropdownClass={styles.phoneDropdown}
                                     />
                                     <label
                                        htmlFor="phone"

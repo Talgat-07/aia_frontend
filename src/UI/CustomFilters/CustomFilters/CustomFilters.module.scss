@@ -8,6 +8,12 @@
   padding: 12px 100px;
   background-color: var(--black-main-color);
   color: white;
+
+  .dropdownLine {
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+  }
 }
 
 .dropdownLine {
@@ -85,10 +91,10 @@
 
     .staticHandle {
       position: absolute;
-      top: -10px;
+      top: -12px;
       right: -14px;
       width: 15px;
-      height: 27px;
+      height: 28px;
       border: 1px solid var(--gray-fourth);
       background: var(--gray-fourth);
       pointer-events: none;

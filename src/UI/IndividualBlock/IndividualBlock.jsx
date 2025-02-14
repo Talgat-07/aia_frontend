@@ -14,7 +14,7 @@ export const IndividualBlock = () => {
    }
    return (
       <div className={styles.container}>
-         <Heading  text={"Индивидуальное проектирование дома"} color={"black"}/>
+         <Heading className={styles.heading}  text={"Индивидуальное проектирование дома"} color={"black"}/>
          <div className={styles.content}>
             <img src={config.image} alt="individualBlockpng" />
             <div className={styles.content_des}>

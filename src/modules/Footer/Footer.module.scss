@@ -149,11 +149,34 @@
       padding: 0 35px 0 0;
       align-items: center;
    }
+   @media screen and (max-width: 480px){
+      .container{
+         gap: 0 !important;
+         padding: 0 41.5px!important;
+      }
+      .links{
+         margin-bottom: 24px;
+         ul{
+            gap: 16px !important;
+
+
+         }
+      }
+      .hours{
+         margin-bottom: 24px;
+         gap: 24px !important;
+      }
+      .social{
+         justify-content: center !important;
+
+      }
+   }
    .container {
 
       padding: 0;
       display: flex;
       gap: 55px;
+
    }
 
    .logo {

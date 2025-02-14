@@ -2,7 +2,26 @@
 .customBlock {
   background-color: var(--black-main-color);
   padding: 30px 90px 70px;
+  @media screen and (max-width: 480px){
+    .leftContentClass {
+      flex-direction: column !important;
+      .textContainer{
+        order: 2;
+        width: 336px;
+        .text{
 
+          height: 156px !important;
+          overflow: auto;
+        }
+
+      }
+    }
+    .imageContainer{
+      width: 336px !important;
+      height: 300px !important;
+    }
+
+  }
   .leftContentClass {
     display: flex;
     justify-content: space-between;
