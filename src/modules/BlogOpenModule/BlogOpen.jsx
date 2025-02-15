@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
-import styles from "modules/BlogOpenModule/BlogOpen.module.scss";
+import styles from "./BlogOpen.module.scss";
 import img1 from "assets/img/BlogOpen.png";
 import { Heading, Typography, BreadCrumbs } from 'UI/index';
 import { VectorIcon } from "assets/icons/VectorIcon";

@@ -96,7 +96,7 @@ export const ProjectCard = () => {
     },
   ];
 
-  const images = [img, img, img, img,img];
+  const images = [img, img, img, img,img,img];
 
 
   return (
@@ -105,7 +105,6 @@ export const ProjectCard = () => {
           <div className={styles.left_top}>
             <div className={styles.breadcrumb}>
               <BreadCrumbs items={filteredBreadCrumbData} linkColor={'#828282'} activeColor={'#262626'} />
-
             </div>
             <Heading align="left" color="black" text={projectTitle} />
             <Typography className={styles.subtitle} weight={"medium"} variant="bodyL">Подзаголовок</Typography>

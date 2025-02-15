@@ -1,0 +1,48 @@
+import 'UI/Typography/Typography.module.scss';
+import styles from './Header.module.scss';
+import Logo from 'assets/img/logo.svg';
+import { Typography, CustomButton } from 'UI/index.js';
+import { useModal } from 'utils/hooks/useModal.js';
+import { RegModal } from 'modules/User/Components/RegModal/RegModal.jsx';
+import { Link } from 'react-router-dom';
+import { BurgerMenu } from '.';
+import { path } from 'utils/constants/constants';
+
+import { useMediaQuery } from "utils/hooks/useMediaQuery";
+
+export const Header = () => {
+   const { isOpen, openModal, closeModal, setIsOpen } = useModal();
+   const isMobile = useMediaQuery("(max-width: 768px)");
+
+   return (
+       <header className={styles.header}>
+          <div className={styles.BottomBar}>
+             <div className={styles.logoAndContact}>
+                <Link to={path.home}>
+                   <img src={Logo} alt="logo" />
+                </Link>
+                {!isMobile && (
+                    <div className={styles.ContactInfo}>
+                       <Typography variant="bodyS" color="white" lineHeight="lineXl">
+                          <a className={styles.phone} href="tel:+996020373712">
+                             +996020373712
+                          </a>
+                       </Typography>
+                    </div>
+                )}
+             </div>
+             <div className={styles.right_bottom_bar}>
+                {!isMobile && (
+                    <CustomButton
+                        buttonStyles={"customButtonBrown"}
+                        onClick={openModal}
+                        text={<Typography variant="bodyS" color="white">Оставить заявку</Typography>}
+                    />
+                )}
+                <BurgerMenu />
+             </div>
+          </div>
+          {isOpen && <RegModal closeModal={closeModal} isOpen={isOpen} setIsOpen={setIsOpen} />}
+       </header>
+   );
+};

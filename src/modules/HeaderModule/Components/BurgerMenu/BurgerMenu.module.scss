@@ -1,0 +1,349 @@
+.burgerContainer {
+   position: relative;
+
+}
+
+.modalOverlay {
+   z-index: -10;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   display: flex;
+   justify-content: flex-end;
+   opacity: 0;
+   background: rgba(0, 0, 0, 0.8);
+   transition: opacity 0.3s ease;
+   pointer-events: none;
+}
+
+.modalOverlay.open {
+   z-index: 1000;
+   opacity: 1;
+   pointer-events: auto;
+}
+
+.modalContent {
+   overflow-x: hidden;
+   width: 540px;
+   height: 100vh;
+   background: #1a1a1a;
+   color: #fff;
+   display: flex;
+   flex-direction: column;
+   padding: 30px 50px;
+   position: relative;
+   transform: translateX(100%);
+   transition: transform 0.5s ease;
+   pointer-events: none;
+   @media screen and (max-width: 1024px){
+      width: 440px;
+      @media screen and (max-width: 480px){
+         width: 330px;
+
+      }
+   }
+}
+
+.modalContent.open {
+   transform: translateX(0);
+   pointer-events: auto;
+}
+
+
+.burgerIcon {
+   background: none;
+   border: none;
+   cursor: pointer;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   width: 32px;
+   height: 27px;
+   z-index: 1001;
+   transition: transform 0.3s ease-in-out;
+}
+.burgerIcon {
+   position: relative;
+   z-index: 1001;
+
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   width: 32px;
+   height: 27px;
+   background: none;
+   border: none;
+   cursor: pointer;
+   transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.burgerIcon div {
+   width: 32px;
+   height: 3px;
+   background-color: #fff;
+   border-radius: 1px;
+   transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.burgerIcon.open div:nth-child(1) {
+   width: 40px;
+   transform: translateY(11px) rotate(45deg);
+}
+
+.burgerIcon.open div:nth-child(2) {
+   opacity: 0;
+}
+
+.burgerIcon.open div:nth-child(3) {
+   width: 40px;
+   transform: translateY(-9px) rotate(-45deg);
+}
+
+.modalContent::-webkit-scrollbar {
+   width: 8px;
+}
+
+.modalContent::-webkit-scrollbar-thumb {
+   background: #B3895E;
+}
+
+.modalContent::-webkit-scrollbar-thumb:hover {
+   background: #626262;
+}
+
+.closeIcon {
+   background: none;
+   border: none;
+   cursor: pointer;
+   position: relative;
+   width: 30px;
+   height: 25px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+
+   div {
+      width: 100%;
+      height: 3px;
+      background-color: #fff;
+      position: absolute;
+      transition: transform 0.3s ease-in-out;
+   }
+   div:first-child {
+      transform: rotate(45deg);
+   }
+   div:last-child {
+      transform: rotate(-45deg);
+   }
+}
+
+.topModal {
+
+      button{
+         height: 38px;
+      }
+   gap: 5px;
+   padding: 10px 16px 0 0;
+   display: flex;
+   align-items: center;
+   img {
+      width: 100px;
+      height: 61px;
+   }
+}
+
+hr {
+   width: 100%;
+}
+
+.searchBox {
+   margin-top: 16px;
+   margin-bottom: 20px;
+   .searchInput {
+      width: 440px;
+      padding: 8px;
+      border: 1px solid #555;
+      border-radius: 4px;
+      background: #333;
+      color: #fff;
+   }
+}
+
+.socialIcons {
+   display: flex;
+   gap: 35px;
+   align-items: center;
+   svg {
+      &:hover {
+         transform: scale(1.1);
+         transition: 0.4s ease-in-out;
+      }
+   }
+}
+
+.menu {
+   display: flex;
+   ul {
+      list-style: none;
+      padding: 0;
+      li {
+         margin-bottom: 10px;
+         @media  screen and (max-width: 1024px){
+            margin-bottom: 20px;
+         }
+         .activeChildLink{
+            color: var(--main-color);
+
+         }
+         .childMenu{
+            li{
+               margin-bottom: 10px;
+            }
+         }
+         .Link{
+            font-weight: 500;
+         }
+         .disabledLink {
+            pointer-events: none;
+            opacity: 0.5;
+         }
+         .activeLink{
+            color: var(--main-color);
+         }
+         a {
+            color: #fff;
+            text-decoration: none;
+            &:hover {
+               color: var(--main-color);
+            }
+         }
+         ul {
+            margin-top: 5px;
+            margin-left: 15px;
+            li {
+               margin-bottom: 5px;
+            }
+         }
+      }
+   }
+}
+
+//ANIMATION test
+
+.modalContent.open {
+   animation: slideIn 0.5s ease forwards;
+}
+
+@keyframes slideIn {
+   0% {
+      opacity: 0;
+      transform: translateX(100%);
+   }
+   100% {
+      opacity: 1;
+      transform: translateX(0);
+   }
+}
+
+.topModal,
+.searchBox,
+.socialIcons,
+.menu {
+   opacity: 0;
+   transform: translateY(20px);
+   animation: fadeIn 0.3s ease forwards;
+}
+
+//.topModal {
+//  animation-delay: 0.2s;
+//}
+//
+//.searchBox {
+//  animation-delay: 0.4s;
+//}
+
+//.socialIcons {
+//  animation-delay: 0.6s;
+//}
+
+//.menu {
+//  animation-delay: 0.8s;
+//}
+
+@keyframes fadeIn {
+   0% {
+      opacity: 0;
+      transform: translateY(20px);
+   }
+   100% {
+      opacity: 1;
+      transform: translateY(0);
+   }
+}
+
+//search-bar
+.search {
+   width: max-content;
+   position: relative;
+   display: flex;
+   align-items: center;
+
+   &_input {
+      padding: 8px;
+      background: transparent;
+      border: 2px solid white;
+      position: relative;
+      width: 400px;
+      font-size: 18px;
+      font-weight: 300;
+      outline: none;
+      transition: border 0.5s ease;
+      color: white;
+
+      ::placeholder {
+         color: white;
+      }
+
+      &:focus {
+         border: 2px solid var(--main-color);
+
+         & + .search_icon:not(.icon_fixed) {
+            transform: translateX(290px);
+            transition: transform 0.5s ease;
+         }
+      }
+
+      &:hover {
+         border: 2px solid var(--main-color);
+      }
+   }
+
+   &_icon {
+      left: 75px;
+      bottom: 18%;
+      cursor: pointer;
+      position: absolute;
+      transition: transform 0.5s ease;
+      &.icon_fixed {
+         transform: translateX(290px);
+      }
+
+   }
+}
+.languageSwitcher {
+   display: flex;
+}
+
+.no_scroll {
+   overflow: hidden;
+}
+
+
+
+
+
+
+
+
+
+

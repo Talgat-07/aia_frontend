@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom';
 import { Loader } from 'UI/index.js';
 import { ContactForm } from 'UI/ContactForm/ContactForm';
 import { ScrollToTop } from 'UI/ScrollToTop/ScrollToTop';
-import { Header } from 'modules/headerModule/Components';
+import { Header } from 'modules/HeaderModule/Components';
 
 export const Layout = ({ showFooter = true, showContactForm = true }) => {
    return (

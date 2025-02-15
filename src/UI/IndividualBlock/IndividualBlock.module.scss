@@ -25,3 +25,34 @@
     }
   }
 }
+@media screen and (max-width: 1024px){
+  .container{
+    padding: 100px 30px 0;
+  }
+  .content{
+    img{
+      width: 346px;
+      height: 300px;
+    }
+
+  }
+
+}
+@media screen and (max-width: 480px){
+  .container{
+    padding: 80px 20px 40px;
+  }
+  .heading{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 26;
+  }
+  .content{
+    flex-direction: column;
+    &_des{
+      width: 100%;
+    }
+  }
+
+}

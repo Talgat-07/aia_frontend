@@ -1,5 +1,5 @@
 import { BlockTitle, Container, MoreProjects } from 'UI/index';
-import { ApartmentDesign } from 'modules/ApartmentDesignModule/components';
+import { ApartmentDesign } from 'modules/ApartmentDesignModule/ApartmentDesign.jsx';
 import { Outlet } from 'react-router-dom';
 import Image from 'assets/img/moreProjects.png';
 import { path } from 'utils/constants/constants.js';
@@ -24,7 +24,6 @@ export const ApartmentDesignPage = () => {
       linkWidth: '467px',
    }
    return (
-      <>
          <Container>
             <BlockTitle config={startBlockConfig}/>
             <ApartmentDesign />
@@ -32,6 +31,5 @@ export const ApartmentDesignPage = () => {
 
             <Outlet />
          </Container>
-      </>
    );
 };

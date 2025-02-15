@@ -1,11 +1,14 @@
 import { useEffect } from "react";
 import { useModal } from "utils/hooks/useModal";
 import PropTypes from "prop-types";
-import styles from "UI/YoutubeBlock/YoutubeBlock.module.scss";
+import styles from "./YoutubeBlock.module.scss";
 import { Heading } from "UI/index.js";
+import {useMediaQuery} from "utils/hooks/useMediaQuery.js";
 
 export const YoutubeBlock = ({ videoId, backgroundColor }) => {
   const { isOpen, openModal, closeModal } = useModal();
+  const Tablet = useMediaQuery('(max-width: 822px)');
+  const Mobile = useMediaQuery('(max-width:480px')
 
   useEffect(() => {
     if (isOpen) {
@@ -57,8 +60,8 @@ export const YoutubeBlock = ({ videoId, backgroundColor }) => {
                  title="YouTube Video"
                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                  allowFullScreen
-                 width="900px"
-                 height="500px"
+                 width={ Mobile ? '336px' : Tablet ? '516px' : '900px'}
+                 height={ Mobile ? '192px': Tablet ? '300px' : '500px'}
               ></iframe>
             </div>
           </div>

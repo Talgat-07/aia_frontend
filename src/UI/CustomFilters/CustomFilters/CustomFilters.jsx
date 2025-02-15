@@ -17,12 +17,12 @@ export const CustomFilters = ({ item, onFilterChange, visibleFilters }) => {
          display: "flex",
          alignItems: "center",
          justifyContent: "space-between",
-         width: "175px",
-         height: "45px",
+         // width: "175px",
+         // height: "45px",
          borderRadius: "0",
          border: "0",
          boxShadow: "none",
-         padding: "0 10px",
+         // padding: "0 10px",
       }),
 
       valueContainer: (styles) => ({
@@ -57,9 +57,8 @@ export const CustomFilters = ({ item, onFilterChange, visibleFilters }) => {
 
 
 
-   const yearOptions = [{ value: '', label: 'Все' }, ...(item?.years?.map(y => ({ value: y, label: y })) || [])];
-   const floorOptions = item?.floors ? [{ value: '', label: 'Все' }, ...item.floors.map(f => ({ value: f, label: f }))] : [];
-
+   const yearOptions = [{ value: '', label: 'Год' }, ...(item?.years?.map(y => ({ value: y, label: y })) || [])];
+   const floorOptions = item?.floors ? [{ value: '', label: 'Этаж' }, ...item.floors.map(f => ({ value: f, label: f }))] : [];
 
    return (
       <div className={style.filterContainer}>
@@ -68,6 +67,7 @@ export const CustomFilters = ({ item, onFilterChange, visibleFilters }) => {
                <div className={style.customDropdown}>
                   <Select
                      styles={customStyles}
+                     isSearchable={false}
                      value={yearOptions.find((opt) => opt.value === filters.year)}
                      onChange={(option) => handleChange('year', option.value)}
                      options={yearOptions}
@@ -82,6 +82,7 @@ export const CustomFilters = ({ item, onFilterChange, visibleFilters }) => {
                      styles={customStyles}
                      value={floorOptions.find((opt) => opt.value === filters.floor)}
                      onChange={(option) => handleChange('floor', option.value)}
+                     isSearchable={false}
                      options={floorOptions}
                      placeholder="Этаж"
                   />
@@ -102,7 +103,7 @@ export const CustomFilters = ({ item, onFilterChange, visibleFilters }) => {
                      value={filters.area}
                      onChange={(e) => handleChange('area', Number(e.target.value))}
                      style={{
-                        '--progress': `${(filters.area / 930) * 100}%`,
+                        '--progress': `${(filters.area / 900) * 100}%`,
                         '--thumb-offset': `0px`,
                      }}
                   />

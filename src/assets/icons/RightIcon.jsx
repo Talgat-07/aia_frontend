@@ -10,9 +10,9 @@ export const RightIcon = () => {
          <path
             d="M10 7L15 12L10 17"
             stroke="#B3895E"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
          />
       </svg>
    );

@@ -23,10 +23,15 @@ export const BlogCards = ({ image, title, text, date, link }) => {
             <Typography variant="bodyM" className={styles.card_text}>
                {text}
             </Typography>
-            <Link to={link} className={styles.card_link}>
-               Читать публикацию
-               <RightIcon />
-            </Link>
+            <div className={styles.cardFooter}>
+               <Link to={link} className={styles.card_link}>
+                  Читать публикацию
+                  <RightIcon />
+               </Link>
+               <Typography variant="bodyS" className={styles.card_dateTwo}>
+                  {date}
+               </Typography>
+            </div>
          </div>
       </Link>
    );

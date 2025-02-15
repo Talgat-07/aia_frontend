@@ -1,27 +1,29 @@
-
 .breadcrumb {
-  font-size: 18px;
-  font-weight: 400;
+   font-size: 18px;
+   font-weight: 400;
 }
 
 li {
-  list-style-type: none;
+   list-style-type: none;
 }
 
 .navigation__item {
-  cursor: pointer;
-  transition: color 0.3s ease;
+   cursor: pointer;
+   transition: color 0.3s ease;
 
-  &:hover {
-    opacity: 0.8;
-  }
+   &:hover {
+      opacity: 0.8;
+   }
 }
 
 .navigation {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  gap: 4px;
-  align-items: center;
-}
+   position: relative;
+   z-index: 1;
+   display: flex;
+   gap: 4px;
+   align-items: center;
 
+   @media (max-width: 768px) {
+      display: none;
+   }
+}

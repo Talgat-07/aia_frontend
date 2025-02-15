@@ -10,3 +10,29 @@
     justify-content: center;
   }
 }
+:global(.swiper-pagination-bullet) {
+  background-color: #706f6f !important;
+  border-radius: 0 !important;
+}
+
+:global(.swiper-pagination-bullet-active) {
+  background-color: #D9B38C !important;
+}
+@media  screen  and (max-width: 1024px) {
+  .container{
+    padding: 50px 30px;
+  }
+  .contentTablet{
+    height: 400px;
+
+  }
+  :global(.swiper-slide){
+    width: 346px !important;
+  }
+  :global(.swiper){
+
+  }
+
+
+
+}

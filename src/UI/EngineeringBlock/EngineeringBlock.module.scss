@@ -17,3 +17,14 @@
   align-items: center;
 
 }
+
+@media screen  and (max-width: 1024px) {
+  .container{
+    padding: 100px 30px 0;
+  }
+  .des{
+    overflow: auto;
+    height: 120px;
+  }
+
+}

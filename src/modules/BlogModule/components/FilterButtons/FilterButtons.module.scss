@@ -3,12 +3,18 @@
    flex-wrap: wrap;
    max-width: 630px;
    gap: 8px;
+   @media (max-width: 1091px) {
+      gap: 12px !important;
+      max-width: 100%;
+      @media (max-width: 650px) {
+         gap: 8px !important;
+      }
+   }
 }
 
 .filterButton {
    padding: 5.5px 10px;
    border: none;
-   border-radius: 5px;
    background: consectetur;
    cursor: pointer;
    transition:
@@ -16,6 +22,14 @@
       color 0.3s;
    display: flex;
    align-items: center;
+
+   @media (max-width: 1091px) {
+      padding: 7px 20px !important;
+      max-width: 100%;
+      @media (max-width: 650px) {
+         padding: 5.5px 10px !important;
+      }
+   }
 }
 
 .filterButton:hover {

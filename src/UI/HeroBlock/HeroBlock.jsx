@@ -2,15 +2,37 @@ import { BreadCrumbs, Typography, CustomButton } from 'UI/index.js';
 import { useLocation } from 'react-router-dom';
 import { BreadCrumbData } from 'utils/constants/constants.js';
 import myImage from 'assets/img/mainBanner.png';
+import {useEffect, useRef, useState} from "react";
 import styles from './HeroBlock.module.scss';
 import { BackToTop } from "modules/HomeModules/index.js";
 import { useModal } from 'utils/hooks/useModal.js';
 import { RegModal } from 'modules/User/Components/RegModal/RegModal.jsx';
+import {useMediaQuery} from "utils/hooks/useMediaQuery.js";
 
 export const HeroBlock = ({ config = {}, breadcrumbs }) => {
    const { isOpen, openModal, closeModal } = useModal();
    const location = useLocation();
    const currentPath = location.pathname;
+   const [shouldLoad, setShouldLoad] = useState(false);
+   const videoRef = useRef(null);
+   const Desktop = useMediaQuery('(min-width: 1370px)');
+   useEffect(() => {
+      if (!videoRef.current) return;
+
+      const observer = new IntersectionObserver(
+          ([entry]) => {
+             if (entry.isIntersecting) {
+                setShouldLoad(true);
+                observer.disconnect();
+             }
+          },
+          { threshold: 0.5 }
+      );
+
+      observer.observe(videoRef.current);
+
+      return () => observer.disconnect();
+   }, []);
 
    const {
       showBreadCrumbs = true,
@@ -48,23 +70,28 @@ export const HeroBlock = ({ config = {}, breadcrumbs }) => {
             />
          )}
 
-         {video && (
-            <video
-               className={styles.video_overlay}
-               src={video}
-               autoPlay
-               muted
-               loop
-               playsInline
-            />
+         { Desktop && video && (
+             <div ref={videoRef}>
+                {shouldLoad && (
+                    <video
+                        className={styles.video_overlay}
+                        src={video}
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                    />
+                )}
+             </div>
+
          )}
 
          <div className={styles.textBanner}>
             <Typography
-               variant="h1"
-               weight="bold"
-               color="white"
-               className={styles.title}
+                variant="h1"
+                weight="bold"
+                color="white"
+                className={styles.title}
             >
                {titleHero || BreadCrumbData.find(item => item.link === currentPath)?.label || "Не найдено"}
             </Typography>

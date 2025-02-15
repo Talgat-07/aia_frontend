@@ -1,0 +1,73 @@
+.header {
+   background-color: var(--black-main-color);
+   position: sticky;
+   top: 0;
+   height: 118px;
+   z-index: 1000;
+   transition: all 0.3s ease;
+}
+.BottomBar {
+   padding: 30px 0;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+
+   .logoAndContact {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+   }
+}
+.TopBar_Container {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   text-align: center;
+   position: relative;
+}
+.ContactInfo {
+   padding-top: 10px;
+
+   .phone {
+      transition:
+         color 0,
+         3s ease;
+
+      &:hover {
+         color: rgba(179, 137, 94, 1);
+      }
+   }
+}
+.languageSwitcher {
+   display: flex;
+}
+.right_bottom_bar {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 50px;
+   .customBrownButton {
+      width: 200px;
+      height: 40px;
+   }
+}
+
+@media screen and (max-width: 820px) {
+   .header{
+      height: 66px;
+   }
+   .BottomBar{
+      padding: 0;
+   }
+   .logoAndContact{
+      height: 4rem;
+      display: flex;
+      gap: 24px;
+
+      img{
+         width: 70px;
+         height: 40px;
+      }
+   }
+}
+

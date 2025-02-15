@@ -1,0 +1,137 @@
+.content {
+  padding: 20px 90px;
+
+  &_year {
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .cardContainer {
+    padding: 0px;
+    justify-content: center;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 20px;
+  }
+}
+.button_content{
+  display: flex;
+  justify-content: center;
+}
+.divider {
+  height: 2px;
+  background-color: rgba(181, 180, 180, 1);
+  margin: 70px 0;
+  width: 100%;
+  border: 1px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.heading{
+  padding: 0 20px;
+}
+.blockButton{
+  display: flex;
+  gap: 20px;
+  height: 90px;
+  padding: 0 100px ;
+  background: var(--black-main-color);
+  button{
+    font-weight: 400;
+    font-size: 18px;
+    margin: 30px 0;
+    height: 20px;
+    color: #fff;
+    border: none;
+    outline: none;
+    background: transparent;
+  }
+  .activeButton{
+    color: var(--main-color);
+    transition: color 0.3s;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cardContainer .card {
+  opacity: 0;
+  animation: fadeIn 0.4s ease forwards;
+  animation-delay: var(--delay);
+}
+
+
+
+@media screen and (max-width: 770px) {
+  .content {
+    padding: 32px  20px;
+  }
+
+  .blockButton {
+    height: 50px;
+    padding: 0
+    30px;
+    button{
+      margin: 12px 0;
+      font-size: 16px;
+      font-weight: 400;
+    }
+  }
+
+  .cardContainer {
+    gap: 16px !important;
+
+  }
+
+  .cardContainer .card {
+    flex-basis: 48%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .heading{
+    padding: 0;
+  }
+  .content {
+    padding: 15px 20px;
+  }
+
+  .blockButton {
+    padding: 0 20px;
+    height: auto;
+  }
+
+  .cardContainer {
+    gap: 8px;
+  }
+
+  .cardContainer .card {
+    flex-basis: 100%;
+  }
+
+  .blockButton button {
+    font-size: 16px;
+    height: auto;
+  }
+}
+
+@media  screen and (max-width: 1550px) {
+  .cardContainer {
+    padding: 0;
+
+  }
+}

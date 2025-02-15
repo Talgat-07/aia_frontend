@@ -1,13 +1,12 @@
-import {useState} from 'react';
+import { useEffect, useState } from 'react';
 import { CustomGalleryBlock } from 'UI/CustomGalleryBlock/CustomGalleryBlock.jsx';
 import { CustomFilters } from 'UI/CustomFilters/CustomFilters/CustomFilters.jsx';
 import { Container } from 'UI/Container/Container.jsx';
 import { CustomPagination } from 'UI/CustomPagination/CustomPagination.jsx';
+import style from './PrivateArchitecture.module.scss'
+import img from 'assets/img/moreProjects.png'
 
 export const PrivateArchitecture = () => {
-
-   const img = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmCy16nhIbV3pI1qLYHMJKwbH2458oiC9EmA&s'
-
 
    const customFiltersItem = {
       years: [2020, 2021, 2022],
@@ -74,7 +73,7 @@ export const PrivateArchitecture = () => {
       {
          img: img,
          title: '2021 - 2 этаж',
-         text: 'проверка',
+         text: 'Площадь: 200 м²',
          year: 2021,
          floor: 2,
          area: 200,
@@ -82,10 +81,10 @@ export const PrivateArchitecture = () => {
       {
          img: img,
          title: '2022 - 3 этаж',
-         text: 'Площадь: 300 м²',
+         text: 'Площадь: 500 м²',
          year: 2022,
          floor: 3,
-         area: 300,
+         area: 500,
       },
       {
          img: img,
@@ -563,7 +562,7 @@ export const PrivateArchitecture = () => {
 
    const [filteredCards, setFilteredCards] = useState(cardsData);
    const [activePage, setActivePage] = useState(1);
-   const itemsPerPage = 9;
+   const [itemsPerPage, setItemsPerPage] = useState(9);
 
    const handleFilterChange = (filters) => {
       const { year, floor, area } = filters;
@@ -573,10 +572,28 @@ export const PrivateArchitecture = () => {
             (floor === '' || card.floor === floor) &&
             card.area <= area
       );
-      console.log('filtered', filtered)
      setFilteredCards(filtered);
       setActivePage(1);
    };
+
+   useEffect(() => {
+      const updateItemsPerPage = () => {
+         if (window.innerWidth <= 768) {
+            setItemsPerPage(4);
+         } else if (window.innerWidth <= 1024) {
+            setItemsPerPage(6);
+         } else {
+            setItemsPerPage(9);
+         }
+      };
+
+      updateItemsPerPage();
+      window.addEventListener('resize', updateItemsPerPage);
+
+      return () => {
+         window.removeEventListener('resize', updateItemsPerPage);
+      };
+   }, []);
 
    const indexOfLastItem = activePage * itemsPerPage;
    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
@@ -589,7 +606,9 @@ export const PrivateArchitecture = () => {
    return (
       <Container>
          <CustomFilters visibleFilters={['year', 'floor', 'area']} item={customFiltersItem} onFilterChange={handleFilterChange}/>
-         <CustomGalleryBlock cardsData={currentCards} />
+         <div className={style.privateContainer}>
+            <CustomGalleryBlock cardsData={currentCards} />
+         </div>
          <CustomPagination
             activePage={activePage}
             itemsPerPage={itemsPerPage}
@@ -599,4 +618,6 @@ export const PrivateArchitecture = () => {
       </Container>
    );
 };
+
+
 

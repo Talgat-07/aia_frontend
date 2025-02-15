@@ -1,5 +1,14 @@
-.Container {
-  max-width: 100vw;
-  margin: 0 auto;
 
+
+.Container {
+  margin: 0 auto;
+  max-width: 1440px;
+  @media screen and (min-width: 1445px){
+    max-width: 1920px;
+
+  }
+  @media screen and (min-width: 1920px){
+    max-width: 2560px;
+
+  }
 }

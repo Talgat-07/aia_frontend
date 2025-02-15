@@ -1,8 +1,9 @@
-import { HouseDesign } from 'modules/HouseDesignModule/components';
+import { HouseDesign } from 'modules/HouseDesignModule/HouseDesign.jsx';
 import { MoreProjects } from 'UI/MoreProjects/MoreProjects.jsx';
 import Image from 'assets/img/moreProjects.png';
 import { path } from 'utils/constants/constants.js';
 import { BlockTitle } from 'UI/BlockTitle/BlockTitle.jsx';
+import {Container} from "UI/Container/Container.jsx";
 
 export const HouseDesignPage = () => {
    const config =
@@ -24,11 +25,11 @@ export const HouseDesignPage = () => {
       linkWidth: '467px',
    }
    return (
-      <>
+      <Container>
          <BlockTitle config={startBlockConfig}/>
          <HouseDesign />
          <MoreProjects config={config}/>
 
-      </>
+      </Container>
    );
 };

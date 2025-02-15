@@ -7,3 +7,26 @@
 .container{
   padding: 70px 100px 140px;
 }
+
+
+@media screen and (max-width: 1025px){
+  .container{
+    padding: 70px 30px 70px;
+  }
+  .OurTeam{
+    gap: 15px;
+  }
+
+}
+@media screen and (max-width: 480px){
+  .container{
+    padding: 40px 0 60px 20px ;
+
+  }
+  .MobileOur{
+    padding: 0 20px;
+    width: 300px !important;
+    height: 370px;
+    overflow: hidden;
+  }
+}
