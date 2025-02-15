@@ -5,7 +5,7 @@ export { FollowUs } from 'UI/FollowUs/FollowUs.jsx';
 export { WeInNumber } from 'UI/WeInNumber/WeInNumber.jsx';
 export { YoutubeBlock } from 'UI/YoutubeBlock/YoutubeBlock.jsx';
 export { Container } from 'UI/Container/Container.jsx';
-export { PeopleCard } from 'UI/Cards/peopleCard/PeopleCard.jsx';
+export { PeopleCard } from 'UI/Cards/PeopleCard/PeopleCard.jsx';
 export { BreadCrumbs } from 'UI/BreadCrumbs/BreadCrumbs.jsx';
 export { Loader } from 'UI//Loader/Loader.jsx';
 export { ContactForm } from 'UI/ContactForm/ContactForm.jsx';
